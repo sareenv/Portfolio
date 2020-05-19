@@ -1,5 +1,5 @@
 import React from 'react'
-import {Card} from 'antd'
+import Project from '../Components/Project'
 import 'antd/dist/antd.css';
 
 class Projects extends React.Component {
@@ -12,16 +12,22 @@ class Projects extends React.Component {
     }
 
     render() {
+        const tile = "hello"
         return (
-            <div style = {{marginTop: 10}}> 
-                <Card title="Default size card" cover={
-                    <img src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" alt= 'noImg'/>
-                } style={{ width: 300, margin: 10 }}>
-                    <p>Card content</p>
-                    <p>Card content</p>
-                    <p>Card content</p>
-                </Card>
+            <div>
+                <div style = {{marginTop: 10, display: 'flex', justifyContent: 'center'}}> 
+                    <Project title= {'YoBruh'}/>
+                    <Project title = {tile}/>
+                    <Project title = {tile}/>
+                </div>    
+
+                <div style = {{marginTop: 10, display: 'flex', justifyContent: 'center'}}> 
+                    <Project title = {tile}/>
+                    <Project title = {tile}/>
+                    <Project title = {tile}/>
+                </div>
             </div>    
+
         )
     }
 
