@@ -7,7 +7,7 @@ const Header = () => {
                 <ul style = {{textDecoration: 'none', listStyle: 'none', display: 'flex', flexDirection: 'row', justifyContent: 'center'}}>
                     <li style = {{padding: 12}}> Research </li>
                     <li style = {{padding: 12}}> Hackathons </li>
-                    <li style = {{padding: 12}}> Blogs </li>
+                    <li style = {{padding: 12}}> Articles </li>
                     <li style = {{padding: 12}}> Projects </li>
                     <li style = {{padding: 12}}> Experience </li>
                 </ul>
