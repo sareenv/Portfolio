@@ -12,19 +12,20 @@ class Projects extends React.Component {
     }
 
     render() {
-        const tile = "hello"
+        
         return (
             <div>
-                <div style = {{marginTop: 10, display: 'flex', justifyContent: 'center'}}> 
-                    <Project title= {'YoBruh'}/>
-                    <Project title = {tile}/>
-                    <Project title = {tile}/>
+                <p style = {{display: 'flex', justifyContent: 'center', marginTop: 20, fontSize: 28}}> Projects </p>
+                <div style = {{marginTop: -15, display: 'flex', justifyContent: 'center'}}> 
+                    <Project title= {'SVSwiper Library'}/>
+                    <Project title = {'Food Ordering IOS APP'}/>
+                    <Project title = {'Resturant Ordering REST Api'}/>
                 </div>    
 
                 <div style = {{marginTop: 10, display: 'flex', justifyContent: 'center'}}> 
-                    <Project title = {tile}/>
-                    <Project title = {tile}/>
-                    <Project title = {tile}/>
+                    <Project title = {'Movies Review Application'}/>
+                    <Project title = {'Python ChatBot'}/>
+                    <Project title = {'YoBruh'}/>
                 </div>
             </div>    
 

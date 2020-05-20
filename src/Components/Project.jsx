@@ -12,14 +12,13 @@ class Project extends React.Component {
         return(
             <div> 
             <Card hoverable style={{ width: 240 }} cover={
-                <img src="https://gw.alipayobjects.com/zos/rmsportal/JiqGstEfoWAOHiTxclqi.png" alt= 'noImg'/>
+                <img src="https://i.ytimg.com/vi/h3pS5rNokQA/maxresdefault.jpg" alt= 'noImg'/>
                 } style={{ width: 300, margin: 30 }}>
                 <Card.Meta title= {this.props.title} description="www.instagram.com" />
             </Card>
             </div>
         )
     }
-
 } 
 
 export default Project
