@@ -11,11 +11,11 @@ class Project extends React.Component {
     render() {
         return(
             <div> 
-            <Card hoverable style={{ width: 240 }} cover={
-                <img src="https://i.ytimg.com/vi/h3pS5rNokQA/maxresdefault.jpg" alt= 'noImg'/>
-                } style={{ width: 300, margin: 30 }}>
-                <Card.Meta title= {this.props.title} description="www.instagram.com" />
-            </Card>
+                <Card hoverable style={{ width: 240 }} cover={
+                    <img src="https://i.ytimg.com/vi/h3pS5rNokQA/maxresdefault.jpg" alt= 'noImg'/>
+                    } style={{ width: 300, margin: 30 }}>
+                    <Card.Meta title= {this.props.title} description="www.instagram.com" />
+                </Card>
             </div>
         )
     }

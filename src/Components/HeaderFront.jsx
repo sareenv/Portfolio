@@ -1,9 +1,11 @@
 import React from 'react'
 import AnimatedTitles from './AnimatedtTitles'
 import image from '../me.jpeg'
+import { Button } from 'react-bootstrap';
+import 'bootstrap/dist/css/bootstrap.min.css';
 const HeaderFront = () => {
     return (
-        <section style={{display: 'flex', alignItems: 'center', 
+        <div style={{display: 'flex', alignItems: 'center', 
         backgroundColor: 'white', minHeight: 200, minWidth: '100%' ,flexDirection: 'column'}}>
             <img src = {image} alt='noImg' style={{width: 100, height: 100,
                  borderRadius: 50, marginTop: 25}} />
@@ -14,8 +16,8 @@ const HeaderFront = () => {
                 </div>
                 <AnimatedTitles /> 
             </div>
-            <button style = {{width: 200, backgroundColor: 'purple', border: 'none', color: 'white', padding: 13, fontSize: 18, borderRadius: 80}}> Download Resume </button>
-        </section>
+            <Button> Download Resume </Button>
+        </div>
     )
 }
 
