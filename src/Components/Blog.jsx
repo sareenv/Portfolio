@@ -2,7 +2,7 @@ import CodeBlock from './CodeSnippet'
 import React from 'react'
 
 class Blog extends React.Component {
-
+    
     constructor(props){
         super(props);
     }

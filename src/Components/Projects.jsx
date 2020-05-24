@@ -15,7 +15,7 @@ class Projects extends React.Component {
         
         return (
             <div>
-                <p style = {{display: 'flex', justifyContent: 'center', marginTop: 20, fontSize: 28}}> Projects </p>
+                <p style = {{display: 'flex', justifyContent: 'center', marginTop: 20, fontSize: 20, color: '#1b1b2f'}}> Personal Projects </p>
                 <div style = {{marginTop: -15, display: 'flex', justifyContent: 'center'}}> 
                     <Project title= {'SVSwiper Library'}/>
                     <Project title = {'Food Ordering IOS APP'}/>
