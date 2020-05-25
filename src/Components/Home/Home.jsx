@@ -5,11 +5,12 @@ import Footer from '../Footer'
 const Home = () => {
     return (
         <div>
-            <HeaderFront />
-            <Footer />
+            <div style={{margin: 10}}>
+                <HeaderFront />
+            </div>
+            <Footer />    
         </div>
     )
 }
 
 export default Home
-

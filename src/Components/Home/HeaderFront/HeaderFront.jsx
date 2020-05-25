@@ -17,7 +17,7 @@ const HeaderFront = () => {
                         <p style = {{color: '#e43f5a', fontSize: 25, marginTop: 15, padding: 3}}>  Hi, I'm </p>
                         <p style = {{color: 'white', fontSize: 25, marginTop: 15}}> Vinayak Sareen  </p>
                     </div>
-                    <h3 style={{color: 'white', marginTop: -30, fontSize: '15px', textAlign: 'center'}}> 
+                    <h3 style={{color: 'white', marginTop: -20, fontSize: '15px', textAlign: 'center'}}> 
                     I'm enthusiastic recenlty graduated software engineer from Coventry University. </h3>
                     <h3 style={{color: 'white', marginTop: -10, fontSize: '15px'}}> I'm a full stack developer who can 
                     develop mobile applications and backend REST Api as per the business logic.

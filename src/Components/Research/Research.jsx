@@ -1,6 +1,6 @@
 import React from 'react'
 
-class BlogPage extends React.Component {
+class ResearchPage extends React.Component {
     constructor(props) {
         super(props)
 
@@ -9,10 +9,10 @@ class BlogPage extends React.Component {
     render() {
         return(
         <div style={{margin: 20}}>
-            Blogs Page
+            Research Page
         </div>
         )
     }
 }
 
-export default BlogPage
+export default ResearchPage
