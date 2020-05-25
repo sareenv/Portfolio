@@ -1,10 +1,9 @@
 import React from 'react'
 import AnimatedTitles from './AnimatedtTitles'
-import image from '../me.jpeg'
-import { Button } from 'react-bootstrap';
-import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa";
-import 'bootstrap/dist/css/bootstrap.min.css';
-import '../Components/css/main.css'
+import image from '../../../me.jpeg'
+import { Button } from 'react-bootstrap'
+import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa"
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 const HeaderFront = () => {
     return (
