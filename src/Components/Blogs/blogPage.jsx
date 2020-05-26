@@ -1,45 +1,21 @@
 import React from 'react'
-import {ListGroup, Button} from 'react-bootstrap'
+import { ListGroup, Button } from 'react-bootstrap'
 import Footer from '../Footer'
+import Moment from 'react-moment';
+import { AiFillCode } from 'react-icons/ai'
 
 class BlogPage extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
             // this will also be removed from here and we will make this work from the database
-            articles: [
-                {   
-                    id: 12,
-                    page: 1,
-                    date: new Date().toLocaleDateString(), 
-                    image: '',
-                    title: 'Optionals in Swift Programming', 
-                    description: 'This is a nice article on hacking with swift and will help me'
-                },
-                {   
-                    id: 13,
-                    page: 1,
-                    date: new Date().toLocaleDateString(), 
-                    image: '',
-                    title: 'UICollectionView Tutorial', 
-                    description: 'This is a nice article on hacking with swift and will help me'
-                }, {
-                    id: 13,
-                    page: 1,
-                    date: new Date().toLocaleDateString(), 
-                    image: '',
-                    title: 'UITableViewController', 
-                    description: 'This is a nice article on hacking with swift and will help me'
-                }, {
-                    id: 14,
-                    page: 1,
-                    date: new Date().toLocaleDateString(), 
-                    image: '',
-                    title: 'Developing React Applications With Javascript', 
-                    description: 'This is a nice article on hacking with swift and will help me'
-                }
-            ]
+            articles: []
         }
+    }
+
+    componentDidMount() {
+        const api = 'https://portfoliowebby.herokuapp.com/api/fetchblogs'
+        // using the fetch api download all the data and append the state variable.
     }
 
     listItem = (title, description, date) => {
@@ -59,14 +35,36 @@ class BlogPage extends React.Component {
         )
     }
 
+    // conditional Rendering
+    ListItems = () => {
+        if(this.state.articles.length > 0) {
+            return(
+                <div>
+                    <ListGroup>
+                        {this.state.articles.map((article) => this.listItem(article.title, article.description, article.date))}
+                    </ListGroup>
+                </div>
+            )
+        }
+
+        return(
+            <div style={{backgroundColor: 'white', fontSize: 28, display: 'flex', flexDirection: 'row', 
+                justifyContent: 'center',
+                alignItems: 'center',
+            }}>
+                Blogs comming soon !
+            </div>
+        )
+        
+    }
+
+
+
     render() {
         return(
         <div style={{margin: 20, backgroundColor: 'rgba(238, 238, 238, 0.4)'}}>
-            <center> <h2 style={{padding: 14}}> Programming Blogs 🔥 </h2></center>
-            <ListGroup>
-                {this.state.articles.map((article) => this.listItem(article.title, article.description, article.date))}
-                {console.log(this.state.articles[0].date)}
-            </ListGroup>
+            <center> <h2 style={{padding: 14}}> Programming Blogs <AiFillCode /> </h2></center>
+            {this.ListItems()}
             <Footer />
         </div>
         )

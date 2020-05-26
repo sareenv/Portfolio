@@ -5,7 +5,7 @@ import Footer from '../Footer'
 const Home = () => {
     return (
         <div>
-            <div style={{margin: 10}}>
+            <div style={{margin: 20}}>
                 <HeaderFront />
             </div>
             <Footer />    

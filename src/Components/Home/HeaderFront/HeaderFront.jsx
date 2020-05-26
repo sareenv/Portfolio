@@ -9,17 +9,17 @@ const HeaderFront = () => {
     return (
         <div>
             <div style={{display: 'flex', alignItems: 'center', 
-            backgroundColor: '#1b1b2f', minHeight: 400, minWidth: '100%' ,flexDirection: 'column', padding: 10}}>
-                <img src = {image} alt='noImg' style={{width: 100, height: 100,
-                    borderRadius: 50, marginTop: 25}} />
+            backgroundColor: '#1d3557', minHeight: 400, minWidth: '100%' ,flexDirection: 'column', padding: 10}}>
+                <img src = {image} alt='noImg' style={{width: 150, height: 150,
+                    borderRadius: 100, marginTop: 25}} />
                 <div style={{display: 'flex', flexDirection: 'column', padding: 0, margin: 0}}>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                        <p style = {{color: '#e43f5a', fontSize: 25, marginTop: 15, padding: 3}}>  Hi, I'm </p>
-                        <p style = {{color: 'white', fontSize: 25, marginTop: 15}}> Vinayak Sareen  </p>
+                        <p style = {{color: '#e63946', fontSize: 25, marginTop: 15, padding: 3}}>  Hi, I'm </p>
+                        <p style = {{color: '#f1faee', fontSize: 25, marginTop: 15}}> Vinayak Sareen  </p>
                     </div>
-                    <h3 style={{color: 'white', marginTop: -20, fontSize: '15px', textAlign: 'center'}}> 
+                    <h3 style={{color: '#f1faee', marginTop: -20, fontSize: '15px', textAlign: 'center'}}> 
                     I'm enthusiastic recenlty graduated software engineer from Coventry University. </h3>
-                    <h3 style={{color: 'white', marginTop: -10, fontSize: '15px'}}> I'm a full stack developer who can 
+                    <h3 style={{color: '#f1faee', marginTop: -10, fontSize: '15px'}}> I'm a full stack developer who can 
                     develop mobile applications and backend REST Api as per the business logic.
                     </h3>
                 </div>
