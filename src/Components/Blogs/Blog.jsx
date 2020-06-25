@@ -3,10 +3,6 @@ import React from 'react'
 
 class Blog extends React.Component {
     
-    constructor(props){
-        super(props);
-    }
-
     render() {
         const code = `
         import UIKit 
