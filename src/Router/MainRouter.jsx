@@ -16,11 +16,11 @@ const MainRouter = () => {
         <BrowserRouter>
             <Navbar collapseOnSelect className="customNavbar" expand="lg">
                 <Nav className="m-auto">
-                    <Nav.Link as={NavLink} className="customNav" to="/" activeClassName="active" exact >Projects</Nav.Link>
-                    <Nav.Link as={NavLink} className="customNav" to="/blog" activeClassName="active">Blogs</Nav.Link>
-                    <Nav.Link as={NavLink} className="customNav" to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link>
-                    <Nav.Link as={NavLink} className="customNav" to="/research" activeClassName="active">Research</Nav.Link>
-                    <Nav.Link as={NavLink} className="customNav" to="/contact" activeClassName="active"> Contact Me </Nav.Link>
+                    <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Projects</Nav.Link>
+                    <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/blog" activeClassName="active">Blogs</Nav.Link>
+                    <Nav.Link as={NavLink} className="customNav" style={{color: "white"}}  to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link>
+                    <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/research" activeClassName="active">Research</Nav.Link>
+                    <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/contact" activeClassName="active"> Contact Me </Nav.Link>
                 </Nav>
                 
             </Navbar>

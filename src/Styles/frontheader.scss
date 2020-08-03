@@ -1,0 +1,17 @@
+.frontheader {
+    background-color: #1d3557;
+    min-height: 400;
+    display: flex;
+    align-items: center;
+    min-width: 90vw;    
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.circularimage {
+    width: 150px;
+    height: 150px;
+    border-radius: 100px;
+    margin-top: 25px;
+}

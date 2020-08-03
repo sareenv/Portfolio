@@ -1,17 +1,15 @@
 import React from 'react'
 import AnimatedTitles from './AnimatedtTitles'
-import image from '../../../me.jpeg'
+import image from '../../../Assets/me.jpeg'
 import { Button } from 'react-bootstrap'
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa"
 import 'bootstrap/dist/css/bootstrap.min.css'
-
+import '../../../Styles/frontheader.scss'
 const HeaderFront = () => {
     return (
         <div>
-            <div style={{display: 'flex', alignItems: 'center', 
-            backgroundColor: '#1d3557', minHeight: 400, minWidth: '100%' ,flexDirection: 'column', padding: 10}}>
-                <img src = {image} alt='noImg' style={{width: 150, height: 150,
-                    borderRadius: 100, marginTop: 25}} />
+            <div className="frontheader">
+                <img className="circularimage" src = {image} alt='noImg' />
                 <div style={{display: 'flex', flexDirection: 'column', padding: 0, margin: 0}}>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                         <p style = {{color: '#e63946', fontSize: 25, marginTop: 15, padding: 3}}>  Hi, I'm </p>
