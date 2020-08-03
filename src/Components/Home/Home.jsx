@@ -4,7 +4,7 @@ import HeaderFront from './HeaderFront/HeaderFront'
 const Home = () => {
     return (
         <div>
-            <div style={{margin: 10}}>
+            <div style={{margin: 0}}>
                 <HeaderFront />
             </div> 
         </div>
