@@ -1,12 +1,9 @@
 import React from 'react';
-import { ListGroup, Button, Modal } from 'react-bootstrap';
+import { ListGroup, Button } from 'react-bootstrap';
 import Footer from '../Footer';
 import axios from 'axios';
 import { AiFillCode } from 'react-icons/ai';
 import CodeBlock from './CodeSnippet'
-import ReactHtmlParser, { processNodes, convertNodeToElement, htmlparser2 } from 'react-html-parser';
- 
-import Blog from './Blog';
 
 class BlogPage extends React.Component {
     constructor(props) {
@@ -38,7 +35,7 @@ class BlogPage extends React.Component {
                 <ListGroup.Item>
                     <div style = {{display: 'flex', flexDirection: 'column', justifyContent: 'center', marginBottom: 20}}> 
                         <div style = {{display: 'flex', flexDirection: 'row', justifyContent: 'left'}}>
-                            <img src={image} style={{maxWidth: 300}}/> 
+                            <img src={image} style={{maxWidth: 300}} alt="no_img"/> 
 
                             <div style={{display: 'flex', flexDirection: 'column', padding: 20}}>
                                 <h2> {title} </h2>

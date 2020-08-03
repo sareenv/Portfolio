@@ -1,0 +1,22 @@
+$baseColor: #1d3557;
+$baseNavColor: #1b1b2f;
+$secondaryColor: $baseNavColor;
+
+.customNavbar {
+    background-color: $baseColor;
+}
+
+.customNav {
+    padding: 10;
+    text-align: center;
+    background-color: white;
+    color: black;
+}
+
+.active {
+    color: white;
+    background-color: blue;
+    font: bold;
+    padding: 10;
+    text-align: center;
+}
