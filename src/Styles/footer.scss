@@ -2,15 +2,14 @@ $baseColor: #1d3557;
 $baseNavColor: #1b1b2f;
 $secondaryColor: red;
 
-
-
 .footer {
     position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: $baseColor;
-    color: white;
+    background-color: whitesmoke;
+    color: black;
     text-align: center;
     height: "40px";
+    
 }

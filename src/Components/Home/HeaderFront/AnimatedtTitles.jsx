@@ -6,9 +6,11 @@ const AnimatedTitles = () => {
         <div style = {{color: '#e43f5a', fontSize: 20, display: 'flex'}}>
             <p style= {{color: 'white'}}>#</p>
             <Typed
-                strings={['Mobile Application', 
-                'REST API',
-                'Web Application', 
+                strings={['iOS Application', 
+                'Spring Boot',
+                'Java',
+                'Python', 
+                'FullStack' 
                 ]}
                 typeSpeed={40}
                 loop

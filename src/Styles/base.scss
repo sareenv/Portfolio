@@ -12,7 +12,48 @@ $redthemeColor: #e43f5a;
     text-align: center;
     background-color: $baseNavColor;
     text-decoration: none;
-    color: white;
+    color: black;
+}
+
+// hide the classical navigation bar.
+@media only screen 
+  and (max-device-width: 990px) {
+    .customNav {
+        display: none;
+    }
+
+    .customCardStyle {
+        width: '0rem';
+    }
+
+    * {
+        font-size: '2rem';
+    }
+}
+
+.cutomColumn {
+    margin-top: 1rem;
+}
+
+.projectBase {
+    .projectSection {
+        background-color: #1d3557;
+        padding-top: 2rem;
+        h3 {
+            color: whitesmoke;
+        }
+    }
+}
+
+.projectSection {
+    margin-bottom: 5rem;
+    margin-top: 2rem;
+    margin-left: 0rem;
+}
+
+.customline{
+  width: 50%;
+  background-color: white;
 }
 
 .active {
