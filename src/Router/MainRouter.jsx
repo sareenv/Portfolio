@@ -8,6 +8,7 @@ import Projects from '../Components/Projects/Projects'
 import { Navbar, Nav } from 'react-bootstrap'
 import '../Styles/base.scss'
 import SampleBlog from '../Components/Blogs/SampleBlog'
+import ProjectDetails from '../Components/Projects/ProjectDetails'
 
 
 const MainRouter = () => {
@@ -25,7 +26,7 @@ const MainRouter = () => {
             </Navbar>
 
             <Switch>
-                <Route path="/" exact component={Home} />
+                <Route path="/" exact component={ProjectDetails} />
                 <Route path="/blog" exact component={BlogPage} />
                 <Route path="/hackathons" exact component={HackathonPage} />
                 <Route path="/projects" exact component={Projects} />

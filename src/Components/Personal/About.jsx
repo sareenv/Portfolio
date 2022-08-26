@@ -3,10 +3,9 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../Styles/about.scss'
-import image from '../../Assets/me.jpeg'
+import image from '../../Assets/aws.png'
 import Image from 'react-bootstrap/Image'
 
-// content here needs to be changed.
 
 const About = () => {
     return(
@@ -14,9 +13,9 @@ const About = () => {
             <Container fluid="sm" style={{marginTop: '2rem'}}> 
                 <Row style={{backgroundColor: 'white'}}>
                     <Col lg={4}>
-                    <h3> About Me </h3>
-                    {/* <hr className='customline'/> */}
-                        <Image src={image} className='img-thumbnail' />
+                    
+                    <Image fluid="lg" src={image}/>
+                   
                     </Col>
                    
                     <Col>
@@ -33,10 +32,8 @@ const About = () => {
                             Recently, during my time as a software developer intern at the University of Windsor, I worked on Getmytiffin.ca - the highly scalable to alleviate the condition of home-made food selling businesses in the COVID era, with the focus on accessibility and user experience (UX) using technologies such as React, React Native, Redux etc. Having worked with diverse Agile teams and clients, through school, work and volunteering, I have developed a wide range of skills in written and verbal communication, teamwork and analytical thinking which are directly related to any technical role.
                         </div>
                     </Col>
-
                 </Row> 
         </Container>
-
         </>
         
     )
