@@ -1,12 +1,11 @@
-import React from 'react' 
+import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Badge from '../Utilities/Badge';
-import {Button, Card} from 'react-bootstrap'
-import {useState} from 'react'
-import { Nav } from 'react-bootstrap'
-import '../../Styles/base.scss'
+import {Link} from 'react-router-dom';
+import {Button, Card} from 'react-bootstrap';
+import '../../Styles/base.scss';
 
 const Project = () => {
     return (
@@ -27,7 +26,8 @@ const Project = () => {
                                         <Card.Text>
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
-                                        <Button variant="primary" style={{width: '100%'}} to="/blog" >View Details</Button>
+                                        {/* <Button variant="primary" style={{width: '100%'}} to="/blog" >View Details</Button> */}
+                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -41,7 +41,7 @@ const Project = () => {
                                         <Card.Text>
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
-                                        <Button variant="primary" style={{width: '100%'}}>View Details</Button>
+                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -55,7 +55,7 @@ const Project = () => {
                                         <Card.Text>
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
-                                        <Button variant="primary" style={{width: '100%'}}>View Details</Button>
+                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>

@@ -5,7 +5,6 @@ import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
 
-
 const Home = () => {
     return (
         <div>

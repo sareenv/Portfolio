@@ -19,7 +19,7 @@ const HeaderFront = () => {
                     I'm enthusiastic Masters Student At Concordia University with Software Engineering experience of two years. </h3>
                 </div>
                 <AnimatedTitles /> 
-                <Button>  #Resume </Button> 
+                <Button className='resumeBtn'>  #Resume </Button> 
             </div>
             <div style={{color: 'white', display: 'flex', marginTop: -40, justifyContent: 'flex-end', marginRight: 10}}> 
                 <a style={{textDecoration: 'none', color: 'white'}} href="https://github.com/sareenv"> <FaGithub style = {{marginRight: 15, fontSize: 20}}/> </a>

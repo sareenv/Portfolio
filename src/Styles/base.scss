@@ -18,9 +18,9 @@ $redthemeColor: #e43f5a;
 // hide the classical navigation bar.
 @media only screen 
   and (max-device-width: 990px) {
-    .customNav {
-        display: none;
-    }
+    // .customNav {
+    //     display: none;
+    // }
 
     .customCardStyle {
         width: '0rem';
@@ -47,6 +47,7 @@ $redthemeColor: #e43f5a;
 
 .projectSection {
     margin-bottom: 0.8rem;
+    padding-bottom: 1.2rem;
     margin-top: 2rem;
     margin-left: 0rem;
 }
@@ -61,4 +62,17 @@ $redthemeColor: #e43f5a;
     font: bold;
     padding: 10;
     text-align: center;
+}
+
+.customLink {
+    background-color: #007bff;
+    color: whitesmoke;
+    padding: 0.5rem;
+    min-width: fit-content;
+    right: auto;
+}
+
+.customLink :hover {
+   text-decoration: none;
+   color: white;
 }
