@@ -11,12 +11,14 @@ import '../Styles/base.scss'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 
+import '../Styles/base.scss'
+
 
 const MainRouter = () => {
     return(
         <BrowserRouter>
-            
                 <Navbar collapseOnSelect className="customNavbar" expand="lg">
+                <Navbar.Toggle aria-controls="basic-navbar-nav" color='white'/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto">
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
