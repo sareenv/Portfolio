@@ -1,22 +1,25 @@
 
 import React from 'react'
-import Form from 'react-bootstrap/Form';
-import { Container, Button, Row, Col } from 'react-bootstrap';
+import { Container, Button, Row, Col } from 'react-bootstrap'
+import { FaLinkedinIn, FaMailBulk, FaPaperPlane } from 'react-icons/fa'
+import Form from 'react-bootstrap/Form'
+import Footer from '../Footer'
 import '../../Styles/base.scss'
 import '../../Styles/contact.scss'
-import { FaPaperPlane } from 'react-icons/fa';
 
 const Contact = () => {
+    
     return (
         <Container>
             <Row className='contact_section'>
                 <Col sm={6}>
                 <center>
-                        <h2> Contact Details </h2>
+                        <h2> Let's Discuss! </h2>
+                        <p> Let's convert your idea into user-friendly products.</p>
                         <hr className='customline'></hr>
                         <span> 
                             <div>
-                                <b>Email</b>: sareenv026@outlook.com
+                                <b>Contact Email</b>: contact@sareenv.com
                             </div>
                             <div>
                                 <b>Location </b>: Montréal, Canada
@@ -26,37 +29,38 @@ const Contact = () => {
                                 <b>Contact Number </b>: (+1)5149783251
                             </div>
                             <div style={{margin: '1rem'}}>
-                                <b>LinkedIn  </b>: <a href="https://www.linkedin.com/in/vinayak-sareen/" 
-                                    style={{textDecoration: 'none', 
-                                    backgroundColor: '#007bff', 
-                                    color: 'white',
-                                    borderRadius: '2px',
-                                    padding: '0.2rem'}}> View Profile</a>
+                                <a href="https://www.linkedin.com/in/vinayak-sareen/" 
+                                    className='btn btn-outline-primary'> <FaLinkedinIn /> <> </>CONNECT ON LINKEDIN </a>
                             </div>
+
+                            <div>
+                            <a href="https://www.linkedin.com/in/vinayak-sareen/" 
+                            style={{textDecoration: 'none',}} className="btn btn-outline-danger"> <FaMailBulk /> contact@sareenv.com </a>
+                            </div>
+    
                         </span>
                     </center>
                 </Col>
                 <Col sm={6}>
-                        <Container fluid='sm' className='contact-form'> 
+                        <Container fluid='sm' className='contact-form' style={{marginTop: '20px'}}> 
                         <center>
                         <h2> Get in Touch </h2>
                         <hr className='customline'></hr>
                         </center>
-                        <Form>
-
+                        <Form action='https://formsubmit.co/contact@sareenv.com' method='post'>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label htmlFor="email">Full Name</Form.Label>
-                                <Form.Control type="email" placeholder="name@example.com" />
+                                <Form.Label htmlFor="fullName">Full Name</Form.Label>
+                                <Form.Control type="fullName" name="fullname" placeholder="Your Full Name"/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label htmlFor="email">Email</Form.Label>
-                                <Form.Control type="email" placeholder="name@example.com" />
+                                <Form.Control type="email" name="email" placeholder="name@example.com"/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label htmlFor="email">Your Message</Form.Label>
-                                <Form.Control as="textarea" placeholder='Please type your message here' rows={3} />
+                                <Form.Label htmlFor="message">Your Message</Form.Label>
+                                <Form.Control as="textarea" name="message" placeholder='Please type your message here' />
                             </Form.Group>
                             <Button variant="primary" type="submit"> 
                                 <div>
@@ -72,6 +76,8 @@ const Contact = () => {
             <div className='footer-contact' style={{display: 'none'}}>
                 contact form
             </div>
+
+            <Footer />
         </Container>
     )
 }

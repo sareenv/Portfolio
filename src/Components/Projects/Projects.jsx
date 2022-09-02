@@ -4,8 +4,9 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Badge from '../Utilities/Badge';
 import {Link} from 'react-router-dom';
-import {Button, Card} from 'react-bootstrap';
+import {Card} from 'react-bootstrap';
 import '../../Styles/base.scss';
+import Footer from '../Footer';
 
 const Project = () => {
     return (
@@ -61,7 +62,7 @@ const Project = () => {
                             </Col>
     
                         </Row>
-    
+
                         <Row>
                             <Col sm={12} md={5} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{  }}>
@@ -72,7 +73,8 @@ const Project = () => {
                                         <Card.Text>
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
-                                        <Button variant="primary" style={{width: '100%'}}>View Details</Button>
+                                        {/* <Button variant="primary" style={{width: '100%'}} to="/blog" >View Details</Button> */}
+                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
@@ -82,33 +84,36 @@ const Project = () => {
                                     <Card.Img variant="top" src="https://reactjs.org/logo-og.png"/>
                                     <Badge tag="React" />
                                     <Card.Body>
-                                        <Card.Title>Cinemato iOS Application </Card.Title>
+                                        <Card.Title>Portfolio Website </Card.Title>
                                         <Card.Text>
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
-                                        <Button variant="primary" style={{width: '100%'}}>View Details</Button>
+                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
     
                             <Col sm={12} md={5} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{ }}>
-                                    <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/Cinemato/master/banner.png"/>
+                                    <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/SVSwiper/master/assets/poster.png"/>
                                     <Badge tag="UIKit" />
                                     <Card.Body>
-                                        <Card.Title>Cinemato iOS Application </Card.Title>
+                                        <Card.Title>SVSwiper Opensource Library </Card.Title>
                                         <Card.Text>
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
-                                        <Button variant="primary" style={{width: '100%'}}>View Details</Button>
+                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
     
                         </Row>
+    
+                        
                         
                     </Container>
-                
+
+                    <Footer />
             </div>
     )
 }

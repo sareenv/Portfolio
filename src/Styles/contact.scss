@@ -1,7 +1,12 @@
+$baseColor: rgb(30, 52, 86);
+
 .contact-form {
     margin-bottom: 5rem;
-    background-color: white;
+    background-color: $baseColor;
+    padding: 2rem;
+    border-radius: 0.3rem;
     max-width: 50rem;
+    color: white;
 }
 
 .contact_section {
