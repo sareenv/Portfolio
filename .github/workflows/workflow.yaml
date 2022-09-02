@@ -8,12 +8,14 @@ on:
 jobs: 
   build: 
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        node-version: 14.20.0
+    
 
     steps:
       - uses: actions/checkout@v1
+      - uses: actions/setup-node@v3
+      with:
+        node-version: 14.20.0
+        cache: 'npm'
       - run: npm install 
       - run: npm build
       # - uses: jakejarvis/s3-sync-action@master
