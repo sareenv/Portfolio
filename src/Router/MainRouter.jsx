@@ -10,7 +10,7 @@ import { Navbar, Nav, Image } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 import ArticleDetail from '../Components/Article/ArticleDetail'
-
+import Education from '../Components/Personal/Education'
 import '../Styles/base.scss'
 
 const MainRouter = () => {
@@ -32,8 +32,14 @@ const MainRouter = () => {
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/projects" activeClassName="active">Projects</Nav.Link>
                             
+
+                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/education"
+                            activeClassName="active"> Education </Nav.Link>
+
+
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/services" activeClassName="active">Services</Nav.Link>
                             {/* <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link> */}
+                            
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/contact"
                             activeClassName="active"> Contact Me </Nav.Link>
                         </Nav>
@@ -48,7 +54,8 @@ const MainRouter = () => {
                 <Route path="/experience" exact component={Projects} />
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/services" exact component={Service} />
-                <Route path="article/:id" exact component={ArticleDetail}></Route>
+                <Route path="/education" exact component={Education} />
+                <Route path="article/:id" exact component={ArticleDetail} />
                 <Route path="/project_details/:id" exact component={ProjectDetails} />
             </Switch>
         </BrowserRouter>
