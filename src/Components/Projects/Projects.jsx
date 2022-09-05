@@ -18,7 +18,7 @@ const Project = () => {
               
                     <Container fluid="sm">
                         <Row>
-                            <Col sm={12} md={5} lg={4} className="cutomColumn">
+                            <Col sm={12} md={12} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{  }}>
                                     <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/Cinemato/master/banner.png"/>
                                     <Badge tag="UIKit" />
@@ -33,7 +33,7 @@ const Project = () => {
                                 </Card>
                             </Col>
     
-                            <Col  sm={12} md={5} lg={4} className="cutomColumn">
+                            <Col  sm={12} md={12} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{ }}>
                                     <Card.Img variant="top" src="https://reactjs.org/logo-og.png"/>
                                     <Badge tag="React" />
@@ -47,7 +47,7 @@ const Project = () => {
                                 </Card>
                             </Col>
     
-                            <Col sm={12} md={5} lg={4} className="cutomColumn">
+                            <Col sm={12} md={12} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{ }}>
                                     <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/SVSwiper/master/assets/poster.png"/>
                                     <Badge tag="UIKit" />
@@ -64,7 +64,7 @@ const Project = () => {
                         </Row>
 
                         <Row>
-                            <Col sm={12} md={5} lg={4} className="cutomColumn">
+                            <Col sm={12} md={12} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{  }}>
                                     <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/Cinemato/master/banner.png"/>
                                     <Badge tag="UIKit" />
@@ -79,7 +79,7 @@ const Project = () => {
                                 </Card>
                             </Col>
     
-                            <Col  sm={12} md={5} lg={4} className="cutomColumn">
+                            <Col  sm={12} md={12} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{ }}>
                                     <Card.Img variant="top" src="https://reactjs.org/logo-og.png"/>
                                     <Badge tag="React" />
@@ -93,7 +93,7 @@ const Project = () => {
                                 </Card>
                             </Col>
     
-                            <Col sm={12} md={5} lg={4} className="cutomColumn">
+                            <Col sm={12} md={12} lg={4} className="cutomColumn">
                                 <Card className='customsytle' style={{ }}>
                                     <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/SVSwiper/master/assets/poster.png"/>
                                     <Badge tag="UIKit" />
