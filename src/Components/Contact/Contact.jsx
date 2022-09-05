@@ -12,7 +12,7 @@ const Contact = () => {
     return (
         <Container>
             <Row className='contact_section'>
-                <Col sm={6}>
+                <Col sm={12} md={12} lg={6}>
                 <center>
                         <h2> Let's Discuss! </h2>
                         <p> Let's convert your idea into user-friendly products.</p>
@@ -41,7 +41,7 @@ const Contact = () => {
                         </span>
                     </center>
                 </Col>
-                <Col sm={6}>
+                <Col sm={12} md={12} lg={6}>
                         <Container fluid='sm' className='contact-form' style={{marginTop: '20px'}}> 
                         <center>
                         <h2> Get in Touch </h2>

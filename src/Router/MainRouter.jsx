@@ -5,6 +5,7 @@ import BlogPage from '../Components/Article/SampleBlog'
 import HackathonPage from '../Components/Hackathons/Hackathons'
 import ContactPage from '../Components/Contact/Contact'
 import Projects from '../Components/Projects/Projects'
+import ProjectsPage from '../Components/Projects/ProjectsPage'
 import { Navbar, Nav, Image } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
@@ -43,7 +44,7 @@ const MainRouter = () => {
                 <Route path="/" exact component={Home} />
                 <Route path="/articles" exact component={BlogPage} />
                 <Route path="/hackathons" exact component={HackathonPage} />
-                <Route path="/projects" exact component={Projects} />
+                <Route path="/projects" exact component={ProjectsPage} />
                 <Route path="/experience" exact component={Projects} />
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/services" exact component={Service} />

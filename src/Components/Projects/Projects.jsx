@@ -12,7 +12,7 @@ const Project = () => {
     return (
         <div className='projectSection'>
                 <center>
-                    <h3> Featured Projects </h3>
+                    <h4 style={{fontSize: '1.3em'}}> Featured Projects </h4>
                     <hr className='customline'/>
                 </center>
               
