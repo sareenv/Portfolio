@@ -3,7 +3,7 @@ import Navigation from './Components/Navigation'
 
 function App() {
   return (
-    <div>
+    <div style={{margin: '0.5rem'}}>
         <Navigation /> 
     </div>
   );

@@ -3,32 +3,36 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../Styles/about.scss'
-import Image from 'react-bootstrap/Image'
-import { Button } from "react-bootstrap";
+import { Button, Card } from "react-bootstrap";
 import {ConcordiaDetails, CoventryDetails} from "./details"
 
 
 const Education = (props) => {
     return (
-        <div>
-            <Image style={{maxWidth: '200px'}} fluid="lg" src={props.image} />
-                    <span>
-                        <div>
-                            <b> Qualification: {props.qualification}</b> 
-                        </div>
+        
+        <Card>
+            <Card.Img fluid={true} src={props.image}/>
+                <Card.Body>
+                
+                        <span>
+                            <div>
+                                <b> Qualification: {props.qualification}</b> 
+                            </div>
 
-                        <div>
-                            <b> Institution: </b> {props.instition}
-                        </div>
+                            <div>
+                                <b> Institution: </b> {props.instition}
+                            </div>
 
-                        <div>
-                            <b> Address: </b> {props.address}
-                        </div>
+                            <div>
+                                <b> Address: </b> {props.address}
+                            </div>
 
-                    </span>
+                        </span>
 
-                    <Button variant="info" disabled={false} style={{marginTop: '1rem'}}> Relevant Information </Button>
-        </div>
+                    </Card.Body>
+
+                    <Button variant="info" disabled={false} style={{margin: '1rem'}}> Relevant Information </Button>
+        </Card>
     )
 }
 
@@ -91,3 +95,4 @@ const About = () => {
 }
 
 export default About
+export {Education}

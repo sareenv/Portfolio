@@ -10,7 +10,7 @@ import { Navbar, Nav, Image } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 import ArticleDetail from '../Components/Article/ArticleDetail'
-import Education from '../Components/Personal/Education'
+import EducationPage from '../Components/Personal/EducationPage'
 import '../Styles/base.scss'
 
 const MainRouter = () => {
@@ -54,7 +54,7 @@ const MainRouter = () => {
                 <Route path="/experience" exact component={Projects} />
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/services" exact component={Service} />
-                <Route path="/education" exact component={Education} />
+                <Route path="/education" exact component={EducationPage} />
                 <Route path="article/:id" exact component={ArticleDetail} />
                 <Route path="/project_details/:id" exact component={ProjectDetails} />
             </Switch>
