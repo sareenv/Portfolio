@@ -2,56 +2,56 @@
 import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
 import {Education} from '../Personal/About'
-import { ConcordiaDetails } from './details';
+import { ConcordiaDetails, AWSCertification, CoventryDetails } from './details';
 // this is most likely not change at all.
 const EducationPage = () => {
     return (
         <Container style={{marginTop: '2rem'}}>
-            <h3>Higher Education </h3>
-            <Row>
-                <Col sm={12} md={12} lg={5}>
-                    <Education 
-                        image={ConcordiaDetails.image}
-                        qualification={ConcordiaDetails.qualification} 
-                        instition={ConcordiaDetails.instition} 
-                        address={ConcordiaDetails.address}  
-                    />
-                </Col>
 
-
-                <Col sm={12} md={12} lg={5}>
-                    <Education 
-                        image={ConcordiaDetails.image}
-                        qualification={ConcordiaDetails.qualification} 
-                        instition={ConcordiaDetails.instition} 
-                        address={ConcordiaDetails.address}  
-                    />
-                </Col>
-            </Row>
+        <h3 style={{marginTop: '2rem'}}>Higher Education </h3>
+        <Row >
             
-            <h3 style={{marginTop: '2rem'}}>Certification & Licensing Education </h3>
-            <Row>
-                <Col sm={12} md={12} lg={5}>
-                    <Education 
-                        image={ConcordiaDetails.image}
-                        qualification={ConcordiaDetails.qualification} 
-                        instition={ConcordiaDetails.instition} 
-                        address={ConcordiaDetails.address}  
-                    />
-                </Col>
-
-
-                <Col sm={12} md={12} lg={5}>
-                    <Education 
-                        image={ConcordiaDetails.image}
-                        qualification={ConcordiaDetails.qualification} 
-                        instition={ConcordiaDetails.instition} 
-                        address={ConcordiaDetails.address}  
-                    />
-                </Col>
-            </Row>
-        </Container>
+        <Col sm={12} md={11} lg={7} style={{marginBottom: '1rem'}}>
+                <Education 
+                    image={ConcordiaDetails.image}
+                    qualification={ConcordiaDetails.qualification} 
+                    instition={ConcordiaDetails.instition} 
+                    address={ConcordiaDetails.address}
+                    modules={true}
+                />
+        </Col>
         
+        <Col sm={12} md={11} lg={5}>
+                <Education 
+                    image={CoventryDetails.image}
+                    qualification={CoventryDetails.qualification} 
+                    instition={CoventryDetails.instition} 
+                    address={CoventryDetails.address}
+                    modules={true}
+                    visible={true}
+                    bnttitle={"Degree Certificate"}
+                    credLink={""}
+                />
+            </Col>
+        </Row>
+
+            <h3 style={{marginTop: '2rem'}}>Certification & Licensing Education </h3>
+            <Row >
+                <Col sm={12} md={12} lg={6}>
+                    <Education 
+                        image={AWSCertification.image}
+                        qualification={AWSCertification.qualification} 
+                        instition={AWSCertification.instition} 
+                        visible={true}
+                        bnttitle={'View Credentials'}
+                        credLink={AWSCertification.credLink}
+                    />
+                </Col>
+
+            </Row>
+
+            
+        </Container>
     )
 }
 

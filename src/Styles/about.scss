@@ -8,3 +8,15 @@ $secondaryColor: red;
     text-align: justify;
     background-color: white;
 }
+
+.customThumbnail {
+    display: block;
+    margin-top: 0.5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    height: auto;
+    max-height: 250px;
+    width: auto;
+    max-width: 250px;
+}

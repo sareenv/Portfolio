@@ -3,15 +3,15 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../Styles/about.scss'
-import { Button, Card } from "react-bootstrap";
-import {ConcordiaDetails, CoventryDetails} from "./details"
+import { Button, Card, Image, ListGroup } from "react-bootstrap";
+import {ConcordiaDetails,  CoventryDetails} from "./details"
 
 
 const Education = (props) => {
     return (
         
         <Card>
-            <Card.Img fluid={true} src={props.image}/>
+                <Image className="customThumbnail" src={props.image}></Image>
                 <Card.Body>
                 
                         <span>
@@ -22,16 +22,35 @@ const Education = (props) => {
                             <div>
                                 <b> Institution: </b> {props.instition}
                             </div>
-
-                            <div>
-                                <b> Address: </b> {props.address}
-                            </div>
-
+                            
+                            {props.address != null && 
+                                <div>
+                                    <b> Address: </b> {props.address}
+                                </div>
+                            }
+                            
+                            {props.modules === true &&
+                                <div>
+                                <Card.Header style={{marginTop: '1rem'}}><b>Relevant Modules </b></Card.Header>
+                                    <ListGroup variant="flush">
+                                        <ListGroup.Item> • iOS Application Development with Swift </ListGroup.Item>
+                                        <ListGroup.Item> • Web Application Development </ListGroup.Item>
+                                        <ListGroup.Item> • Advanced Datastructures and Algorithms</ListGroup.Item>
+                                        <ListGroup.Item> • Data and Information Retrival</ListGroup.Item>
+                                        <ListGroup.Item> • Operating Systems</ListGroup.Item>
+                                        <ListGroup.Item> • Theory of Compution & Automata</ListGroup.Item>
+                                    </ListGroup>
+                                </div>
+                            }       
                         </span>
 
                     </Card.Body>
 
-                    <Button variant="info" disabled={false} style={{margin: '1rem'}}> Relevant Information </Button>
+                    {props.visible === true && 
+                        <Button variant="info" disabled={false} style={{margin: '1rem'}}> {props.bnttitle} </Button>
+                    }
+
+                    
         </Card>
     )
 }

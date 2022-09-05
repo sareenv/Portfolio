@@ -15,5 +15,13 @@ const CoventryDetails = {
     image: 'https://conflictresearchsociety.org/wp-content/uploads/2020/01/coventry-university-logo.png', 
 }
 
+const AWSCertification = {
+    instition: 'Amazon AWS',
+    qualification: 'AWS Certified Cloud Practitioner',
+    id: '3',
+    image: 'https://images.credly.com/size/220x220/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png',
+    credLink: 'https://www.credly.com/badges/a1241d89-d1e6-4f30-80da-e3f0bdc51e3f/public_url'
+}
 
-export {ConcordiaDetails, CoventryDetails};
+
+export {ConcordiaDetails, CoventryDetails, AWSCertification};
