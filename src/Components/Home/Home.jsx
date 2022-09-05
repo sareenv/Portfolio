@@ -9,7 +9,7 @@ const Home = () => {
     return (
         <div>
             <div style={{margin: 0, padding: 0}}>
-                <HeaderFront />
+                <HeaderFront/>
                     <About/>
                     <div className='projectBase'>
                         <Project/>

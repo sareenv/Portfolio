@@ -3,7 +3,7 @@ import Typed from 'react-typed';
 
 const AnimatedTitles = () => {
     return(
-        <div style = {{color: 'rgb(230, 57, 70)', fontSize: 20, display: 'flex'}}>
+        <div style = {{color: 'rgb(230, 57, 70)', fontSize: '1rem', display: 'flex'}}>
             <p style= {{color: 'white'}}>#</p>
             <Typed
                 strings={['iOS Application', 

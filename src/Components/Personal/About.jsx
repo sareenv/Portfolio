@@ -35,10 +35,10 @@ const Education = (props) => {
 
 const About = () => {
     return(
-        <>
+        <div>
             <Container fluid="sm" style={{marginTop: '2rem'}}> 
                 <Row style={{backgroundColor: 'white'}}>
-                    <Col lg={4} sm={12}>
+                    <Col  sm={12} md={12} lg={5} style={{paddingTop: '3rem'}}>
                         <center>
                         <h2> Education Background </h2>
                         <hr className="customline"></hr>
@@ -65,7 +65,7 @@ const About = () => {
                     </center>
                     </Col>
                    
-                    <Col>
+                    <Col sm={12} md={12} lg={7}>
                         <div className='aboutSection'>
                             <center>
                                 <h2> About Me </h2>
@@ -85,7 +85,7 @@ const About = () => {
                     </Col>
                 </Row> 
         </Container>
-        </>
+        </div>
         
     )
 }
