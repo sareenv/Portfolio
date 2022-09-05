@@ -13,7 +13,7 @@ const HeaderFront = () => {
                 <img className="circularimage" src = {image} alt='noImg' />
                 <div style={{display: 'flex', flexDirection: 'column', padding: 0, margin: 0}}>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                        <p style = {{color: '#e63946', fontSize: '1.6rem', marginTop: 15, padding: 3}}>  Hi <span>👋 </span> I'm </p>
+                        <p style = {{color: '#e63946', fontSize: '1.6rem', marginTop: 15, padding: 3}}>  Hi <span role="img">👋 </span> I'm </p>
                         <p style = {{color: '#f1faee', fontSize: '1.6rem', marginTop: 15}}> Vinayak Sareen  </p>
                     </div>
                     <h3 style={{color: '#f1faee', marginTop: -20, fontSize: '15px', textAlign: 'center'}}> 
