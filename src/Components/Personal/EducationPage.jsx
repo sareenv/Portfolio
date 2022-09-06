@@ -18,6 +18,8 @@ const EducationPage = () => {
                     instition={ConcordiaDetails.instition} 
                     address={ConcordiaDetails.address}
                     modules={true}
+                    courses={ConcordiaDetails.course}
+                    key={ConcordiaDetails.id}
                 />
         </Col>
         
@@ -31,6 +33,8 @@ const EducationPage = () => {
                     visible={true}
                     bnttitle={"Degree Certificate"}
                     credLink={"https://credentialsareenv.s3.ca-central-1.amazonaws.com/Degreecertificate.pdf"}
+                    courses={CoventryDetails.course}
+                    key={CoventryDetails.id}
                 />
             </Col>
         </Row>

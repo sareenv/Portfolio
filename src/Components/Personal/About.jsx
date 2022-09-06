@@ -33,12 +33,12 @@ const Education = (props) => {
                                 <div>
                                 <Card.Header style={{marginTop: '1rem'}}><b>Relevant Modules </b></Card.Header>
                                     <ListGroup variant="flush">
-                                        <ListGroup.Item> • iOS Application Development with Swift </ListGroup.Item>
-                                        <ListGroup.Item> • Web Application Development </ListGroup.Item>
-                                        <ListGroup.Item> • Advanced Datastructures and Algorithms</ListGroup.Item>
-                                        <ListGroup.Item> • Data and Information Retrival</ListGroup.Item>
-                                        <ListGroup.Item> • Operating Systems</ListGroup.Item>
-                                        <ListGroup.Item> • Theory of Compution & Automata</ListGroup.Item>
+                                        {props.courses != null && props.courses.map(function(course) {
+                                            return (
+                                                <ListGroup.Item key={course.id}> • {course} </ListGroup.Item>
+                                            ) 
+                                        })}
+                                        
                                     </ListGroup>
                                 </div>
                             }       
