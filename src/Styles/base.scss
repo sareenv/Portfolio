@@ -54,16 +54,12 @@ $redthemeColor: #89043D;
 }
 
 .customLink {
+    display: block;
+    align-items: center;
+    text-align: center;
     background-color: #007bff;
     color: whitesmoke;
     padding: 0.5rem;
-    min-width: fit-content;
-    right: auto;
-}
-
-.customLink :hover {
-   text-decoration: none;
-   color: white;
 }
 
 

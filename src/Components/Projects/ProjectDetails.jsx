@@ -26,11 +26,31 @@ const ProjectDetails = () => {
                             <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
                                 <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
                             </Col> 
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
+                            </Col>
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
+                            </Col> 
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                            <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
+                            </Col>
+
+                            <Col lg={3} sm={3} xs ={3} style={{marginTop: '0.7rem', backgroundColor: 'white'}}>
+                                <Button style={{height: '100%', width: '100%'}}>
+                                    <FaVideo  style={{fontSize: '2rem'}}/>
+                                </Button>
+                                
+                            </Col>
+
                         </Row>
                     
                 </Col>
 
-                <Col lg={6} style={{backgroundColor: 'white', marginTop: 2}}>
+                <Col lg={6} style={{backgroundColor: 'white', marginTop: '1.2rem'}}>
                     <div>
                         <h5>
                             <b>SwiftUI Core Data Money Tracker with iPad Support</b>
@@ -40,8 +60,8 @@ const ProjectDetails = () => {
 
                     {/* Preview button */}
                     <div>
-                        <Row noGutters={true}>
-                            <Col sm={9} noGutters={true} style={{paddingLeft: 0, paddingRight: 0}}>
+                        <Row noGutters={true} style={{margin: '0.5rem'}}>
+                            <Col sm={9} noGutters={true} style={{paddingLeft: 0, paddingRight: '1rem'}}>
                                 <Button> 
                                     <FaVideo />
                                     <>  Watch Preview </>

@@ -28,7 +28,7 @@ const Project = () => {
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
                                         {/* <Button variant="primary" style={{width: '100%'}} to="/blog" >View Details</Button> */}
-                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
+                                        <Link  className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
