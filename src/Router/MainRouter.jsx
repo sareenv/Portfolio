@@ -38,7 +38,7 @@ const MainRouter = () => {
                             {/* <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link> */}
                             
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/contact"
-                            activeClassName="active"> Contact Me </Nav.Link>
+                            activeClassName="active"> Experience </Nav.Link>
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
