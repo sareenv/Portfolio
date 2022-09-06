@@ -30,7 +30,7 @@ const EducationPage = () => {
                     modules={true}
                     visible={true}
                     bnttitle={"Degree Certificate"}
-                    credLink={""}
+                    credLink={"https://credentialsareenv.s3.ca-central-1.amazonaws.com/Degreecertificate.pdf"}
                 />
             </Col>
         </Row>

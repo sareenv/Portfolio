@@ -47,7 +47,7 @@ const Education = (props) => {
                     </Card.Body>
 
                     {props.visible === true && 
-                        <Button variant="info" disabled={false} style={{margin: '1rem'}}> {props.bnttitle} </Button>
+                        <Button variant="info" disabled={false} style={{margin: '1rem'}} href={props.credLink}> {props.bnttitle} </Button>
                     }
 
                     
