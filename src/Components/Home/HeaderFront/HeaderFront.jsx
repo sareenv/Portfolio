@@ -16,8 +16,8 @@ const HeaderFront = () => {
                         <p style = {{color: '#e63946', fontSize: '1.6rem', marginTop: 15, padding: 3}}>  Hi <span role="img" aria-label="hi">👋 </span> I'm </p>
                         <p style = {{color: '#f1faee', fontSize: '1.6rem', marginTop: 15}}> Vinayak Sareen  </p>
                     </div>
-                    <h3 style={{color: '#f1faee', marginTop: -20, fontSize: '15px', textAlign: 'center'}}> 
-                    I'm enthusiastic Masters Student At Concordia University with Software Engineering experience of two years. </h3>
+                    <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1.2rem', textAlign: 'center'}}> 
+                         I'm enthusiastic Masters Student at Concordia University with Software Engineering experience of two years. </p>
                 </div>
                 <AnimatedTitles /> 
                 <Button className='resumeBtn'>  #Resume </Button> 
