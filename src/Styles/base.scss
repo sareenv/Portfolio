@@ -1,8 +1,7 @@
-$baseColor: #1d3557;
+$baseColor: #003049;
 $baseNavColor: #1b1b2f;
 $secondaryColor: $baseNavColor;
-$redthemeColor: #89043D;
-
+$redthemeColor: #d62828;
 
 .customNavbar {
     background-color: $baseColor;
@@ -26,9 +25,9 @@ $redthemeColor: #89043D;
 
 .projectBase {
     .projectSection {
-        background-color: #1d3557;
+        background-color: #003049;
         padding-top: 2rem;
-        h4 {
+        h3 {
             color: whitesmoke;
         }
     }
@@ -57,7 +56,7 @@ $redthemeColor: #89043D;
     display: block;
     align-items: center;
     text-align: center;
-    background-color: #007bff;
+    background-color: #003049;
     color: whitesmoke;
     padding: 0.5rem;
 }
@@ -76,6 +75,16 @@ $redthemeColor: #89043D;
     border-color: rgba(255,255,255,.1);
 }
 
-.custom-brand {
-    background-color: red;
+.customBrand {
+    background-color: #003049;
+    color: white;
+    display: none;
 }
+
+
+@media only screen and (max-width: 990px) {
+    .customBrand {
+        display: block
+    }
+}
+

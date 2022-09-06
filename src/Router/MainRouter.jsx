@@ -6,7 +6,7 @@ import HackathonPage from '../Components/Hackathons/Hackathons'
 import ContactPage from '../Components/Contact/Contact'
 import Projects from '../Components/Projects/Projects'
 import ProjectsPage from '../Components/Projects/ProjectsPage'
-import { Navbar, Nav, Button } from 'react-bootstrap'
+import { Navbar, Nav } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 import ArticleDetail from '../Components/Article/ArticleDetail'
@@ -19,10 +19,9 @@ const MainRouter = () => {
                 <Navbar collapseOnSelect className="customNavbar" expand="lg">
                     
                 <Navbar.Brand>
-                    <Button className="custom-brand" style={{ 
-                    color: 'white', fontSize: '1rem', alignItems: 'center'}} disabled={true}>
+                    <button className="customBrand" disabled={true}>
                         SAREENV
-                    </Button>            
+                    </button>            
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" color='white'/>
                     <Navbar.Collapse id="basic-navbar-nav">
