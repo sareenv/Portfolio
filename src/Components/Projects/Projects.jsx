@@ -108,9 +108,7 @@ const Project = () => {
                             </Col>
     
                         </Row>
-    
-                        
-                        
+
                     </Container>
 
                     <Footer />

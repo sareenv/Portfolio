@@ -4,7 +4,8 @@ const ConcordiaDetails = {
     qualification: 'MApCompSc (Masters)',
     address: '1455 Boul. de Maisonneuve Ouest, Montréal, Canada, QC H3G 1M8',
     id: '1',
-    course: ["Distributed System Design", 
+    course: [
+            "Distributed System Design", 
             "Program and Problem Solving", 
             "Advanced Software Architecture", 
             "Applied Artificial Intelligence", 
