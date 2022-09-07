@@ -29,6 +29,8 @@ const MainRouter = () => {
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/projects" activeClassName="active">Projects</Nav.Link>
                             
+                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/contact"
+                            activeClassName="active"> Experience </Nav.Link>
 
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/education"
                             activeClassName="active"> Education </Nav.Link>
@@ -37,8 +39,7 @@ const MainRouter = () => {
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/services" activeClassName="active">Services</Nav.Link>
                             {/* <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link> */}
                             
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/contact"
-                            activeClassName="active"> Experience </Nav.Link>
+                            
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
