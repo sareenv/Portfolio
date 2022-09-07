@@ -25,10 +25,9 @@ $redthemeColor: #d62828;
 
 .projectBase {
     .projectSection {
-        background-color: #003049;
+        background-color: whitesmoke;
         padding-top: 2rem;
         h3 {
-            background-color: white;
             color: black;
         }
         hr {
@@ -41,8 +40,17 @@ $redthemeColor: #d62828;
     margin-bottom: 0.8rem;
     padding-bottom: 1.2rem;
     margin-top: 2rem;
+    padding-top: 1.2rem;
     margin-left: 0rem;
+    background-color: whitesmoke;
 }
+
+.customButton {
+    background-color: white;
+    border-color: black;
+    color: black
+}
+
 
 .customline{
   width: 50%;

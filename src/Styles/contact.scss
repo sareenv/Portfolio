@@ -2,11 +2,17 @@ $baseColor: #003049;
 
 .contact-form {
     margin-bottom: 5rem;
-    background-color: $baseColor;
+    background-color: whitesmoke;
     padding: 2rem;
     border-radius: 0.3rem;
     max-width: 50rem;
-    color: white;
+    color: black;
+}
+
+.customButton {
+    background-color: white;
+    border-color: black;
+    color: black
 }
 
 .contact_section {

@@ -62,7 +62,7 @@ const Contact = () => {
                                 <Form.Label htmlFor="message">Your Message</Form.Label>
                                 <Form.Control as="textarea" name="message" placeholder='Please type your message here' />
                             </Form.Group>
-                            <Button variant="primary" type="submit"> 
+                            <Button className="customButton" type="submit"> 
                                 <div>
                                     <FaPaperPlane /> <> { } </>
                                     Send Message 
