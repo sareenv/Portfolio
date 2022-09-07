@@ -4,7 +4,7 @@ import Home from '../Components/Home/Home'
 import BlogPage from '../Components/Article/SampleBlog'
 import HackathonPage from '../Components/Hackathons/Hackathons'
 import ContactPage from '../Components/Contact/Contact'
-import Projects from '../Components/Projects/Projects'
+import ExperiencePage from '../Components/Personal/ExperiencePage'
 import ProjectsPage from '../Components/Projects/ProjectsPage'
 import { Navbar, Nav } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
@@ -29,7 +29,7 @@ const MainRouter = () => {
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/projects" activeClassName="active">Projects</Nav.Link>
                             
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/contact"
+                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/experience"
                             activeClassName="active"> Experience </Nav.Link>
 
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/education"
@@ -48,7 +48,7 @@ const MainRouter = () => {
                 <Route path="/articles" exact component={BlogPage} />
                 <Route path="/hackathons" exact component={HackathonPage} />
                 <Route path="/projects" exact component={ProjectsPage} />
-                <Route path="/experience" exact component={Projects} />
+                <Route path="/experience" exact component={ExperiencePage} />
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/services" exact component={Service} />
                 <Route path="/education" exact component={EducationPage} />
