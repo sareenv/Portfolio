@@ -14,7 +14,7 @@ const Service = () => {
                             <tr>
                                 <th>#</th>
                                 <th>Type</th>
-                                <th>Technology</th>
+                                <th>Framework</th>
                                 <th>Experience</th>
                             </tr>
                         </thead>
@@ -49,10 +49,46 @@ const Service = () => {
                             <td>
                                 <li style={{fontSize: '0.8rem'}}> UIKit </li>
                                 <li style={{fontSize: '0.8rem'}}> AVKit </li>
-                                <li style={{fontSize: '0.8rem'}}> Swift </li>
+                                <li style={{fontSize: '0.8rem'}}> Swift UI </li>
                                 <li style={{fontSize: '0.8rem'}}> MapKit </li>
                             </td>
                         </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Automated Testing </td>
+                            <td> Unit Testing </td>
+                            <td>
+                                <li style={{fontSize: '0.8rem'}}> JUnit </li> 
+                                <li style={{fontSize: '0.8rem'}}> Jest </li>
+                                <li style={{fontSize: '0.8rem'}}> Mocha </li>
+                                <li style={{fontSize: '0.8rem'}}> XCTest </li>
+                            </td>
+                        </tr>
+
+                        <tr>
+                            <td>4</td>
+                            <td>Cloud </td>
+                            <td> AWS </td>
+                            <td>
+                                <li style={{fontSize: '0.8rem'}}> Foundation</li>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <td>5</td>
+                            <td> Databases </td>
+                            <td> DBMS </td>
+                            <td>
+                                <li style={{fontSize: '0.8rem'}}> MySQL </li>
+                                <li style={{fontSize: '0.8rem'}}> Postgres</li>
+                                <li style={{fontSize: '0.8rem'}}> MongoDB </li>
+                                <li style={{fontSize: '0.8rem'}}> DynamoDB</li>
+                            </td>
+                        </tr>
+
+                        
                         
                     </tbody>
 

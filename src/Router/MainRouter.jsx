@@ -20,7 +20,7 @@ const MainRouter = () => {
                     
                 <Navbar.Brand>
                     <button className="customBrand" disabled={true}>
-                        SAREENV
+                        <i>SAREENV</i>
                     </button>            
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" color='white'/>
