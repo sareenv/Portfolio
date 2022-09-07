@@ -1,20 +1,22 @@
 import React from 'react'
-import {Container, Row, Col, Card, Image, ListGroup} from 'react-bootstrap'
+import {Container, Row, Col, Card, Image, ListGroup, Button} from 'react-bootstrap'
 import Contact from '../Contact/Contact'
 
 
 function JobPosition() {
     return <Card style={{marginTop: '1rem'}}>
         
-        <div style={{display: 'flex', justifyContent: 'center', padding: '1rem'}}>
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '1rem'}}>
             <Image roundedCircle={false} thumbnail={true} style={{ width: '120px', height: '120px', objectFit: 'cover' }}  variant="top" src="https://media-exp1.licdn.com/dms/image/C4E0BAQFHIz3iJdalew/company-logo_200_200/0/1646322452937?e=1670457600&v=beta&t=fNjSBVyJ4CIvFoq3b96Hdi3h8kLqh-Iu9kKzusTUL3c" />
         </div>
            
-        
         <Card.Body>
-            
             <ListGroup variant='flush'>
-                <ListGroup.Item active> <h5>  <i> Carrybags Limited </i> </h5> </ListGroup.Item>
+                <ListGroup.Item> 
+                    <center>
+                        <Button disabled={true}> <i> Carrybags Limited </i>  </Button>
+                    </center>  
+                </ListGroup.Item>
                 <ListGroup.Item > <b>Position: </b> <i> Associate Software Engineer ~ FullStack Application Developer </i> </ListGroup.Item>
                 <ListGroup.Item> <b>Type:</b> Part-time</ListGroup.Item>
                 <ListGroup.Item> <b>Office Location: </b> Carrybags Limited
@@ -43,12 +45,9 @@ const ExperiencePage = () => {
     return(
         <Container >
             <Row style={{marginTop: '0.5rem'}}>
-                <Col  sm={12} md={12} lg={12} style={{backgroundColor: 'white', minHeight: '40rem'}}>
-                    {JobPosition()}
-                                              
+                <Col  sm={12} md={12} lg={12} style={{backgroundColor: 'whitesmoke', minHeight: '40rem'}}>
+                    {JobPosition()}                  
                 </Col>
-
-                
             </Row>
 
             <Row>
@@ -62,4 +61,5 @@ const ExperiencePage = () => {
 }
 
 export default ExperiencePage;
+export {JobPosition};
 
