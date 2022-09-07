@@ -61,5 +61,5 @@ const ExperiencePage = () => {
 }
 
 export default ExperiencePage;
-export {JobPosition};
+
 

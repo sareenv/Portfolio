@@ -4,7 +4,7 @@ import Footer from '../Footer'
 import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
-import {JobPosition} from '../Personal/ExperiencePage'
+
 
 const Home = () => {
     return (
