@@ -14,7 +14,7 @@ const Service = () => {
                             <tr>
                                 <th>#</th>
                                 <th>Type</th>
-                                <th>Framework</th>
+                                <th>Specifics</th>
                                 <th>Experience</th>
                             </tr>
                         </thead>
@@ -28,6 +28,7 @@ const Service = () => {
                                 <li style={{fontSize: '0.8rem'}}>Express</li>
                                 <li style={{fontSize: '0.8rem'}}>Koa</li>
                                 <li style={{fontSize: '0.8rem'}}>Jest</li>
+                                <li style={{fontSize: '0.8rem'}}>OAuth</li>
                             </td>
                         </tr>
 
@@ -61,17 +62,18 @@ const Service = () => {
                             <td>
                                 <li style={{fontSize: '0.8rem'}}> JUnit </li> 
                                 <li style={{fontSize: '0.8rem'}}> Jest </li>
-                                <li style={{fontSize: '0.8rem'}}> Mocha </li>
                                 <li style={{fontSize: '0.8rem'}}> XCTest </li>
                             </td>
                         </tr>
 
                         <tr>
                             <td>4</td>
-                            <td>Cloud </td>
-                            <td> AWS </td>
+                            <td>Devops </td>
+                            <td> <i> NA </i> </td>
                             <td>
-                                <li style={{fontSize: '0.8rem'}}> Foundation</li>
+                                <li style={{fontSize: '0.8rem'}}> AWS </li>
+                                <li style={{fontSize: '0.8rem'}}> Docker </li>
+                                <li style={{fontSize: '0.8rem'}}> GitHub Actions </li>
                             </td>
                         </tr>
 
