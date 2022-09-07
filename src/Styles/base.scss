@@ -28,7 +28,11 @@ $redthemeColor: #d62828;
         background-color: #003049;
         padding-top: 2rem;
         h3 {
-            color: whitesmoke;
+            background-color: white;
+            color: black;
+        }
+        hr {
+            display: none;
         }
     }
 }
