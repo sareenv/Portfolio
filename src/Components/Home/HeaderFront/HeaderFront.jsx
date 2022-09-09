@@ -17,7 +17,7 @@ const HeaderFront = () => {
                         <p style = {{color: '#f1faee', fontSize: '1.6rem', marginTop: 15}}> Vinayak Sareen  </p>
                     </div>
                     <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em', textAlign: 'center'}}> 
-                         I'm enthusiastic Masters (MEng) Student at Concordia University with 1+ years of Software Development experience </p>
+                         I'm enthusiastic Masters (MEng) Student at Concordia University with Software Development experience </p>
                 </div>
                 <AnimatedTitles /> 
                 <Button className='resumeBtn'>  #Resume </Button> 
