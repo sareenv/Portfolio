@@ -3,6 +3,11 @@ $baseNavColor: #012335;
 $secondaryColor: $baseNavColor;
 $redthemeColor: #d62828;
 
+* {
+    padding: 0;
+    margin: 0;
+ }
+
 .customNavbar {
     background-color: $baseColor;
 }
