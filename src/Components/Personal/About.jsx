@@ -88,24 +88,23 @@ const About = () => {
                     </center>
                     </Col>
 
-                    <Col sm= {0} md={0} lg={1}/>
                    
-                    <Col sm={12} md={12} lg={6}>
+                    <Col sm={12} md={12} lg={7}>
                         <div className='aboutSection'>
-                            <center>
+                            <div style={{display: 'flex', justifyContent: 'center'}}>
                                 <h2> About Me </h2>
-                                <hr className="customline"></hr>
-                            </center>
+                            </div>
+                            <hr />
                             <p>
-                            I am a passionate front-end web developer with 3+ years of hands-on experience in creating web applications in personal, academic and professional environment using Agile methodologies.
-                            While I was enrolled in the Master of Applied Computing program at the University of Windsor.
+                            
+                            I am a passionate FullStack Software Development Engineer with hands-on experience in creating iOS mobile applications and web applications in personal, academic and professional environments using Agile methodologies. I'm also an AWS certified Cloud Practitioner (CLF-CO1) with sufficient knowledge of cloud technologies. While I was enrolled in the Master of Software Engineering in Gina Cody School of Computing program at Concordia University, Montreal, Canada. I worked on several academic projects involving diversity of technologies from the topic areas such as Distributed Systems, Advanced Software Architecture, Problem Solving and Applied Artificial Intelligence. </p>
+                            <p>
+                            In the past I had  worked in the United Kingdom  as Associate Software Engineer where I worked with a team size of four software developers in three time zones (GMT+1, EST and IST) and responsible for developing the mobile scalable Mobile Application for iOS platform and collaborating with software developers to deliver the required functionality using technologies such as RabbitMQ for low coupled communication between the microservices developed in the Node.js and deploying the services to the EC2 instances and auto-scaling group (ASG) in AWS cloud platform. 
+                            I strongly believe in adapting to the tools and technology as per the requirements of the project and try to be technology agnostic and develop the requirements as per the internal discussion with the teams. 
                             </p>
-                           
                             <p>
-                            I worked on several academic projects including a multi-user blogging platform that enables an authenticated user to perform CRUD operations on blog posts via a private dashboard using technologies such as HTML5, CSS3, JavaScript, React, Node.js, NoSQL, Selenium etc. In addition to the academic ones, I have spent a considerable amount of time self-learning new technologies such as Figma and their applications through personal projects to expand my technical acumen.
-                            Being the GitHub Campus Expert and the technical head at the Computer Science Society, I have contributed to the local community by working as the front-end web developer and the co-founder at WinHacks (Windsor's first major hackathon), with 500 attendees from around the globe.    
-                            </p> 
-                            Recently, during my time as a software developer intern at the University of Windsor, I worked on Getmytiffin.ca - the highly scalable to alleviate the condition of home-made food selling businesses in the COVID era, with the focus on accessibility and user experience (UX) using technologies such as React, React Native, Redux etc. Having worked with diverse Agile teams and clients, through school, work and volunteering, I have developed a wide range of skills in written and verbal communication, teamwork and analytical thinking which are directly related to any technical role.
+                            Please don’t hesitate to contact me over the contact form or email and I’ll try to get back to you as soon as possible. 
+                            </p>
                         </div>
                     </Col>
                 </Row> 
