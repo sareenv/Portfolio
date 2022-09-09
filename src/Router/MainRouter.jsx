@@ -18,19 +18,20 @@ const MainRouter = () => {
     return(
         <BrowserRouter>
                 <Navbar collapseOnSelect className="customNavbar" expand="lg">
-                <Navbar.Brand>
-                    <Button disabled={true} style={{opacity: "1"}} variant="light"> Sareenv</Button>       
+                <Navbar.Brand className="customBrand">
+                    <Button disabled={true}  style={{opacity: "1", display: 'none'}} variant="light"> Sareenv</Button>       
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" color='white'/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto">
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/projects" activeClassName="active">Projects</Nav.Link>
+                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/services" activeClassName="active">Services</Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/experience"
                             activeClassName="active"> Experience </Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/education"
                             activeClassName="active"> Education </Nav.Link>
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/services" activeClassName="active">Services</Nav.Link>
+                           
                             {/* <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link> */}
                         </Nav>
                     </Navbar.Collapse>

@@ -11,7 +11,7 @@ const Education = (props) => {
     return (
         
         <Card>
-                <Image className="customThumbnail" src={props.image}></Image>
+                <Image   className="customThumbnail" src={props.image}></Image>
                 <Card.Body>
                 
                         <span>
@@ -87,8 +87,10 @@ const About = () => {
                         
                     </center>
                     </Col>
+
+                    <Col sm= {0} md={0} lg={1}/>
                    
-                    <Col sm={12} md={12} lg={7}>
+                    <Col sm={12} md={12} lg={6}>
                         <div className='aboutSection'>
                             <center>
                                 <h2> About Me </h2>
