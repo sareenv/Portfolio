@@ -6,7 +6,7 @@ import Contact from '../Contact/Contact'
 function JobPosition() {
     return <Card style={{marginTop: '1rem'}}>
         
-        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '1rem'}}>
+        <div style={{display: 'flex', justifyContent: 'center', paddingTop: '1rem', paddingBottom: 'px'}}>
             <Image roundedCircle={false} thumbnail={true} style={{ width: '120px', height: '120px', objectFit: 'cover' }}  variant="top" src="https://media-exp1.licdn.com/dms/image/C4E0BAQFHIz3iJdalew/company-logo_200_200/0/1646322452937?e=1670457600&v=beta&t=fNjSBVyJ4CIvFoq3b96Hdi3h8kLqh-Iu9kKzusTUL3c" />
         </div>
            
@@ -14,7 +14,7 @@ function JobPosition() {
             <ListGroup variant='flush'>
                 <ListGroup.Item> 
                     <center>
-                        <Button disabled={true}> <i> Carrybags Limited </i>  </Button>
+                        <Button disabled={true} variant="dark"> <i> Carrybags Limited </i>  </Button>
                     </center>  
                 </ListGroup.Item>
                 <ListGroup.Item > <b>Position: </b> <i> Associate Software Engineer ~ FullStack Application Developer </i> </ListGroup.Item>
@@ -25,7 +25,7 @@ function JobPosition() {
                 <ListGroup.Item> <b>Role desciption: </b> 
                     <ul>
                         <li> Manged Development Team of 4 developers across three different time zones ~ Canada, UK and India</li>
-                        <li> Developed Mobile Application ~ iOS Application with Swift</li>
+                        <li> Developed Mobile Application ~ iOS Application with Swift & MVC architectural pattern</li>
                         <li> Attended meetings with the stakeholders to negotiate and explain the supporting services ~ Stripe UK, DPD</li>
                         <li> Performed unit and Acceptance Testing along with the QA team ~ XCTests </li>
                         <li> Setup the CI/CD Pipeline to automate the deployment of Node.js application to AWS EC2 instances ~ GitLabs </li>
@@ -43,11 +43,19 @@ function JobPosition() {
 
 const ExperiencePage = () => {
     return(
-        <Container >
+        <Container>
+            <h3 style={{marginTop: '1rem'}}> Applied Experience </h3>
             <Row style={{marginTop: '0.5rem'}}>
+                
+                
+
                 <Col  sm={12} md={12} lg={12} style={{backgroundColor: 'whitesmoke', minHeight: '40rem'}}>
                     {JobPosition()}                  
                 </Col>
+
+             
+                
+
             </Row>
 
             <Row>

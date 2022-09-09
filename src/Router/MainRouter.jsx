@@ -6,39 +6,32 @@ import HackathonPage from '../Components/Hackathons/Hackathons'
 import ContactPage from '../Components/Contact/Contact'
 import ExperiencePage from '../Components/Personal/ExperiencePage'
 import ProjectsPage from '../Components/Projects/ProjectsPage'
-import { Navbar, Nav } from 'react-bootstrap'
+import { Navbar, Nav, Button } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 import ArticleDetail from '../Components/Article/ArticleDetail'
 import EducationPage from '../Components/Personal/EducationPage'
 import '../Styles/base.scss'
 
+
 const MainRouter = () => {
     return(
         <BrowserRouter>
                 <Navbar collapseOnSelect className="customNavbar" expand="lg">
-                    
                 <Navbar.Brand>
-                    <button className="customBrand" disabled={true}>
-                        <i>SAREENV</i>
-                    </button>            
+                    <Button disabled={true} style={{opacity: "1"}} variant="light"> Sareenv</Button>       
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav" color='white'/>
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto">
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/projects" activeClassName="active">Projects</Nav.Link>
-                            
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/experience"
                             activeClassName="active"> Experience </Nav.Link>
-
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/education"
                             activeClassName="active"> Education </Nav.Link>
-
-
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/services" activeClassName="active">Services</Nav.Link>
                             {/* <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link> */}
-                            
                         </Nav>
                     </Navbar.Collapse>
                 </Navbar>
@@ -55,6 +48,7 @@ const MainRouter = () => {
                 <Route path="article/:id" exact component={ArticleDetail} />
                 <Route path="/project_details/:id" exact component={ProjectDetails} />
             </Switch>
+
         </BrowserRouter>
     )
 }
