@@ -1,7 +1,7 @@
 import React from 'react'
 import AnimatedTitles from './AnimatedtTitles'
 import image from '../../../Assets/me.jpeg'
-import { Button } from 'react-bootstrap'
+import { Button, Image } from 'react-bootstrap'
 import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa"
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../../Styles/frontheader.scss'
@@ -10,14 +10,14 @@ const HeaderFront = () => {
     return (
         <div>
             <div className="frontheader">
-                <img className="circularimage" src = {image} alt='noImg' />
+                <Image thumbnail className="circularimage" src = {image} alt='noImg' />
                 <div style={{display: 'flex', flexDirection: 'column', padding: 0, margin: 0}}>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
                         <p style = {{color: '#e63946', fontSize: '1.6rem', marginTop: 15, padding: 3}}>  Hi <span role="img" aria-label="hi">👋 </span> I'm </p>
                         <p style = {{color: '#f1faee', fontSize: '1.6rem', marginTop: 15}}> Vinayak Sareen  </p>
                     </div>
-                    <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1.2rem', textAlign: 'center'}}> 
-                         I'm enthusiastic Masters Student at Concordia University with Software Engineering experience of two years. </p>
+                    <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em', textAlign: 'center'}}> 
+                         I'm enthusiastic Masters (MEng) Student at Concordia University with 1+ years of Software Development experience </p>
                 </div>
                 <AnimatedTitles /> 
                 <Button className='resumeBtn'>  #Resume </Button> 

@@ -8,9 +8,8 @@ const AnimatedTitles = () => {
             <Typed
                 strings={[
                     'iOS Application',
-                    'Spring Boot',
                     'Java Application',
-                    'Node.js', 
+                    'Backend', 
                     'FullStack'
                 ]}
                 typeSpeed={40}
