@@ -49,7 +49,7 @@ const ExperiencePage = () => {
             <h3 style={{marginTop: '1rem'}}> Applied Experience </h3>
             <Row style={{marginTop: '0.5rem'}}>
 
-                <Col  sm={12} md={12} lg={6} style={{backgroundColor: 'white', minHeight: '40rem'}}>
+                <Col  sm={12} md={12} lg={12} style={{backgroundColor: 'whitesmoke', minHeight: '40rem'}}>
                     <JobPosition
                         company = "Carrybags Limited"
                         color = "rgb(244 201 42)"
@@ -60,7 +60,7 @@ const ExperiencePage = () => {
                     />            
                 </Col>
 
-                <Col sm={12} md={12} lg={6} style={{backgroundColor: 'white', minHeight: '40rem'}}>
+                <Col sm={12} md={12} lg={12} style={{backgroundColor: 'whitesmoke', minHeight: '40rem', marginTop: '2rem'}}>
                     <JobPosition
                         company = "ASOP Pvt Ltd"
                         color = "rgb(175 25 25)"

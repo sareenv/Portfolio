@@ -8,7 +8,9 @@ import {Card} from 'react-bootstrap';
 import '../../Styles/base.scss';
 import Footer from '../Footer';
 
+
 const Project = () => {
+
     return (
         <div className='projectSection'>
                 <center>
