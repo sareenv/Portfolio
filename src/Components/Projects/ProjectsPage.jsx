@@ -5,11 +5,8 @@ import {downloadProject} from '../../Services/Projects'
 import {Link} from 'react-router-dom'
 import '../../Styles/base.scss'
 
-
 const ProjectsPage = () => {
-
     const [project, setProject] = useState([]);
-
     useEffect(() => {
         let mounted = true;
         downloadProject().then(item => {
