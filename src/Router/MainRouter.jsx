@@ -2,7 +2,6 @@ import React from 'react'
 import {Switch, BrowserRouter, Route, NavLink} from 'react-router-dom'
 import Home from '../Components/Home/Home'
 import BlogPage from '../Components/Article/SampleBlog'
-import HackathonPage from '../Components/Hackathons/Hackathons'
 import ContactPage from '../Components/Contact/Contact'
 import ExperiencePage from '../Components/Personal/ExperiencePage'
 import ProjectsPage from '../Components/Projects/ProjectsPage'
@@ -41,7 +40,6 @@ const MainRouter = () => {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/articles" exact component={BlogPage} />
-                <Route path="/hackathons" exact component={HackathonPage} />
                 <Route path="/projects" exact component={ProjectsPage} />
                 <Route path="/experience" exact component={ExperiencePage} />
                 <Route path="/contact" exact component={ContactPage} />
