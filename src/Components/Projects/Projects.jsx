@@ -9,14 +9,17 @@ import '../../Styles/base.scss';
 import Footer from '../Footer';
 
 
-const Project = () => {
+const Project = (props) => {
 
     return (
         <div className='projectSection'>
-                <center>
-                    <h3> Featured Projects </h3>
-                    <hr className='customline'/>
-                </center>
+                {props.showTitle && (
+                    <center>
+                        <h3> Featured Projects </h3>
+                        <hr className='customline'/>
+                    </center>
+                )}
+                
               
                     <Container fluid="sm">
                         <Row>

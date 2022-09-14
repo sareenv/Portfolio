@@ -21,7 +21,7 @@ const ProjectsPage = () => {
             <Container style={{marginTop: '1rem'}}>
                 <Row>
                     <Col lg={6} md={12} sm={12}>
-                        <Image fluid={true} src={project.thumbnail}/> 
+                        <Image  fluid={true} src={project.thumbnail} responsive/> 
                     </Col>
 
                     <Col lg={6} md={12} sm={12}>
@@ -35,7 +35,9 @@ const ProjectsPage = () => {
                     </Col>
                 </Row>
             </Container>
+            
             <Project />
+            
         </div>
     )
 }

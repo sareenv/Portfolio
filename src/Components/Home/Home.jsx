@@ -13,7 +13,7 @@ const Home = () => {
                 <HeaderFront/>
                     <About/>
                     <div className='projectBase'>
-                        <Project/>
+                        <Project showTitle={true}/>
                     </div>
                     
                     <Contact />
