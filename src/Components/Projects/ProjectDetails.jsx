@@ -10,42 +10,59 @@ const ProjectDetails = () => {
         <Container>
             <Row style={{marginTop: '1rem'}}>
                 <Col lg={6} style={{backgroundColor: 'white'}}>
-                    <Image fluid 
+                    <Image
+                        fluid
                         thumbnail = {true}
-                        src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'>
+                        src='https://sareenv-projects.s3.amazonaws.com/images/cinemato.png'>
                     </Image>
-                        <Row>
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                            
                             <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
+                            </Col>
+
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
+                            </Col>
+
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
                             </Col>
 
                             <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
+                            </Col>
+                        </Row>
+
+                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                            
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
+                            </Col>
+
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
+                            </Col>
+
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
                             </Col>
 
                             <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
-                            </Col> 
-
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
+                                <Image fluid 
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
                             </Col>
-
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
-                            </Col> 
-
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                            <Image fluid src='https://letsbuildthatapp-videos.s3.us-west-2.amazonaws.com/8ecd376c-864a-4c68-8f14-f3d359cdbf49'></Image>
-                            </Col>
-
-                            <Col lg={3} sm={3} xs ={3} style={{marginTop: '0.7rem', backgroundColor: 'white'}}>
-                                <Button style={{height: '100%', width: '100%'}}>
-                                    <FaVideo  style={{fontSize: '2rem'}}/>
-                                </Button>
-                                
-                            </Col>
-
                         </Row>
                     
                 </Col>

@@ -115,7 +115,7 @@ const Service = () => {
                 <Col sm={12} md={12} lg={5} style={{backgroundColor: 'white'}}>
                     <h3> Services Information </h3>
                     <hr />
-                    <p>
+                    <p style={{textAlign: 'justify'}}>
                         My services includes the <i> FullStack Application development </i> and are adaptive 
                         to the requirments of the project. The application domain of Mobile Application Development is 
                         area of interest along with the backend development using platforms 
