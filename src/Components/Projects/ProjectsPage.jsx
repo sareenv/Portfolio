@@ -13,7 +13,13 @@ const ProjectsPage = () => {
         let mounted = true;
         downloadProject().then(item => {
             if(mounted) {
-                setfeaturedProject(item.Items[0])
+                item.Items.forEach(item => {
+                    if(item.featured === true) {
+                        setfeaturedProject(item)
+                        return
+                    }
+                });
+                
             }
         })
     }, []);
