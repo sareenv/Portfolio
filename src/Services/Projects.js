@@ -6,4 +6,10 @@ const downloadProject = () => {
     return data
 }
 
-export {downloadProject}
+const downloadProjectByID = (id) => {
+    const url = `${baseUrl}/project/${id}`
+    const data = fetch(url).then(data => data.json())
+    return data
+}
+
+export {downloadProject, downloadProjectByID}
