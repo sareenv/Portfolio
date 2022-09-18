@@ -40,14 +40,13 @@ const Project = (props) => {
                                     return (
                                         <Col sm={12} md={12} lg={4} className="cutomColumn">
                                             <Card className='customsytle ' style={{  }}>
-                                                <Card.Img variant="top" style={{width: '100%', height: '15vw', objectFit: 'cover'}} src={project.thumbnail}/>
+                                                <Card.Img variant="top" style={{width: '100%', height: '15em', objectFit: 'cover'}} src={project.thumbnail}/>
                                                 <Badge tag={project.tags[0]}/>
                                                 <Card.Body>
                                                     <Card.Title> {project.projectName} </Card.Title>
                                                     <Card.Text>
                                                     {project.description}
                                                     </Card.Text>
-                                                    {/* <Button variant="primary" style={{width: '100%'}} to="/blog" >View Details</Button> */}
                                                     <Link  className='customLink text-decoration-none' to={{pathname: '/project_details/1'}}> View Details </Link>
                                                 </Card.Body>
                                             </Card>
