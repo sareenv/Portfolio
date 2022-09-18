@@ -12,10 +12,9 @@ const Service = () => {
                         <h3> Skills & Services </h3>
                         <hr/>
 
-                        <Table variant='dark' striped>
+                        <Table variant='light' striped>
                             <thead>
                                 <tr>
-                                    <th>#</th>
                                     <th>Type</th>
                                     <th>Specifics</th>
                                     <th>Experience</th>
@@ -24,7 +23,7 @@ const Service = () => {
 
                             <tbody>
                             <tr>
-                                <td>1</td>
+                                
                                 <td>Backend</td>
                                 <td>Node.js </td>
                                 <td>
@@ -37,7 +36,7 @@ const Service = () => {
                             </tr>
 
                             <tr>
-                                <td>2</td>
+                           
                                 <td>Frontend</td>
                                 <td> React </td>
                                 <td>
@@ -48,7 +47,7 @@ const Service = () => {
                             </tr>
 
                             <tr>
-                                <td>3</td>
+                         
                                 <td>Mobile </td>
                                 <td> iOS </td>
                                 <td>
@@ -60,7 +59,7 @@ const Service = () => {
                             </tr>
 
                             <tr>
-                                <td>3</td>
+                  
                                 <td>Automated Testing </td>
                                 <td> Unit Testing </td>
                                 <td>
@@ -71,7 +70,7 @@ const Service = () => {
                             </tr>
 
                             <tr>
-                                <td>4</td>
+                     
                                 <td>Devops </td>
                                 <td> <i> NA </i> </td>
                                 <td>
@@ -84,7 +83,7 @@ const Service = () => {
 
 
                             <tr>
-                                <td>5</td>
+                         
                                 <td> Datastores </td>
                                 <td> DBMS </td>
                                 <td>
@@ -97,11 +96,12 @@ const Service = () => {
 
 
                             <tr>
-                                <td>5</td>
                                 <td> Miscellaneous </td>
                                 <td> NA </td>
                                 <td>
-                                    <li style={{fontSize: '0.8rem'}}> Firebase/FireStore </li>
+                                    <li style={{fontSize: '0.8rem'}}> Firebase </li>
+                                    <li style={{fontSize: '0.8rem'}}> Postman </li>
+                                    <li style={{fontSize: '0.8rem'}}> Zoho </li>
                                     <li style={{fontSize: '0.8rem'}}> Git </li>
                                 </td>
                             </tr>
