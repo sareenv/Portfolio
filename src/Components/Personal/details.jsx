@@ -1,7 +1,7 @@
 
 const ConcordiaDetails = {
     instition: 'Concordia University',
-    qualification: 'MApCompSc (Masters)',
+    qualification: 'Masters of Engineering- MEng, Software Engineering',
     address: '1455 Boul. de Maisonneuve Ouest, Montréal, Canada, QC H3G 1M8',
     id: '1',
     course: [

@@ -3,12 +3,13 @@ import React from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
 import {Education} from '../Personal/About'
 import { ConcordiaDetails, AWSCertification, CoventryDetails } from './details';
-// this is most likely not change at all.
+
 const EducationPage = () => {
     return (
-        <Container style={{marginTop: '2rem'}}>
+        <Container style={{marginTop: '2rem', marginBottom: '4rem'}}>
 
         <h3 style={{marginTop: '2rem'}}>Higher Education </h3>
+        <hr/>
         <Row >
             
         <Col sm={12} md={11} lg={7} style={{marginBottom: '1rem'}}>
@@ -53,8 +54,6 @@ const EducationPage = () => {
                 </Col>
 
             </Row>
-
-            
         </Container>
     )
 }

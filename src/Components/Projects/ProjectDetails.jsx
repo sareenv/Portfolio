@@ -1,6 +1,7 @@
 
-import React from 'react'
 import { Container, Row, Col, Image, Button } from 'react-bootstrap';
+import React  from 'react';
+import { useEffect, useState } from 'react';
 import { FaGithub, FaVideo } from 'react-icons/fa';
 
 import '../../Styles/product-details.scss'
@@ -8,6 +9,7 @@ import '../../Styles/product-details.scss'
 const ProjectDetails = () => {
     return (
         <Container>
+           
             <Row style={{marginTop: '1rem'}}>
                 <Col lg={6} style={{backgroundColor: 'white'}}>
                     <Image
@@ -15,55 +17,42 @@ const ProjectDetails = () => {
                         thumbnail = {true}
                         src='https://sareenv-projects.s3.amazonaws.com/images/cinemato.png'>
                     </Image>
-                        <Row style={{display: 'flex', justifyContent: 'center'}}>
+                        <Row style={{display: 'flex', justifyContent: 'start'}}>
                             
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
-                            </Col>
-
+                            
 
                             <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
-                            </Col>
-
-
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
+                                <Image fluid thumbnail={true}
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato2.png'></Image>
                             </Col>
 
                             <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
+                                <Image fluid thumbnail={true}
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato3.png'></Image>
+                            </Col>
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid thumbnail={true}
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato4.png'></Image>
+                            </Col>
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid thumbnail={true}
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato5.png'></Image>
+                            </Col>
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid thumbnail={true}
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato6.png'></Image>
+                            </Col>
+
+                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
+                                <Image fluid thumbnail={true}
+                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato7.png'></Image>
                             </Col>
                         </Row>
 
-                        <Row style={{display: 'flex', justifyContent: 'center'}}>
-                            
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
-                            </Col>
-
-
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
-                            </Col>
-
-
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
-                            </Col>
-
-                            <Col lg={3} sm={3} xs={3} style={{marginTop: '0.7rem'}}>
-                                <Image fluid 
-                                    src='https://sareenv-projects.s3.amazonaws.com/images/cinemato1.png'></Image>
-                            </Col>
-                        </Row>
+                        
                     
                 </Col>
 

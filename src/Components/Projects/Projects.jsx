@@ -21,10 +21,10 @@ const Project = (props) => {
                 )}
                 
               
-                    <Container fluid="sm">
+                    <Container fluid="sm" style={{marginBottom: '4rem'}}>
                         <Row>
-                            <Col sm={12} md={12} lg={4} className="cutomColumn">
-                                <Card className='customsytle' style={{  }}>
+                            <Col sm={12} md={12} lg={5} className="cutomColumn">
+                                <Card className='customsytle ' style={{  }}>
                                     <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/Cinemato/master/banner.png"/>
                                     <Badge tag="UIKit" />
                                     <Card.Body>
@@ -33,88 +33,16 @@ const Project = (props) => {
                                         The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
                                         </Card.Text>
                                         {/* <Button variant="primary" style={{width: '100%'}} to="/blog" >View Details</Button> */}
-                                        <Link  className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
+                                        <Link  className='customLink text-decoration-none' to={{pathname: '/project_details/1'}}> View Details </Link>
                                     </Card.Body>
                                 </Card>
                             </Col>
-    
-                            <Col  sm={12} md={12} lg={4} className="cutomColumn">
-                                <Card className='customsytle' style={{ }}>
-                                    <Card.Img variant="top" src="https://reactjs.org/logo-og.png"/>
-                                    <Badge tag="React" />
-                                    <Card.Body>
-                                        <Card.Title>Portfolio Website </Card.Title>
-                                        <Card.Text>
-                                        The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
-                                        </Card.Text>
-                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-    
-                            <Col sm={12} md={12} lg={4} className="cutomColumn">
-                                <Card className='customsytle' style={{ }}>
-                                    <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/SVSwiper/master/assets/poster.png"/>
-                                    <Badge tag="UIKit" />
-                                    <Card.Body>
-                                        <Card.Title>SVSwiper Opensource Library </Card.Title>
-                                        <Card.Text>
-                                        The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
-                                        </Card.Text>
-                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-    
                         </Row>
 
-                        <Row>
-                            <Col sm={12} md={12} lg={4} className="cutomColumn">
-                                <Card className='customsytle' style={{  }}>
-                                    <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/Cinemato/master/banner.png"/>
-                                    <Badge tag="UIKit" />
-                                    <Card.Body>
-                                        <Card.Title>Cinemato iOS Application </Card.Title>
-                                        <Card.Text>
-                                        The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
-                                        </Card.Text>
-                                        {/* <Button variant="primary" style={{width: '100%'}} to="/blog" >View Details</Button> */}
-                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-    
-                            <Col  sm={12} md={12} lg={4} className="cutomColumn">
-                                <Card className='customsytle' style={{ }}>
-                                    <Card.Img variant="top" src="https://reactjs.org/logo-og.png"/>
-                                    <Badge tag="React" />
-                                    <Card.Body>
-                                        <Card.Title>Portfolio Website </Card.Title>
-                                        <Card.Text>
-                                        The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
-                                        </Card.Text>
-                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-    
-                            <Col sm={12} md={12} lg={4} className="cutomColumn">
-                                <Card className='customsytle' style={{ }}>
-                                    <Card.Img variant="top" src="https://raw.githubusercontent.com/sareenv/SVSwiper/master/assets/poster.png"/>
-                                    <Badge tag="UIKit" />
-                                    <Card.Body>
-                                        <Card.Title>SVSwiper Opensource Library </Card.Title>
-                                        <Card.Text>
-                                        The application focuses on providing users to choose trending movies and tv shows and is using TheMovieDB api for fetching the details.
-                                        </Card.Text>
-                                        <Link className='customLink' to={{pathname: '/project_details/1'}}> View Details </Link>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-    
-                        </Row>
+                        
 
                     </Container>
+                    <div style={{minHeight: '2rem', backgroundColor: 'white', marginTop: '2rem', marginBottom: '1rem'}}></div>
 
                     <Footer />
             </div>
