@@ -34,8 +34,8 @@ const Contact = () => {
                             </div>
 
                             <div>
-                            <a href="https://www.linkedin.com/in/vinayak-sareen/" 
-                            style={{textDecoration: 'none',}} className="btn btn-outline-danger"> <FaMailBulk /> contact@sareenv.com </a>
+                                <a href="mailto:contact@sareenv.com" 
+                                    style={{textDecoration: 'none',}} className="btn btn-outline-danger"> <FaMailBulk /> contact@sareenv.com </a>
                             </div>
     
                         </span>
@@ -62,7 +62,7 @@ const Contact = () => {
                                 <Form.Label htmlFor="message">Your Message</Form.Label>
                                 <Form.Control as="textarea" name="message" placeholder='Please type your message here' />
                             </Form.Group>
-                            <Button className="customButton" type="submit"> 
+                            <Button className="customButton" type="submit" > 
                                 <div>
                                     <FaPaperPlane /> <> { } </>
                                     Send Message 

@@ -59,7 +59,7 @@ const Education = (props) => {
 const About = () => {
     return(
         <div>
-            <Container fluid="sm" style={{marginTop: '2rem'}}> 
+            <Container  style={{marginTop: '2rem'}}> 
                 <Row style={{backgroundColor: 'white'}}>
                     <Col  sm={12} md={12} lg={5} style={{paddingTop: '3rem'}}>
                         <center>
@@ -96,7 +96,6 @@ const About = () => {
                             </div>
                             <hr />
                             <p>
-                            
                             I am a passionate FullStack Software Development Engineer with hands-on experience in creating iOS mobile applications and web applications in personal, academic and professional environments using Agile methodologies. I'm also an AWS certified Cloud Practitioner (CLF-CO1) with sufficient knowledge of cloud technologies. While I was enrolled in the Master of Software Engineering in Gina Cody School of Computing program at Concordia University, Montreal, Canada. I worked on several academic projects involving diversity of technologies from the topic areas such as Distributed Systems, Advanced Software Architecture, Problem Solving and Applied Artificial Intelligence. </p>
                             <p>
                             In the past I had  worked in the United Kingdom  as Associate Software Engineer where I worked with a team size of four software developers in three time zones (GMT+1, EST and IST) and responsible for developing the mobile scalable Mobile Application for iOS platform and collaborating with software developers to deliver the required functionality using technologies such as RabbitMQ for low coupled communication between the microservices developed in the Node.js and deploying the services to the EC2 instances and auto-scaling group (ASG) in AWS cloud platform. 
