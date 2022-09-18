@@ -1,12 +1,13 @@
 import React from 'react';
 import Navigation from './Components/Navigation'
 import './Styles/base.scss'
+import SafeArea from 'react-safe-area-component'
 
 function App() {
   return (
-    <div>
-        <Navigation /> 
-    </div>
+    <SafeArea top>
+      <Navigation /> 
+    </SafeArea>
   );
 }
 
