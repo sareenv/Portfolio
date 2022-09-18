@@ -1,5 +1,5 @@
 import React from 'react'
-import {Switch, BrowserRouter, Route, NavLink} from 'react-router-dom'
+import {Switch, HashRouter, Route, NavLink} from 'react-router-dom'
 import Home from '../Components/Home/Home'
 import BlogPage from '../Components/Article/SampleBlog'
 import ContactPage from '../Components/Contact/Contact'
@@ -15,7 +15,7 @@ import '../Styles/base.scss'
 
 const MainRouter = () => {
     return(
-        <BrowserRouter>
+        <HashRouter basename='/'>
                 <Navbar collapseOnSelect className="customNavbar" expand="lg">
                 <Navbar.Brand className="customBrand">
                     <Button disabled={true}  style={{opacity: "1", display: 'none'}} variant="light"> Sareenv</Button>       
@@ -49,7 +49,7 @@ const MainRouter = () => {
                 <Route path="/project_details/:id" exact component={ProjectDetails} />
             </Switch>
 
-        </BrowserRouter>
+        </HashRouter>
     )
 }
 
