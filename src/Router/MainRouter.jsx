@@ -12,7 +12,6 @@ import ArticleDetail from '../Components/Article/ArticleDetail'
 import EducationPage from '../Components/Personal/EducationPage'
 import '../Styles/base.scss'
 
-
 const MainRouter = () => {
     return(
         <HashRouter basename='/'>
@@ -30,8 +29,6 @@ const MainRouter = () => {
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/experience"
                             activeClassName="active"> Experience </Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/services" activeClassName="active">Services</Nav.Link>
-                            
-                           
                             {/* <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/hackathons" activeClassName="active" exact> Hackathons </Nav.Link> */}
                         </Nav>
                     </Navbar.Collapse>

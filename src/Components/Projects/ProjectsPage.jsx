@@ -39,6 +39,9 @@ const ProjectsPage = () => {
             </Container>
             
             <Project />
+
+            <div style={{minHeight: '2rem', backgroundColor: 'white', marginTop: '2rem', marginBottom: '1rem'}}></div>
+
             
         </div>
     )
