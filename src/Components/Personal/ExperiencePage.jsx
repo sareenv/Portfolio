@@ -59,7 +59,7 @@ const ExperiencePage = () => {
                             "Managed Development Team of 4 developers across three different time zones ~ Canada, UK and India.",
                             "Developed Mobile Application ~ iOS Application with Swift & MVC architectural pattern",
                             "Attended meetings with the stakeholders to negotiate and explain the supporting services ~ Stripe UK, DPD.",
-                            "Performed unit and Integration Testing along with the QA team ~ XCTests",
+                            "Performed unit and Integration Testing along with the QA team",
                             "Setup the CI/CD Pipeline to automate the deployment of Node.js application to AWS EC2 instances ~ GitLabs", 
                             "Worked on the OAuth2 and authentication related features of the REST API ~ Node.js"
                         ]}
