@@ -1,5 +1,5 @@
 
-const baseUrl = "http://api.sareenv.com/api/v1"
+const baseUrl = "https://d32pt0shyvap5q.cloudfront.net/api/v1"
 const downloadProject = () => {
     const url = `${baseUrl}/projects`
     const data = fetch(url).then(data => data.json())
