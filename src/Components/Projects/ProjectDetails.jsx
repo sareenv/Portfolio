@@ -61,20 +61,23 @@ const ProjectDetails = (props) => {
 
                     {/* Preview button */}
                     <div>
-                        <Row style={{margin: '0.5rem'}}>
-                            <Col sm={5} md={5} lg={5}>
-                                <Button disabled = {project.video === undefined}> 
+                    
+                        <span>
+
+                                <Button disabled = {project.video === undefined} 
+                                    style={{marginRight: '1rem'}}> 
                                     <FaVideo />
                                     <>  Watch Preview </>
                                 </Button>
-                            </Col>
-                            <Col sm={5} md={5} lg={5}>
+
                                 <Button variant="light" href={project.github}> 
                                     <FaGithub />
                                     <>  Source Code </>
                                 </Button>
-                            </Col>
-                        </Row>
+                        
+                        </span>
+
+                        
                     </div>
 
                     <div className='description'>
