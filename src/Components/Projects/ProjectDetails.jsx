@@ -62,13 +62,13 @@ const ProjectDetails = (props) => {
                     {/* Preview button */}
                     <div>
                         <Row style={{margin: '0.5rem'}}>
-                            <Col sm={9} style={{paddingLeft: 0, paddingRight: '1rem'}}>
-                                <Button> 
+                            <Col sm={5} md={5} lg={5}>
+                                <Button disabled = {project.video === undefined}> 
                                     <FaVideo />
                                     <>  Watch Preview </>
                                 </Button>
                             </Col>
-                            <Col sm={4}  style={{paddingLeft: 0, paddingRight: 0, marginTop: '0.8rem'}}>
+                            <Col sm={5} md={5} lg={5}>
                                 <Button variant="light" href={project.github}> 
                                     <FaGithub />
                                     <>  Source Code </>
@@ -100,7 +100,7 @@ const ProjectDetails = (props) => {
                             {project.configuration && project.configuration.length !== 0 && (() => {
                                 return <b> Project Configuration </b>
                             })}
-                            
+
                             <ul>
                                 {project.configuration !== undefined && project.configuration.map((config) => {
                                     return <li> {config} </li>
