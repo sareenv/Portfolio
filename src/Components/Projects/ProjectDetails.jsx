@@ -100,6 +100,7 @@ const ProjectDetails = (props) => {
                             {project.configuration && project.configuration.length !== 0 && (() => {
                                 return <b> Project Configuration </b>
                             })}
+                            
                             <ul>
                                 {project.configuration !== undefined && project.configuration.map((config) => {
                                     return <li> {config} </li>

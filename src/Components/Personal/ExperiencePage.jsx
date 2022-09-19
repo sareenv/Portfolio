@@ -23,12 +23,10 @@ const JobPosition = (props) => {
                  </ListGroup.Item>
                 <ListGroup.Item> <b>Role desciption: </b> 
                     <ul style={{paddingLeft: '1rem'}}>
-                        <li> Manged Development Team of 4 developers across three different time zones ~ Canada, UK and India</li>
-                        <li> Developed Mobile Application ~ iOS Application with Swift & MVC architectural pattern</li>
-                        <li> Attended meetings with the stakeholders to negotiate and explain the supporting services ~ Stripe UK, DPD</li>
-                        <li> Performed unit and Acceptance Testing along with the QA team ~ XCTests </li>
-                        <li> Setup the CI/CD Pipeline to automate the deployment of Node.js application to AWS EC2 instances ~ GitLabs </li>
-                        <li> Worked on the OAuth2 and authentication related features of the REST API ~ Node.js</li>
+                        {props.description && props.description.map((desc) => {
+                            return <li> {desc} </li>
+                        })}
+                       
                     </ul>
                 </ListGroup.Item>
                 
@@ -57,6 +55,14 @@ const ExperiencePage = () => {
                         type="Part-time"
                         location="The Enterprise Hub 5, Whitefriars Street, Coventry, United Kingdom"
                         logo="https://media-exp1.licdn.com/dms/image/C4E0BAQFHIz3iJdalew/company-logo_200_200/0/1646322452937?e=1670457600&v=beta&t=fNjSBVyJ4CIvFoq3b96Hdi3h8kLqh-Iu9kKzusTUL3c"
+                        description = {[
+                            "Managed Development Team of 4 developers across three different time zones ~ Canada, UK and India.",
+                            "Developed Mobile Application ~ iOS Application with Swift & MVC architectural pattern",
+                            "Attended meetings with the stakeholders to negotiate and explain the supporting services ~ Stripe UK, DPD.",
+                            "Performed unit and Integration Testing along with the QA team ~ XCTests",
+                            "Setup the CI/CD Pipeline to automate the deployment of Node.js application to AWS EC2 instances ~ GitLabs", 
+                            "Worked on the OAuth2 and authentication related features of the REST API ~ Node.js"
+                        ]}
                     />            
                 </Col>
            
@@ -68,6 +74,14 @@ const ExperiencePage = () => {
                         type = "Contract" 
                         location = "SBS Nagar Nawanshahr Punjab (144514), India"
                         logo="https://media-exp1.licdn.com/dms/image/C560BAQEjCSpbKs2q1g/company-logo_200_200/0/1567672229702?e=1671062400&v=beta&t=7IVTLIm9o425c3izi5Rsy73zKejl20RJAphN2BTYyCA"
+                        description = {[
+                            "Gathered and analyzed the clients requirement to support the functionality for the ordering system.",
+                            "Responsible for developing the RESTful APi in Node.js and Express.",
+                            "Developed iOS Application using MVC architectural Pattern.",
+                            "Implemented the Push Notification on the client side connected with Firebase service controlled through the dashboard.",
+                            "Developed a script in Python3 to bulk upload all the organization’s products to the MySQL database hosted on Heroku platform.", 
+                            "Deployed the backend APi to the Heroku Cloud Platform."
+                        ]}
                     />       
                 </Col>
             </Row>
