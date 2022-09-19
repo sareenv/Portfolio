@@ -96,12 +96,14 @@ const ProjectDetails = (props) => {
                     <Row>
                         
                         <Col style={{marginTop: '1rem'}}>
-                            <b> Project Configuration </b>
+                            
+                            {project.configuration && project.configuration.length !== 0 && (() => {
+                                return <b> Project Configuration </b>
+                            })}
                             <ul>
-                                <li> You want to explore the limits of SwiftUI </li>
-                                <li> You want to build applications quickly and correctly </li>
-                                <li> You want to learn about Reactive State Programming </li>
-                                <li> You want to go through real world examples of View Models</li>
+                                {project.configuration !== undefined && project.configuration.map((config) => {
+                                    return <li> {config} </li>
+                                })}
                             </ul>
                         </Col>
                     </Row>
