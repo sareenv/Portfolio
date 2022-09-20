@@ -48,6 +48,7 @@ const Contact = () => {
                         <hr className='customline'></hr>
                         </center>
                         <Form action='https://formsubmit.co/contact@sareenv.com' method='post'>
+                            <input type="hidden" name="_next" value="https://www.sareenv.com"/>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
                                 <Form.Label htmlFor="fullName">Full Name</Form.Label>
                                 <Form.Control type="fullName" name="fullname" placeholder="Your Full Name"/>
