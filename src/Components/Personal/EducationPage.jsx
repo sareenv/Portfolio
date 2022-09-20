@@ -40,9 +40,9 @@ const EducationPage = () => {
                     </Col>
                 </Row>
 
-                    <h3 style={{marginTop: '2rem'}}>Certification & Licensing Education </h3>
+                    <h3 style={{marginTop: '2rem'}}>Certifications & Licensing Education </h3>
                     <Row>
-                        <Col sm={12} md={12} lg={6}>
+                        <Col sm={12} md={12} lg={4}>
                             <Education 
                                 image={AWSCertification.image}
                                 qualification={AWSCertification.qualification} 

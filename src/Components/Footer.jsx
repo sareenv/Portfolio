@@ -5,7 +5,7 @@ import '../Styles/footer.scss'
 const Footer = () => {
     return (
         <div className = "footer" style={{padding: '1rem'}}>
-            Copyright © 2020 Vinayak Sareen.
+            Copyright © 2022 Vinayak Sareen.
         </div>
     )
 }
