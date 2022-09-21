@@ -38,7 +38,7 @@ const Project = (props) => {
                             {
                                 projects.map((project) => {
                                     return (
-                                        <Col sm={12} md={12} lg={4} className="cutomColumn">
+                                        <Col key={project.ID} sm={12} md={12} lg={4} className="cutomColumn">
                                             <Card className='customsytle ' style={{  }}>
                                                 <Card.Img variant="top" style={{width: '100%', height: '15em', objectFit: 'cover'}} src={project.thumbnail}/>
                                                 <Badge tag={project.tags[0]}/>

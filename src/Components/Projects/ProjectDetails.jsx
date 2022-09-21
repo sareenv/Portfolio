@@ -3,10 +3,12 @@ import React  from 'react';
 import { useEffect, useState } from 'react';
 import { FaGithub, FaVideo } from 'react-icons/fa';
 import { downloadProjectByID } from '../../Services/Projects';
+import Vimeo from '@u-wave/react-vimeo';
 import '../../Styles/product-details.scss'
 
 const ProjectDetails = (props) => {
     const [displayImage, setDisplayImage] = useState("");
+    const [isDisplayed, setIsDisplayed] = useState(false);
     const [project, setProject] = useState([]);
     useEffect(() => {
         const mounted = true;
@@ -61,11 +63,32 @@ const ProjectDetails = (props) => {
 
                     {/* Preview button */}
                     <div>
+
+                        {project.ID !== undefined && isDisplayed === true && (() => {
+                            return (
+                                <div style={{paddingBottom: '1rem'}}>
+                                    <Vimeo
+                                        id={project.video}
+                                        video="751829078"
+                                        height='400px'
+                                        volume={true}
+                                        responsive={true}
+                                    >
+                                    </Vimeo>
+                                </div>
+                            )
+                            
+                        })()}
                     
                         <span>
 
-                                <Button disabled = {project.video === undefined} 
-                                    style={{marginRight: '1rem'}}> 
+                                <Button
+                                    disabled={project.video === undefined} 
+                                    style={{marginRight: '1rem'}}
+                                    onClick={ () => {
+                                        setIsDisplayed(true)
+                                    }}
+                                    > 
                                     <FaVideo />
                                     <>  Watch Preview </>
                                 </Button>

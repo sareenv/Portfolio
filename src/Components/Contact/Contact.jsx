@@ -47,20 +47,20 @@ const Contact = () => {
                         <h2> Get in Touch </h2>
                         <hr className='customline'></hr>
                         </center>
-                        <Form action='https://formsubmit.co/contact@sareenv.com' method='post'>
+                        <Form id="contact" action='https://formsubmit.co/contact@sareenv.com' method='post'>
                             <input type="hidden" name="_next" value="https://www.sareenv.com"/>
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label htmlFor="fullName">Full Name</Form.Label>
+                                <Form.Label>Full Name</Form.Label>
                                 <Form.Control type="fullName" name="fullname" placeholder="Your Full Name"/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label htmlFor="email">Email</Form.Label>
+                                <Form.Label>Email</Form.Label>
                                 <Form.Control type="email" name="email" placeholder="name@example.com"/>
                             </Form.Group>
 
                             <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label htmlFor="message">Your Message</Form.Label>
+                                <Form.Label>Your Message</Form.Label>
                                 <Form.Control as="textarea" name="message" placeholder='Please type your message here' />
                             </Form.Group>
                             <Button className="customButton" type="submit" > 
