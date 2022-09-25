@@ -81,9 +81,14 @@ html, body {
     align-items: center;
     text-align: center;
     background-color: #003049;
-    color: whitesmoke;
+    color: white;
+    font-weight: 400;
     text-decoration: none;
     padding: 0.5rem;
+}
+
+.customLink:hover {
+    color: white;
 }
 
 

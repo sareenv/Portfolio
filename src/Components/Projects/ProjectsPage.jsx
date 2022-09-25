@@ -1,9 +1,9 @@
 import React, {useEffect, useState} from "react";
-import Project from "./Projects"
 import {Row, Col, Image, Container} from 'react-bootstrap'
 import {downloadProject} from '../../Services/Projects'
 import {Link} from 'react-router-dom'
 import '../../Styles/base.scss'
+import Project from "./Projects"
 
 const ProjectsPage = () => {
     const [featuredProject, setfeaturedProject] = useState([])

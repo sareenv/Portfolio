@@ -47,7 +47,7 @@ const Project = (props) => {
                                                     <Card.Text>
                                                     {project.description}
                                                     </Card.Text>
-                                                    <Link  className='customLink text-decoration-none' to={{pathname: '/project_details/' + project.ID}}> View Details </Link>
+                                                    <Link  className='customLink text-decoration-none rounded' to={{pathname: '/project_details/' + project.ID}}> View Details </Link>
                                                 </Card.Body>
                                             </Card>
                                         </Col>

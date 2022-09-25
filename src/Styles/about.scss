@@ -3,11 +3,12 @@ $baseNavColor: #1b1b2f;
 $secondaryColor: red;
 
 .aboutSection {
+    white-space: inherit;
     margin: 2rem;
     padding: 1rem;
     text-align: justify;
     text-justify: distribute;
-    word-break: break-all;
+    word-wrap: break-all;
     background-color: white;
 }
 

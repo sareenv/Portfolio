@@ -61,15 +61,14 @@ const ProjectDetails = (props) => {
                         <p style={{color: 'grey'}}> {project.tagLine} </p>
                     </div>
 
-                    {/* Preview button */}
+                    {/* Preview button expands on this one */}
                     <div>
-
                         {project.ID !== undefined && isDisplayed === true && (() => {
                             return (
                                 <div style={{paddingBottom: '1rem'}}>
                                     <Vimeo
                                         id={project.video}
-                                        video="751829078"
+                                        video={project.video}
                                         height='400px'
                                         volume={true}
                                         responsive={true}
@@ -79,7 +78,10 @@ const ProjectDetails = (props) => {
                             )
                             
                         })()}
-                    
+
+                       
+
+
                         <span>
 
                                 <Button
@@ -93,11 +95,10 @@ const ProjectDetails = (props) => {
                                     <>  Watch Preview </>
                                 </Button>
 
-                                <Button variant="light" href={project.github}> 
+                                <Button variant="light" style={{marginRight: '1rem'}} href={project.github}> 
                                     <FaGithub />
                                     <>  Source Code </>
                                 </Button>
-                        
                         </span>
 
                         
@@ -118,6 +119,8 @@ const ProjectDetails = (props) => {
                             </ul>
                         </Col>
                     </Row>
+
+                   
                                     
                     <Row>
                         
