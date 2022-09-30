@@ -36,12 +36,24 @@ const CoventryDetails = {
 }
 
 const AWSCertification = {
-    instition: 'Amazon AWS',
+    instition: 'AWS Web Services',
     qualification: 'AWS Certified Cloud Practitioner',
     id: '3',
     image: 'https://images.credly.com/size/220x220/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png',
+    issued: "Aug 2022",
     credLink: 'https://www.credly.com/badges/a1241d89-d1e6-4f30-80da-e3f0bdc51e3f/public_url'
 }
 
 
-export {ConcordiaDetails, CoventryDetails, AWSCertification};
+const DockerCertification = {
+    instition: 'Udemy',
+    qualification: 'Learn Docker with Handson Experience',
+    id: '4',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgbt4tw3edW-Vk6YXwxNgo_AiZAqRqOnPnXVDHoDmsV6c1Zq4STf--ZzOGTLZnXeua8M&usqp=CAU',
+    credLink: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a.pdf', 
+    issued: "Sept 2022"
+}
+
+
+
+export {ConcordiaDetails, CoventryDetails, AWSCertification, DockerCertification};

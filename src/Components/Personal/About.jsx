@@ -22,6 +22,12 @@ const Education = (props) => {
                             <div>
                                 <b> Institution: </b> {props.instition}
                             </div>
+
+                            {props.issued != null && 
+                                <div>
+                                   <b>Issued: </b> {props.issued}
+                                </div>
+                            }
                             
                             {props.address != null && 
                                 <div>
