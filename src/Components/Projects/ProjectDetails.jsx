@@ -110,8 +110,8 @@ const ProjectDetails = (props) => {
 
                     <Row>
                         <Col style={{marginTop: '1rem'}}>
-                            <b> Concepts Used </b>
-                            <ul style={{textAlign: 'justify', textBreak: 'break-all'}}>
+                            <b> Details </b>
+                            <ul style={{textBreak: 'break-all'}}>
                                 { project.conceptsUsed !== undefined 
                                     && project.conceptsUsed.map((concept) => {
                                         return <li> {concept} </li>

@@ -15,7 +15,6 @@ const Home = () => {
                     <div className='projectBase'>
                         <Project showTitle={true}/>
                     </div>
-                    
                     <Contact />
                 <Footer />
             </div> 

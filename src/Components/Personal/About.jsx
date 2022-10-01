@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import '../../Styles/about.scss'
+import '../../Styles/base.scss'
 import { Button, Card, Image, ListGroup } from "react-bootstrap";
 import {ConcordiaDetails,  CoventryDetails} from "./details"
 
@@ -53,7 +54,7 @@ const Education = (props) => {
                     </Card.Body>
 
                     {props.visible === true && 
-                        <Button variant="info" disabled={false} style={{margin: '1rem'}} href={props.credLink}> {props.bnttitle} </Button>
+                        <Button className="customLink" disabled={false} style={{margin: '1rem'}} href={props.credLink}> {props.bnttitle} </Button>
                     }
 
                     

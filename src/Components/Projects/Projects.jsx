@@ -14,12 +14,10 @@ import { downloadProject } from '../../Services/Projects';
 const Project = (props) => {
 
     const [projects, setProjects] = useState([])
-
     useEffect(() => {
         downloadProject().then(items => {
             setProjects(items.Items)
         })
-        
     }, [])
 
     return (
@@ -45,7 +43,7 @@ const Project = (props) => {
                                                 <Card.Body>
                                                     <Card.Title> {project.projectName} </Card.Title>
                                                     <Card.Text>
-                                                    {project.description}
+                                                    <p style={{textAlign: 'left'}}> {project.description} </p>
                                                     </Card.Text>
                                                     <Link  className='customLink text-decoration-none rounded' to={{pathname: '/project_details/' + project.ID}}> View Details </Link>
                                                 </Card.Body>

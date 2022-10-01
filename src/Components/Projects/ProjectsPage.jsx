@@ -7,18 +7,14 @@ import Project from "./Projects"
 
 const ProjectsPage = () => {
     const [featuredProject, setfeaturedProject] = useState([])
-   
-
+    const [visibility, setVisibility] = useState(false)
     useEffect(() => {
         let mounted = true;
         downloadProject().then(item => {
             if(mounted) {
-                item.Items.forEach(item => {
-                    if(item.featured === true) {
-                        setfeaturedProject(item)
-                        return
-                    }
-                });
+                let featuredItem = item.Items.find(item => item.featured === true)
+                setfeaturedProject(featuredItem)
+                setVisibility(true)
             }
         })
     }, []);
@@ -36,14 +32,19 @@ const ProjectsPage = () => {
                                 <h2 style={{paddingTop: '2rem', paddingLeft: '1rem'}}>
                                         {featuredProject.projectName}
                                 </h2>
-                                <p style={{paddingTop: '0.3rem', paddingLeft: '1rem'}}> {featuredProject.description}</p>
-                                <Link className="customLink text-decoration-none" to={"project_details/" + featuredProject.ID} style={{width: '20em', backgroundColor: '#003049', marginLeft: '1rem'}}> View Details </Link>
+                                <p style={{paddingTop: '0.3rem', paddingLeft: '1rem'}}> {featuredProject.description} </p>
+                                {visibility === true && 
+                                    <Link className="customLink text-decoration-none" to={"project_details/" + featuredProject.ID} style={{width: '20em', backgroundColor: '#003049', marginLeft: '1rem'}}> View Details </Link>
+                                }
                             </div>
                         </Col>
                     </Row>
             </Container>
             
-            <Project />
+            {visibility && 
+                <Project />
+            }
+            
 
             <div style={{minHeight: '2rem', backgroundColor: 'white', marginTop: '2rem', marginBottom: '1rem'}}></div>
         </div>

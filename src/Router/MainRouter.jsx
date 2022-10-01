@@ -12,6 +12,7 @@ import ArticleDetail from '../Components/Article/ArticleDetail'
 import EducationPage from '../Components/Personal/EducationPage'
 import '../Styles/base.scss'
 
+
 const MainRouter = () => {
     return(
         <HashRouter basename='/'>
@@ -34,17 +35,18 @@ const MainRouter = () => {
                     </Navbar.Collapse>
                 </Navbar>
             
-            <Switch>
-                <Route path="/" exact component={Home} />
-                <Route path="/articles" exact component={BlogPage} />
-                <Route path="/projects" exact component={ProjectsPage} />
-                <Route path="/experience" exact component={ExperiencePage} />
-                <Route path="/contact" exact component={ContactPage} />
-                <Route path="/services" exact component={Service} />
-                <Route path="/education" exact component={EducationPage} />
-                <Route path="article/:id" exact component={ArticleDetail} />
-                <Route path="/project_details/:id" exact component={ProjectDetails} />
-            </Switch>
+                <Switch>
+                    <Route path="/" exact component={Home} />
+                    <Route path="/articles" exact component={BlogPage} />
+                    <Route path="/projects" exact component={ProjectsPage} />
+                    <Route path="/experience" exact component={ExperiencePage} />
+                    <Route path="/contact" exact component={ContactPage} />
+                    <Route path="/services" exact component={Service} />
+                    <Route path="/education" exact component={EducationPage} />
+                    <Route path="article/:id" exact component={ArticleDetail} />
+                    <Route path="/project_details/:id" exact component={ProjectDetails} />
+                </Switch>
+            
 
         </HashRouter>
     )
