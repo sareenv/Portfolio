@@ -55,7 +55,7 @@ const EducationPage = () => {
                         />
                     </Col>
 
-                        <Col sm={12} md={12} lg={4}>
+                        <Col sm={12} md={12} lg={5}>
                             <Education 
                                 image={AWSCertification.image}
                                 qualification={AWSCertification.qualification} 
