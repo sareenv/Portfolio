@@ -1,14 +1,12 @@
 import React from 'react'
 import {Switch, HashRouter, Route, NavLink} from 'react-router-dom'
 import Home from '../Components/Home/Home'
-import BlogPage from '../Components/Article/SampleBlog'
 import ContactPage from '../Components/Contact/Contact'
 import ExperiencePage from '../Components/Personal/ExperiencePage'
 import ProjectsPage from '../Components/Projects/ProjectsPage'
 import { Navbar, Nav, Button } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
-import ArticleDetail from '../Components/Article/ArticleDetail'
 import EducationPage from '../Components/Personal/EducationPage'
 import '../Styles/base.scss'
 
@@ -37,13 +35,11 @@ const MainRouter = () => {
             
                 <Switch>
                     <Route path="/" exact component={Home} />
-                    <Route path="/articles" exact component={BlogPage} />
                     <Route path="/projects" exact component={ProjectsPage} />
                     <Route path="/experience" exact component={ExperiencePage} />
                     <Route path="/contact" exact component={ContactPage} />
                     <Route path="/services" exact component={Service} />
                     <Route path="/education" exact component={EducationPage} />
-                    <Route path="article/:id" exact component={ArticleDetail} />
                     <Route path="/project_details/:id" exact component={ProjectDetails} />
                 </Switch>
             

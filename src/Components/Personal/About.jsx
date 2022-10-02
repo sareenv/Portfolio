@@ -29,6 +29,14 @@ const Education = (props) => {
                                    <b>Issued: </b> {props.issued}
                                 </div>
                             }
+
+                            {
+                                props.certificateID != null && 
+                                <div>
+                                    <b>Credential ID:</b> {props.certificateID}
+                                </div>
+                            }
+
                             
                             {props.address != null && 
                                 <div>

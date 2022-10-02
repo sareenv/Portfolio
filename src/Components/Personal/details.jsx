@@ -51,7 +51,8 @@ const DockerCertification = {
     id: '4',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbgbt4tw3edW-Vk6YXwxNgo_AiZAqRqOnPnXVDHoDmsV6c1Zq4STf--ZzOGTLZnXeua8M&usqp=CAU',
     credLink: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a.pdf', 
-    issued: "Sep 2022"
+    issued: "Sep 2022",
+    certificateID: "UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a"
 }
 
 

@@ -43,7 +43,7 @@ const EducationPage = () => {
                     <h3 style={{marginTop: '2rem'}}>Certifications & Licensing Education </h3>
                     <Row>
 
-                    <Col sm={12} md={12} lg={7}>
+                    <Col sm={12} md={12} lg={7} style={{marginBottom: '1rem'}}>
                         <Education 
                             image={DockerCertification.image}
                             qualification={DockerCertification.qualification} 
@@ -52,26 +52,22 @@ const EducationPage = () => {
                             bnttitle={'View Credentials'}
                             credLink={DockerCertification.credLink}
                             issued={DockerCertification.issued}
+                            certificateID={DockerCertification.certificateID}
                         />
                     </Col>
 
-                        <Col sm={12} md={12} lg={5}>
-                            <Education 
-                                image={AWSCertification.image}
-                                qualification={AWSCertification.qualification} 
-                                instition={AWSCertification.instition} 
-                                visible={true}
-                                bnttitle={'View Credentials'}
-                                credLink={AWSCertification.credLink}
-                                issued={AWSCertification.issued}
-                            />
-                        </Col>
-
-                        
-
-                        
-
-                    </Row>
+                    <Col sm={12} md={12} lg={5}>
+                        <Education 
+                            image={AWSCertification.image}
+                            qualification={AWSCertification.qualification} 
+                            instition={AWSCertification.instition} 
+                            visible={true}
+                            bnttitle={'View Credentials'}
+                            credLink={AWSCertification.credLink}
+                            issued={AWSCertification.issued}
+                        />
+                    </Col>
+                </Row>
             </Container>
         </div>
     )
