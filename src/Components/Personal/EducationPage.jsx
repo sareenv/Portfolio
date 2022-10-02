@@ -1,10 +1,15 @@
 
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
 import {Education} from '../Personal/About'
 import { ConcordiaDetails, AWSCertification, CoventryDetails, DockerCertification } from './details';
-
+import ReactGA from 'react-ga'
 const EducationPage = () => {
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
+
     return (
         <div style={{backgroundColor: 'white', paddingBottom: '2rem'}}>
             <Container style={{marginTop: '2rem'}}>

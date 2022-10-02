@@ -1,7 +1,7 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import {Container, Row, Col, Image, ListGroup} from 'react-bootstrap'
 import Contact from '../Contact/Contact'
-
+import ReactGA from 'react-ga'
 
 const JobPosition = (props) => {
     return (<Container style={{marginTop: '0.1rem'}}>
@@ -25,8 +25,7 @@ const JobPosition = (props) => {
                     <ul style={{paddingLeft: '1rem'}}>
                         {props.description && props.description.map((desc) => {
                             return <li> {desc} </li>
-                        })}
-                       
+                        })}   
                     </ul>
                 </ListGroup.Item>
                 
@@ -39,14 +38,14 @@ const JobPosition = (props) => {
 
 
 const ExperiencePage = () => {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
     return(
         <Container >
-
             <h3 style={{marginTop: '2rem'}}> Applied Experience </h3>
             <hr />
-
             <Row>
-
                 <Col  sm={12} md={12} lg={6} style={{backgroundColor: 'white', minHeight: '40rem', marginTop: '2rem'}}>
                     <JobPosition
                         company = "Carrybags Limited"

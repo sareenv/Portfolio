@@ -1,12 +1,15 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import HeaderFront from './HeaderFront/HeaderFront'
 import Footer from '../Footer'
 import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
-
+import ReactGA from 'react-ga'
 
 const Home = () => {
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
     return (
         <div>
             <div style={{margin: 0, padding: 0}}>
