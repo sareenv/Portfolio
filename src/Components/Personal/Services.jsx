@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import service from '../../Assets/experience.png'
 import {Row, Col, Container, Table, Image} from 'react-bootstrap'
-import Footer from '../Footer';
+import Footer from '../Footer'
+import ReactGA from 'react-ga'
 
 const Service = () => {
+
+    useEffect(() => {
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [])
+
     return (
         <Container  style={{marginTop: '1rem'}}>
             <Row style={{marginBottom: '3rem'}}>

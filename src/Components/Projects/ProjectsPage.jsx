@@ -4,6 +4,7 @@ import {downloadProject} from '../../Services/Projects'
 import {Link} from 'react-router-dom'
 import '../../Styles/base.scss'
 import Project from "./Projects"
+import ReactGA from 'react-ga'
 
 const ProjectsPage = () => {
     const [featuredProject, setfeaturedProject] = useState([])
@@ -17,6 +18,8 @@ const ProjectsPage = () => {
                 setVisibility(true)
             }
         })
+
+        ReactGA.pageview(window.location.pathname + window.location.search);
     }, []);
 
     return (

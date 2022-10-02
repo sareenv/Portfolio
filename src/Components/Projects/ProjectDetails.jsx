@@ -1,9 +1,10 @@
-import { Container, Row, Col, Image, Button } from 'react-bootstrap';
-import React  from 'react';
-import { useEffect, useState } from 'react';
-import { FaGithub, FaVideo } from 'react-icons/fa';
-import { downloadProjectByID } from '../../Services/Projects';
-import Vimeo from '@u-wave/react-vimeo';
+import { Container, Row, Col, Image, Button } from 'react-bootstrap'
+import React  from 'react'
+import { useEffect, useState } from 'react'
+import { FaGithub, FaVideo } from 'react-icons/fa'
+import { downloadProjectByID } from '../../Services/Projects'
+import Vimeo from '@u-wave/react-vimeo'
+import ReactGA from 'react-ga'
 import '../../Styles/product-details.scss'
 
 const ProjectDetails = (props) => {
@@ -21,6 +22,7 @@ const ProjectDetails = (props) => {
                 setDisplayImage(projectDetails.thumbnail)
             })
             setDisplayImage("https://sareenv-projects.s3.amazonaws.com/images/cinemato5.png")
+            ReactGA.pageview(window.location.pathname + window.location.search);
         }
     }, [props.match.params.id])
 
