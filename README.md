@@ -2,7 +2,7 @@
 
 The SPA contains my portfolio, including all the projects, applied experience gained. 
 
-Live Link: 👉️ https://www.sareen.com
+Live Link: 👉️ https://www.sareenv.com
 
 ## Technical Concepts
 <li> React Hooks were used for the state management of the application </li> 
