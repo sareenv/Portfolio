@@ -1,12 +1,10 @@
 ## E-Portfolio SPA
-
 The SPA contains my portfolio, including all the projects, applied experience gained. 
-
 Live Link: 👉️ https://www.sareenv.com
 
 ## Technical Concepts
 <li> React Hooks were used for the state management of the application </li> 
-<li>Configured React-Router to serve multiple components to seprate tabs</li>
+<li> Configured React-Router to serve multiple components to seprate tabs</li>
 <li> Developed Functional Components which interacts with the RESTful APi to </li>
 <li> Used Bootstrap library to deliver the mobile responsive and user-centric design. </li>
 <li> Developed the CI/CD workflow which automates the process building and deploying and invalidating the cache from the edge locations CDN to AWS Cloud </li>
