@@ -17,7 +17,7 @@ const HeaderFront = () => {
                         <h3 style = {{color: '#f1faee', marginTop: 15}}> Vinayak Sareen  </h3>
                     </div>
                     <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em', textAlign: 'center'}}> 
-                         I'm enthusiastic Masters (MEng) Student at Concordia University. </p>
+                         I'm enthusiastic Masters (MEng) Student at Concordia University </p>
                 </div>
                 <AnimatedTitles /> 
                 <Button variant="light" href="https://credentialsareenv.s3.ca-central-1.amazonaws.com/Resume.pdf"> <span style={{fontSize: '1em'}} role="img" aria-label="cv"> 🧑‍💻  </span> Resume </Button> 
