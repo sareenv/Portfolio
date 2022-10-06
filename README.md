@@ -1,6 +1,7 @@
 ## E-Portfolio SPA
-The SPA contains my portfolio, including all the projects, applied experience gained. 
+The SPA contains my portfolio, including all the projects, applied experience gained.
 Live Link: 👉️ https://www.sareenv.com
+RESTful APi Link: 👉️ https://github.com/sareenv/PortfolioAPI
 
 ## Technical Concepts
 <li> React Hooks were used for the state management of the application </li> 
@@ -23,8 +24,8 @@ Live Link: 👉️ https://www.sareenv.com
 <li> React Typed </li>
 <li> React Ga </li>
 
-
-
+## Project Reuse.
+The project is completely developed from scratch by Vinayak Sareen (me), so I give permission to reuse it in any context as a result. Feel free to fork the project and use it as it is or tweak it as per your requirements for the front-end portfolio. If you clone the project, I would appreciate a star on the respective repository. If there are any issues, feel free to contact me at contact@sareenv.com
 
 
 
