@@ -38,7 +38,7 @@ const Project = (props) => {
                                     return (
                                         <Col key={project.ID} sm={12} md={12} lg={4} className="cutomColumn">
                                             <Card className='customsytle shadow-md bg-white rounded' style={{   }}>
-                                                <Card.Img variant="top" style={{width: '100%', height: '15em', objectFit: 'cover'}} src={project.thumbnail}/>
+                                                <Card.Img  variant="top" style={{width: '100%', height: '15em', objectFit: 'cover'}} src={project.thumbnail}/>
                                                 <Badge tag={project.tags[0]}/>
                                                 <Card.Body>
                                                     <Card.Title> {project.projectName} </Card.Title>

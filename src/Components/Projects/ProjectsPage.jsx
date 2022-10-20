@@ -27,7 +27,7 @@ const ProjectsPage = () => {
             <Container style={{marginTop: '1rem'}}>
                     <Row>
                         <Col lg={6} md={12} sm={12}>
-                            <Image  fluid={true} src={featuredProject.thumbnail} responsive/> 
+                            <Image thumbnail={true}  fluid={true} src={featuredProject.thumbnail} responsive/> 
                         </Col>
 
                         <Col lg={6} md={12} sm={12}>
@@ -37,7 +37,7 @@ const ProjectsPage = () => {
                                 </h2>
                                 <p style={{paddingTop: '0.3rem', paddingLeft: '1rem'}}> {featuredProject.description} </p>
                                 {visibility === true && 
-                                    <Link className="customLink text-decoration-none" to={"project_details/" + featuredProject.ID} style={{width: '20em', backgroundColor: '#003049', marginLeft: '1rem'}}> View Details </Link>
+                                    <Link thumbnail={true} className="customLink text-decoration-none" to={"project_details/" + featuredProject.ID} style={{width: '20em', backgroundColor: '#003049', marginLeft: '1rem'}}> View Details </Link>
                                 }
                             </div>
                         </Col>
