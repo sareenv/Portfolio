@@ -26,12 +26,15 @@ const CoventryDetails = {
     id: '2',
     image: 'https://conflictresearchsociety.org/wp-content/uploads/2020/01/coventry-university-logo.png',
     course: [
+        "Discrete Mathematics",
         "iOS Application Development with Swift", 
-        "Web Application Development", 
+        "Web Application & Backend Development", 
         "Advanced Datastructures and Algorithms", 
         "Data and Information Retrival",
         "Operating Systems", 
-        "Theory of Compution & Automata"
+        "Theory of Compution & Automata", 
+        "Software Engineering", 
+        "Final Dissertation",
     ]
 }
 
