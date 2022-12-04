@@ -15,9 +15,9 @@ const EducationPage = () => {
             <Container style={{marginTop: '2rem'}}>
                 <h3 style={{marginTop: '2rem'}}>Higher Education </h3>
                 <hr/>
-                <Row >
+                <Row style={{display: 'flex', flexWrap: 'wrap'}}>
                     
-                <Col sm={12} md={11} lg={7} style={{marginBottom: '1rem'}}>
+                    <Col sm={12} md={11} lg={6}  >
                         <Education 
                             image={ConcordiaDetails.image}
                             qualification={ConcordiaDetails.qualification} 
@@ -27,20 +27,22 @@ const EducationPage = () => {
                             courses={ConcordiaDetails.course}
                             key={ConcordiaDetails.id}
                         />
-                </Col>
+                    </Col>
                 
-                <Col sm={12} md={11} lg={5}>
+                    <Col sm={12} md={11} lg={6} >
                         <Education 
+                            
                             image={CoventryDetails.image}
                             qualification={CoventryDetails.qualification} 
                             instition={CoventryDetails.instition} 
                             address={CoventryDetails.address}
                             modules={true}
-                            visible={true}
-                            bnttitle={"Degree Certificate"}
+                            // visible={true}
+                            // bnttitle={"Degree Certificate"}
                             credLink={"https://credentialsareenv.s3.ca-central-1.amazonaws.com/Degreecertificate.pdf"}
                             courses={CoventryDetails.course}
                             key={CoventryDetails.id}
+                            
                         />
                     </Col>
                 </Row>
@@ -48,7 +50,7 @@ const EducationPage = () => {
                     <h3 style={{marginTop: '2rem'}}>Certifications & Licensing Education </h3>
                     <Row>
 
-                    <Col sm={12} md={12} lg={7} style={{marginBottom: '1rem'}}>
+                    <Col sm={12} md={12} lg={6} style={{marginBottom: '1rem'}}>
                         <Education 
                             image={DockerCertification.image}
                             qualification={DockerCertification.qualification} 
@@ -61,7 +63,7 @@ const EducationPage = () => {
                         />
                     </Col>
 
-                    <Col sm={12} md={12} lg={5}>
+                    <Col sm={12} md={12} lg={6}>
                         <Education 
                             image={AWSCertification.image}
                             qualification={AWSCertification.qualification} 

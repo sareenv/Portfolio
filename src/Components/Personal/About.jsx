@@ -9,9 +9,8 @@ import {ConcordiaDetails,  CoventryDetails} from "./details"
 
 
 const Education = (props) => {
-    return (
-        
-        <Card>
+    return (    
+        <Card style={{display: 'flex', flexType: 'wrap'}}>
                 <Image   className="customThumbnail" src={props.image}></Image>
                 <Card.Body>
                 
