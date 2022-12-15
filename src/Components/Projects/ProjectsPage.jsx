@@ -37,7 +37,12 @@ const ProjectsPage = () => {
                                 </h2>
                                 <p style={{paddingTop: '0.3rem', paddingLeft: '1rem'}}> {featuredProject.description} </p>
                                 {visibility === true && 
-                                    <Link thumbnail={true} className="customLink text-decoration-none" to={"project_details/" + featuredProject.ID} style={{width: '20em', backgroundColor: '#003049', marginLeft: '1rem'}}> View Details </Link>
+                                    <Link thumbnail={true} 
+                                    className="customLink text-decoration-none" 
+                                    to={"project_details/" + featuredProject.ID} 
+                                    style={{width: '10em', 
+                                        backgroundColor: '#003049', 
+                                        marginLeft: '1rem'}}> View Details </Link>
                                 }
                             </div>
                         </Col>
