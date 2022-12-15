@@ -3,7 +3,7 @@ import { useState } from 'react'
 import AnimatedTitles from './AnimatedtTitles'
 import image from '../../../Assets/me.jpeg'
 import { Button, Image } from 'react-bootstrap'
-import { FaGithub, FaLinkedin, FaDiscord } from "react-icons/fa"
+import { FaGithub, FaLinkedin } from "react-icons/fa"
 import {motion} from 'framer-motion'
 import 'bootstrap/dist/css/bootstrap.min.css'
 import '../../../Styles/frontheader.scss'
