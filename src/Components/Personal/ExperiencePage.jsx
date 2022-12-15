@@ -53,7 +53,7 @@ const ExperiencePage = () => {
                         title="Associate Software Engineer"
                         type="Part-time"
                         location="The Enterprise Hub 5, Whitefriars Street, Coventry, United Kingdom"
-                        logo="https://media-exp1.licdn.com/dms/image/C4E0BAQFHIz3iJdalew/company-logo_200_200/0/1646322452937?e=1670457600&v=beta&t=fNjSBVyJ4CIvFoq3b96Hdi3h8kLqh-Iu9kKzusTUL3c"
+                        logo="https://sareenv-projects.s3.amazonaws.com/images/1646322452937.jpeg"
                         description = {[
                             "Managed Development Team of 4 developers across three different time zones ~ Canada, UK and India.",
                             "Developed Mobile Application ~ iOS Application with Swift & MVC architectural pattern",
@@ -72,7 +72,7 @@ const ExperiencePage = () => {
                         title = "Junior Mobile Application Developer"
                         type = "Contract" 
                         location = "SBS Nagar Nawanshahr Punjab (144514), India"
-                        logo="https://media-exp1.licdn.com/dms/image/C560BAQEjCSpbKs2q1g/company-logo_200_200/0/1567672229702?e=1671062400&v=beta&t=7IVTLIm9o425c3izi5Rsy73zKejl20RJAphN2BTYyCA"
+                        logo="https://sareenv-projects.s3.amazonaws.com/images/1567672229702.jpeg"
                         description = {[
                             "Gathered and analyzed the clients requirement to support the functionality for the ordering system.",
                             "Responsible for developing the RESTful APi in Node.js and Express.",
