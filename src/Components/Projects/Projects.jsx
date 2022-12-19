@@ -27,15 +27,14 @@ const Project = (props) => {
         <div className='projectSection'>
                 {props.showTitle && (
                     <div>
-                        <div style={{ display: 'flex', justifyContent: 'center'}}>  
-                            <h3> Featured Projects </h3>
-                            <hr className='customline'/>
-                        </div>
+                        <center>
+                            <h3>Featured Projects</h3>
+                        </center>
 
-                        <div style={{ display: 'flex', marginRight: '4rem'}}>
-                            <a href="/#/projects" style={{marginLeft: 'auto', color: 'black'}}> View All </a>
+                        <div style={{display: 'flex', justifyContent: 'flex-end', paddingRight: '2em'}}>
+                            <a href='/#/projects' style={{color: 'black'}}> View All </a>
                         </div>
-
+                        
                     </div>
                 )}
                 
