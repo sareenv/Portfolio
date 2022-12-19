@@ -16,7 +16,7 @@ const Home = () => {
                 <HeaderFront/>
                     <About/>
                     <div className='projectBase'>
-                        <Project showTitle={true}/>
+                        <Project length={6} showTitle={true}/>
                     </div>
                     <Contact />
                 <Footer />

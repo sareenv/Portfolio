@@ -10,23 +10,33 @@ import '../../Styles/base.scss';
 import Footer from '../Footer';
 import { downloadProject } from '../../Services/Projects';
 
-
 const Project = (props) => {
 
     const [projects, setProjects] = useState([])
+
     useEffect(() => {
         downloadProject().then(items => {
-            setProjects(items.Items)
+            let start = 0;
+            const length = props.length;
+            const data = length != null ? items.Items.slice(start, length) : items.Items
+            setProjects(data)
         })
-    }, [])
+    }, [props.length])
 
     return (
         <div className='projectSection'>
                 {props.showTitle && (
-                    <center>
-                        <h3> Featured Projects </h3>
-                        <hr className='customline'/>
-                    </center>
+                    <div>
+                        <div style={{ display: 'flex', justifyContent: 'center'}}>  
+                            <h3> Featured Projects </h3>
+                            <hr className='customline'/>
+                        </div>
+
+                        <div style={{ display: 'flex', marginRight: '4rem'}}>
+                            <a href="/#/projects" style={{marginLeft: 'auto', color: 'black'}}> View All </a>
+                        </div>
+
+                    </div>
                 )}
                 
               
