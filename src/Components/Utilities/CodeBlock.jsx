@@ -14,7 +14,7 @@ class CodeBlock extends React.Component {
 
     render() {
         return(
-            <div style={{width: '50%', margin: 20}}>
+            <div>
                 <SyntaxHighlighter language={this.state.language} style={docco}>
                     {this.state.code}
                  </SyntaxHighlighter>

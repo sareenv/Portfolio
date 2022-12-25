@@ -9,6 +9,7 @@ import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 import EducationPage from '../Components/Personal/EducationPage'
 import '../Styles/base.scss'
+import Article from '../Components/Articles/Article'
 
 
 const MainRouter = () => {
@@ -40,6 +41,7 @@ const MainRouter = () => {
                     <Route path="/contact" exact component={ContactPage} />
                     <Route path="/services" exact component={Service} />
                     <Route path="/education" exact component={EducationPage} />
+                    <Route path="/articles" exact component={Article} />
                     <Route path="/project_details/:id" exact component={ProjectDetails} />
                 </Switch>
             
