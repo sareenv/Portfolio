@@ -12,6 +12,7 @@
     "axios": "^0.27.2",
     "bootstrap": "^4.6.0",
     "framer-motion": "^4.1.17",
+    "markdown-to-jsx": "^7.1.8",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-bootstrap": "^2.2.0",
