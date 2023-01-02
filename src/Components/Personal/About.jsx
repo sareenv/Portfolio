@@ -11,7 +11,7 @@ import {ConcordiaDetails,  CoventryDetails} from "./details"
 const Education = (props) => {
     return (    
         <Card style={{display: 'flex', flexType: 'wrap'}}>
-                <Image   className="customThumbnail" src={props.image}></Image>
+                <Image className="customThumbnail" src={props.image}></Image>
                 <Card.Body>
                 
                         <span>
@@ -63,8 +63,6 @@ const Education = (props) => {
                     {props.visible === true && 
                         <Button className="customLink" disabled={false} style={{margin: '1rem'}} href={props.credLink}> {props.bnttitle} </Button>
                     }
-
-                    
         </Card>
     )
 }

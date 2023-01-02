@@ -97,11 +97,11 @@ let identification = IdentificationCard(identificationNumber: "40186182")`
 `import Foundation
 
 class IdentificationCard {
+
     let identificationNumber: String
 
     public init(identificationNumber: String) {
         self.identificationNumber = identificationNumber
-
     }
     
     deinit {
