@@ -57,6 +57,7 @@ const ExperiencePage = () => {
                         "Launched new platform features as a mobile developer, collaborating with cross-functional teams, reporting bugs, and adhering to agile methodologies and architecture guidelines.",
                         "Experienced the release for the mobile platform and worked in a fast-paced environment.",
                         "Built new features using FRP Combine framework with SwiftUI and MVVM architecture, while adhering to defined guidelines and collaborating with existing codebase.",
+                        "Performed unit testing using XCTest framework to ensure high-quality and reliable code.",
                         "Reported bugs and participated in code reviews to ensure high-quality code.",
                         "Collaborated on feature development using various technologies such as SwiftUI, UIKit, and Objective-C.",
                         "Experience working on Scrum team with Azure DevOps."
