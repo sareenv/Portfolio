@@ -54,7 +54,7 @@ const ExperiencePage = () => {
                     type = "Internship"
                     location = "4110 Yonge St, North York, ON M2P 2B7"
                     description = {[
-                        "Launched new platform features as a mobile developer, collaborating with cross-functional teams, reporting bugs, and adhering to agile methodologies and architecture guidelines.",
+                        "Implemented new platform features as a mobile developer, while collaborating with cross-functional teams, reporting bugs, and following agile methodologies and architecture guidelines.",
                         "Experienced the release for the mobile platform and worked in a fast-paced environment.",
                         "Built new features using FRP Combine framework with SwiftUI and MVVM architecture, while adhering to defined guidelines and collaborating with existing codebase.",
                         "Performed unit testing using XCTest framework to ensure high-quality and reliable code.",
