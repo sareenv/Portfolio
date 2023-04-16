@@ -10,10 +10,10 @@ import {ConcordiaDetails,  CoventryDetails} from "./details"
 
 const Education = (props) => {
     return (    
-        <Card style={{display: 'flex', flexType: 'wrap'}}>
+        <Card style={{display: 'flex', flexType: 'wrap', alignItems: 'stretch', justifyContent: 'space-around'}}>
                 <Image className="customThumbnail" src={props.image}></Image>
                 <Card.Body>
-                
+                        
                         <span>
                             <div>
                                 <b> Qualification: {props.qualification}</b> 
@@ -23,7 +23,7 @@ const Education = (props) => {
                                 <b> Institution: </b> {props.instition}
                             </div>
 
-                            {props.issued != null && 
+                            { props.issued != null && 
                                 <div>
                                    <b>Issued: </b> {props.issued}
                                 </div>
@@ -61,7 +61,7 @@ const Education = (props) => {
                     </Card.Body>
 
                     {props.visible === true && 
-                        <Button className="customLink" disabled={false} style={{margin: '1rem'}} href={props.credLink}> {props.bnttitle} </Button>
+                        <Button className="link" disabled={false} style={{margin: '1rem'}} href={props.credLink}> {props.bnttitle} </Button>
                     }
         </Card>
     )
@@ -70,9 +70,9 @@ const Education = (props) => {
 
 const About = () => {
     return(
-        <div>
+        <div >
             <Container  style={{marginTop: '2rem'}}> 
-                <Row style={{backgroundColor: 'white'}}>
+                <Row >
                     <Col  sm={12} md={12} lg={5} style={{paddingTop: '3rem'}}>
                         <center>
                         <h2> Education Background </h2>
@@ -100,7 +100,6 @@ const About = () => {
                     </center>
                     </Col>
 
-                   
                     <Col sm={12} md={12} lg={7}>
                         <div className='aboutSection' style={{padding: 0, margin: '1rem'}}>
                             <div style={{display: 'flex', justifyContent: 'center'}}>

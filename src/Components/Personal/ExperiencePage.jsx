@@ -34,9 +34,6 @@ const JobPosition = (props) => {
     </Container>
     )
 }
-
-
-
 const ExperiencePage = () => {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
@@ -46,6 +43,29 @@ const ExperiencePage = () => {
             <h3 style={{marginTop: '2rem'}}> Applied Experience </h3>
             <hr />
             <Row>
+                <Col sm={12} md={12} lg={12} 
+                style={{minHeight: '25rem',
+                 backgroundColor: 'white'}}>
+                 <JobPosition 
+                    logo="https://d3bql97l1ytoxn.cloudfront.net/app_resources/296829/overview/img4479993099242896054-2x.png"
+                    company = "Ceridian Dayforce" 
+                    title = "Mobile Software Developer Intern"
+                    color ="#0072C6"
+                    type = "Internship"
+                    location = "4110 Yonge St, North York, ON M2P 2B7"
+                    description = {[
+                        "Implemented new platform features as a mobile developer, while collaborating with cross-functional teams, reporting bugs, and following agile methodologies and architecture guidelines.",
+                        "Experienced the release for the mobile platform and worked in a fast-paced environment.",
+                        "Built new features using FRP Combine framework with SwiftUI and MVVM architecture, while adhering to defined guidelines and collaborating with existing codebase.",
+                        "Performed unit testing using XCTest framework to ensure high-quality and reliable code.",
+                        "Reported bugs and participated in code reviews to ensure high-quality code.",
+                        "Collaborated on feature development using various technologies such as SwiftUI, UIKit, and Objective-C.",
+                        "Experience working on Scrum team with Azure DevOps."
+                      ]}
+                />
+                
+                </Col>
+
                 <Col  sm={12} md={12} lg={6} style={{backgroundColor: 'white', minHeight: '40rem', marginTop: '2rem'}}>
                     <JobPosition
                         company = "Carrybags Limited"
