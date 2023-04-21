@@ -12,7 +12,6 @@ import '../Styles/base.scss'
 import Show from '../Components/Articles/Show'
 // import Article from '../Components/Articles/Article'
 
-
 const MainRouter = () => {
     return(
         <HashRouter basename='/'>

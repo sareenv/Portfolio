@@ -1,7 +1,6 @@
 import React, {useEffect} from 'react';
-import service from '../../Assets/experience.png'
+import service from '../../Assets/experience.svg'
 import {Row, Col, Container, Table, Image} from 'react-bootstrap'
-import Footer from '../Footer'
 import ReactGA from 'react-ga'
 
 const Service = () => {
@@ -11,7 +10,7 @@ const Service = () => {
     }, [])
 
     return (
-        <Container  style={{marginTop: '1rem'}}>
+        <Container  style={{marginTop: '1rem', padding: '1rem'}}>
             <Row style={{marginBottom: '3rem'}}>
 
                 <Col sm={12} md={12} lg={7} style={{backgroundColor: 'white'}}>
@@ -28,8 +27,22 @@ const Service = () => {
                             </thead>
 
                             <tbody>
+
                             <tr>
-                                
+                                <td>Mobile </td>
+                                <td> iOS </td>
+                                <td>
+                                    <li style={{fontSize: '0.8rem'}}> UIKit </li>
+                                    <li style={{fontSize: '0.8rem'}}> AVKit </li>
+                                    <li style={{fontSize: '0.8rem'}}> Swift UI </li>
+                                    <li style={{fontSize: '0.8rem'}}> MapKit </li>
+                                    <li style={{fontSize: '0.8rem'}}> CoreLocation </li>
+                                    <li style={{fontSize: '0.8rem'}}> CoreData </li>
+                                    <li style={{fontSize: '0.8rem'}}> Combine </li>
+                                </td>
+                            </tr>
+
+                            <tr>
                                 <td>Backend</td>
                                 <td>Node.js </td>
                                 <td>
@@ -52,17 +65,7 @@ const Service = () => {
                                 </td>
                             </tr>
 
-                            <tr>
-                         
-                                <td>Mobile </td>
-                                <td> iOS </td>
-                                <td>
-                                    <li style={{fontSize: '0.8rem'}}> UIKit </li>
-                                    <li style={{fontSize: '0.8rem'}}> AVKit </li>
-                                    <li style={{fontSize: '0.8rem'}}> Swift UI </li>
-                                    <li style={{fontSize: '0.8rem'}}> MapKit </li>
-                                </td>
-                            </tr>
+                            
 
                             <tr>
                   
@@ -124,12 +127,15 @@ const Service = () => {
                     <p style={{textAlign: 'justify'}}>
                         My services includes the <i> FullStack Application development </i> and are adaptive 
                         to the requirments of the project. The application domain of Mobile Application Development is 
-                        area of interest along with the backend development using platforms 
-                        such as <i> Node.js </i> & <i>SpringBoot</i> facilitating the cloud services and 
+                        area of interest in platforms such as <b>iOS</b>, <b>Android</b>, along with the backend development using platforms 
+                        such as <b> Node.js & SpringBoot</b>  facilitating the cloud services and 
                         platforms such as AWS and GCP.
                     </p>
                     
-                    <Image fluid src={service}></Image>
+                    <Container style={{padding: '2rem'}}>
+                        <Image fluid src={service}></Image>
+                    </Container>
+                    
                     <p style={{textAlign: 'justify'}}>
                         The skills mentioned in the section reflect the skills and experience I accumulated from the previously applied expertise in professional or academic settings. I strongly believe in adapting to the requirements of projects and offering the most appropriate development services accordingly. Therefore, open to learning or adapting to the existing or new technology as per the business logic.   
                     </p>
@@ -137,9 +143,7 @@ const Service = () => {
                
             </Row>
 
-            <Row>
-                <Footer></Footer>
-            </Row>
+           
         </Container>
     )
 }
