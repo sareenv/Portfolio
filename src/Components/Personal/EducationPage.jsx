@@ -2,7 +2,6 @@
 import React, {useEffect} from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
 import {Education} from '../Personal/About'
-import Footer from '../Footer';
 import { ConcordiaDetails, AWSCertification, CoventryDetails, DockerCertification } from './details';
 import ReactGA from 'react-ga'
 const EducationPage = () => {
