@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import AnimatedTitles from './AnimatedtTitles'
 import image from '../../../Assets/me.jpeg'
-import { Button, Image } from 'react-bootstrap'
+import { Image } from 'react-bootstrap'
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import {motion} from 'framer-motion'
 import 'bootstrap/dist/css/bootstrap.min.css'
