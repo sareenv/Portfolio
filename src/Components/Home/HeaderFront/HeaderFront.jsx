@@ -27,10 +27,10 @@ const HeaderFront = () => {
                         <h3 style = {{color: '#f1faee', marginTop: 15}}> Vinayak Sareen  </h3>
                     </div>
                     <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em', textAlign: 'center'}}> 
-                         I'm enthusiastic Masters (MEng) Student at Concordia University </p>
+                    MEng Graduate from Concordia, fueled by enthusiasm, crafting mobile app solutions as a Developer Associate at Ceridian. </p>
                 </div>
                 <AnimatedTitles /> 
-                <Button style={{display: "hidden"}} variant="light" href="https://credentialsareenv.s3.ca-central-1.amazonaws.com/Resume.pdf"> <span style={{fontSize: '1em', display: 'hidden'}} role="img" aria-label="cv"> 🧑‍💻  </span> Resume </Button> 
+              
             </div>
             <div style={{color: 'white', display: 'flex', marginTop: -40, justifyContent: 'flex-end', marginRight: 10}}> 
                 <a style={{textDecoration: 'none', color: 'white'}} href="https://github.com/sareenv"> <FaGithub style = {{marginRight: 15, fontSize: 20}}/> </a>
