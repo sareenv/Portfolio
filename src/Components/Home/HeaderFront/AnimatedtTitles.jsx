@@ -10,7 +10,8 @@ const AnimatedTitles = () => {
                     'iOS Application',
                     'Java Application',
                     'Backend', 
-                    'FullStack'
+                    'FullStack', 
+                    'Software'
                 ]}
                 typeSpeed={40}
                 loop

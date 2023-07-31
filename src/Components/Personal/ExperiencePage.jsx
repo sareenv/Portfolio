@@ -43,7 +43,30 @@ const ExperiencePage = () => {
             <h3 style={{marginTop: '2rem'}}> Applied Experience </h3>
             <hr />
             <Row>
-                <Col sm={12} md={12} lg={12} 
+
+            <Col sm={12} md={12} lg={6} 
+            style={{minHeight: '25rem',
+             backgroundColor: 'white'}}>
+             <JobPosition 
+                logo="https://d3bql97l1ytoxn.cloudfront.net/app_resources/296829/overview/img4479993099242896054-2x.png"
+                company = "Ceridian Dayforce" 
+                title = "Mobile Software Developer Associate"
+                color ="#0072C6"
+                type = "Full-time"
+                location = "4110 Yonge St, North York, ON M2P 2B7"
+                description = {[
+                    "Designing and implementing new development projects and completing and augmenting the current solutions and services",
+                    "Collaborating with Product Managers, Developers, Technical Writing and Quality Assurance throughout the development process to ensure the product is functionally complete and technically solid;", 
+                    "Analyzing, designing, prototyping, developing, testing, and supporting the application - the complete software lifecycle", 
+                    "Working with clients, prospects, implementation partners, and Dayforce personnel to envision and deliver the required functionality", 
+                    "Creating and enhancing a scalable enterprise application for the mobile devices", 
+                    "Assessing risks and impacts on the existing system, as new functions are added."
+                ]}
+            />
+            
+            </Col>
+
+                <Col sm={12} md={12} lg={6} 
                 style={{minHeight: '25rem',
                  backgroundColor: 'white'}}>
                  <JobPosition 
@@ -60,7 +83,6 @@ const ExperiencePage = () => {
                         "Performed unit testing using XCTest framework to ensure high-quality and reliable code.",
                         "Reported bugs and participated in code reviews to ensure high-quality code.",
                         "Collaborated on feature development using various technologies such as SwiftUI, UIKit, and Objective-C.",
-                        "Experience working on Scrum team with Azure DevOps."
                       ]}
                 />
                 

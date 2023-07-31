@@ -10,7 +10,8 @@ import {ConcordiaDetails,  CoventryDetails} from "./details"
 
 const Education = (props) => {
     return (    
-        <Card style={{display: 'flex', flexType: 'wrap', alignItems: 'stretch', justifyContent: 'space-around'}}>
+        <Card style={{display: 'flex', flexType: 'wrap', alignItems: 'stretch', 
+        justifyContent: 'space-around', minHeight: props.visible === true ? '26rem': 'auto'}}>
                 <Image className="customThumbnail" src={props.image}></Image>
                 <Card.Body>
                         
@@ -58,11 +59,11 @@ const Education = (props) => {
                             }       
                         </span>
 
-                    </Card.Body>
+                </Card.Body>
 
-                    {props.visible === true && 
-                        <Button className="link" disabled={false} style={{margin: '1rem'}} href={props.credLink}> {props.bnttitle} </Button>
-                    }
+            {props.visible === true && 
+                <Button disabled={false} style={{margin: '0.5rem'}} href={props.credLink}> {props.bnttitle} </Button>
+            }
         </Card>
     )
 }
