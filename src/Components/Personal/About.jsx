@@ -1,4 +1,4 @@
-import React  from "react";
+import React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
@@ -46,14 +46,19 @@ const Education = (props) => {
                             
                             {props.modules === true &&
                                 <div>
-                                <Card.Header style={{marginTop: '1rem'}}><b>Relevant Modules </b></Card.Header>
+                                <Card.Header style={{marginTop: '1rem'}}>
+                                    <span>
+                                    <b>Relevant Modules </b>
+                                    </span>
+                                    
+                                </Card.Header>
+                                    
                                     <ListGroup variant="flush">
-                                        {props.courses != null && props.courses.map(function(course) {
+                                        { props.courses != null && props.courses.map(function(course) {
                                             return (
                                                 <ListGroup.Item key={course.id}> • {course} </ListGroup.Item>
                                             ) 
                                         })}
-                                        
                                     </ListGroup>
                                 </div>
                             }       
@@ -61,7 +66,7 @@ const Education = (props) => {
 
                 </Card.Body>
 
-            {props.visible === true && 
+            {props.visible === true &&
                 <Button disabled={false} style={{margin: '0.5rem'}} href={props.credLink}> {props.bnttitle} </Button>
             }
         </Card>

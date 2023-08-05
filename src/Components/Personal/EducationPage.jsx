@@ -2,7 +2,8 @@
 import React, {useEffect} from 'react';
 import {Container, Row, Col} from 'react-bootstrap'
 import {Education} from '../Personal/About'
-import { ConcordiaDetails, AWSCertification, CoventryDetails, DockerCertification } from './details';
+import { ConcordiaDetails, AWSCertification, 
+    CoventryDetails, DockerCertification } from './details';
 import ReactGA from 'react-ga'
 const EducationPage = () => {
 
@@ -48,9 +49,9 @@ const EducationPage = () => {
                 </Row>
                 <h3 style={{marginTop: '2rem'}}> Certifications </h3>
                 <hr/>
-                <Row>
+                <Row style={{minHeight: '20rem', backgroundColor: 'whitesmoke', padding: '1rem'}}>
 
-                <Col sm={12} md={12} lg={6} style={{marginTop: '1rem'}}>
+                <Col sm={12} md={12} lg={4} style={{marginTop: '1rem'}}>
                     <Education 
                         image={AWSCertification.image}
                         qualification={AWSCertification.qualification} 
@@ -62,18 +63,18 @@ const EducationPage = () => {
                     />
                 </Col>
                     
-                    <Col sm={12} md={12} lg={6} style={{marginTop: '1rem'}}>
-                        <Education 
-                            image={DockerCertification.image}
-                            qualification={DockerCertification.qualification} 
-                            instition={DockerCertification.instition} 
-                            visible={true}
-                            bnttitle={'View Credentials'}
-                            credLink={DockerCertification.credLink}
-                            issued={DockerCertification.issued}
-                            certificateID={DockerCertification.certificateID}
-                        />
-                    </Col>
+                <Col sm={12} md={12} lg={4} style={{marginTop: '1rem'}}>
+                    <Education 
+                        image={DockerCertification.image}
+                        qualification={DockerCertification.qualification} 
+                        instition={DockerCertification.instition} 
+                        visible={true}
+                        bnttitle={'View Credentials'}
+                        credLink={DockerCertification.credLink}
+                        issued={DockerCertification.issued}
+                        certificateID={DockerCertification.certificateID}
+                    />
+                </Col>
             
                 
                 
