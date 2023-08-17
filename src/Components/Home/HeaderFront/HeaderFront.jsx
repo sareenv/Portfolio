@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import AnimatedTitles from './AnimatedtTitles'
 import image from '../../../Assets/me.jpeg'
-import { Image } from 'react-bootstrap'
+import { Button, Image } from 'react-bootstrap'
 import { FaGithub, FaLinkedin } from "react-icons/fa"
 import {motion} from 'framer-motion'
 import 'bootstrap/dist/css/bootstrap.min.css'
@@ -27,10 +27,10 @@ const HeaderFront = () => {
                         <h3 style = {{color: '#f1faee', marginTop: 15}}> Vinayak Sareen  </h3>
                     </div>
                     <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em', textAlign: 'center'}}> 
-                    MEng Graduate from Concordia, fueled by enthusiasm, crafting mobile app solutions as a Developer Associate at Ceridian. </p>
+                    MEng Graduate from Concordia, fueled by enthusiasm, crafting Software Solutions. </p>
                 </div>
                 <AnimatedTitles /> 
-              
+                <Button style={{display: "hidden"}} variant="light" href="https://credentialsareenv.s3.ca-central-1.amazonaws.com/Resume.pdf"> <span style={{fontSize: '1em', display: 'hidden'}} role="img" aria-label="cv"> 🧑‍💻  </span> Resume </Button> 
             </div>
             <div style={{color: 'white', display: 'flex', marginTop: -40, justifyContent: 'flex-end', marginRight: 10}}> 
                 <a style={{textDecoration: 'none', color: 'white'}} href="https://github.com/sareenv"> <FaGithub style = {{marginRight: 15, fontSize: 20}}/> </a>
