@@ -46,7 +46,7 @@ const ExperiencePage = () => {
 
             <Col sm={12} md={12} lg={6} 
             style={{minHeight: '25rem',
-             backgroundColor: 'white'}}>
+             backgroundColor: 'white', marginTop: '2rem'}}>
              <JobPosition 
                 logo="https://d3bql97l1ytoxn.cloudfront.net/app_resources/296829/overview/img4479993099242896054-2x.png"
                 company = "Ceridian Dayforce" 
@@ -68,7 +68,7 @@ const ExperiencePage = () => {
 
                 <Col sm={12} md={12} lg={6} 
                 style={{minHeight: '25rem',
-                 backgroundColor: 'white'}}>
+                 backgroundColor: 'white', marginTop: '2rem'}}>
                  <JobPosition 
                     logo="https://d3bql97l1ytoxn.cloudfront.net/app_resources/296829/overview/img4479993099242896054-2x.png"
                     company = "Ceridian Dayforce" 
