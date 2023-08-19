@@ -1,0 +1,50 @@
+$baseColor: #014f78;
+
+.positionContainer {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-radius: 10;
+    margin-top: 1rem;
+}
+
+.progressCircle {
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    background-color: gray;
+}
+
+.activeProgressCircle {
+    min-height: 10px;
+    min-width: 10px;
+    border-radius: 50%;
+    background-color: $baseColor;
+}
+
+
+.positionTitle {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+    align-items: baseline;
+}
+
+.titleDescriptionColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+.positionDescription {
+    color: gray;
+}
+
+.projectDescriptionAndStatus {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    margin-bottom: 0.7rem;
+}
