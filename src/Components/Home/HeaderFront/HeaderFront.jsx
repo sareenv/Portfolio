@@ -30,7 +30,10 @@ const HeaderFront = () => {
                     MEng Graduate from Concordia, fueled by enthusiasm, crafting Software Solutions. </p>
                 </div>
                 <AnimatedTitles /> 
-                <Button style={{display: "hidden"}} variant="light" href="https://credentialsareenv.s3.ca-central-1.amazonaws.com/Resume.pdf"> <span style={{fontSize: '1em', display: 'hidden'}} role="img" aria-label="cv"> 🧑‍💻  </span> Resume </Button> 
+                <Button className="resumeBtn" style={{display: "hidden"}} 
+                variant="light" 
+                href="https://credentialsareenv.s3.ca-central-1.amazonaws.com/Resume.pdf"> <span style={{fontSize: '1em', display: 'hidden'}} 
+                role="img" aria-label="cv"> 🧑‍💻  </span> Resume </Button> 
             </div>
             <div style={{color: 'white', display: 'flex', marginTop: -40, justifyContent: 'flex-end', marginRight: 10}}> 
                 <a style={{textDecoration: 'none', color: 'white'}} href="https://github.com/sareenv"> <FaGithub style = {{marginRight: 15, fontSize: 20}}/> </a>

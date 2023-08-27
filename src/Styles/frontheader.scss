@@ -3,7 +3,7 @@ $baseNavColor: #1b1b2f;
 .frontheader {
     background-color: #003049;
     // background-image: url("https://images.unsplash.com/photo-1504639725590-34d0984388bd?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80");
-    min-height: 400;
+    min-height: 500;
     display: flex;
 
     align-items: center;
@@ -12,13 +12,21 @@ $baseNavColor: #1b1b2f;
     padding: 10px;
 }
 
-.resumeBtn {
-    background-color: $baseNavColor;
-}
-
 .circularimage {
     width: 150px;
     height: 150px;
     border-radius: 100px;
     margin-top: 25px;
+}
+
+@media screen and (max-device-width: 420px){
+    .frontheader {
+        min-height: 60vh;
+        min-width: 100%;
+    }
+    .resumeBtn {
+        min-width: 40vw;
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
 }
