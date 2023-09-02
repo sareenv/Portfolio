@@ -103,8 +103,7 @@ const ExperiencePage = () => {
             <Row >
             <Col sm={12} md={12} lg = {12}>
             <div>
-            <div style={{
-                backgroundColor: "#0072C6", 
+            <div className="backgroundGradient" style={{
                 display: 'flex', 
                 justifyContent: 'center', 
                 paddingTop: '1rem', 
