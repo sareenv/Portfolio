@@ -58,5 +58,26 @@ const DockerCertification = {
     certificateID: "UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a"
 }
 
+const JiraCertification = {
+    instition: 'Ceridian Dayforce Learning',
+    qualification: 'Jira at Ceridian',
+    id: '5',
+    image: 'https://cdn.icon-icons.com/icons2/3053/PNG/512/jira_cloud_macos_bigsur_icon_190051.png',
+    credLink: "",
+    issued: "Sept 2023",
+    certificateID: ""
+}
 
-export {ConcordiaDetails, CoventryDetails, AWSCertification, DockerCertification};
+const GraphQLCertification = {
+    instition: 'Udemy e-Learning',
+    qualification: 'GraphQL',
+    id: '6',
+    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png',
+    credLink: "",
+    issued: "In Progress",
+    certificateID: "UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a"
+}
+
+
+export {ConcordiaDetails, CoventryDetails, AWSCertification, 
+    DockerCertification, JiraCertification, GraphQLCertification};

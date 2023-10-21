@@ -9,7 +9,7 @@ import ProjectsPage from '../Components/Projects/ProjectsPage'
 import { Navbar, Nav, Button } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
-import EducationPage from '../Components/Personal/EducationPage'
+import EducationPage from '../Components/Personal/Education/EducationPage'
 
 // CSS Imports .
 import '../Styles/base.scss'
@@ -44,8 +44,6 @@ const MainRouter = () => {
                     <Route path="/education" exact component={EducationPage} />
                     <Route path="/project_details/:id" exact component={ProjectDetails} />
                 </Switch>
-            
-
         </HashRouter>
     )
 }

@@ -153,7 +153,6 @@ const ExperiencePage = () => {
                 
                 <Col style={{backgroundColor: 'white'}}>
                     <h3 style={{textAlign: "start", paddingLeft: '2rem', paddingTop: '1rem'}}>Swift India Developer Conference</h3>
-                    <hr />
                     <ul>
                         <li> Actively participated in the developer conference in 2018 where iOS application developer across India participated to gain key topics and improvments in the latest iOS development features.</li>
                         <li> Meet renowned iOS expert and gained industry knowledge on various iOS frameworks such as SwiftUI, CompositionalLayout, Reactive Combine Framework, Storage Presistence. </li>
@@ -170,7 +169,6 @@ const ExperiencePage = () => {
                 
                 <Col style={{backgroundColor: 'white'}}>
                     <h3 style={{textAlign: "start", paddingLeft: '2rem', paddingTop: '1rem'}}>CovHack 2020</h3>
-                    <hr />
                     <ul>
                        <li>Collaborated with other 4 team members from different universities based in the United Kingdom</li> 
                        <li>Developed Chrome extension for profanity detection using core javascript which interacts with Django REST-API</li>
