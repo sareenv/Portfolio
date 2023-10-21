@@ -81,9 +81,6 @@ const ProjectDetails = (props) => {
                             
                         })()}
 
-                       
-
-
                         <span>
 
                                 <Button

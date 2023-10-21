@@ -1,11 +1,12 @@
 
 import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
-import { Education } from '../Personal/About'
+import Education from '../Education/Education'
 import {
     ConcordiaDetails, AWSCertification,
-    CoventryDetails, DockerCertification
-} from './details';
+    CoventryDetails, DockerCertification, 
+    JiraCertification, GraphQLCertification
+} from '../details';
 import ReactGA from 'react-ga'
 const EducationPage = () => {
 
@@ -14,9 +15,9 @@ const EducationPage = () => {
     }, [])
 
     return (
-        <div style={{ backgroundColor: 'white', paddingBottom: '2rem' }}>
+        <div style={{ backgroundColor: 'white', paddingBottom: '2rem', borderRadius: '0.3rem' }}>
             <Container style={{ marginTop: '2rem' }}>
-                <h3 style={{ marginTop: '2rem' }}>Higher Education & Certifications</h3> <hr />
+                <h3 style={{ marginTop: '2rem' }}>Higher Education</h3> <hr />
                 
                 <Row style={{backgroundColor: 'whitesmoke', padding: '0.4rem', paddingBottom: '1rem' }}>
                     <Col sm={12} md={12} lg={6} style={{ marginTop: '1rem' }}>
@@ -47,9 +48,11 @@ const EducationPage = () => {
                         />
                     </Col>
                 </Row>
+                <h3 style={{ marginTop: '2rem' }}> Certifications </h3> <hr />
+                
                 <Row  style={{backgroundColor: 'whitesmoke', marginTop: '1rem', 
-                    borderRadius: '0.3rem', paddingBottom: '1rem' }}>
-                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }}>
+                    borderRadius: '0.3rem', paddingBottom: '1rem'}}>
+                    <Col sm={12} md={12} lg={4}  style={{ marginTop: '1rem' }}>
                         <Education
                             image={AWSCertification.image}
                             qualification={AWSCertification.qualification}
@@ -62,7 +65,7 @@ const EducationPage = () => {
                     </Col>
 
 
-                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }}>
+                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }} >
                         <Education
                             image={DockerCertification.image}
                             qualification={DockerCertification.qualification}
@@ -75,7 +78,29 @@ const EducationPage = () => {
                         />
                     </Col>
 
-                    
+                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }} >
+                        <Education
+                            image={GraphQLCertification.image}
+                            qualification={GraphQLCertification.qualification}
+                            instition={GraphQLCertification.instition}
+                            visible={true}
+                            bnttitle={'View Credentials'}
+                            credLink={undefined}
+                            issued={GraphQLCertification.issued}
+                        />
+                    </Col>
+
+                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }} >
+                        <Education
+                            image={JiraCertification.image}
+                            qualification={JiraCertification.qualification}
+                            instition={JiraCertification.instition}
+                            visible={true}
+                            bnttitle={'View Credentials'}
+                            credLink={undefined}
+                            issued={JiraCertification.issued}
+                        />
+                    </Col>
                 </Row>
             </Container>
 

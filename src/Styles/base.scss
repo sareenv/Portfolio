@@ -87,19 +87,18 @@ html {
     align-items: center;
     text-align: center;
     background-color: #003049;
-    outline-color: red;
     color: white;
     font-weight: 400;
     text-decoration: none;
     outline: none;
     padding: 0.5rem;
-    
+    border: none;
 }
 
 .customLink:hover {
+    border: none;
     background-color:#003049;
     color: white;
-    outline-color: red;
 }
 
 

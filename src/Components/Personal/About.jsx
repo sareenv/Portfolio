@@ -2,82 +2,11 @@ import React from "react";
 import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
-import Badge from '../Utilities/Badge'
-import '../../Styles/about.scss'
-import '../../Styles/base.scss'
-import { Button, Card, Image, ListGroup } from "react-bootstrap";
+import Education from "./Education/Education";
+import "../../Styles/about.scss"
+import "../../Styles/base.scss"
+
 import { ConcordiaDetails, CoventryDetails } from "./details"
-
-
-const Education = (props) => {
-    return (
-        <Card style={{
-            display: 'flex', flexType: 'wrap',
-            justifyContent: 'space-around',
-            minHeight: props.visible === true ? '26rem' : 'auto', 
-            textAlign: 'center'
-        }}
-        >
-            <Image className="customThumbnail" src={props.image} style={{maxHeight: props.isHE === true ? '100px': 'auto'}} />
-            <Card.Body>
-                <span>
-                    <div>
-                        <h5> {props.qualification} </h5>
-                    </div>
-
-                    <div>
-                        {props.instition}
-                    </div>
-
-                    {props.issued != null &&
-                        <div>
-                            <Badge tag= {props.issued}/>
-                        </div>
-                    }
-
-                    {
-                        props.certificateID != null &&
-                        <div>
-                            <b>Credential ID:</b> {props.certificateID}
-                        </div>
-                    }
-
-
-                    {props.address != null &&
-                        <div>
-                            {props.address}
-                        </div>
-                    }
-
-                    {props.modules === true &&
-                        <div>
-                            <Card.Header style={{ marginTop: '1rem' }}>
-                                <span>
-                                    <b>Relevant Modules </b>
-                                </span>
-
-                            </Card.Header>
-
-                            <ListGroup variant="flush">
-                                {props.courses != null && props.courses.map(function (course) {
-                                    return (
-                                        <ListGroup.Item key={course.id}> • {course} </ListGroup.Item>
-                                    )
-                                })}
-                            </ListGroup>
-                        </div>
-                    }
-                </span>
-
-            </Card.Body>
-
-            {props.visible === true &&
-                <Button disabled={false} style={{ margin: '0.5rem' }} href={props.credLink}> {props.bnttitle} </Button>
-            }
-        </Card>
-    )
-}
-
 
 const About = () => {
     return (
@@ -140,4 +69,3 @@ const About = () => {
 }
 
 export default About
-export { Education }
