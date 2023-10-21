@@ -1,6 +1,6 @@
 import React, {useEffect} from 'react'
 import {Container, Row, Col, Image, ListGroup} from 'react-bootstrap'
-import Badge from '../Utilities/Badge';
+import ProgressJobPosition from '../Utilities/JobPositionProgress'
 import Contact from '../Contact/Contact'
 import ReactGA from 'react-ga'
 import '../../Styles/experience.scss'
@@ -37,59 +37,7 @@ const JobPosition = (props) => {
     )
 }
 
-const ProgressJobPosition = (props) => {
-    return (
-        
-        <div className= "positionContainer">
-                {props.progress.map((progress) => {
-                    return (
-                    <div className='positionContainer'>
-                        <div className="positionTitle">
-                            {(() => {
-                                if (progress !== undefined && progress.isLastPosition) {
-                                    return (
-                                        <div className="activeProgressCircle"/>
-                                    )
-                                } else {
-                                    return (
-                                        <div className="progressCircle" />
-                                    )
-                                }
-                            })()}
 
-                            <div className="titleDescriptionColumn">
-                            <ListGroup >
-                            
-                                <h5>{progress.title} </h5>
-                                    <div className="projectDescriptionAndStatus"> 
-                                        <Badge tag={progress.type}/> 
-                                        <i style={{color: "gray"}}>{progress.dates} </i>
-                                    </div>
-
-                                    <ul style={{textBreak: 'break-all', padding: '0.3rem'}}>
-                                        {progress.desc.map((description) => {
-                                            return <li> {description} </li>
-                                        })}
-                                    </ul>
-                             
-                                </ListGroup>
-                            </div>
-                            
-                        </div>
-                        {(() => {
-                            if (progress.showVerticleLine === true) {
-                                return (
-                                    <div className='hline' />
-                                )
-                            } else {
-                                return <div/>
-                            } 
-                        })()}
-                    </div>)
-                })}
-        </div>
-    )
-}
 
 
 const ExperiencePage = () => {
@@ -113,7 +61,8 @@ const ExperiencePage = () => {
             </div>
             {/* Progress Job Position Component */}
                 
-                <ProgressJobPosition progress={
+                <ProgressJobPosition 
+                    progress={
                     [
                         {
                             title: "Mobile Software Developer Associate",
@@ -146,7 +95,9 @@ const ExperiencePage = () => {
                             type: "Internship", 
                             dates: "Jan - Apr (2023)"
                         }
-                ]}/>
+                    ]
+                    }
+                />
                 </div>
             </Col>
                 
