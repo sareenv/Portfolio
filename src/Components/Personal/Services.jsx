@@ -1,13 +1,18 @@
 import React, {useEffect} from 'react';
-import service from '../../Assets/experience.svg'
-import {Row, Col, Container, Table, Image} from 'react-bootstrap'
+import service from '../../Assets/experience.png'
+import SkillsServices from './SkillsServices'
+import {Row, Col, Container, Image, Button} from 'react-bootstrap'
 import ReactGA from 'react-ga'
 
 const Service = () => {
-
+    
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, [])
+
+    const handleBookConsultation = () => {
+        window.open("https://calendly.com/contact-sareenv/consultation-session", "_blank")
+    }
 
     return (
         <Container  style={{marginTop: '1rem', padding: '1rem'}}>
@@ -17,136 +22,34 @@ const Service = () => {
             <Col sm={12} md={12} lg={12} style={{backgroundColor: 'white'}}>
             <h3> Services Information </h3>
             <hr />
-            <Container>
-                <p style={{textAlign: 'justify'}}>
-                    I specialize in <i> FullStack Application development </i>, providing adaptable solutions tailored to 
-                    the unique requirements of each project. My expertise encompasses the realm 
-                    of Mobile Application Development, with a focus on prominent platforms like <b>iOS </b> and <b>Android</b>. 
-                    I am also well-versed in backend development using platforms such as <b>Node.js and SpringBoot</b>, leveraging their capabilities to integrate 
-                    seamlessly with cloud services like AWS and GCP.
-                </p>
-            </Container>
-            
-            <Container style={{padding: '2rem'}}>
-                <Image fluid src={service} className= "d-block mx-auto img-fluid w-50" />
-            </Container>
-            
-            <p style={{textAlign: 'justify'}}>
-                The skills mentioned in the section reflect the skills and experience I accumulated from the previously applied expertise in professional or academic settings. I strongly believe in adapting to the requirements of projects and offering the most appropriate development services accordingly. Therefore, open to learning or adapting to the existing or new technology as per the business logic.   
-            </p>
-        </Col>
-        <Col sm={12} md={12} lg={12} style={{backgroundColor: 'white'}}>
-        <h4 style={{paddingTop: '1rem'}}> Skills & Services </h4>
-        <hr/>
+            <Row>
+                <Col sm={12} md={12} lg={6}>
+                <Image fluid src={service} className= "d-block mx-auto img-fluid w-40 h-10" />
+                </Col>
 
-        <Table variant='light' striped>
-            <thead>
-                <tr>
-                    <th>Type</th>
-                    <th>Specifics</th>
-                    <th>Experience</th>
-                </tr>
-            </thead>
-
-            <tbody>
-
-            <tr>
-                <td>Mobile </td>
-                <td> iOS </td>
-                <td>
-                    <li style={{fontSize: '0.8rem'}}> UIKit </li>
-                    <li style={{fontSize: '0.8rem'}}> AVKit </li>
-                    <li style={{fontSize: '0.8rem'}}> Swift UI </li>
-                    <li style={{fontSize: '0.8rem'}}> MapKit </li>
-                    <li style={{fontSize: '0.8rem'}}> CoreLocation </li>
-                    <li style={{fontSize: '0.8rem'}}> CoreData </li>
-                    <li style={{fontSize: '0.8rem'}}> Combine </li>
-                </td>
-            </tr>
-
-            <tr>
-                <td>Backend</td>
-                <td>Node.js </td>
-                <td>
-                    <li style={{fontSize: '0.8rem'}}>Express</li>
-                    <li style={{fontSize: '0.8rem'}}>Koa</li>
-                    <li style={{fontSize: '0.8rem'}}>REST API</li>
-                    <li style={{fontSize: '0.8rem'}}>OAuth</li>
-                    <li style={{fontSize: '0.8rem'}}>GraphQL</li>
-                </td>
-            </tr>
-
-            <tr>
-        
-                <td>Frontend</td>
-                <td> React </td>
-                <td>
-                    <li style={{fontSize: '0.8rem'}}> Redux </li>
-                    <li style={{fontSize: '0.8rem'}}> Context </li>
-                    <li style={{fontSize: '0.8rem'}}> Hooks </li>
-                </td>
-            </tr>
-
-            
-
-            <tr>
-
-                <td>Automated Testing </td>
-                <td> Unit Testing </td>
-                <td>
-                    <li style={{fontSize: '0.8rem'}}> JUnit </li> 
-                    <li style={{fontSize: '0.8rem'}}> Jest </li>
-                    <li style={{fontSize: '0.8rem'}}> XCTest </li>
-                </td>
-            </tr>
-
-            <tr>
-    
-                <td>Devops </td>
-                <td> <i> NA </i> </td>
-                <td>
-                    <li style={{fontSize: '0.8rem'}}> AWS </li>
-                    <li style={{fontSize: '0.8rem'}}> Docker </li>
-                    <li style={{fontSize: '0.8rem'}}> K8S Basic </li>
-                    <li style={{fontSize: '0.8rem'}}> GitHub Actions </li>
-                </td>
-            </tr>
-
-
-            <tr>
-        
-                <td> Datastores </td>
-                <td> DBMS </td>
-                <td>
-                    <li style={{fontSize: '0.8rem'}}> MySQL </li>
-                    <li style={{fontSize: '0.8rem'}}> Postgres</li>
-                    <li style={{fontSize: '0.8rem'}}> MongoDB </li>
-                    <li style={{fontSize: '0.8rem'}}> DynamoDB</li>
-                </td>
-            </tr>
-
-
-            <tr>
-                <td> Miscellaneous </td>
-                <td> NA </td>
-                <td>
-                    <li style={{fontSize: '0.8rem'}}> Firebase </li>
-                    <li style={{fontSize: '0.8rem'}}> Postman </li>
-                    <li style={{fontSize: '0.8rem'}}> Zoho </li>
-                    <li style={{fontSize: '0.8rem'}}> Git </li>
-                </td>
-            </tr>
-
-        </tbody>
-    
-        </Table>
-
-        </Col>
+                <Col sm={12} md={12} lg={6}>
+                    <h3>Full Stack Software Developer </h3>
+                    <p style={{color: "gray"}}> 
+                        Freelance Coding Expertise, Just a Click Away. </p>
+                    <p style={{textAlign: 'justify', marginTop: '1rem'}}>
+                    I am a seasoned FullStack Application Developer, committed to delivering versatile and customized solutions for a diverse range of projects. My expertise spans across the dynamic field of Mobile Application Development, with a specialized focus on leading platforms such as iOS and Android. In addition to this, my proficiency extends to backend development, particularly using Node.js. This skill enables me to create solutions that integrate smoothly with advanced cloud services, including AWS and Google Cloud Platform.
+                    </p>
+                    <p style={{textAlign: 'justify', marginTop: '1rem'}}>
+                        My skill set is a culmination of extensive experience and knowledge gained through professional and academic pursuits in the field of software development. I pride myself on my ability to adapt to the unique requirements of each project, ensuring that the technology and approaches I employ are perfectly aligned with the project's needs and business logic. I am always eager to embrace new challenges and am fully open to learning and adapting new or existing technologies to deliver the most effective and efficient solutions to my clients.
+                    </p>
+                    <Button style={{width: '100%'}} onClick={handleBookConsultation}>Book Consultation</Button>
+                </Col>
+                </Row>
                 
-               
+            </Col>        
             </Row>
 
-           
+            <Row>
+                <Col sm={12} md={12} lg={12}>
+                    <SkillsServices/>
+                </Col>
+            </Row>
+            
         </Container>
     )
 }
