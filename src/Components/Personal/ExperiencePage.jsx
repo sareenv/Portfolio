@@ -44,7 +44,7 @@ const ExperiencePage = () => {
     }, [])
     return(
             <Container style={{marginTop: '0.1rem'}}>
-            <h3 style={{marginTop: '2rem'}}> Applied Experience </h3>
+            <h3 style={{marginTop: '2rem'}}> Professional Experience </h3>
             <hr />
             <Row >
             <Col sm={12} md={12} lg = {12}>
