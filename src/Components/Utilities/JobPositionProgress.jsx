@@ -6,12 +6,6 @@ import '../../Styles/experience.scss'
 
 /// A utility method which creates a component to show the progress bar for the job description.
 const ProgressJobPosition = (props) => {
-	
-	const appStoreLink  = "https://apps.apple.com/us/app/dayforce/id456073226"
-
-	const handleButtonClick = () => {
-		window.location.href = appStoreLink;
-	 }
 
 	return (
 		<div className="positionContainer">
@@ -31,9 +25,7 @@ const ProgressJobPosition = (props) => {
 									)
 								}
 							})()}
-
 							
-
 							<div className="titleDescriptionColumn">
 								<ListGroup >
 
