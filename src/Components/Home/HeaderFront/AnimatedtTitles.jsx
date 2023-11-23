@@ -9,7 +9,7 @@ const AnimatedTitles = () => {
                 strings={[
                     'iOS Application',
                     'Java Application',
-                    'Backend', 
+                    'Backend APi', 
                     'FullStack', 
                     'Software'
                 ]}

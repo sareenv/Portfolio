@@ -52,3 +52,22 @@ $baseColor: #014f78;
 .backgroundGradient {
     background-image: linear-gradient(25deg, rgb(0, 114, 198), rgb(114, 0, 198));
 }
+
+.containerBox {
+    background-color: white;
+    width: 100%;
+    display: flex;
+    justify-content: left;
+    align-items: center;
+}
+
+
+@media screen and (max-device-width: 990px){
+    .containerBox {
+        background-color: white;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

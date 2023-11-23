@@ -38,8 +38,6 @@ const JobPosition = (props) => {
 }
 
 
-
-
 const ExperiencePage = () => {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
@@ -67,6 +65,7 @@ const ExperiencePage = () => {
                         {
                             title: "Mobile Software Developer Associate",
                             desc: [
+                                
                                 "Designing and implementing new development projects and completing and augmenting the current solutions and services",
                                 "Unified effort: Product, Dev, Tech Writers, QA ensure thorough, solid product development.",
                                 "Analyzing, designing, prototyping, developing, testing, and supporting the application - the complete software lifecycle.", 
@@ -77,18 +76,19 @@ const ExperiencePage = () => {
                             showVerticleLine: true, 
                             isLastPosition: true, 
                             type: "Full-Time", 
-                            dates: "May(2023) - Present"
+                            dates: "July(2023) - Present"
                         }, 
     
                         {
                             title: "Mobile Software Developer Intern",
                             desc: [
-                                "Implemented new platform features as a mobile developer, while collaborating with cross-functional teams, reporting bugs, and following agile methodologies and architecture guidelines.",
-                                "Experienced the release for the mobile platform and worked in a fast-paced environment.",
-                                "Built new features using FRP Combine framework with SwiftUI and MVVM architecture, while adhering to defined guidelines and collaborating with existing codebase.", 
-                                "Performed unit testing using XCTest framework to ensure high-quality and reliable code.",
-                                "Reported bugs and participated in code reviews to ensure high-quality code.", 
-                                "Collaborated on feature development using various technologies such as SwiftUI, UIKit, and Objective-C."
+                                "Developed and implemented new platform features, collaborating with cross-functional teams to enhance mobile applications.",
+                                "Engaged in agile methodologies and architecture guidelines, ensuring efficient and structured development processes.",
+                                "Played a key role in the release of significant updates for the mobile platform, adapting to a dynamic and fast-paced work environment.", 
+                                "Built and integrated new features using FRP Combine framework in conjunction with SwiftUI and MVVM architecture, ensuring seamless integration with the existing codebase.",
+                                "Conducted comprehensive unit testing utilizing the XCTest framework, contributing to the development of high-quality and reliable code.",
+                                "Actively participated in bug reporting and code review processes, emphasizing the production of high-quality, error-free code.", 
+                                "Collaborated on diverse feature development projects, utilizing a range of technologies including SwiftUI, UIKit, and Objective-C, demonstrating versatility and technical proficiency."
                             ],
                             showVerticleLine: false, 
                             isLastPosition: false, 
@@ -179,16 +179,15 @@ const ExperiencePage = () => {
                 </Col>
             </Row>
 
-            <Row style={{backgroundColor: 'white', 
-                marginTop: '2rem', 
-                marginLeft: '0.1rem', 
-                marginBottom: '2rem'
-            }}>
-                <Col >
-                    <Contact />
-                </Col>
-            </Row>
-
+                <Row style={{backgroundColor: 'white', 
+                    marginTop: '2rem', 
+                    marginLeft: '0.1rem', 
+                    marginBottom: '2rem'
+                }}>
+                    <Col >
+                        <Contact />
+                    </Col>
+                </Row>
             </Container>
         
     )

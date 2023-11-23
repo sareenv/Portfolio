@@ -1,12 +1,30 @@
 import React from 'react'
 import Badge from './Badge';
-import { ListGroup } from 'react-bootstrap'
+import { ListGroup, Image } from 'react-bootstrap'
+import appStoreButton from '../../Assets/appStoreButton.svg'
 import '../../Styles/experience.scss'
 
 /// A utility method which creates a component to show the progress bar for the job description.
 const ProgressJobPosition = (props) => {
+	
+	const appStoreLink  = "https://apps.apple.com/us/app/dayforce/id456073226"
+
+	const handleButtonClick = () => {
+		window.location.href = appStoreLink;
+	 }
+
 	return (
 		<div className="positionContainer">
+			<div className='containerBox'>
+				<button onClick={handleButtonClick} style={{background: 'none', border: 'none', 
+					padding: 0, cursor: 'pointer'}}>
+					<Image 
+						src={appStoreButton}
+						style={{width: '9em', height: '4em'}}
+					/>
+				</button>
+			</div>
+
 			{props.progress.map((progress) => {
 				return (
 					<div className='positionContainer'>
@@ -22,6 +40,8 @@ const ProgressJobPosition = (props) => {
 									)
 								}
 							})()}
+
+							
 
 							<div className="titleDescriptionColumn">
 								<ListGroup >
