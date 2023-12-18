@@ -6,7 +6,6 @@ import './Styles/base.scss'
 function App() {
   useEffect(() => {
     ReactGA.initialize("G-5W33THPW7Y")
-    console.log("tested")
   }, [])
 
   return (
