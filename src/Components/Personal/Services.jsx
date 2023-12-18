@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import service from '../../Assets/experience.png'
+import experience from '../../Assets/experience.png'
 import SkillsServices from './SkillsServices'
 import {Row, Col, Container, Image, Button} from 'react-bootstrap'
 import ReactGA from 'react-ga'
@@ -24,7 +24,7 @@ const Service = () => {
             <hr />
             <Row>
                 <Col sm={12} md={12} lg={6}>
-                <Image fluid src={service} className= "d-block mx-auto img-fluid w-40 h-10" />
+                <Image fluid src={experience} className= "d-block mx-auto img-fluid" />
                 </Col>
 
                 <Col sm={12} md={12} lg={6}>
