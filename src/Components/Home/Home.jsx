@@ -1,6 +1,5 @@
 import React, {useEffect} from 'react'
 import HeaderFront from './HeaderFront/HeaderFront'
-import Footer from '../Footer'
 import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
@@ -16,10 +15,10 @@ const Home = () => {
                 <HeaderFront/>
                     <About/>
                     <div className='projectBase'>
-                        <Project length={6} showTitle={true}/>
+                        <Project  length={6} showTitle={true}/>
                     </div>
                     <Contact />
-                <Footer />
+                
             </div> 
         </div>
     )

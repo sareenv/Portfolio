@@ -40,7 +40,6 @@ const Service = () => {
                     <Button style={{width: '100%'}} onClick={handleBookConsultation}>Book Consultation</Button>
                 </Col>
                 </Row>
-                
             </Col>        
             </Row>
 

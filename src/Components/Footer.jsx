@@ -1,11 +1,26 @@
 import React from 'react'
+import {Row, Col} from 'react-bootstrap'
+
 import '../Styles/footer.scss'
 
 const Footer = () => {
     return (
-        <div className = "footer" style={{padding: '1rem'}}>
-            Copyright © 2023 Vinayak Sareen.
-        </div>
+        <Row  style={{
+            margin: '0.3rem', 
+            backgroundColor: 'whitesmoke', 
+            padding: '1rem'
+        }}>
+            <Col sm={12} md={6} lg={6}>
+                Copyright © 2024 Vinayak Sareen.
+            </Col>
+
+            <Col sm={12} md={6} lg={5}>
+                <h3 style={{fontWeight: 600}}> Contact US </h3>
+                <label style={{fontWeight: 100 }}>Email: contact@sareenv.com</label> <br/>
+                5 Buttermill Anvenue, Vaughan, ON, Canada
+            </Col>
+            
+        </Row>
     )
 }
 
