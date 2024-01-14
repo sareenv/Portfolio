@@ -37,7 +37,7 @@ const Project = (props) => {
                 )}
                     
                 <Container fluid="sm" style={{ marginBottom: '4rem' }}>
-                <Row style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
+                    <Row style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
             
                     {
                         projects.map((project) => {
@@ -62,12 +62,10 @@ const Project = (props) => {
                         })
                     }
             
-                </Row>
-            </Container>
-            
-            
-                    
-                    <Footer />
+                    </Row>
+                </Container>
+                
+                <Footer />
             </div>
     )
 }
