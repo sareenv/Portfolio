@@ -17,7 +17,7 @@ const Footer = () => {
             <Col sm={12} md={6} lg={5}>
                 <h3 style={{fontWeight: 600}}> Contact US </h3>
                 <label style={{fontWeight: 100 }}>Email: contact@sareenv.com</label> <br/>
-                5 Buttermill Anvenue, Vaughan, ON, Canada
+                Vaughan, ON, Canada
             </Col>
             
         </Row>

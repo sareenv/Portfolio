@@ -4,7 +4,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Card } from 'react-bootstrap';
 import Badge from '../Utilities/Badge';
-import Footer from '../Footer';
+
 import { downloadProject } from '../../Services/Projects';
 import '../../Styles/base.scss';
 
@@ -64,8 +64,7 @@ const Project = (props) => {
             
                     </Row>
                 </Container>
-                
-                <Footer />
+            
             </div>
     )
 }
