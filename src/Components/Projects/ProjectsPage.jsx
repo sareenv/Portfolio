@@ -2,6 +2,7 @@ import React, {useEffect, useState} from "react";
 import {Row, Col, Image, Container} from 'react-bootstrap'
 import {ShimmerPostList, ShimmerThumbnail, 
     ShimmerSectionHeader, ShimmerText} from 'react-shimmer-effects'
+    import Footer from '../Footer';
 import {downloadProject} from '../../Services/Projects'
 import {Link} from 'react-router-dom'
 import '../../Styles/base.scss'
@@ -98,6 +99,11 @@ const ProjectsPage = () => {
             {visibility && 
                 <Project />
             }
+
+            <Container>
+                <Footer />
+            </Container>
+            
 
         </div>
     )
