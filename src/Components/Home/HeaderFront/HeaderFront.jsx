@@ -26,11 +26,10 @@ const HeaderFront = () => {
                         <h3 style = {{color: '#e63946', marginTop: 15, padding: 3}}>  Hi <span role="img" aria-label="hi"> 👋 </span> I'm </h3>
                         <h3 style = {{color: '#f1faee', marginTop: 15}}> Vinayak Sareen  </h3>
                     </div>
-                    <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em', textAlign: 'center'}}> 
-                    MEng Graduate from Concordia, fueled by enthusiasm, crafting Software Solutions. </p>
+                    <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em',  textAlign: 'center'}}> 
+                    Mobile Software Developer at Dayforce </p>
                 </div>
                 <AnimatedTitles /> 
-              
             </div>
             <div style={{color: 'white', display: 'flex', marginTop: -40, justifyContent: 'flex-end', marginRight: 10}}> 
                 <a style={{textDecoration: 'none', color: 'white'}} href="https://github.com/sareenv"> <FaGithub style = {{marginRight: 15, fontSize: 20}}/> </a>
