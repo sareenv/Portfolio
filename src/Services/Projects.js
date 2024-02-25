@@ -1,5 +1,5 @@
 
-const baseUrl = "https://api.sareenv.com/api/v1"
+const baseUrl = "http://api.sareenv.com/api/v1"
 
 var projectCache = []
 const projectMap = new Map();

@@ -3,6 +3,7 @@ import HeaderFront from './HeaderFront/HeaderFront'
 import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
+// import CarryBags from '../WorkProjects/CarryBags'
 import ReactGA from 'react-ga'
 
 const Home = () => {
