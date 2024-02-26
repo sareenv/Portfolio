@@ -3,7 +3,7 @@ import HeaderFront from './HeaderFront/HeaderFront'
 import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
-// import CarryBags from '../WorkProjects/CarryBags'
+import CarryBags from '../WorkProjects/CarryBags'
 import ReactGA from 'react-ga'
 
 const Home = () => {
@@ -15,11 +15,9 @@ const Home = () => {
             <div style={{margin: 0, padding: 0}}>
                 <HeaderFront/>
                     <About/>
-                    <div className='projectBase'>
-                        <Project  length={6} showTitle={true}/>
-                    </div>
+                    <Project  length={6} showTitle={true}/> 
+                    <CarryBags />
                     <Contact />
-                
             </div> 
         </div>
     )
