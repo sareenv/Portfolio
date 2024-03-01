@@ -1,8 +1,8 @@
 import React from 'react';
-import {Row, Col, Image, Container, Button} from 'react-bootstrap'
+import {Row, Col, Image, Container} from 'react-bootstrap'
 import CB02 from '../../Assets/carrybags/cb02.png'
 import CB04 from '../../Assets/carrybags/cb04.png'
-// import downloadLogo from '../../Assets/carrybags/downloadLogo.svg'
+import DownloadLogo from '../../Assets/appStoreButton.svg'
 const CarryBags = () => {
     const handleOpenAppLink = () => {
         console.log('click detected.')
@@ -26,7 +26,9 @@ const CarryBags = () => {
                 <Col sm={12} md={12} lg={5}>
                     <h3 style={{fontWeight: 600, color: 'black'}}> WeCarryBags: Elevate Your Shopping Experience </h3>
                     
-                    <label style={{color: 'gray', marginTop: '0.4rem', textAlign: 'justify'}}>
+                    <label style={{color: 'gray', 
+                        marginTop: '0.4rem', 
+                        textAlign: 'justify'}}>
                         WeCarryBags transforms your in-store shopping journey by delivering your purchases 
                         directly to any address you choose. Say goodbye to the hassle of carrying bags and hello 
                         to more leisure and work time. Built with SwiftUI, this app offers the ultimate convenience 
@@ -40,8 +42,14 @@ const CarryBags = () => {
                         - Seamlessly pay for delivery within the app <br />
                         - Supports iPhone and iPad iOS 15.0+ devices.
                     </div>
-                    <Button onClick={handleOpenAppLink} variant="dark" style={{width: '100%', marginTop: '1rem'}}> Download on Appstore </Button>
-                    <Button disabled variant='primary' style={{width: '100%', marginTop: '1rem'}}> Learn More </Button>
+                    <div style={{
+                        display: 'flex', 
+                        width: '100%',
+                        justifyContent: 'start',
+                        marginTop: '1rem'
+                    }}>
+                        <Image src={DownloadLogo} onClick={handleOpenAppLink}></Image>
+                    </div>
                 </Col>
             </Row>
         </Container>

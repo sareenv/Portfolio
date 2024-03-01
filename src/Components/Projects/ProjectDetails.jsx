@@ -57,9 +57,9 @@ const ProjectDetails = (props) => {
 
                 <Col lg={6} style={{backgroundColor: 'white', marginTop: '1.2rem'}}>
                     <div>
-                        <h5>
+                        <h3 style={{fontWeight: 800}}>
                             <b> {project.projectName}</b>
-                        </h5>
+                        </h3>
                         <p style={{color: 'grey'}}> {project.tagLine} </p>
                     </div>
 
@@ -82,7 +82,6 @@ const ProjectDetails = (props) => {
                         })()}
 
                         <span>
-
                                 <Button
                                     disabled={project.video === undefined} 
                                     style={{marginRight: '1rem'}}
@@ -99,36 +98,24 @@ const ProjectDetails = (props) => {
                                     <>  Source Code </>
                                 </Button>
                         </span>
-
-                        
                     </div>
 
-                    <div className='description'>
-                        {project.description}
-                    </div>
+                    <div className='description'> {project.description} </div>
 
                     <Row>
                         <Col style={{marginTop: '1rem'}}>
-                            <b> Details </b>
-                            <ul style={{textBreak: 'break-all'}}>
-                                { project.conceptsUsed !== undefined 
-                                    && project.conceptsUsed.map((concept) => {
-                                        return <li> {concept} </li>
-                                }) }
-                            </ul>
+                            { project.conceptsUsed !== undefined 
+                                && project.conceptsUsed.map((concept) => {
+                                    return <li style={{fontWeight: 140}}> {concept} </li>
+                            })}
                         </Col>
                     </Row>
 
-                   
-                                    
                     <Row>
-                        
                         <Col style={{marginTop: '1rem'}}>
-                            
                             {project.configuration && project.configuration.length !== 0 && (() => {
                                 return <b> Project Configuration </b>
                             })}
-
                             <ul>
                                 {project.configuration !== undefined && project.configuration.map((config) => {
                                     return <li> {config} </li>
@@ -136,8 +123,6 @@ const ProjectDetails = (props) => {
                             </ul>
                         </Col>
                     </Row>
-
-
                 </Col>
             </Row>
         </Container>
