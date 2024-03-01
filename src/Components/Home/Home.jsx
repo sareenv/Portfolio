@@ -15,7 +15,7 @@ const Home = () => {
             <div style={{margin: 0, padding: 0}}>
                 <HeaderFront/>
                     <About/>
-                    <Project  length={6} showTitle={true}/> 
+                    <Project  length={6} showTitle={true}/>   
                     <CarryBags />
                     <Contact />
             </div> 

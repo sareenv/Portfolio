@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import AnimatedTitles from './AnimatedtTitles'
+// import AnimatedTitles from './AnimatedtTitles'
 import image from '../../../Assets/me.jpeg'
 import { Image } from 'react-bootstrap'
 import { FaGithub, FaLinkedin } from "react-icons/fa"
@@ -29,7 +29,7 @@ const HeaderFront = () => {
                     <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em',  textAlign: 'center'}}> 
                     Mobile Software Developer at Dayforce </p>
                 </div>
-                <AnimatedTitles /> 
+
             </div>
             <div style={{color: 'white', display: 'flex', marginTop: -40, justifyContent: 'flex-end', marginRight: 10}}> 
                 <a style={{textDecoration: 'none', color: 'white'}} href="https://github.com/sareenv"> <FaGithub style = {{marginRight: 15, fontSize: 20}}/> </a>
