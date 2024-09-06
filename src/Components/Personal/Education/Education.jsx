@@ -18,7 +18,7 @@ const Education = (props) => {
             <Card.Body>
                 <span>
                     <div>
-                        <h5> {props.qualification} </h5>
+                        <h5 style={{fontWeight: 800}}> {props.qualification} </h5>
                     </div>
 
                     <div>

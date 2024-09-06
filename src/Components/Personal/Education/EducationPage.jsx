@@ -2,6 +2,7 @@
 import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap'
 import Education from '../Education/Education'
+import Footer from '../../Footer'
 import {
     ConcordiaDetails, AWSCertification,
     CoventryDetails, DockerCertification, 
@@ -50,7 +51,7 @@ const EducationPage = () => {
                 </Row>
                 <h3 style={{ marginTop: '2rem' }}> Certifications </h3> <hr />
                 
-                <Row  style={{backgroundColor: 'whitesmoke', marginTop: '1rem', 
+                <Row  style={{backgroundColor: 'white', marginTop: '1rem', 
                     borderRadius: '0.3rem', paddingBottom: '1rem'}}>
                     <Col sm={12} md={12} lg={4}  style={{ marginTop: '1rem' }}>
                         <Education
@@ -84,7 +85,7 @@ const EducationPage = () => {
                             qualification={GraphQLCertification.qualification}
                             instition={GraphQLCertification.instition}
                             visible={true}
-                            bnttitle={'View Credentials'}
+                            bnttitle={'Updating soon'}
                             credLink={undefined}
                             issued={GraphQLCertification.issued}
                         />
@@ -96,14 +97,19 @@ const EducationPage = () => {
                             qualification={JiraCertification.qualification}
                             instition={JiraCertification.instition}
                             visible={true}
-                            bnttitle={'View Credentials'}
+                            bnttitle={'Updating soon'}
                             credLink={undefined}
                             issued={JiraCertification.issued}
                         />
                     </Col>
+
+               
                 </Row>
             </Container>
 
+            <Container style={{padding: '1rem'}}>
+                <Footer />
+            </Container>
         </div>
     )
 }

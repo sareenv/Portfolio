@@ -64,7 +64,7 @@ const ProjectsPage = () => {
 
                             <Col lg={6} md={12} sm={12}>
                                 <div style={{width: '100%', height: '65%', backgroundColor: 'white'}}>
-                                    <h2 style={{paddingTop: '2rem', paddingLeft: '1rem'}}>
+                                    <h2 style={{paddingTop: '2rem', paddingLeft: '1rem', fontWeight: 800}}>
                                             {featuredProject.projectName}
                                     </h2>
                                     <p style={{paddingTop: '0.3rem', paddingLeft: '1rem'}}> {featuredProject.description} </p>

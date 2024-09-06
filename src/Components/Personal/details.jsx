@@ -21,7 +21,7 @@ const ConcordiaDetails = {
 
 const CoventryDetails = {
     instition: 'Coventry University',
-    qualification: 'BSc (Hons) Computer Science',
+    qualification: 'BSc Hons Computer Science',
     address: 'Priory St, Coventry CV1 5FB, United Kingdom',
     id: '2',
     image: 'https://conflictresearchsociety.org/wp-content/uploads/2020/01/coventry-university-logo.png',

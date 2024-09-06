@@ -28,7 +28,7 @@ const Service = () => {
                 </Col>
 
                 <Col sm={12} md={12} lg={6}>
-                    <h3>Full Stack Software Developer </h3>
+                    <h3 style={{fontWeight: 800}}>Passionate Software Engineer </h3>
                     <p style={{color: "gray"}}> 
                         Freelance Coding Expertise, Just a Click Away. </p>
                     <p style={{textAlign: 'justify', marginTop: '1rem'}}>
@@ -37,7 +37,7 @@ const Service = () => {
                     <p style={{textAlign: 'justify', marginTop: '1rem'}}>
                         My skill set is a culmination of extensive experience and knowledge gained through professional and academic pursuits in the field of software development. I pride myself on my ability to adapt to the unique requirements of each project, ensuring that the technology and approaches I employ are perfectly aligned with the project's needs and business logic. I am always eager to embrace new challenges and am fully open to learning and adapting new or existing technologies to deliver the most effective and efficient solutions to my clients.
                     </p>
-                    <Button style={{width: '100%'}} onClick={handleBookConsultation}>Book Consultation</Button>
+                    <Button style={{width: '100%', fontWeight: 500}} onClick={handleBookConsultation}>Book Consultation</Button>
                 </Col>
                 </Row>
             </Col>        

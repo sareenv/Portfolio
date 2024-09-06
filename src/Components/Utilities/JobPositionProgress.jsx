@@ -29,7 +29,7 @@ const ProgressJobPosition = (props) => {
 							<div className="titleDescriptionColumn">
 								<ListGroup >
 
-									<h5>{progress.title} </h5>
+									<h5 style={{fontWeight: 800}}>{progress.title} </h5>
 									<div className="projectDescriptionAndStatus">
 										<Badge tag={progress.type} />
 										<i style={{ color: "gray" }}>{progress.dates} </i>

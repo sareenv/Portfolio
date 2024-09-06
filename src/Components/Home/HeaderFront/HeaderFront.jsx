@@ -23,11 +23,11 @@ const HeaderFront = () => {
 
                 <div style={{display: 'flex', flexDirection: 'column', padding: 0, margin: 0}}>
                     <div style={{display: 'flex', flexDirection: 'row', justifyContent: 'center', alignItems: 'center'}}>
-                        <h3 style = {{color: '#e63946', marginTop: 15, padding: 3}}>  Hi <span role="img" aria-label="hi"> 👋 </span> I'm </h3>
+                        <h3 style = {{color: '#e63946', marginTop: 15, padding: 3, fontWeight: 800}}>  Hi <span role="img" aria-label="hi"> 👋 </span> I'm </h3>
                         <h3 style = {{color: '#f1faee', marginTop: 15}}> Vinayak Sareen  </h3>
                     </div>
                     <p style={{color: '#f1faee', marginTop: '0.1em', fontSize: '1em',  textAlign: 'center'}}> 
-                    Mobile Software Developer at Dayforce </p>
+                    Software Engineer at Dayforce </p>
                 </div>
 
             </div>

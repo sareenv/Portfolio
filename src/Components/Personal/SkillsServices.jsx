@@ -112,7 +112,7 @@ const SkillsServices = () => {
             <Row>
                 <Col xs={12}>
                     <h4 style={{ color: colors.header, paddingBottom: '1rem', fontSize: '1.5rem', 
-                    fontWeight: 'bold' }}>
+                    fontWeight: 'bold', fontWeight: 800 }}>
                         INTERESTS
                     </h4>
                     <div className='table-responsive'>

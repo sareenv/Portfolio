@@ -50,7 +50,7 @@ const Project = (props) => {
                                         </div>
             
                                         <Card.Body className="d-flex flex-column">
-                                            <Card.Title> {project.projectName} </Card.Title>
+                                            <Card.Title style={{fontWeight: 800}}> {project.projectName} </Card.Title>
                                             <Card.Text>
                                                 <p style={{ textAlign: 'left' }}> {project.description} </p>
                                             </Card.Text>
