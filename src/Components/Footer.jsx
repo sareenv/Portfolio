@@ -3,8 +3,6 @@ import {Row, Col} from 'react-bootstrap'
 
 import '../Styles/footer.scss'
 
-const currentYear = new Date().getFullYear();
-
 const Footer = () => {
     return (
         <Row  style={{
@@ -13,7 +11,7 @@ const Footer = () => {
             padding: '1rem'
         }}>
             <Col sm={12} md={6} lg={6}>
-                Copyright © {{currentYear}} Vinayak Sareen.
+                Copyright © 2025 Vinayak Sareen.
             </Col>
 
             <Col sm={12} md={6} lg={5}>
