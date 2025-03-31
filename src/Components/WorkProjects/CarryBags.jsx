@@ -3,6 +3,7 @@ import {Row, Col, Image, Container} from 'react-bootstrap'
 import CB02 from '../../Assets/carrybags/cb02.png'
 import CB04 from '../../Assets/carrybags/cb04.png'
 import DownloadLogo from '../../Assets/appStoreButton.svg'
+
 const CarryBags = () => {
     const handleOpenAppLink = () => {
         console.log('click detected.')
@@ -11,7 +12,7 @@ const CarryBags = () => {
     return (
         <Container thumbnail style={{
             marginTop: '1rem',
-            background: '#f9fafb',
+            background: 'white',
             padding: '1rem', 
             borderRadius: '0.3rem'
         }}> 
@@ -24,7 +25,12 @@ const CarryBags = () => {
                     <Image thumbnail fluid src={CB02}></Image>
                 </Col>
                 <Col sm={12} md={12} lg={5}>
-                    <h3 style={{fontWeight: 600, color: 'black'}}> WeCarryBags: Elevate Your Shopping Experience </h3>
+                   
+                <Col sm={12} md={12} lg={12}>
+                    <h3 style={{fontWeight: 540, color: 'black', paddingBottom: '1rem'}}> 
+                        WeCarryBags: Elevate Your Shopping Experience 
+                    </h3>
+                </Col>
                     
                     <label style={{color: 'gray', 
                         marginTop: '0.4rem', 
@@ -34,13 +40,19 @@ const CarryBags = () => {
                         to more leisure and work time. Built with SwiftUI, this app offers the ultimate convenience 
                         for shoppers looking to blend shopping with their busy lifestyles seamlessly.
                     </label>
-                    <h5 style={{marginTop: '1rem'}}><b> Benefits</b></h5>
-                    <div style={{fontWeight: 160}}>
-                        - Have your purchases sent straight to your destination.<br />
-                        - Enjoy your free time without the hassle of carrying bags. <br />
-                        - Service tailored to wherever you're located  <br />
-                        - Seamlessly pay for delivery within the app <br />
-                        - Supports iPhone and iPad iOS 15.0+ devices.
+                    <center>
+                        <h5 style={{marginTop: '1rem'}}>Benefits</h5>
+                    </center>
+                    <div style={{fontWeight: 200}}>
+                        <ol style={{textAlign: 'justify'}}>
+                            <li> Have your purchases delivered directly to your doorstep or hotel—wherever your journey takes you. </li>
+                            <li> Reclaim your day and explore freely without being weighed down by shopping bags. </li>
+                            <li> Location-adaptive service that follows you whether you're a local or tourist.
+                            </li>
+                            <li> Simple in-app payment system with transparent pricing and no hidden fees.
+                            </li>
+                            <li> Supports iPhone and iPad iOS 15.0+ devices. </li>
+                        </ol>
                     </div>
                     <div style={{
                         display: 'flex', 
@@ -52,6 +64,7 @@ const CarryBags = () => {
                     </div>
                 </Col>
             </Row>
+            <hr />
         </Container>
     )
 }

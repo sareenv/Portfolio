@@ -37,7 +37,6 @@ const JobPosition = (props) => {
     )
 }
 
-
 const ExperiencePage = () => {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
@@ -124,16 +123,16 @@ const ExperiencePage = () => {
                     <JobPosition
                         company = "ASOP Pvt Ltd"
                         color = "rgb(175 25 25)"
-                        title = "Junior Mobile Application Developer"
+                        title = "Mobile Application Developer"
                         type = "Contract" 
                         location = "SBS Nagar Nawanshahr Punjab (144514), India"
                         logo="https://sareenv-projects.s3.amazonaws.com/images/1567672229702.jpeg"
                         description = {[
-                            "Gathered and analyzed the clients requirement to support the functionality for the ordering system.",
-                            "Responsible for developing the RESTful APi in Node.js and Express.",
-                            "Developed iOS Application using MVC architectural Pattern.",
-                            "Implemented the Push Notification on the client side connected with Firebase service controlled through the dashboard.",
-                            "Developed a script in Python3 to bulk upload all the organization’s products to the MySQL database hosted on Heroku platform.", 
+                            "Gathered and analyzed client requirements to enhance ordering system functionality.",
+                            "Developed RESTful APIs using Node.js and Express.",
+                            "Built iOS application implementing the MVC architectural pattern.",
+                            "Integrated push notification functionality on the client side, connecting with Firebase services managed through a dashboard.",
+                            "Created a Python 3 script for bulk uploading organizational products to a MySQL database hosted on Heroku.", 
                             "Deployed the backend APi to the Heroku Cloud Platform."
                         ]}
                     />       

@@ -1,6 +1,5 @@
 import React from 'react'
 import { useState } from 'react'
-// import AnimatedTitles from './AnimatedtTitles'
 import image from '../../../Assets/me.jpeg'
 import { Image } from 'react-bootstrap'
 import { FaGithub, FaLinkedin } from "react-icons/fa"

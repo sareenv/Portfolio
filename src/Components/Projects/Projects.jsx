@@ -4,14 +4,11 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import { Card } from 'react-bootstrap';
 import Badge from '../Utilities/Badge';
-
 import { downloadProject } from '../../Services/Projects';
 import '../../Styles/base.scss';
 
 const Project = (props) => {
-
     const [projects, setProjects] = useState([])
-
     useEffect(() => {
         downloadProject().then(items => {
             let start = 0;
@@ -38,7 +35,6 @@ const Project = (props) => {
                     
                 <Container fluid="sm" style={{ marginBottom: '4rem' }}>
                     <Row style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', gap: '1rem' }}>
-            
                     {
                         projects.map((project) => {
                             return (

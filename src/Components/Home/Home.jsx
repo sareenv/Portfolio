@@ -14,10 +14,10 @@ const Home = () => {
         <div>
             <div style={{margin: 0, padding: 0}}>
                 <HeaderFront/>
-                    <About/>
-                    <Project  length={6} showTitle={true}/>   
-                    <CarryBags />
-                    <Contact />
+                <About/>
+                <Project  length={6} showTitle={true}/>
+                <CarryBags />
+                <Contact />
             </div> 
         </div>
     )

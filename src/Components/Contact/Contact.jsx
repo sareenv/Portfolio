@@ -1,4 +1,3 @@
-
 import React from 'react'
 import { Container, Button, Row, Col } from 'react-bootstrap'
 import { FaLinkedinIn, FaMailBulk, FaPaperPlane } from 'react-icons/fa'
@@ -8,7 +7,6 @@ import '../../Styles/base.scss'
 import '../../Styles/contact.scss'
 
 const Contact = () => {
-    
     return (
         <Container>
             <Row className='contact_section'>
@@ -22,7 +20,7 @@ const Contact = () => {
                                 <b>Contact Email</b>: contact@sareenv.com
                             </div>
                             <div>
-                                <b>Location </b>: Montréal, Canada
+                                <b>Location </b>: Vaughan, Canada
                             </div>
 
                             <div>
