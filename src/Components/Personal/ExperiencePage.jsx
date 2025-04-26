@@ -61,8 +61,25 @@ const ExperiencePage = () => {
                 <ProgressJobPosition 
                     progress={
                     [
+
                         {
-                            title: "Mobile Software Developer Associate",
+                            title: "Mobile Software Engineer",
+                            desc: [
+                                "Led end-to-end AppStore deployment processes for an application serving 5M+ daily users",
+                                "Resolved developer roadblocks and optimized workflows across feature teams",
+                                "Responsible for developing internal productivity tools for development efficiency", 
+                                "Orchestrated successful phased rollouts through DevOps collaboration",
+                                "Creating and enhancing a scalable enterprise application for the mobile devices.",
+                                "Continue assessing risks and impacts on the existing system, as new functions are added."
+                            ],
+                            showVerticleLine: true, 
+                            isLastPosition: true, 
+                            type: "Full-Time", 
+                            dates: "May(2023) - Present"
+                        }, 
+
+                        {
+                            title: "Mobile Software Engineer Associate",
                             desc: [
                                 
                                 "Designing and implementing new development projects and completing and augmenting the current solutions and services",
@@ -73,9 +90,9 @@ const ExperiencePage = () => {
                                 "Assessing risks and impacts on the existing system, as new functions are added."
                             ],
                             showVerticleLine: true, 
-                            isLastPosition: true, 
+                            isLastPosition: false, 
                             type: "Full-Time", 
-                            dates: "July(2023) - Present"
+                            dates: "July(2023) - April 30"
                         }, 
     
                         {
