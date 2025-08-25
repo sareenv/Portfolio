@@ -1,7 +1,7 @@
 ## E-Portfolio SPA
 The SPA contains my portfolio, including all the projects, applied experience gained.
 Live Link: 👉️ https://www.sareenv.com
-RESTful APi Link: 👉️ https://github.com/sareenv/PortfolioAPI
+RESTful API Link: 👉️ https://github.com/sareenv/PortfolioAPI
 
 ## Technical Concepts
 <li> React Hooks were used for the state management of the application </li> 
@@ -17,7 +17,6 @@ RESTful APi Link: 👉️ https://github.com/sareenv/PortfolioAPI
 <li> Used the AWS S3 bucket to deliver the media related content.</li>
 <li> Used Route53 to configure the DNS to map the iPV4 address to the domain. </li>
 
-
 ## React Libraries
 <li> React Bootstrap </li>
 <li> React Router Dom </li>
@@ -27,5 +26,5 @@ RESTful APi Link: 👉️ https://github.com/sareenv/PortfolioAPI
 ## Project Reuse.
 The project is completely developed from scratch by Vinayak Sareen (me), so I give permission to reuse it in any context as a result. Feel free to fork the project and use it as it is or tweak it as per your requirements for the front-end portfolio. If you clone the project, I would appreciate a star on the respective repository. If there are any issues, feel free to contact me at contact@sareenv.com
 
-
-
+## Upcomming Changes. 
+Previously(currently), the project has been hosted on the AWS costing money for hosting the small svc for the portfolio. As a result, we have decided to self host the API on bear metal and use the ``Caddy`` framework for it, you can visit and read more about it here https://caddyserver.com/docs/. In case you don't have a static IP address to self host, you can still use DDNS svc and investigate more into it such as https://www.duckdns.org/
