@@ -6,7 +6,6 @@ import DownloadLogo from '../../Assets/appStoreButton.svg'
 
 const CarryBags = () => {
     const handleOpenAppLink = () => {
-        console.log('click detected.')
         window.location.href = "https://apps.apple.com/ca/app/wecarrybags/id6475269259"
     }
     return (

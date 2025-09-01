@@ -13,7 +13,7 @@ const Project = (props) => {
         downloadProject().then(items => {
             let start = 0;
             const length = props.length;
-            const data = length != null ? items.Items.slice(start, length) : items.Items
+            const data = length != null ? items.slice(start, length) : items
             setProjects(data)
         })
     }, [props.length])
@@ -50,7 +50,7 @@ const Project = (props) => {
                                             <Card.Text>
                                                 <p style={{ textAlign: 'left' }}> {project.description} </p>
                                             </Card.Text>
-                                            <Link className='mt-auto customLink text-decoration-none rounded' to={{ pathname: '/project_details/' + project.ID }}> View Details </Link>
+                                            <Link className='mt-auto customLink text-decoration-none rounded' to={{ pathname: '/project_details/' + project.id }}> View Details </Link>
                                         </Card.Body>
                                     </Card>
                                 </div>

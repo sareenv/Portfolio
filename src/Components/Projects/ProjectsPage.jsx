@@ -16,8 +16,8 @@ const ProjectsPage = () => {
         let mounted = true;
         downloadProject().then(item => {
             if(mounted) {
-                let featuredItem = item.Items.find(item => item.featured === true)
-                setfeaturedProject(featuredItem)
+                let featuredItems = item.filter(i => i.featured === true)
+                setfeaturedProject(featuredItems[0])
                 setTimeout(() => {
                     setVisibility(true)
                 }, 1200)
@@ -29,8 +29,6 @@ const ProjectsPage = () => {
 
     return (
         <div>
-
-
             {visibility === false && 
                 
                 <Container style={{marginTop: '1rem'}}>
@@ -71,7 +69,7 @@ const ProjectsPage = () => {
                                     {visibility === true && 
                                         <Link thumbnail={true} 
                                         className="customLink text-decoration-none" 
-                                        to={"project_details/" + featuredProject.ID} 
+                                        to={"project_details/" + featuredProject.id} 
                                         style={{width: '10em', 
                                             backgroundColor: '#003049', 
                                             marginLeft: '1rem'}}> View Details </Link>
