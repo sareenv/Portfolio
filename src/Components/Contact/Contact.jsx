@@ -20,7 +20,7 @@ const Contact = () => {
                                 <b>Contact Email</b>: contact@sareenv.com
                             </div>
                             <div>
-                                <b>Location </b>: Vaughan, Canada
+                                <b>Location </b>: Barrie, Canada
                             </div>
 
                             <div>

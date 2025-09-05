@@ -65,7 +65,7 @@ const ProjectDetails = (props) => {
 
                     {/* Preview button expands on this one */}
                     <div>
-                        {project.ID !== undefined && isDisplayed === true && (() => {
+                        {project.id !== undefined && isDisplayed === true && (() => {
                             return (
                                 <div style={{paddingBottom: '1rem'}}>
                                     <Vimeo
@@ -83,7 +83,7 @@ const ProjectDetails = (props) => {
 
                         <span>
                                 <Button
-                                    disabled={project.video === undefined} 
+                                    disabled={project.video === undefined || project.video === null} 
                                     style={{marginRight: '1rem'}}
                                     onClick={ () => {
                                         setIsDisplayed(true)
