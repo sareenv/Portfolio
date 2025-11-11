@@ -16,12 +16,49 @@ const EducationPage = () => {
     }, [])
 
     return (
-        <div style={{ backgroundColor: 'white', paddingBottom: '2rem', borderRadius: '0.3rem' }}>
-            <Container style={{ marginTop: '2rem' }}>
-                <h3 style={{ marginTop: '2rem' }}>Higher Education</h3> <hr />
+        <div style={{ paddingBottom: '2rem' }}>
+            <Container style={{ marginTop: '4rem' }}>
+                {/* Page Header */}
+                <Row style={{marginBottom: '3rem'}}>
+                    <Col>
+                        <h3 style={{
+                            marginTop: '2rem',
+                            fontSize: '1.8rem',
+                            fontWeight: 600,
+                            color: '#003049',
+                            marginBottom: '0.5rem'
+                        }}>Academic Background & Professional Certifications</h3>
+                        <p style={{
+                            fontSize: '1.05rem',
+                            color: '#666',
+                            marginBottom: '1.5rem'
+                        }}>Continuous learning and professional development journey</p>
+                        <hr style={{
+                            borderTop: '2px solid #e8e8e8',
+                            marginBottom: 0
+                        }}/>
+                    </Col>
+                </Row>
+
+                {/* Higher Education Section */}
+                <Row style={{marginBottom: '1rem'}}>
+                    <Col>
+                        <h4 style={{
+                            fontSize: '1.5rem',
+                            fontWeight: 600,
+                            color: '#003049',
+                            marginBottom: '0.5rem'
+                        }}>Higher Education</h4>
+                        <p style={{
+                            fontSize: '1rem',
+                            color: '#666',
+                            marginBottom: '1.5rem'
+                        }}>Graduate and undergraduate academic qualifications</p>
+                    </Col>
+                </Row>
                 
-                <Row style={{backgroundColor: 'whitesmoke', padding: '0.4rem', paddingBottom: '1rem' }}>
-                    <Col sm={12} md={12} lg={6} style={{ marginTop: '1rem' }}>
+                <Row style={{marginBottom: '4rem'}}>
+                    <Col sm={12} md={12} lg={6} style={{ marginBottom: '2rem' }}>
                         <Education
                             image={ConcordiaDetails.image}
                             qualification={ConcordiaDetails.qualification}
@@ -35,7 +72,7 @@ const EducationPage = () => {
                         />
                     </Col>
 
-                    <Col sm={12} md={12} lg={6} style={{ marginTop: '1rem' }}>
+                    <Col sm={12} md={12} lg={6} style={{ marginBottom: '2rem' }}>
                         <Education
                             image={CoventryDetails.image}
                             qualification={CoventryDetails.qualification}
@@ -49,11 +86,26 @@ const EducationPage = () => {
                         />
                     </Col>
                 </Row>
-                <h3 style={{ marginTop: '2rem' }}> Certifications </h3> <hr />
                 
-                <Row  style={{backgroundColor: 'white', marginTop: '1rem', 
-                    borderRadius: '0.3rem', paddingBottom: '1rem'}}>
-                    <Col sm={12} md={12} lg={4}  style={{ marginTop: '1rem' }}>
+                {/* Certifications Section */}
+                <Row style={{marginBottom: '1rem'}}>
+                    <Col>
+                        <h4 style={{
+                            fontSize: '1.5rem',
+                            fontWeight: 600,
+                            color: '#003049',
+                            marginBottom: '0.5rem'
+                        }}>Professional Certifications</h4>
+                        <p style={{
+                            fontSize: '1rem',
+                            color: '#666',
+                            marginBottom: '1.5rem'
+                        }}>Industry-recognized credentials demonstrating specialized expertise</p>
+                    </Col>
+                </Row>
+                
+                <Row style={{marginBottom: '2rem'}}>
+                    <Col sm={12} md={6} lg={4} style={{ marginBottom: '2rem' }}>
                         <Education
                             image={AWSCertification.image}
                             qualification={AWSCertification.qualification}
@@ -66,7 +118,7 @@ const EducationPage = () => {
                     </Col>
 
 
-                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }} >
+                    <Col sm={12} md={6} lg={4} style={{ marginBottom: '2rem' }}>
                         <Education
                             image={DockerCertification.image}
                             qualification={DockerCertification.qualification}
@@ -79,7 +131,7 @@ const EducationPage = () => {
                         />
                     </Col>
 
-                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }} >
+                    <Col sm={12} md={6} lg={4} style={{ marginBottom: '2rem' }}>
                         <Education
                             image={GraphQLCertification.image}
                             qualification={GraphQLCertification.qualification}
@@ -91,7 +143,7 @@ const EducationPage = () => {
                         />
                     </Col>
 
-                    <Col sm={12} md={12} lg={4} style={{ marginTop: '1rem' }} >
+                    <Col sm={12} md={6} lg={4} style={{ marginBottom: '2rem' }}>
                         <Education
                             image={JiraCertification.image}
                             qualification={JiraCertification.qualification}

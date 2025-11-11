@@ -54,29 +54,96 @@ const ProjectsPage = () => {
             }
 
             {visibility === true && 
-                <Container style={{marginTop: '1rem'}}>
-                        <Row>
-                            <Col lg={6} md={12} sm={12}>
-                                <Image thumbnail={true}  fluid={true} src={featuredProject.thumbnail} responsive/> 
-                            </Col>
+                <Container style={{marginTop: '3rem', paddingBottom: '2rem'}}>
+                    <Row style={{ marginBottom: "2rem" }}>
+                        <Col>
+                            <h3 style={{ 
+                                fontSize: "1.8rem", 
+                                fontWeight: 600, 
+                                color: "#003049",
+                                marginBottom: 0
+                            }}>Featured Project</h3>
+                        </Col>
+                    </Row>
 
-                            <Col lg={6} md={12} sm={12}>
-                                <div style={{width: '100%', height: '65%', backgroundColor: 'white'}}>
-                                    <h2 style={{paddingTop: '2rem', paddingLeft: '1rem', fontWeight: 800}}>
-                                            {featuredProject.projectName}
-                                    </h2>
-                                    <p style={{paddingTop: '0.3rem', paddingLeft: '1rem'}}> {featuredProject.description} </p>
-                                    {visibility === true && 
-                                        <Link thumbnail={true} 
-                                        className="customLink text-decoration-none" 
+                    <Row style={{ 
+                        backgroundColor: "white", 
+                        borderRadius: "12px",
+                        overflow: "hidden",
+                        boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
+                        marginLeft: "0.1rem",
+                        marginRight: "0.1rem"
+                    }}>
+                        <Col lg={6} md={12} sm={12} style={{ padding: 0 }}>
+                            <div style={{ 
+                                height: "100%", 
+                                minHeight: "400px",
+                                backgroundColor: "#f8f9fa",
+                                display: "flex",
+                                alignItems: "center",
+                                justifyContent: "center"
+                            }}>
+                                <Image 
+                                    thumbnail={false}
+                                    fluid={true}
+                                    src={featuredProject.thumbnail} 
+                                    responsive
+                                    style={{
+                                        width: "100%",
+                                        height: "100%",
+                                        objectFit: "cover"
+                                    }}
+                                />
+                            </div>
+                        </Col>
+
+                        <Col lg={6} md={12} sm={12} style={{ padding: "3rem" }}>
+                            <div>
+                                <h2 style={{ 
+                                    fontWeight: 700, 
+                                    color: "#003049",
+                                    fontSize: "1.8rem",
+                                    marginBottom: "1.5rem"
+                                }}>
+                                    {featuredProject.projectName}
+                                </h2>
+                                <p style={{
+                                    color: "#666",
+                                    fontSize: "1.05rem",
+                                    lineHeight: "1.7",
+                                    marginBottom: "2rem"
+                                }}>{featuredProject.description}</p>
+                                {visibility === true && 
+                                    <Link 
+                                        thumbnail={true} 
+                                        className="text-decoration-none" 
                                         to={"project_details/" + featuredProject.id} 
-                                        style={{width: '10em', 
-                                            backgroundColor: '#003049', 
-                                            marginLeft: '1rem'}}> View Details </Link>
-                                    }
-                                </div>
-                            </Col>
-                        </Row>
+                                        style={{
+                                            backgroundColor: '#003049',
+                                            padding: '0.9rem 2rem',
+                                            color: 'white',
+                                            textDecoration: 'none',
+                                            fontSize: '1rem',
+                                            borderRadius: '8px',
+                                            fontWeight: 600,
+                                            display: 'inline-block',
+                                            transition: 'all 0.3s ease'
+                                        }}
+                                        onMouseEnter={(e) => {
+                                            e.target.style.backgroundColor = "#002035";
+                                            e.target.style.transform = "translateY(-2px)";
+                                            e.target.style.boxShadow = "0 4px 12px rgba(0,48,73,0.3)";
+                                        }}
+                                        onMouseLeave={(e) => {
+                                            e.target.style.backgroundColor = "#003049";
+                                            e.target.style.transform = "translateY(0)";
+                                            e.target.style.boxShadow = "none";
+                                        }}
+                                    >View Project Details →</Link>
+                                }
+                            </div>
+                        </Col>
+                    </Row>
                 </Container>
             }
             

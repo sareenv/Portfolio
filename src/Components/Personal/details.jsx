@@ -16,7 +16,7 @@ const ConcordiaDetails = {
             "Software Comprehension & Maintenance", 
             "Software Development Methodologies"
     ],
-    image: 'https://www.concordia.ca/content/dam/common/logos/Concordia-logo.jpeg', 
+    image: 'https://campus1mtl.ca/montreal-student-housing/assets/images/interface/concorida-logo-sm.png', 
 }
 
 const CoventryDetails = {

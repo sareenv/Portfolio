@@ -4,6 +4,7 @@ import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
 import CarryBags from '../WorkProjects/CarryBags'
+import ExploreMore from '../Utilities/ExploreMore'
 import ReactGA from 'react-ga'
 
 const Home = () => {
@@ -17,6 +18,7 @@ const Home = () => {
                 <About/>
                 <Project  length={6} showTitle={true}/>
                 <CarryBags />
+                <ExploreMore currentPage="home" />
                 <Contact />
             </div> 
         </div>

@@ -25,7 +25,16 @@ const MainRouter = () => {
                     <Navbar.Collapse id="basic-navbar-nav">
                         <Nav className="m-auto">
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/projects" activeClassName="active">Projects</Nav.Link>
+                            <Nav.Link 
+                                as={NavLink} 
+                                className="customNav" 
+                                style={{color: "white"}} 
+                                to="/projects" 
+                                activeClassName="active"
+                                isActive={(match, location) => {
+                                    return location.pathname === '/projects' || location.pathname.startsWith('/project_details');
+                                }}
+                            >Projects</Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/experience"
                             activeClassName="active"> Experience </Nav.Link>
                             <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/education"

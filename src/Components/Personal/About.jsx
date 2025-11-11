@@ -10,55 +10,123 @@ import { ConcordiaDetails, CoventryDetails } from "./details"
 
 const About = () => {
     return (
-        <div >
-            <Container style={{ marginTop: '2rem' }}>
-                <Row >
-                    <Col sm={12} md={12} lg={5} style={{ paddingTop: '3rem' }}>
-                        <center>
-                            <h2> Education Background </h2>
-                            <hr className="customline"></hr>
+        <div style={{
+            padding: '4rem 0',
+            backgroundColor: '#f8f9fa',
+            transition: 'all 0.3s ease'
+        }}>
+            <Container>
+                <Row style={{marginBottom: '3rem'}}>
+                    <Col sm={12}>
+                        <div style={{textAlign: 'center'}}>
+                            <h3 style={{
+                                fontWeight: 600,
+                                color: '#003049',
+                                fontSize: '1.8rem',
+                                marginBottom: '0.5rem'
+                            }}>
+                                About Me
+                            </h3>
+                            <p style={{
+                                color: '#666',
+                                fontSize: '1.05rem',
+                                marginBottom: '0',
+                                maxWidth: '700px',
+                                margin: '0 auto'
+                            }}>
+                                Full-stack software engineer passionate about building scalable applications
+                            </p>
+                        </div>
+                    </Col>
+                </Row>
 
-                            <Container>
-                                <Education
-                                    image={ConcordiaDetails.image}
-                                    qualification={ConcordiaDetails.qualification}
-                                    instition={ConcordiaDetails.instition}
-                                    address={ConcordiaDetails.address}
-                                />
-                            </Container>
-                            <div style={{ height: '55px' }}></div>
+                <Row>
+                    {/* Education Section - Left Side */}
+                    <Col sm={12} md={12} lg={5} style={{marginBottom: '2rem'}}>
+                        <div style={{
+                            backgroundColor: 'white',
+                            padding: '2rem',
+                            borderRadius: '12px',
+                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                            height: '100%'
+                        }}>
+                            <h4 style={{
+                                fontWeight: 600,
+                                color: '#003049',
+                                fontSize: '1.3rem',
+                                marginBottom: '1.5rem'
+                            }}>
+                                Education Background
+                            </h4>
+                            
+                            <Education
+                                image={ConcordiaDetails.image}
+                                qualification={ConcordiaDetails.qualification}
+                                instition={ConcordiaDetails.instition}
+                                address={ConcordiaDetails.address}
+                                isHE={true}
+                            />
 
-                            <Container>
-                                <Education style={{ marginTop: '2px' }}
-                                    image={CoventryDetails.image}
-                                    qualification={CoventryDetails.qualification}
-                                    instition={CoventryDetails.instition}
-                                    address={CoventryDetails.address}
-                                />
-                            </Container>
+                            <div style={{
+                                height: '1px',
+                                backgroundColor: '#e8e8e8',
+                                margin: '1.5rem 0'
+                            }}></div>
 
-                        </center>
+                            <Education
+                                image={CoventryDetails.image}
+                                qualification={CoventryDetails.qualification}
+                                instition={CoventryDetails.instition}
+                                address={CoventryDetails.address}
+                                isHE={true}
+                            />
+                        </div>
                     </Col>
 
+                    {/* About Text - Right Side */}
                     <Col sm={12} md={12} lg={7}>
-                        <div className='aboutSection' style={{ padding: 0, margin: '1rem' }}>
-                            <div style={{ display: 'flex', justifyContent: 'center' }}>
-                                <h2> About Me </h2>
-                            </div>
-                            <hr />
-                            <div>
-
-                                <p>
-                                    I am a passionate FullStack Software Development Engineer with hands-on experience in creating iOS mobile applications and web applications in personal, academic and professional environments using Agile methodologies. I'm also an AWS certified Cloud Practitioner (CLF-CO1) with sufficient knowledge of cloud technologies. While I was enrolled in the Master of Software Engineering in Gina Cody School of Computing program at Concordia University, Montreal, Canada. I worked on several academic projects involving diversity of technologies from the topic areas such as Distributed Systems, Advanced Software Architecture, Problem Solving and Applied Artificial Intelligence. </p>
-                                <p>
-                                    In the past I had  worked in the United Kingdom  as Associate Software Engineer where I worked with a team size of four software developers in three time zones (GMT+1, EST and IST) and responsible for developing the mobile scalable Mobile Application for iOS platform and collaborating with software developers to deliver the required functionality using technologies such as RabbitMQ for low coupled communication between the microservices developed in the Node.js and deploying the services to the EC2 instances and auto-scaling group (ASG) in AWS cloud platform.
-                                    I strongly believe in adapting to the tools and technology as per the requirements of the project and try to be technology agnostic and develop the requirements as per the internal discussion with the teams.
-                                </p>
-                                <p>
-                                    Please don’t hesitate to contact me over the contact form or email and I’ll try to get back to you as soon as possible.
-                                </p>
-                            </div>
-
+                        <div style={{
+                            backgroundColor: 'white',
+                            padding: '2rem',
+                            borderRadius: '12px',
+                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                            height: '100%'
+                        }}>
+                            <h4 style={{
+                                fontWeight: 600,
+                                color: '#003049',
+                                fontSize: '1.3rem',
+                                marginBottom: '1.5rem'
+                            }}>
+                                Professional Journey
+                            </h4>
+                            
+                            <p style={{
+                                color: '#555',
+                                lineHeight: '1.8',
+                                marginBottom: '1.25rem',
+                                fontSize: '1rem'
+                            }}>
+                                I am a passionate <strong>FullStack Software Development Engineer</strong> with hands-on experience in creating iOS mobile applications and web applications in personal, academic and professional environments using Agile methodologies. I'm also an <strong>AWS certified Cloud Practitioner (CLF-CO1)</strong> with sufficient knowledge of cloud technologies.
+                            </p>
+                            
+                            <p style={{
+                                color: '#555',
+                                lineHeight: '1.8',
+                                marginBottom: '1.25rem',
+                                fontSize: '1rem'
+                            }}>
+                                While enrolled in the <strong>Master of Software Engineering</strong> in Gina Cody School of Computing program at <strong>Concordia University, Montreal, Canada</strong>, I worked on several academic projects involving diversity of technologies from the topic areas such as Distributed Systems, Advanced Software Architecture, Problem Solving and Applied Artificial Intelligence.
+                            </p>
+                            
+                            <p style={{
+                                color: '#555',
+                                lineHeight: '1.8',
+                                marginBottom: '0',
+                                fontSize: '1rem'
+                            }}>
+                                Previously, I worked in the United Kingdom as an <strong>Associate Software Engineer</strong> in a distributed team across three time zones (GMT+1, EST and IST). I was responsible for developing scalable iOS applications and collaborating with developers to deliver functionality using technologies such as <strong>RabbitMQ</strong>, <strong>Node.js</strong> microservices, and <strong>AWS cloud platform</strong> (EC2, Auto-scaling groups). I strongly believe in being technology agnostic and adapting tools to meet project requirements.
+                            </p>
                         </div>
                     </Col>
                 </Row>

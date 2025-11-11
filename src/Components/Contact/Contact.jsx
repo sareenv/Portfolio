@@ -8,76 +8,323 @@ import '../../Styles/contact.scss'
 
 const Contact = () => {
     return (
-        <Container>
-            <Row className='contact_section'>
-                <Col sm={12} md={12} lg={6}>
-                <center>
-                        <h2> Let's Discuss! </h2>
-                        <p> Let's convert your idea into user-friendly products.</p>
-                        <hr className='customline'></hr>
-                        <span> 
-                            <div>
-                                <b>Contact Email</b>: contact@sareenv.com
-                            </div>
-                            <div>
-                                <b>Location </b>: Barrie, Canada
-                            </div>
+        <div style={{
+            backgroundColor: '#f8f9fa',
+            minHeight: '100vh',
+            paddingTop: '4rem',
+            paddingBottom: '4rem',
+            transition: 'all 0.3s ease'
+        }}>
+            <Container>
+                {/* Page Header */}
+                <Row style={{marginBottom: '3rem'}}>
+                    <Col>
+                        <h2 style={{
+                            fontWeight: 600,
+                            color: '#003049',
+                            fontSize: '2rem',
+                            marginBottom: '0.5rem',
+                            textAlign: 'center'
+                        }}>
+                            Get in Touch
+                        </h2>
+                        <p style={{
+                            color: '#666',
+                            fontSize: '1.1rem',
+                            marginBottom: 0,
+                            textAlign: 'center',
+                            maxWidth: '600px',
+                            margin: '0 auto'
+                        }}>
+                            Have a project in mind or just want to connect? I'd love to hear from you!
+                        </p>
+                    </Col>
+                </Row>
 
-                            <div>
-                                <b>Contact Number </b>: (+1)5149783251
-                            </div>
-                            <div style={{margin: '1rem'}}>
-                                <a href="https://www.linkedin.com/in/vinayak-sareen/" 
-                                    className='btn btn-outline-primary'> <FaLinkedinIn /> <> </>CONNECT ON LINKEDIN </a>
-                            </div>
-
-                            <div>
-                                <a href="mailto:contact@sareenv.com" 
-                                    style={{textDecoration: 'none',}} className="btn btn-outline-danger"> <FaMailBulk /> contact@sareenv.com </a>
-                            </div>
-    
-                        </span>
-                    </center>
-                </Col>
-                <Col sm={12} md={12} lg={6}>
-                        <Container fluid='sm' className='contact-form' style={{marginTop: '20px'}}> 
-                        <center>
-                        <h2> Get in Touch </h2>
-                        <hr className='customline'></hr>
-                        </center>
-                        <Form id="contact" action='https://formsubmit.co/contact@sareenv.com' method='post'>
-                            <input type="hidden" name="_next" value="https://www.sareenv.com"/>
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>Full Name</Form.Label>
-                                <Form.Control type="fullName" name="fullname" placeholder="Your Full Name"/>
-                            </Form.Group>
-
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>Email</Form.Label>
-                                <Form.Control type="email" name="email" placeholder="name@example.com"/>
-                            </Form.Group>
-
-                            <Form.Group className="mb-3" controlId="exampleForm.ControlTextarea1">
-                                <Form.Label>Your Message</Form.Label>
-                                <Form.Control as="textarea" name="message" placeholder='Please type your message here' />
-                            </Form.Group>
-                            <Button className="customButton" type="submit" > 
-                                <div>
-                                    <FaPaperPlane /> <> { } </>
-                                    Send Message 
+                <Row>
+                    {/* Contact Information */}
+                    <Col sm={12} md={12} lg={5} style={{marginBottom: '2rem'}}>
+                        <div style={{
+                            backgroundColor: 'white',
+                            borderRadius: '12px',
+                            padding: '2.5rem',
+                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                            height: '100%'
+                        }}>
+                            <h3 style={{
+                                fontSize: '1.5rem',
+                                fontWeight: 600,
+                                color: '#003049',
+                                marginBottom: '1.5rem'
+                            }}>
+                                Contact Information
+                            </h3>
+                            
+                            <div style={{marginBottom: '2rem'}}>
+                                <div style={{
+                                    marginBottom: '1.5rem',
+                                    paddingBottom: '1.5rem',
+                                    borderBottom: '1px solid #e8e8e8'
+                                }}>
+                                    <div style={{
+                                        fontSize: '0.85rem',
+                                        color: '#666',
+                                        marginBottom: '0.25rem',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.5px',
+                                        fontWeight: 600
+                                    }}>Email</div>
+                                    <div style={{
+                                        fontSize: '1rem',
+                                        color: '#003049',
+                                        fontWeight: '500'
+                                    }}>contact@sareenv.com</div>
                                 </div>
-                            </Button>
-                        </Form>
-                    </Container>
-                </Col>
-            </Row>
-            
-            <div className='footer-contact' style={{display: 'none'}}>
-                contact form
-            </div>
 
-            <Footer />
-        </Container>
+                                <div style={{
+                                    marginBottom: '1.5rem',
+                                    paddingBottom: '1.5rem',
+                                    borderBottom: '1px solid #e8e8e8'
+                                }}>
+                                    <div style={{
+                                        fontSize: '0.85rem',
+                                        color: '#666',
+                                        marginBottom: '0.25rem',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.5px',
+                                        fontWeight: 600
+                                    }}>Location</div>
+                                    <div style={{
+                                        fontSize: '1rem',
+                                        color: '#003049',
+                                        fontWeight: '500'
+                                    }}>Barrie, Canada</div>
+                                </div>
+
+                                <div style={{
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    <div style={{
+                                        fontSize: '0.85rem',
+                                        color: '#666',
+                                        marginBottom: '0.25rem',
+                                        textTransform: 'uppercase',
+                                        letterSpacing: '0.5px',
+                                        fontWeight: 600
+                                    }}>Phone</div>
+                                    <div style={{
+                                        fontSize: '1rem',
+                                        color: '#003049',
+                                        fontWeight: '500'
+                                    }}>+1 (437) 365-3351</div>
+                                </div>
+                            </div>
+
+                            <div style={{
+                                display: 'flex',
+                                flexDirection: 'column',
+                                gap: '0.75rem'
+                            }}>
+                                <a 
+                                    href="https://www.linkedin.com/in/vinayak-sareen/" 
+                                    style={{
+                                        textDecoration: 'none',
+                                        backgroundColor: '#0077b5',
+                                        color: 'white',
+                                        padding: '0.75rem 1.25rem',
+                                        borderRadius: '8px',
+                                        fontWeight: '500',
+                                        fontSize: '0.95rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '0.5rem',
+                                        transition: 'all 0.3s ease',
+                                        border: 'none'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.backgroundColor = '#005885';
+                                        e.target.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.backgroundColor = '#0077b5';
+                                        e.target.style.transform = 'translateY(0)';
+                                    }}
+                                >
+                                    <FaLinkedinIn /> Connect on LinkedIn
+                                </a>
+
+                                <a 
+                                    href="mailto:contact@sareenv.com" 
+                                    style={{
+                                        textDecoration: 'none',
+                                        backgroundColor: '#f8f9fa',
+                                        color: '#003049',
+                                        border: '1px solid #e8e8e8',
+                                        padding: '0.75rem 1.25rem',
+                                        borderRadius: '8px',
+                                        fontWeight: '500',
+                                        fontSize: '0.95rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '0.5rem',
+                                        transition: 'all 0.3s ease'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.backgroundColor = '#e8e8e8';
+                                        e.target.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.backgroundColor = '#f8f9fa';
+                                        e.target.style.transform = 'translateY(0)';
+                                    }}
+                                >
+                                    <FaMailBulk /> Send Email
+                                </a>
+                            </div>
+
+                            {/* Response Time Message */}
+                            <div style={{
+                                marginTop: '2rem',
+                                padding: '1rem',
+                                backgroundColor: '#e3f2fd',
+                                borderRadius: '8px',
+                                borderLeft: '3px solid #003049'
+                            }}>
+                                <p style={{
+                                    color: '#003049',
+                                    fontSize: '0.9rem',
+                                    marginBottom: 0,
+                                    lineHeight: '1.6'
+                                }}>
+                                    <strong>Quick Response:</strong> I typically respond within 24 hours during business days.
+                                </p>
+                            </div>
+                        </div>
+                    </Col>
+
+                    {/* Contact Form */}
+                    <Col sm={12} md={12} lg={7}>
+                        <div style={{
+                            backgroundColor: 'white',
+                            borderRadius: '12px',
+                            padding: '2.5rem',
+                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)'
+                        }}>
+                            <h3 style={{
+                                fontSize: '1.5rem',
+                                fontWeight: 600,
+                                color: '#003049',
+                                marginBottom: '0.5rem'
+                            }}>
+                                Send a Message
+                            </h3>
+                            <p style={{
+                                color: '#666',
+                                fontSize: '1rem',
+                                marginBottom: '2rem'
+                            }}>
+                                Fill out the form below and I'll get back to you as soon as possible.
+                            </p>
+
+                            <Form id="contact" action='https://formsubmit.co/contact@sareenv.com' method='post'>
+                                <input type="hidden" name="_next" value="https://www.sareenv.com"/>
+                                
+                                <Form.Group className="mb-3" controlId="fullName">
+                                    <Form.Label style={{
+                                        fontWeight: 600,
+                                        color: '#003049',
+                                        fontSize: '0.95rem'
+                                    }}>Full Name</Form.Label>
+                                    <Form.Control 
+                                        type="text" 
+                                        name="fullname" 
+                                        placeholder="Your Full Name"
+                                        style={{
+                                            borderRadius: '8px',
+                                            border: '1px solid #e8e8e8',
+                                            padding: '0.75rem',
+                                            fontSize: '1rem'
+                                        }}
+                                    />
+                                </Form.Group>
+
+                                <Form.Group className="mb-3" controlId="email">
+                                    <Form.Label style={{
+                                        fontWeight: 600,
+                                        color: '#003049',
+                                        fontSize: '0.95rem'
+                                    }}>Email Address</Form.Label>
+                                    <Form.Control 
+                                        type="email" 
+                                        name="email" 
+                                        placeholder="name@example.com"
+                                        style={{
+                                            borderRadius: '8px',
+                                            border: '1px solid #e8e8e8',
+                                            padding: '0.75rem',
+                                            fontSize: '1rem'
+                                        }}
+                                    />
+                                </Form.Group>
+
+                                <Form.Group className="mb-3" controlId="message">
+                                    <Form.Label style={{
+                                        fontWeight: 600,
+                                        color: '#003049',
+                                        fontSize: '0.95rem'
+                                    }}>Your Message</Form.Label>
+                                    <Form.Control 
+                                        as="textarea" 
+                                        name="message" 
+                                        rows={6}
+                                        placeholder='Tell me about your project or inquiry...'
+                                        style={{
+                                            borderRadius: '8px',
+                                            border: '1px solid #e8e8e8',
+                                            padding: '0.75rem',
+                                            fontSize: '1rem',
+                                            resize: 'vertical'
+                                        }}
+                                    />
+                                </Form.Group>
+                                
+                                <Button 
+                                    type="submit"
+                                    style={{
+                                        backgroundColor: '#003049',
+                                        border: 'none',
+                                        padding: '0.75rem 2rem',
+                                        borderRadius: '8px',
+                                        fontWeight: '500',
+                                        fontSize: '1rem',
+                                        display: 'flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        transition: 'all 0.3s ease',
+                                        width: '100%',
+                                        justifyContent: 'center'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.target.style.backgroundColor = '#002037';
+                                        e.target.style.transform = 'translateY(-2px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.target.style.backgroundColor = '#003049';
+                                        e.target.style.transform = 'translateY(0)';
+                                    }}
+                                >
+                                    <FaPaperPlane /> Send Message
+                                </Button>
+                            </Form>
+                        </div>
+                    </Col>
+                </Row>
+
+                <Footer />
+            </Container>
+        </div>
     )
 }
 

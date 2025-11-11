@@ -1,6 +1,5 @@
 import React from 'react'
 import Badge from './Badge';
-import { ListGroup } from 'react-bootstrap'
 
 import '../../Styles/experience.scss'
 
@@ -8,52 +7,114 @@ import '../../Styles/experience.scss'
 const ProgressJobPosition = (props) => {
 
 	return (
-		<div className="positionContainer">
+		<div style={{padding: 0}}>
 			
-			{props.progress.map((progress) => {
+			{props.progress.map((progress, index) => {
 				return (
-					<div className='positionContainer'>
-						<div className="positionTitle">
-							{(() => {
-								if (progress !== undefined && progress.isLastPosition) {
-									return (
-										<div className="activeProgressCircle" />
-									)
-								} else {
-									return (
-										<div className="progressCircle" />
-									)
-								}
-							})()}
+					<div key={index} style={{position: 'relative'}}>
+						<div style={{
+							display: 'flex',
+							alignItems: 'flex-start',
+							paddingBottom: progress.showVerticleLine ? '2rem' : '0'
+						}}>
+							{/* Circle indicator */}
+							<div style={{
+								minWidth: '50px',
+								display: 'flex',
+								flexDirection: 'column',
+								alignItems: 'center',
+								paddingTop: '0.25rem'
+							}}>
+								{(() => {
+									if (progress !== undefined && progress.isLastPosition) {
+										return (
+											<div style={{
+												width: '20px',
+												height: '20px',
+												borderRadius: '50%',
+												backgroundColor: '#003049',
+												border: '4px solid #e3f2fd',
+												boxShadow: '0 2px 8px rgba(0,48,73,0.3)'
+											}} />
+										)
+									} else {
+										return (
+											<div style={{
+												width: '16px',
+												height: '16px',
+												borderRadius: '50%',
+												backgroundColor: '#e8e8e8',
+												border: '3px solid white',
+												boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
+											}} />
+										)
+									}
+								})()}
+								
+								{/* Vertical line */}
+								{(() => {
+									if (progress.showVerticleLine === true) {
+										return (
+											<div style={{
+												width: '3px',
+												height: '100%',
+												backgroundColor: '#e8e8e8',
+												marginTop: '0.5rem',
+												position: 'absolute',
+												top: '28px',
+												left: '23px',
+												bottom: 0
+											}} />
+										)
+									}
+								})()}
+							</div>
 							
-							<div className="titleDescriptionColumn">
-								<ListGroup >
+							{/* Content */}
+							<div style={{
+								flex: 1,
+								paddingLeft: '1.5rem'
+							}}>
+								<h5 style={{
+									fontWeight: 700,
+									color: '#003049',
+									fontSize: '1.3rem',
+									marginBottom: '0.75rem'
+								}}>{progress.title}</h5>
+								
+								<div style={{
+									display: 'flex',
+									alignItems: 'center',
+									gap: '1rem',
+									marginBottom: '1rem',
+									flexWrap: 'wrap'
+								}}>
+									<Badge tag={progress.type} />
+									<span style={{
+										color: '#666',
+										fontSize: '0.95rem',
+										fontStyle: 'italic'
+									}}>{progress.dates}</span>
+								</div>
 
-									<h5 style={{fontWeight: 800}}>{progress.title} </h5>
-									<div className="projectDescriptionAndStatus">
-										<Badge tag={progress.type} />
-										<i style={{ color: "gray" }}>{progress.dates} </i>
-									</div>
-
-									<ul style={{ textBreak: 'break-all', padding: '0.3rem' }}>
-										{progress.desc.map((description) => {
-											return <li> {description} </li>
-										})}
-									</ul>
-
-								</ListGroup>
+								<ul style={{
+									paddingLeft: '1.5rem',
+									margin: 0,
+									color: '#666',
+									fontSize: '1rem',
+									lineHeight: '1.7'
+								}}>
+									{progress.desc.map((description, descIndex) => {
+										return (
+											<li key={descIndex} style={{
+												marginBottom: '0.75rem'
+											}}>{description}</li>
+										)
+									})}
+								</ul>
 							</div>
 
 						</div>
-						{(() => {
-							if (progress.showVerticleLine === true) {
-								return (
-									<div className='hline' />
-								)
-							} else {
-								return <div />
-							}
-						})()}
 					</div>)
 			})}
 		</div>
