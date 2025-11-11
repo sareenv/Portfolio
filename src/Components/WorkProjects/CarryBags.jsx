@@ -11,7 +11,7 @@ const CarryBags = () => {
     return (
         <div style={{
             backgroundColor: '#ffffff',
-            padding: '4rem 0',
+            padding: '2rem 0 4rem 0',
             transition: 'all 0.3s ease'
         }}>
             <Container>

@@ -21,7 +21,7 @@ const Project = (props) => {
     return (
         <div className='projectSection' style={{
             backgroundColor: '#ffffff',
-            padding: '4rem 0',
+            padding: '4rem 0 2rem 0',
             transition: 'all 0.3s ease'
         }}>
                 {props.showTitle && (
@@ -53,7 +53,7 @@ const Project = (props) => {
                     </div>
                 )}
                     
-                <Container fluid="sm" style={{ marginBottom: '4rem' }}>
+                <Container fluid="sm" style={{ marginBottom: '0' }}>
                     <Row style={{ 
                         display: 'grid', 
                         gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', 
