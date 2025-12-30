@@ -1,9 +1,30 @@
 import React, {useEffect} from 'react';
-import experience from '../../Assets/experience.png'
 import SkillsServices from './SkillsServices'
 import Footer from '../Footer'
-import {Row, Col, Container, Image, Button} from 'react-bootstrap'
+import {Row, Col, Container} from 'react-bootstrap'
+import { HiOutlineCode, HiOutlineDeviceMobile, HiOutlineCloud, HiArrowRight } from 'react-icons/hi'
 import ReactGA from 'react-ga'
+
+const services = [
+    {
+        icon: HiOutlineDeviceMobile,
+        title: 'Mobile Development',
+        description: 'Native iOS applications built with Swift and SwiftUI, delivering seamless user experiences with modern architecture patterns.',
+        features: ['iOS & iPadOS Apps', 'SwiftUI & UIKit', 'App Store Deployment']
+    },
+    {
+        icon: HiOutlineCode,
+        title: 'Full-Stack Development',
+        description: 'End-to-end web applications using React, Node.js, and modern frameworks with scalable backend architectures.',
+        features: ['React & Next.js', 'Node.js & Express', 'REST & GraphQL APIs']
+    },
+    {
+        icon: HiOutlineCloud,
+        title: 'Cloud Solutions',
+        description: 'Cloud infrastructure setup and management on AWS and GCP, with CI/CD pipelines and containerized deployments.',
+        features: ['AWS & GCP', 'Docker & Kubernetes', 'CI/CD Pipelines']
+    }
+];
 
 const Service = () => {
     
@@ -16,149 +37,254 @@ const Service = () => {
     }
 
     return (
-        <div style={{
-            backgroundColor: '#ffffff',
-            padding: '6rem 0'
-        }}>
-        <Container>
-            <Row style={{marginBottom: '3rem'}}>
-                <Col>
-                    <h3 style={{
-                        fontSize: '1.8rem',
-                        fontWeight: 600,
-                        color: '#003049',
-                        marginBottom: '0.5rem'
-                    }}>Professional Services</h3>
-                    <p style={{
-                        fontSize: '1.05rem',
-                        color: '#666',
-                        marginBottom: '1.5rem'
-                    }}>Delivering tailored software solutions for your unique needs</p>
-                    <hr style={{
-                        borderTop: '2px solid #e8e8e8',
-                        marginBottom: 0
-                    }}/>
-                </Col>
-            </Row>
+        <div style={{ backgroundColor: '#ffffff' }}>
+            {/* Hero Section */}
+            <div style={{
+                background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
+                padding: '8rem 0 6rem',
+                position: 'relative',
+                overflow: 'hidden'
+            }}>
+                {/* Background decoration */}
+                <div style={{
+                    position: 'absolute',
+                    top: '20%',
+                    right: '10%',
+                    width: '400px',
+                    height: '400px',
+                    background: 'radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%)',
+                    borderRadius: '50%',
+                    filter: 'blur(40px)',
+                    pointerEvents: 'none'
+                }} />
+                
+                <Container>
+                    <Row className="justify-content-center">
+                        <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
+                            <p style={{
+                                color: '#00b4d8',
+                                fontSize: '0.9rem',
+                                fontWeight: 600,
+                                letterSpacing: '0.1em',
+                                textTransform: 'uppercase',
+                                marginBottom: '1rem'
+                            }}>
+                                Services
+                            </p>
+                            <h1 style={{
+                                color: '#f1faee',
+                                fontSize: 'clamp(2rem, 5vw, 3rem)',
+                                fontWeight: 700,
+                                marginBottom: '1.5rem',
+                                lineHeight: 1.2
+                            }}>
+                                Building Digital Solutions<br />That Drive Results
+                            </h1>
+                            <p style={{
+                                color: 'rgba(241, 250, 238, 0.8)',
+                                fontSize: '1.15rem',
+                                lineHeight: 1.7,
+                                maxWidth: '600px',
+                                margin: '0 auto 2rem'
+                            }}>
+                                From concept to deployment, I deliver tailored software solutions 
+                                that help businesses scale and succeed in the digital landscape.
+                            </p>
+                            <button
+                                onClick={handleBookConsultation}
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    padding: '1rem 2rem',
+                                    backgroundColor: '#00b4d8',
+                                    color: '#003049',
+                                    border: 'none',
+                                    borderRadius: '8px',
+                                    fontWeight: 600,
+                                    fontSize: '1rem',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s ease',
+                                    boxShadow: '0 4px 20px rgba(0, 180, 216, 0.3)'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 180, 216, 0.4)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 180, 216, 0.3)';
+                                }}
+                            >
+                                Book Free Consultation
+                                <HiArrowRight size={18} />
+                            </button>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
 
-            <Row style={{marginBottom: '4rem'}}>
-                <Col sm={12} md={12} lg={12}>
-                    <div style={{
-                        backgroundColor: 'white',
-                        borderRadius: '12px',
-                        boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                        overflow: 'hidden',
-                        transition: 'all 0.3s ease'
-                    }}>
-                        <Row style={{margin: 0}}>
-                            <Col sm={12} md={12} lg={6} style={{padding: 0}}>
+            {/* Services Cards Section */}
+            <Container style={{ marginTop: '-3rem', position: 'relative', zIndex: 2 }}>
+                <Row>
+                    {services.map((service, index) => (
+                        <Col xs={12} md={4} key={index} style={{ marginBottom: '1.5rem' }}>
+                            <div style={{
+                                backgroundColor: '#ffffff',
+                                borderRadius: '16px',
+                                padding: '2rem',
+                                height: '100%',
+                                boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
+                                transition: 'all 0.3s ease',
+                                border: '1px solid #f0f0f0'
+                            }}
+                            onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'translateY(-8px)';
+                                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.12)';
+                            }}
+                            onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'translateY(0)';
+                                e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
+                            }}
+                            >
+                                {/* Icon */}
                                 <div style={{
-                                    height: '100%',
-                                    minHeight: '500px',
-                                    backgroundColor: '#f8f9fa',
+                                    width: '56px',
+                                    height: '56px',
+                                    borderRadius: '14px',
+                                    background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    padding: '3rem'
+                                    marginBottom: '1.5rem'
                                 }}>
-                                    <Image 
-                                        fluid 
-                                        src={experience} 
-                                        className="d-block mx-auto img-fluid"
-                                        style={{
-                                            maxWidth: '90%',
-                                            objectFit: 'contain'
-                                        }}
-                                    />
+                                    <service.icon size={28} color="#00b4d8" />
                                 </div>
-                            </Col>
-
-                            <Col sm={12} md={12} lg={6} style={{padding: '3.5rem'}}>
-                                <div style={{
-                                    display: 'flex',
-                                    flexDirection: 'column',
-                                    height: '100%',
-                                    justifyContent: 'center'
+                                
+                                {/* Title */}
+                                <h3 style={{
+                                    fontSize: '1.25rem',
+                                    fontWeight: 600,
+                                    color: '#003049',
+                                    marginBottom: '0.75rem'
                                 }}>
-                                    <h3 style={{
-                                        fontWeight: 700,
-                                        color: '#003049',
-                                        fontSize: '2.2rem',
-                                        marginBottom: '0.75rem',
-                                        lineHeight: '1.2'
-                                    }}>Full-Stack Development Expertise</h3>
-                                    
-                                    <p style={{
-                                        color: '#d62828',
-                                        fontSize: '1.2rem',
-                                        fontWeight: 500,
-                                        marginBottom: '2rem',
-                                        fontStyle: 'italic'
-                                    }}>Freelance excellence, delivered remotely</p>
-                                    
-                                    <div style={{
-                                        borderLeft: '4px solid #003049',
-                                        paddingLeft: '1.5rem',
-                                        marginBottom: '1.5rem'
-                                    }}>
-                                        <p style={{
-                                            color: '#666',
-                                            fontSize: '1.05rem',
-                                            lineHeight: '1.8',
-                                            marginBottom: '1.5rem'
+                                    {service.title}
+                                </h3>
+                                
+                                {/* Description */}
+                                <p style={{
+                                    fontSize: '0.95rem',
+                                    color: '#666',
+                                    lineHeight: 1.7,
+                                    marginBottom: '1.5rem'
+                                }}>
+                                    {service.description}
+                                </p>
+                                
+                                {/* Features */}
+                                <ul style={{
+                                    listStyle: 'none',
+                                    padding: 0,
+                                    margin: 0
+                                }}>
+                                    {service.features.map((feature, i) => (
+                                        <li key={i} style={{
+                                            display: 'flex',
+                                            alignItems: 'center',
+                                            gap: '0.5rem',
+                                            fontSize: '0.9rem',
+                                            color: '#555',
+                                            marginBottom: '0.5rem'
                                         }}>
-                                            As a <strong style={{color: '#003049'}}>seasoned Full-Stack Application Developer</strong>, I specialize in delivering versatile, customized solutions tailored to your unique project requirements. My expertise spans the entire development spectrum—from <strong style={{color: '#003049'}}>mobile applications</strong> on iOS and Android platforms to robust <strong style={{color: '#003049'}}>backend systems</strong> built with Node.js, seamlessly integrated with cloud services like AWS and Google Cloud Platform.
-                                        </p>
-                                        
-                                        <p style={{
-                                            color: '#666',
-                                            fontSize: '1.05rem',
-                                            lineHeight: '1.8',
-                                            marginBottom: 0
-                                        }}>
-                                            My approach combines extensive professional experience with continuous learning, ensuring that every solution is perfectly aligned with your business logic and technical requirements. I thrive on tackling new challenges and remain committed to adapting emerging technologies to deliver efficient, scalable, and maintainable solutions.
-                                        </p>
-                                    </div>
-                                    
-                                    <Button 
-                                        onClick={handleBookConsultation}
-                                        style={{
-                                            width: '100%',
-                                            fontWeight: 600,
-                                            backgroundColor: '#003049',
-                                            border: 'none',
-                                            padding: '1rem 2rem',
-                                            borderRadius: '8px',
-                                            fontSize: '1.05rem',
-                                            transition: 'all 0.3s ease',
-                                            marginTop: '1rem'
-                                        }}
-                                        onMouseEnter={(e) => {
-                                            e.target.style.backgroundColor = '#002035';
-                                            e.target.style.transform = 'translateY(-2px)';
-                                            e.target.style.boxShadow = '0 4px 12px rgba(0,48,73,0.3)';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            e.target.style.backgroundColor = '#003049';
-                                            e.target.style.transform = 'translateY(0)';
-                                            e.target.style.boxShadow = 'none';
-                                        }}
-                                    >Schedule a Free Consultation →</Button>
-                                </div>
-                            </Col>
-                        </Row>
-                    </div>
-                </Col>        
-            </Row>
+                                            <span style={{
+                                                width: '6px',
+                                                height: '6px',
+                                                borderRadius: '50%',
+                                                backgroundColor: '#00b4d8'
+                                            }} />
+                                            {feature}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        </Col>
+                    ))}
+                </Row>
+            </Container>
 
-            <Row>
-                <Col sm={12} md={12} lg={12}>
-                    <SkillsServices/>
-                </Col>
-            </Row>
-            
+            {/* Skills Section */}
+            <div style={{
+                backgroundColor: '#f8f9fa',
+                padding: '5rem 0',
+                marginTop: '4rem'
+            }}>
+                <Container>
+                    <SkillsServices />
+                </Container>
+            </div>
+
+            {/* CTA Section */}
+            <div style={{
+                padding: '5rem 0',
+                backgroundColor: '#ffffff'
+            }}>
+                <Container>
+                    <Row className="justify-content-center">
+                        <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
+                            <h2 style={{
+                                fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                                fontWeight: 700,
+                                color: '#003049',
+                                marginBottom: '1rem'
+                            }}>
+                                Ready to Start Your Project?
+                            </h2>
+                            <p style={{
+                                color: '#666',
+                                fontSize: '1.1rem',
+                                marginBottom: '2rem',
+                                maxWidth: '500px',
+                                margin: '0 auto 2rem'
+                            }}>
+                                Let's discuss how I can help bring your ideas to life with 
+                                custom software solutions tailored to your needs.
+                            </p>
+                            <button
+                                onClick={handleBookConsultation}
+                                style={{
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    padding: '1rem 2rem',
+                                    backgroundColor: '#003049',
+                                    color: '#f1faee',
+                                    border: 'none',
+                                    borderRadius: '8px',
+                                    fontWeight: 600,
+                                    fontSize: '1rem',
+                                    cursor: 'pointer',
+                                    transition: 'all 0.3s ease'
+                                }}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#002035';
+                                    e.currentTarget.style.transform = 'translateY(-2px)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,48,73,0.3)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#003049';
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                    e.currentTarget.style.boxShadow = 'none';
+                                }}
+                            >
+                                Schedule Consultation
+                                <HiArrowRight size={18} />
+                            </button>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+
             <Footer />
-        </Container>
         </div>
     )
 }

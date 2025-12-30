@@ -3,45 +3,62 @@ import {Container, Row, Col, Image} from 'react-bootstrap'
 import ProgressJobPosition from '../Utilities/JobPositionProgress'
 import Contact from '../Contact/Contact'
 import ReactGA from 'react-ga'
+import { HiOutlineBriefcase, HiOutlineLocationMarker, HiOutlineCalendar } from 'react-icons/hi'
 import '../../Styles/experience.scss'
 
 const JobPosition = (props) => {
     return (
         <div style={{
             backgroundColor: 'white',
-            borderRadius: '12px',
-            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+            borderRadius: '16px',
+            boxShadow: '0 4px 20px rgba(0,0,0,0.08)',
             overflow: 'hidden',
-            transition: 'all 0.3s ease',
-            height: '100%'
+            transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
+            height: '100%',
+            border: '1px solid rgba(0,0,0,0.04)'
         }}
         onMouseEnter={(e) => {
-            e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
-            e.currentTarget.style.transform = 'translateY(-4px)';
+            e.currentTarget.style.boxShadow = '0 12px 32px rgba(0,48,73,0.15)';
+            e.currentTarget.style.transform = 'translateY(-8px)';
         }}
         onMouseLeave={(e) => {
-            e.currentTarget.style.boxShadow = '0 2px 12px rgba(0,0,0,0.08)';
+            e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,0,0,0.08)';
             e.currentTarget.style.transform = 'translateY(0)';
         }}
         >
+            {/* Header with gradient overlay */}
             <div style={{
                 backgroundColor: props.color,
                 display: 'flex',
                 justifyContent: 'center',
                 alignItems: 'center',
-                padding: '2rem',
-                minHeight: '180px'
+                padding: '2.5rem 2rem',
+                minHeight: '200px',
+                position: 'relative',
+                overflow: 'hidden'
             }}>
+                {/* Decorative circle */}
+                <div style={{
+                    position: 'absolute',
+                    top: '-20%',
+                    right: '-10%',
+                    width: '150px',
+                    height: '150px',
+                    borderRadius: '50%',
+                    background: 'rgba(255,255,255,0.1)',
+                    pointerEvents: 'none'
+                }} />
                 <Image 
                     roundedCircle={false} 
                     thumbnail={false}
                     style={{ 
-                        width: '120px', 
-                        height: '120px', 
+                        width: '110px', 
+                        height: '110px', 
                         objectFit: 'cover',
-                        borderRadius: '12px',
-                        border: '4px solid white',
-                        boxShadow: '0 4px 12px rgba(0,0,0,0.15)'
+                        borderRadius: '16px',
+                        border: '4px solid rgba(255,255,255,0.9)',
+                        boxShadow: '0 8px 24px rgba(0,0,0,0.2)',
+                        backgroundColor: 'white'
                     }}  
                     variant="top" 
                     src={props.logo} 
@@ -49,50 +66,86 @@ const JobPosition = (props) => {
             </div>
             
             <div style={{padding: '2rem'}}>
+                {/* Company & Title */}
                 <div style={{textAlign: 'center', marginBottom: '1.5rem'}}>
                     <h3 style={{
                         color: '#003049',
                         fontWeight: 700,
-                        fontSize: '1.4rem',
-                        marginBottom: '0.5rem'
+                        fontSize: '1.35rem',
+                        marginBottom: '0.5rem',
+                        lineHeight: 1.3
                     }}>{props.company}</h3>
                     <p style={{
-                        color: '#666',
-                        fontSize: '1.05rem',
-                        fontStyle: 'italic',
+                        color: '#00b4d8',
+                        fontSize: '1rem',
+                        fontWeight: 600,
                         marginBottom: 0
                     }}>{props.title}</p>
                 </div>
                 
+                {/* Meta info badges */}
                 <div style={{
-                    borderTop: '1px solid #e8e8e8',
-                    paddingTop: '1.5rem'
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    gap: '0.75rem',
+                    justifyContent: 'center',
+                    marginBottom: '1.5rem',
+                    paddingBottom: '1.5rem',
+                    borderBottom: '1px solid #f0f2f5'
                 }}>
-                    <div style={{marginBottom: '1rem'}}>
-                        <strong style={{color: '#003049'}}>Type:</strong>
-                        <span style={{color: '#666', marginLeft: '0.5rem'}}>{props.type}</span>
-                    </div>
-                    
-                    <div style={{marginBottom: '1rem'}}>
-                        <strong style={{color: '#003049'}}>Location:</strong>
-                        <span style={{color: '#666', marginLeft: '0.5rem'}}>{props.location}</span>
-                    </div>
-                    
-                    <div>
-                        <strong style={{color: '#003049', display: 'block', marginBottom: '0.75rem'}}>
-                            Role description:
-                        </strong>
-                        <ul style={{
-                            paddingLeft: '1.25rem',
-                            margin: 0,
-                            color: '#666',
-                            lineHeight: '1.6'
-                        }}>
-                            {props.description && props.description.map((desc, index) => {
-                                return <li key={index} style={{marginBottom: '0.5rem'}}>{desc}</li>
-                            })}   
-                        </ul>
-                    </div>
+                    <span style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        backgroundColor: 'rgba(0,180,216,0.1)',
+                        color: '#00b4d8',
+                        padding: '0.4rem 0.9rem',
+                        borderRadius: '20px',
+                        fontSize: '0.85rem',
+                        fontWeight: 500
+                    }}>
+                        <HiOutlineBriefcase size={14} />
+                        {props.type}
+                    </span>
+                    <span style={{
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        backgroundColor: '#f8f9fa',
+                        color: '#5a6c7d',
+                        padding: '0.4rem 0.9rem',
+                        borderRadius: '20px',
+                        fontSize: '0.85rem',
+                        fontWeight: 500
+                    }}>
+                        <HiOutlineLocationMarker size={14} />
+                        {props.location.split(',')[0]}
+                    </span>
+                </div>
+                
+                {/* Role description */}
+                <div>
+                    <h4 style={{
+                        color: '#003049',
+                        fontSize: '0.9rem',
+                        fontWeight: 600,
+                        textTransform: 'uppercase',
+                        letterSpacing: '0.05em',
+                        marginBottom: '1rem'
+                    }}>
+                        Key Responsibilities
+                    </h4>
+                    <ul style={{
+                        paddingLeft: '1.25rem',
+                        margin: 0,
+                        color: '#5a6c7d',
+                        lineHeight: '1.7',
+                        fontSize: '0.95rem'
+                    }}>
+                        {props.description && props.description.slice(0, 4).map((desc, index) => {
+                            return <li key={index} style={{marginBottom: '0.6rem'}}>{desc}</li>
+                        })}   
+                    </ul>
                 </div>
             </div>
         </div>
@@ -104,29 +157,64 @@ const ExperiencePage = () => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, [])
     return(
-            <Container style={{marginTop: '4rem'}}>
-            
-            {/* Page Header */}
-            <Row style={{marginBottom: '3rem'}}>
-                <Col>
-                    <h3 style={{
-                        marginTop: '2rem',
-                        fontSize: '1.8rem',
-                        fontWeight: 600,
-                        color: '#003049',
-                        marginBottom: '0.5rem'
-                    }}>Professional Experience</h3>
-                    <p style={{
-                        fontSize: '1.05rem',
-                        color: '#666',
-                        marginBottom: '1.5rem'
-                    }}>Career journey and contributions across leading organizations</p>
-                    <hr style={{
-                        borderTop: '2px solid #e8e8e8',
-                        marginBottom: 0
-                    }}/>
-                </Col>
-            </Row>
+        <div style={{ backgroundColor: '#f8f9fa' }}>
+            {/* Hero Section */}
+            <div style={{
+                background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
+                padding: '8rem 0 4rem',
+                position: 'relative',
+                overflow: 'hidden'
+            }}>
+                {/* Background decoration */}
+                <div style={{
+                    position: 'absolute',
+                    top: '20%',
+                    right: '10%',
+                    width: '400px',
+                    height: '400px',
+                    background: 'radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%)',
+                    borderRadius: '50%',
+                    filter: 'blur(40px)',
+                    pointerEvents: 'none'
+                }} />
+                
+                <Container>
+                    <Row className="justify-content-center">
+                        <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
+                            <p style={{
+                                color: '#00b4d8',
+                                fontSize: '0.9rem',
+                                fontWeight: 600,
+                                letterSpacing: '0.1em',
+                                textTransform: 'uppercase',
+                                marginBottom: '1rem'
+                            }}>
+                                Career Journey
+                            </p>
+                            <h1 style={{
+                                color: '#f1faee',
+                                fontSize: 'clamp(2rem, 5vw, 3rem)',
+                                fontWeight: 700,
+                                marginBottom: '1.5rem',
+                                lineHeight: 1.2
+                            }}>
+                                Professional Experience
+                            </h1>
+                            <p style={{
+                                color: 'rgba(241, 250, 238, 0.8)',
+                                fontSize: '1.15rem',
+                                lineHeight: 1.7,
+                                maxWidth: '600px',
+                                margin: '0 auto'
+                            }}>
+                                Career journey and contributions across leading organizations
+                            </p>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+
+            <Container style={{marginTop: '3rem'}}>
 
             <Row >
             <Col sm={12} md={12} lg = {12}>
@@ -255,18 +343,32 @@ const ExperiencePage = () => {
             </Row>
 
             {/* Previous Positions Section */}
-            <Row style={{marginBottom: '1rem'}}>
+            <Row style={{marginBottom: '2rem', marginTop: '1rem'}}>
                 <Col>
-                    <h4 style={{
-                        fontSize: '1.5rem',
-                        fontWeight: 600,
-                        color: '#003049',
-                        marginBottom: '0.5rem'
-                    }}>Previous Positions</h4>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        marginBottom: '0.75rem'
+                    }}>
+                        <div style={{
+                            width: '4px',
+                            height: '32px',
+                            backgroundColor: '#00b4d8',
+                            borderRadius: '2px'
+                        }} />
+                        <h4 style={{
+                            fontSize: '1.5rem',
+                            fontWeight: 700,
+                            color: '#003049',
+                            marginBottom: 0
+                        }}>Previous Positions</h4>
+                    </div>
                     <p style={{
                         fontSize: '1rem',
-                        color: '#666',
-                        marginBottom: '1.5rem'
+                        color: '#5a6c7d',
+                        marginBottom: 0,
+                        marginLeft: '1.25rem'
                     }}>Part-time and contract roles contributing to diverse projects</p>
                 </Col>
             </Row>
@@ -312,23 +414,33 @@ const ExperiencePage = () => {
             </Row>
 
             {/* Learning Events Section */}
-            <Row style={{marginBottom: '1rem', marginTop: '4rem'}}>
+            <Row style={{marginBottom: '2rem', marginTop: '4rem'}}>
                 <Col>
-                    <h4 style={{
-                        fontSize: '1.5rem',
-                        fontWeight: 600,
-                        color: '#003049',
-                        marginBottom: '0.5rem'
-                    }}>Learning Events</h4>
+                    <div style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '1rem',
+                        marginBottom: '0.75rem'
+                    }}>
+                        <div style={{
+                            width: '4px',
+                            height: '32px',
+                            backgroundColor: '#00b4d8',
+                            borderRadius: '2px'
+                        }} />
+                        <h4 style={{
+                            fontSize: '1.5rem',
+                            fontWeight: 700,
+                            color: '#003049',
+                            marginBottom: 0
+                        }}>Learning Events</h4>
+                    </div>
                     <p style={{
                         fontSize: '1rem',
-                        color: '#666',
-                        marginBottom: '1.5rem'
+                        color: '#5a6c7d',
+                        marginBottom: 0,
+                        marginLeft: '1.25rem'
                     }}>Professional development through conferences and hackathons</p>
-                    <hr style={{
-                        borderTop: '2px solid #e8e8e8',
-                        marginBottom: '2rem'
-                    }}/>
                 </Col>
             </Row>
             
@@ -472,10 +584,8 @@ const ExperiencePage = () => {
                 </Col>
             </Row>
             </Container>
-        
+        </div>
     )
 }
 
 export default ExperiencePage;
-
-
