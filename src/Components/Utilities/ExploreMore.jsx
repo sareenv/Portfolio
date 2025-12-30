@@ -9,8 +9,8 @@ const ExploreMore = ({ currentPage }) => {
             description: 'Explore my professional journey at Dayforce and previous roles',
             icon: <FaBriefcase size={28} />,
             link: '#/experience',
-            color: '#3498db',
-            gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+            color: '#00b4d8',
+            gradient: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
             show: currentPage !== 'experience'
         },
         {
@@ -18,8 +18,8 @@ const ExploreMore = ({ currentPage }) => {
             description: 'Learn about my academic background and certifications',
             icon: <FaGraduationCap size={28} />,
             link: '#/education',
-            color: '#2ecc71',
-            gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
+            color: '#00b4d8',
+            gradient: 'linear-gradient(135deg, #003049 0%, #00546e 100%)',
             show: currentPage !== 'education'
         },
         {
@@ -27,8 +27,8 @@ const ExploreMore = ({ currentPage }) => {
             description: 'Discover how I can help with your next project',
             icon: <FaCogs size={28} />,
             link: '#/services',
-            color: '#d62828',
-            gradient: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)',
+            color: '#00b4d8',
+            gradient: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
             show: currentPage !== 'services'
         },
         {
@@ -36,8 +36,8 @@ const ExploreMore = ({ currentPage }) => {
             description: 'View my personal and academic projects',
             icon: <FaLaptopCode size={28} />,
             link: '#/projects',
-            color: '#e67e22',
-            gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+            color: '#00b4d8',
+            gradient: 'linear-gradient(135deg, #003049 0%, #001d2d 100%)',
             show: currentPage !== 'projects'
         }
     ].filter(page => page.show);

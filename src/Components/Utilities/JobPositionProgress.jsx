@@ -32,9 +32,9 @@ const ProgressJobPosition = (props) => {
 												width: '20px',
 												height: '20px',
 												borderRadius: '50%',
-												backgroundColor: '#003049',
-												border: '4px solid #e3f2fd',
-												boxShadow: '0 2px 8px rgba(0,48,73,0.3)'
+												backgroundColor: '#00b4d8',
+												border: '4px solid #e0f7fa',
+												boxShadow: '0 2px 8px rgba(0,180,216,0.4)'
 											}} />
 										)
 									} else {
@@ -43,7 +43,7 @@ const ProgressJobPosition = (props) => {
 												width: '16px',
 												height: '16px',
 												borderRadius: '50%',
-												backgroundColor: '#e8e8e8',
+												backgroundColor: '#e0f7fa',
 												border: '3px solid white',
 												boxShadow: '0 1px 4px rgba(0,0,0,0.1)'
 											}} />
@@ -58,7 +58,7 @@ const ProgressJobPosition = (props) => {
 											<div style={{
 												width: '3px',
 												height: '100%',
-												backgroundColor: '#e8e8e8',
+												backgroundColor: '#e0f7fa',
 												marginTop: '0.5rem',
 												position: 'absolute',
 												top: '28px',

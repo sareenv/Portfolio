@@ -107,21 +107,34 @@ const SkillsServices = () => {
     };
 
     return (
-        <div style={{marginTop: '2rem'}}>
+        <div>
             <Row style={{marginBottom: '2rem'}}>
                 <Col>
-                    <h4 style={{
-                        color: '#003049',
-                        fontSize: '1.8rem',
+                    <p style={{
+                        color: '#00b4d8',
+                        fontSize: '0.9rem',
                         fontWeight: 600,
-                        marginBottom: '1rem'
+                        letterSpacing: '0.1em',
+                        textTransform: 'uppercase',
+                        marginBottom: '0.75rem'
+                    }}>
+                        Skills
+                    </p>
+                    <h2 style={{
+                        color: '#003049',
+                        fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                        fontWeight: 700,
+                        marginBottom: '0.5rem'
                     }}>
                         Technical Expertise
-                    </h4>
-                    <hr style={{
-                        borderTop: '2px solid #e8e8e8',
-                        marginBottom: '2rem'
-                    }}/>
+                    </h2>
+                    <p style={{
+                        color: '#666',
+                        fontSize: '1.05rem',
+                        maxWidth: '500px'
+                    }}>
+                        Technologies and tools I work with on a daily basis.
+                    </p>
                 </Col>
             </Row>
             
