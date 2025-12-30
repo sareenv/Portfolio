@@ -1,0 +1,50 @@
+// Home Page Layout Styles
+// ========================
+
+.home {
+  overflow-x: hidden;
+  
+  // Smooth scrolling behavior
+  scroll-behavior: smooth;
+  
+  // Reset default margins
+  section {
+    position: relative;
+  }
+  
+  // Consistent section spacing
+  & > section {
+    // Add subtle separator between sections
+    &::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      max-width: 1200px;
+      height: 1px;
+      background: linear-gradient(
+        90deg, 
+        transparent 0%, 
+        rgba(0, 48, 73, 0.08) 20%, 
+        rgba(0, 48, 73, 0.08) 80%, 
+        transparent 100%
+      );
+    }
+    
+    // Remove separator from first section (hero)
+    &:first-of-type::before {
+      display: none;
+    }
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .home {
+    & > section::before {
+      width: 90%;
+    }
+  }
+}

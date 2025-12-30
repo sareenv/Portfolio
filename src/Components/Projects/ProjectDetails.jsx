@@ -1,40 +1,117 @@
 import { Container, Row, Col, Image, Button } from 'react-bootstrap'
 import React  from 'react'
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useCallback } from 'react'
 import { FaGithub, FaVideo, FaArrowLeft } from 'react-icons/fa'
-import { downloadProjectByID } from '../../Services/Projects'
+import { downloadProjectByID, clearCache } from '../../Services/Projects'
 import Vimeo from '@u-wave/react-vimeo'
 import ReactGA from 'react-ga'
 import { useHistory } from 'react-router-dom'
 import Footer from '../Footer'
+import ErrorState from '../Utilities/ErrorState'
 import '../../Styles/product-details.scss'
 
 const ProjectDetails = (props) => {
     const [displayImage, setDisplayImage] = useState("");
     const [isDisplayed, setIsDisplayed] = useState(false);
-    const [project, setProject] = useState([]);
+    const [project, setProject] = useState(null);
+    const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
     const history = useHistory();
-    
-    useEffect(() => {
-        const mounted = true;
-        if(mounted) {
+
+    const fetchProject = useCallback(async () => {
+        setLoading(true)
+        setError(null)
+        try {
             const projectID = props.match.params.id
-            const data = downloadProjectByID(projectID)
-            data.then((project) => {
-                const projectDetails = project.content
-                setProject(projectDetails)
-                setDisplayImage(projectDetails.thumbnail)
+            const data = await downloadProjectByID(projectID)
+            const projectDetails = data.content
+            setProject(projectDetails)
+            setDisplayImage(projectDetails.thumbnail)
+            setIsDisplayed(true)
+        } catch (err) {
+            setError({
+                message: err.message || 'Failed to load project details',
+                type: err.type || 'error'
             })
-            setDisplayImage("https://sareenv-projects.s3.amazonaws.com/images/cinemato5.png")
-            ReactGA.pageview(window.location.pathname + window.location.search);
+        } finally {
+            setLoading(false)
         }
     }, [props.match.params.id])
+    
+    useEffect(() => {
+        fetchProject()
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }, [fetchProject])
+
+    const handleRetry = () => {
+        clearCache()
+        fetchProject()
+    }
+
+    if (error) {
+        return (
+            <div style={{
+                backgroundColor: '#f8f9fa',
+                minHeight: '100vh',
+                paddingTop: '6rem',
+                paddingBottom: '4rem'
+            }}>
+                <Container>
+                    <Row style={{marginBottom: '1.5rem'}}>
+                        <Col>
+                            <Button
+                                onClick={() => history.push('/projects')}
+                                style={{
+                                    backgroundColor: 'transparent',
+                                    color: '#003049',
+                                    border: '1px solid #e8e8e8',
+                                    padding: '0.5rem 1rem',
+                                    borderRadius: '8px',
+                                    fontWeight: '500',
+                                    fontSize: '0.9rem',
+                                    display: 'inline-flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem'
+                                }}
+                            >
+                                <FaArrowLeft /> Back to Projects
+                            </Button>
+                        </Col>
+                    </Row>
+                    <ErrorState 
+                        title="Couldn't load project"
+                        message={error.message}
+                        type={error.type}
+                        onRetry={handleRetry}
+                    />
+                </Container>
+                <Container>
+                    <Footer />
+                </Container>
+            </div>
+        )
+    }
+
+    if (loading || !project) {
+        return (
+            <div style={{
+                backgroundColor: '#f8f9fa',
+                minHeight: '100vh',
+                paddingTop: '6rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center'
+            }}>
+                <div style={{ color: '#666' }}>Loading...</div>
+            </div>
+        )
+    }
 
     return (
         <div style={{
             backgroundColor: '#f8f9fa',
             minHeight: '100vh',
-            paddingTop: '2rem',
+            paddingTop: '6rem',
             paddingBottom: '4rem'
         }}>
             <Container>

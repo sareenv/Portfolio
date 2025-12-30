@@ -1,58 +1,237 @@
-
 // Libraries Import.
-import React from 'react'
-import {Switch, HashRouter, Route, NavLink} from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
+import { Switch, HashRouter, Route, NavLink, useLocation } from 'react-router-dom'
 import Home from '../Components/Home/Home'
 import ContactPage from '../Components/Contact/Contact'
 import ExperiencePage from '../Components/Personal/ExperiencePage'
 import ProjectsPage from '../Components/Projects/ProjectsPage'
-import { Navbar, Nav, Button } from 'react-bootstrap'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 import EducationPage from '../Components/Personal/Education/EducationPage'
+import NotFound from '../Components/Utilities/NotFound'
+import { motion, AnimatePresence } from 'framer-motion'
+import { HiMenuAlt3, HiX } from 'react-icons/hi'
 
-// CSS Imports .
+// CSS Imports
 import '../Styles/base.scss'
+import '../Styles/navigation.scss'
 
+// Navigation Links Data
+const navLinks = [
+    { path: '/', label: 'Home', exact: true },
+    { path: '/projects', label: 'Projects', matchPaths: ['/projects', '/project_details'] },
+    { path: '/experience', label: 'Experience' },
+    { path: '/education', label: 'Education' },
+    { path: '/services', label: 'Services' }
+]
+
+// Animation Variants
+const navVariants = {
+    hidden: { y: -20, opacity: 0 },
+    visible: { 
+        y: 0, 
+        opacity: 1,
+        transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] }
+    }
+}
+
+const linkVariants = {
+    hidden: { opacity: 0, y: -10 },
+    visible: (i) => ({
+        opacity: 1,
+        y: 0,
+        transition: { duration: 0.3, delay: 0.1 + (i * 0.05), ease: "easeOut" }
+    })
+}
+
+const mobileMenuVariants = {
+    hidden: { 
+        opacity: 0,
+        height: 0,
+        transition: { duration: 0.3, ease: "easeInOut" }
+    },
+    visible: { 
+        opacity: 1,
+        height: "auto",
+        transition: { duration: 0.3, ease: "easeInOut" }
+    }
+}
+
+const mobileLinkVariants = {
+    hidden: { opacity: 0, x: -20 },
+    visible: (i) => ({
+        opacity: 1,
+        x: 0,
+        transition: { duration: 0.3, delay: 0.05 + (i * 0.05), ease: "easeOut" }
+    }),
+    exit: { opacity: 0, x: -20, transition: { duration: 0.2 } }
+}
+
+// Navigation Component
+const Navigation = () => {
+    const [isScrolled, setIsScrolled] = useState(false)
+    const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+    const location = useLocation()
+
+    // Handle scroll effect
+    useEffect(() => {
+        const handleScroll = () => {
+            setIsScrolled(window.scrollY > 20)
+        }
+        window.addEventListener('scroll', handleScroll)
+        return () => window.removeEventListener('scroll', handleScroll)
+    }, [])
+
+    // Close mobile menu on route change
+    useEffect(() => {
+        setIsMobileMenuOpen(false)
+    }, [location.pathname])
+
+    // Check if link is active
+    const isLinkActive = (link) => {
+        if (link.exact) {
+            return location.pathname === link.path
+        }
+        if (link.matchPaths) {
+            return link.matchPaths.some(p => location.pathname.startsWith(p))
+        }
+        return location.pathname === link.path
+    }
+
+    return (
+        <motion.nav 
+            className={`nav ${isScrolled ? 'nav--scrolled' : ''}`}
+            variants={navVariants}
+            initial="hidden"
+            animate="visible"
+        >
+            <div className="nav__container">
+                {/* Desktop Navigation */}
+                <div className="nav__links">
+                    {navLinks.map((link, index) => (
+                        <motion.div
+                            key={link.path}
+                            custom={index}
+                            variants={linkVariants}
+                            initial="hidden"
+                            animate="visible"
+                        >
+                            <NavLink
+                                to={link.path}
+                                exact={link.exact}
+                                className={`nav__link ${isLinkActive(link) ? 'nav__link--active' : ''}`}
+                            >
+                                <motion.span
+                                    whileHover={{ y: -2 }}
+                                    whileTap={{ y: 0 }}
+                                >
+                                    {link.label}
+                                </motion.span>
+                                {isLinkActive(link) && (
+                                    <motion.div 
+                                        className="nav__link-indicator"
+                                        layoutId="activeIndicator"
+                                        transition={{ type: "spring", stiffness: 380, damping: 30 }}
+                                    />
+                                )}
+                            </NavLink>
+                        </motion.div>
+                    ))}
+                </div>
+
+                {/* Mobile Menu Toggle */}
+                <motion.button 
+                    className="nav__toggle"
+                    onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    aria-label="Toggle navigation menu"
+                >
+                    <AnimatePresence mode="wait">
+                        {isMobileMenuOpen ? (
+                            <motion.div
+                                key="close"
+                                initial={{ rotate: -90, opacity: 0 }}
+                                animate={{ rotate: 0, opacity: 1 }}
+                                exit={{ rotate: 90, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <HiX size={24} />
+                            </motion.div>
+                        ) : (
+                            <motion.div
+                                key="menu"
+                                initial={{ rotate: 90, opacity: 0 }}
+                                animate={{ rotate: 0, opacity: 1 }}
+                                exit={{ rotate: -90, opacity: 0 }}
+                                transition={{ duration: 0.2 }}
+                            >
+                                <HiMenuAlt3 size={24} />
+                            </motion.div>
+                        )}
+                    </AnimatePresence>
+                </motion.button>
+            </div>
+
+            {/* Mobile Navigation Menu */}
+            <AnimatePresence>
+                {isMobileMenuOpen && (
+                    <motion.div 
+                        className="nav__mobile"
+                        variants={mobileMenuVariants}
+                        initial="hidden"
+                        animate="visible"
+                        exit="hidden"
+                    >
+                        <div className="nav__mobile-links">
+                            {navLinks.map((link, index) => (
+                                <motion.div
+                                    key={link.path}
+                                    custom={index}
+                                    variants={mobileLinkVariants}
+                                    initial="hidden"
+                                    animate="visible"
+                                    exit="exit"
+                                >
+                                    <NavLink
+                                        to={link.path}
+                                        exact={link.exact}
+                                        className={`nav__mobile-link ${isLinkActive(link) ? 'nav__mobile-link--active' : ''}`}
+                                        onClick={() => setIsMobileMenuOpen(false)}
+                                    >
+                                        {link.label}
+                                        {isLinkActive(link) && (
+                                            <motion.span 
+                                                className="nav__mobile-link-indicator"
+                                                layoutId="mobileActiveIndicator"
+                                            />
+                                        )}
+                                    </NavLink>
+                                </motion.div>
+                            ))}
+                        </div>
+                    </motion.div>
+                )}
+            </AnimatePresence>
+        </motion.nav>
+    )
+}
+
+// Main Router with Navigation
 const MainRouter = () => {
-    return(
+    return (
         <HashRouter basename='/'>
-                <Navbar collapseOnSelect className="customNavbar" expand="lg">
-                <Navbar.Brand className="customBrand">
-                    <Button disabled={true}  style={{opacity: "1", display: 'none'}} variant="light"> Sareenv</Button>       
-                </Navbar.Brand>
-                <Navbar.Toggle aria-controls="basic-navbar-nav" color='white'/>
-                    <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav className="m-auto">
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/" activeClassName="active" activeStyle = {{color: "white"}} exact >Home</Nav.Link>
-                            <Nav.Link 
-                                as={NavLink} 
-                                className="customNav" 
-                                style={{color: "white"}} 
-                                to="/projects" 
-                                activeClassName="active"
-                                isActive={(match, location) => {
-                                    return location.pathname === '/projects' || location.pathname.startsWith('/project_details');
-                                }}
-                            >Projects</Nav.Link>
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/experience"
-                            activeClassName="active"> Experience </Nav.Link>
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/education"
-                            activeClassName="active"> Education </Nav.Link>
-                            <Nav.Link as={NavLink} className="customNav" style={{color: "white"}} to="/services" activeClassName="active">Services</Nav.Link>
-                        </Nav>
-                    </Navbar.Collapse>
-                </Navbar>
-            
-                <Switch>
-                    <Route path="/" exact component={Home} />
-                    <Route path="/projects" exact component={ProjectsPage} />
-                    <Route path="/experience" exact component={ExperiencePage} />
-                    <Route path="/contact" exact component={ContactPage} />
-                    <Route path="/services" exact component={Service} />
-                    <Route path="/education" exact component={EducationPage} />
-                    <Route path="/project_details/:id" exact component={ProjectDetails} />
-                </Switch>
+            <Navigation />
+            <Switch>
+                <Route path="/" exact component={Home} />
+                <Route path="/projects" exact component={ProjectsPage} />
+                <Route path="/experience" exact component={ExperiencePage} />
+                <Route path="/contact" exact component={ContactPage} />
+                <Route path="/services" exact component={Service} />
+                <Route path="/education" exact component={EducationPage} />
+                <Route path="/project_details/:id" exact component={ProjectDetails} />
+                <Route component={NotFound} />
+            </Switch>
         </HashRouter>
     )
 }

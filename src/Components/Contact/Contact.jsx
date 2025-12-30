@@ -11,8 +11,7 @@ const Contact = () => {
         <div style={{
             backgroundColor: '#f8f9fa',
             minHeight: '100vh',
-            paddingTop: '4rem',
-            paddingBottom: '4rem',
+            padding: '6rem 0',
             transition: 'all 0.3s ease'
         }}>
             <Container>
