@@ -3,24 +3,45 @@ import HeaderFront from './HeaderFront/HeaderFront'
 import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
-import CarryBags from '../WorkProjects/CarryBags'
+import PublishedWork from '../WorkProjects/CarryBags'
 import ExploreMore from '../Utilities/ExploreMore'
 import ReactGA from 'react-ga'
+import '../../Styles/home.scss'
 
 const Home = () => {
     useEffect(() => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, [])
+    
     return (
-        <div>
-            <div style={{margin: 0, padding: 0}}>
-                <HeaderFront/>
+        <div className="home">
+            {/* Hero Section */}
+            <HeaderFront/>
+            
+            {/* About Section */}
+            <section id="about">
                 <About/>
-                <Project  length={6} showTitle={true}/>
-                <CarryBags />
+            </section>
+            
+            {/* Projects Section */}
+            <section id="projects">
+                <Project length={6} showTitle={true}/>
+            </section>
+            
+            {/* Published Work Section */}
+            <section id="published-work">
+                <PublishedWork />
+            </section>
+            
+            {/* Explore More Section */}
+            <section>
                 <ExploreMore currentPage="home" />
+            </section>
+            
+            {/* Contact Section */}
+            <section id="contact">
                 <Contact />
-            </div> 
+            </section>
         </div>
     )
 }

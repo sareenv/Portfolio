@@ -1,41 +1,42 @@
 name: Upload Website
 
 on:
- push:
-   branches:
-     - master
+  push:
+    branches:
+      - master
 
 jobs:
- Deploy:
-   runs-on: ubuntu-latest
-   steps:
-     - name: Checkout
-       uses: actions/checkout@v2
+  Deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
 
-     - name: Setup node
-       uses: actions/setup-node@v3
-       with:
-          node-version: 14.20.0
-       
-     - name: Install dependencies
-       run: npm install
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: 'npm'
 
-     - name: Build static file
-       run: npm run build
+      - name: Install dependencies
+        run: npm ci
 
-     - name: Configure AWS Credentials
-       uses: aws-actions/configure-aws-credentials@v1
-       with:
-         aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
-         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-         aws-region: ca-central-1
+      - name: Build with Vite
+        run: npm run build
 
-     - name: Deploy static site to S3 bucket
-       run: aws s3 sync ./build s3://sareenv.com
-      
-     - name: Invalidate CloudFront
-       uses: chetan/invalidate-cloudfront-action@v2
-       env:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          aws-region: ca-central-1
+
+      - name: Deploy static site to S3 bucket
+        run: aws s3 sync ./build s3://sareenv.com --delete
+
+      - name: Invalidate CloudFront
+        uses: chetan/invalidate-cloudfront-action@v2
+        env:
           DISTRIBUTION: ${{ secrets.DISTRIBUTION }}
           PATHS: "/*"
           AWS_REGION: "us-east-1"

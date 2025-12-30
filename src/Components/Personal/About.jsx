@@ -1,138 +1,113 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
-import Row from 'react-bootstrap/Row';
-import Col from 'react-bootstrap/Col';
-import Education from "./Education/Education";
+import { Row, Col } from 'react-bootstrap';
+import EducationCard from '../Utilities/EducationCard';
 import "../../Styles/about.scss"
 import "../../Styles/base.scss"
 
-import { ConcordiaDetails, CoventryDetails } from "./details"
+// Education data - can be moved to a constants file if needed
+const education = [
+    {
+        id: 1,
+        degree: 'MSc Software Engineering',
+        institution: 'Concordia University',
+        location: 'Montreal, Canada',
+        year: '2021 - 2023',
+        logo: 'https://campus1mtl.ca/montreal-student-housing/assets/images/interface/concorida-logo-sm.png'
+    },
+    {
+        id: 2,
+        degree: 'BSc Computer Science',
+        institution: 'Coventry University',
+        location: 'Coventry, UK',
+        year: '2017 - 2020',
+        logo: 'https://conflictresearchsociety.org/wp-content/uploads/2020/01/coventry-university-logo.png'
+    }
+];
 
 const About = () => {
     return (
         <div style={{
-            padding: '4rem 0',
-            backgroundColor: '#f8f9fa',
-            transition: 'all 0.3s ease'
+            padding: '6rem 0',
+            backgroundColor: '#ffffff'
         }}>
             <Container>
-                <Row style={{marginBottom: '3rem'}}>
-                    <Col sm={12}>
-                        <div style={{textAlign: 'center'}}>
-                            <h3 style={{
-                                fontWeight: 600,
-                                color: '#003049',
-                                fontSize: '1.8rem',
-                                marginBottom: '0.5rem'
-                            }}>
-                                About Me
-                            </h3>
-                            <p style={{
-                                color: '#666',
-                                fontSize: '1.05rem',
-                                marginBottom: '0',
-                                maxWidth: '700px',
-                                margin: '0 auto'
-                            }}>
-                                Full-stack software engineer passionate about building scalable applications
-                            </p>
-                        </div>
-                    </Col>
-                </Row>
-
                 <Row>
-                    {/* Education Section - Left Side */}
-                    <Col sm={12} md={12} lg={5} style={{marginBottom: '2rem'}}>
-                        <div style={{
-                            backgroundColor: 'white',
-                            padding: '2rem',
-                            borderRadius: '12px',
-                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                            height: '100%'
+                    {/* Left Column - About Text */}
+                    <Col xs={12} lg={7} style={{ marginBottom: '2rem' }}>
+                        {/* Section Label */}
+                        <p style={{
+                            color: '#00b4d8',
+                            fontSize: '0.9rem',
+                            fontWeight: 600,
+                            letterSpacing: '0.1em',
+                            textTransform: 'uppercase',
+                            marginBottom: '1rem'
                         }}>
-                            <h4 style={{
-                                fontWeight: 600,
-                                color: '#003049',
-                                fontSize: '1.3rem',
-                                marginBottom: '1.5rem'
-                            }}>
-                                Education Background
-                            </h4>
+                            About
+                        </p>
+                        
+                        {/* Main Heading */}
+                        <h2 style={{
+                            fontWeight: 700,
+                            color: '#003049',
+                            fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+                            marginBottom: '2rem',
+                            lineHeight: 1.3
+                        }}>
+                            Software engineer focused on building products that make a difference.
+                        </h2>
+                        
+                        {/* Description */}
+                        <div style={{
+                            color: '#555',
+                            fontSize: '1.05rem',
+                            lineHeight: 1.85
+                        }}>
+                            <p style={{ marginBottom: '1.25rem' }}>
+                                I'm a Software Development Engineer at <strong style={{ color: '#003049' }}>Dayforce</strong>, 
+                                specializing in iOS development with Swift and SwiftUI. Based in Toronto, Canada, 
+                                I hold a Master's degree in Software Engineering from Concordia University.
+                            </p>
                             
-                            <Education
-                                image={ConcordiaDetails.image}
-                                qualification={ConcordiaDetails.qualification}
-                                instition={ConcordiaDetails.instition}
-                                address={ConcordiaDetails.address}
-                                isHE={true}
-                            />
-
-                            <div style={{
-                                height: '1px',
-                                backgroundColor: '#e8e8e8',
-                                margin: '1.5rem 0'
-                            }}></div>
-
-                            <Education
-                                image={CoventryDetails.image}
-                                qualification={CoventryDetails.qualification}
-                                instition={CoventryDetails.instition}
-                                address={CoventryDetails.address}
-                                isHE={true}
-                            />
+                            <p style={{ marginBottom: '1.25rem' }}>
+                                With experience spanning mobile and full-stack development, I've worked with 
+                                distributed teams across multiple time zones. I'm AWS Certified and enjoy 
+                                building scalable applications using modern technologies.
+                            </p>
+                            
+                            <p style={{ marginBottom: 0 }}>
+                                I believe in choosing the right tools for each challenge and continuously 
+                                expanding my technical toolkit. Clean code and user-focused design 
+                                drive everything I build.
+                            </p>
                         </div>
                     </Col>
-
-                    {/* About Text - Right Side */}
-                    <Col sm={12} md={12} lg={7}>
-                        <div style={{
-                            backgroundColor: 'white',
-                            padding: '2rem',
-                            borderRadius: '12px',
-                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
-                            height: '100%'
+                    
+                    {/* Right Column - Education */}
+                    <Col xs={12} lg={5}>
+                        <div style={{ 
+                            height: '100%',
+                            display: 'flex',
+                            flexDirection: 'column',
+                            gap: '1rem'
                         }}>
-                            <h4 style={{
-                                fontWeight: 600,
-                                color: '#003049',
-                                fontSize: '1.3rem',
-                                marginBottom: '1.5rem'
-                            }}>
-                                Professional Journey
-                            </h4>
-                            
-                            <p style={{
-                                color: '#555',
-                                lineHeight: '1.8',
-                                marginBottom: '1.25rem',
-                                fontSize: '1rem'
-                            }}>
-                                I am a passionate <strong>FullStack Software Development Engineer</strong> with hands-on experience in creating iOS mobile applications and web applications in personal, academic and professional environments using Agile methodologies. I'm also an <strong>AWS certified Cloud Practitioner (CLF-CO1)</strong> with sufficient knowledge of cloud technologies.
-                            </p>
-                            
-                            <p style={{
-                                color: '#555',
-                                lineHeight: '1.8',
-                                marginBottom: '1.25rem',
-                                fontSize: '1rem'
-                            }}>
-                                While enrolled in the <strong>Master of Software Engineering</strong> in Gina Cody School of Computing program at <strong>Concordia University, Montreal, Canada</strong>, I worked on several academic projects involving diversity of technologies from the topic areas such as Distributed Systems, Advanced Software Architecture, Problem Solving and Applied Artificial Intelligence.
-                            </p>
-                            
-                            <p style={{
-                                color: '#555',
-                                lineHeight: '1.8',
-                                marginBottom: '0',
-                                fontSize: '1rem'
-                            }}>
-                                Previously, I worked in the United Kingdom as an <strong>Associate Software Engineer</strong> in a distributed team across three time zones (GMT+1, EST and IST). I was responsible for developing scalable iOS applications and collaborating with developers to deliver functionality using technologies such as <strong>RabbitMQ</strong>, <strong>Node.js</strong> microservices, and <strong>AWS cloud platform</strong> (EC2, Auto-scaling groups). I strongly believe in being technology agnostic and adapting tools to meet project requirements.
-                            </p>
+                            {education.map((edu) => (
+                                <EducationCard 
+                                    key={edu.id} 
+                                    degree={edu.degree}
+                                    institution={edu.institution}
+                                    location={edu.location}
+                                    year={edu.year}
+                                    logo={edu.logo}
+                                    variant="default"
+                                />
+                            ))}
                         </div>
                     </Col>
                 </Row>
             </Container>
         </div>
-
     )
 }
 

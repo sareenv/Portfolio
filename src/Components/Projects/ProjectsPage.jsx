@@ -1,37 +1,72 @@
-import React, {useEffect, useState} from "react";
+import React, {useEffect, useState, useCallback} from "react";
 import {Row, Col, Image, Container} from 'react-bootstrap'
 import {ShimmerPostList, ShimmerThumbnail, 
     ShimmerSectionHeader, ShimmerText} from 'react-shimmer-effects'
-    import Footer from '../Footer';
-import {downloadProject} from '../../Services/Projects'
+import Footer from '../Footer';
+import {downloadProject, clearCache} from '../../Services/Projects'
 import {Link} from 'react-router-dom'
 import '../../Styles/base.scss'
 import Project from "./Projects"
+import ErrorState from '../Utilities/ErrorState'
 import ReactGA from 'react-ga'
 
 const ProjectsPage = () => {
-    const [featuredProject, setfeaturedProject] = useState([])
+    const [featuredProject, setfeaturedProject] = useState(null)
     const [visibility, setVisibility] = useState(false)
-    useEffect(() => {
-        let mounted = true;
-        downloadProject().then(item => {
-            if(mounted) {
-                let featuredItems = item.filter(i => i.featured === true)
-                setfeaturedProject(featuredItems[0])
-                setTimeout(() => {
-                    setVisibility(true)
-                }, 1200)
-            }
-        })
+    const [error, setError] = useState(null)
 
+    const fetchProjects = useCallback(async () => {
+        setError(null)
+        setVisibility(false)
+        try {
+            const items = await downloadProject()
+            let featuredItems = items.filter(i => i.featured === true)
+            setfeaturedProject(featuredItems[0] || null)
+            setTimeout(() => {
+                setVisibility(true)
+            }, 800)
+        } catch (err) {
+            setError({
+                message: err.message || 'Failed to load projects',
+                type: err.type || 'error'
+            })
+            setVisibility(true)
+        }
+    }, [])
+
+    useEffect(() => {
+        fetchProjects()
         ReactGA.pageview(window.location.pathname + window.location.search);
-    }, []);
+    }, [fetchProjects]);
+
+    const handleRetry = () => {
+        clearCache()
+        fetchProjects()
+    }
+
+    if (error) {
+        return (
+            <div>
+                <Container style={{marginTop: '6rem', minHeight: '60vh'}}>
+                    <ErrorState 
+                        title="Couldn't load projects"
+                        message={error.message}
+                        type={error.type}
+                        onRetry={handleRetry}
+                    />
+                </Container>
+                <Container>
+                    <Footer />
+                </Container>
+            </div>
+        )
+    }
 
     return (
         <div>
             {visibility === false && 
                 
-                <Container style={{marginTop: '1rem'}}>
+                <Container style={{marginTop: '6rem'}}>
                 <Row>
                     <Col lg={6} md={12} sm={12}>
                         <ShimmerThumbnail height={300} rounded={4}/> 
@@ -54,7 +89,7 @@ const ProjectsPage = () => {
             }
 
             {visibility === true && 
-                <Container style={{marginTop: '3rem', paddingBottom: '2rem'}}>
+                <Container style={{marginTop: '6rem', paddingBottom: '2rem'}}>
                     <Row style={{ marginBottom: "2rem" }}>
                         <Col>
                             <h3 style={{ 
@@ -87,7 +122,6 @@ const ProjectsPage = () => {
                                     thumbnail={false}
                                     fluid={true}
                                     src={featuredProject.thumbnail} 
-                                    responsive
                                     style={{
                                         width: "100%",
                                         height: "100%",

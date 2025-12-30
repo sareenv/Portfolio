@@ -16,7 +16,11 @@ const Service = () => {
     }
 
     return (
-        <Container style={{marginTop: '4rem', paddingBottom: '2rem'}}>
+        <div style={{
+            backgroundColor: '#ffffff',
+            padding: '6rem 0'
+        }}>
+        <Container>
             <Row style={{marginBottom: '3rem'}}>
                 <Col>
                     <h3 style={{
@@ -155,6 +159,7 @@ const Service = () => {
             
             <Footer />
         </Container>
+        </div>
     )
 }
 
