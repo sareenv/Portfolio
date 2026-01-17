@@ -8,6 +8,8 @@ import ProjectsPage from '../Components/Projects/ProjectsPage'
 import Service from '../Components/Personal/Services'
 import ProjectDetails from '../Components/Projects/ProjectDetails'
 import EducationPage from '../Components/Personal/Education/EducationPage'
+import ArticlesPage from '../Components/Articles/ArticlesPage'
+import ArticleDetailPage from '../Components/Articles/ArticleDetailPage'
 import NotFound from '../Components/Utilities/NotFound'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
@@ -19,7 +21,7 @@ import '../Styles/navigation.scss'
 // Navigation Links Data
 const navLinks = [
     { path: '/', label: 'Home', exact: true },
-    { path: '/projects', label: 'Projects', matchPaths: ['/projects', '/project_details'] },
+    { path: '/articles', label: 'Articles', matchPaths: ['/articles'] },
     { path: '/experience', label: 'Experience' },
     { path: '/education', label: 'Education' },
     { path: '/services', label: 'Services' }
@@ -225,6 +227,8 @@ const MainRouter = () => {
             <Switch>
                 <Route path="/" exact component={Home} />
                 <Route path="/projects" exact component={ProjectsPage} />
+                <Route path="/articles" exact component={ArticlesPage} />
+                <Route path="/articles/:topicId/:conceptId/:slug" exact component={ArticleDetailPage} />
                 <Route path="/experience" exact component={ExperiencePage} />
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/services" exact component={Service} />

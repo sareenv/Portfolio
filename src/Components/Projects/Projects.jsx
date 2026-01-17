@@ -48,7 +48,7 @@ const styles = {
     },
     projectsGrid: {
         display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
+        gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '2rem'
     },
     projectCard: {
@@ -312,11 +312,7 @@ const Project = (props) => {
 
                 {/* Loading State */}
                 {loading && (
-                    <div style={{
-                        display: 'grid',
-                        gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))',
-                        gap: '2rem'
-                    }}>
+                    <div className="projects-grid-3col">
                         {[1, 2, 3].map((item) => (
                             <div key={item} style={{
                                 backgroundColor: '#fff',
@@ -358,11 +354,49 @@ const Project = (props) => {
 
                 {/* Projects Grid */}
                 {!loading && (
-                    <div style={styles.projectsGrid}>
-                        {projects.map((project, index) => (
-                            <ProjectCard key={project.id} project={project} index={index} />
-                        ))}
-                    </div>
+                    <>
+                        <div className="projects-grid-3col">
+                            {projects.map((project, index) => (
+                                <ProjectCard key={project.id} project={project} index={index} />
+                            ))}
+                        </div>
+                        
+                        {/* View All Button - shown on home page */}
+                        {props.showTitle && (
+                            <div style={{ textAlign: 'center', marginTop: '3rem' }}>
+                                <Link
+                                    to="/projects"
+                                    style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: '#003049',
+                                        color: '#ffffff',
+                                        padding: '1rem 2rem',
+                                        borderRadius: '50px',
+                                        fontSize: '1rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: '0 4px 15px rgba(0, 48, 73, 0.2)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#004c6d';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                        e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 48, 73, 0.3)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#003049';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 48, 73, 0.2)';
+                                    }}
+                                >
+                                    View All Projects
+                                    <HiArrowRight size={18} />
+                                </Link>
+                            </div>
+                        )}
+                    </>
                 )}
             </Container>
         </div>

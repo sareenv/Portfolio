@@ -4,7 +4,7 @@ import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
 import PublishedWork from '../WorkProjects/CarryBags'
-import ExploreMore from '../Utilities/ExploreMore'
+import ArticlesPreview from '../Articles/ArticlesPreview'
 import ReactGA from 'react-ga'
 import '../../Styles/home.scss'
 
@@ -25,7 +25,12 @@ const Home = () => {
             
             {/* Projects Section */}
             <section id="projects">
-                <Project length={6} showTitle={true}/>
+                <Project length={9} showTitle={true}/>
+            </section>
+            
+            {/* Articles Section */}
+            <section id="articles">
+                <ArticlesPreview limit={6} />
             </section>
             
             {/* Published Work Section */}
@@ -33,11 +38,7 @@ const Home = () => {
                 <PublishedWork />
             </section>
             
-            {/* Explore More Section */}
-            <section>
-                <ExploreMore currentPage="home" />
-            </section>
-            
+           
             {/* Contact Section */}
             <section id="contact">
                 <Contact />
