@@ -22,23 +22,23 @@ const Home = () => {
             <section id="about">
                 <About/>
             </section>
-            
-            {/* Projects Section */}
-            <section id="projects">
-                <Project length={9} showTitle={true}/>
-            </section>
-            
+
             {/* Articles Section */}
             <section id="articles">
                 <ArticlesPreview limit={6} />
             </section>
             
+            {/* Projects Section */}
+            <section id="projects">
+                <Project length={9} showTitle={true}/>
+            </section>
+
             {/* Published Work Section */}
             <section id="published-work">
                 <PublishedWork />
             </section>
             
-           
+            
             {/* Contact Section */}
             <section id="contact">
                 <Contact />
