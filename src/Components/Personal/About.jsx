@@ -1,108 +1,101 @@
 import React from "react";
 import Container from 'react-bootstrap/Container';
 import { Row, Col } from 'react-bootstrap';
-import EducationCard from '../Utilities/EducationCard';
+import { Link } from 'react-router-dom';
 import "../../Styles/about.scss"
 import "../../Styles/base.scss"
-
-// Education data - can be moved to a constants file if needed
-const education = [
-    {
-        id: 1,
-        degree: 'MSc Software Engineering',
-        institution: 'Concordia University',
-        location: 'Montreal, Canada',
-        year: '2021 - 2023',
-        logo: 'https://campus1mtl.ca/montreal-student-housing/assets/images/interface/concorida-logo-sm.png'
-    },
-    {
-        id: 2,
-        degree: 'BSc Computer Science',
-        institution: 'Coventry University',
-        location: 'Coventry, UK',
-        year: '2017 - 2020',
-        logo: 'https://conflictresearchsociety.org/wp-content/uploads/2020/01/coventry-university-logo.png'
-    }
-];
 
 const About = () => {
     return (
         <div style={{
-            padding: '6rem 0',
+            padding: '4rem 0',
             backgroundColor: '#ffffff'
         }}>
             <Container>
-                <Row>
-                    {/* Left Column - About Text */}
-                    <Col xs={12} lg={7} style={{ marginBottom: '2rem' }}>
-                        {/* Section Label */}
-                        <p style={{
-                            color: '#00b4d8',
-                            fontSize: '0.9rem',
-                            fontWeight: 600,
-                            letterSpacing: '0.1em',
-                            textTransform: 'uppercase',
-                            marginBottom: '1rem'
-                        }}>
-                            About
-                        </p>
-                        
-                        {/* Main Heading */}
-                        <h2 style={{
-                            fontWeight: 700,
-                            color: '#003049',
-                            fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
-                            marginBottom: '2rem',
-                            lineHeight: 1.3
-                        }}>
-                            Software engineer focused on building products that make a difference.
-                        </h2>
-                        
-                        {/* Description */}
-                        <div style={{
-                            color: '#555',
-                            fontSize: '1.05rem',
-                            lineHeight: 1.85
-                        }}>
-                            <p style={{ marginBottom: '1.25rem' }}>
-                                I'm a Software Development Engineer at <strong style={{ color: '#003049' }}>Dayforce</strong>, 
-                                specializing in iOS development with Swift and SwiftUI. Based in Toronto, Canada, 
-                                I hold a Master's degree in Software Engineering from Concordia University.
+                <Row className="justify-content-center">
+                    <Col xs={12} lg={10} xl={8}>
+                        <div style={{ maxWidth: '800px', margin: '0 auto' }}>
+                            {/* Section Label */}
+                            <p style={{
+                                color: '#00b4d8',
+                                fontSize: '0.9rem',
+                                fontWeight: 600,
+                                letterSpacing: '0.1em',
+                                textTransform: 'uppercase',
+                                marginBottom: '1rem'
+                            }}>
+                                About Me
                             </p>
                             
-                            <p style={{ marginBottom: '1.25rem' }}>
-                                With experience spanning mobile and full-stack development, I've worked with 
-                                distributed teams across multiple time zones. I'm AWS Certified and enjoy 
-                                building scalable applications using modern technologies.
-                            </p>
+                            {/* Main Heading */}
+                            <h2 style={{
+                                fontWeight: 700,
+                                color: '#003049',
+                                fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
+                                marginBottom: '1.5rem',
+                                lineHeight: 1.3
+                            }}>
+                                Building solutions that matter, one challenge at a time
+                            </h2>
                             
-                            <p style={{ marginBottom: 0 }}>
-                                I believe in choosing the right tools for each challenge and continuously 
-                                expanding my technical toolkit. Clean code and user-focused design 
-                                drive everything I build.
-                            </p>
-                        </div>
-                    </Col>
-                    
-                    {/* Right Column - Education */}
-                    <Col xs={12} lg={5}>
-                        <div style={{ 
-                            height: '100%',
-                            display: 'flex',
-                            flexDirection: 'column',
-                            gap: '1rem'
-                        }}>
-                            {education.map((edu) => (
-                                <EducationCard 
-                                    key={edu.id} 
-                                    degree={edu.degree}
-                                    institution={edu.institution}
-                                    location={edu.location}
-                                    year={edu.year}
-                                    logo={edu.logo}
-                                    variant="default"
-                                />
-                            ))}
+                            {/* Description */}
+                            <div style={{
+                                color: '#555',
+                                fontSize: '1.05rem',
+                                lineHeight: 1.75
+                            }}>
+                                <p style={{ marginBottom: '1.25rem' }}>
+                                    I'm a Software Development Engineer at <strong style={{ color: '#003049' }}>Dayforce</strong>, 
+                                    currently specializing in iOS development with Swift and SwiftUI. Based in Toronto, Canada, 
+                                    I hold a Master's degree in Software Engineering from Concordia University.
+                                </p>
+                                
+                                <p style={{ marginBottom: '1.25rem' }}>
+                                    My experience spans mobile and full-stack development, working with distributed teams 
+                                    across multiple time zones. I'm comfortable diving into new technologies and frameworks 
+                                    as needed—whether it's building scalable applications, architecting cloud solutions, 
+                                    or solving complex technical challenges.
+                                </p>
+                                
+                                <p style={{ marginBottom: '1.5rem' }}>
+                                    I believe in choosing the right tools for each challenge rather than being confined 
+                                    to a specific stack. Clean code, continuous learning, and user-focused design 
+                                    drive everything I build.
+                                </p>
+                            </div>
+
+                            {/* CTA Button */}
+                            <div style={{ marginTop: '2rem' }}>
+                                <Link
+                                    to="/experience"
+                                    style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        gap: '0.5rem',
+                                        backgroundColor: '#003049',
+                                        color: '#ffffff',
+                                        padding: '0.875rem 1.75rem',
+                                        borderRadius: '10px',
+                                        fontSize: '0.95rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        transition: 'all 0.3s ease',
+                                        boxShadow: '0 4px 15px rgba(0, 48, 73, 0.2)'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#004c6d';
+                                        e.currentTarget.style.transform = 'translateY(-2px)';
+                                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 48, 73, 0.3)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#003049';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 48, 73, 0.2)';
+                                    }}
+                                >
+                                    View Full Experience
+                                </Link>
+                            </div>
                         </div>
                     </Col>
                 </Row>

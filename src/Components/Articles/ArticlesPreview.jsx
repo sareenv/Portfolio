@@ -12,12 +12,12 @@ const ArticlesPreview = ({ limit = 6 }) => {
     return (
         <div style={{
             backgroundColor: '#ffffff',
-            padding: '6rem 0'
+            padding: '4rem 0'
         }}>
             <Container>
                 {/* Section Header */}
                 <div style={{
-                    marginBottom: '3.5rem',
+                    marginBottom: '2.5rem',
                     textAlign: 'center'
                 }}>
                     <span style={{
@@ -37,17 +37,17 @@ const ArticlesPreview = ({ limit = 6 }) => {
                     <h2 style={{
                         fontWeight: 700,
                         color: '#003049',
-                        fontSize: 'clamp(2rem, 5vw, 3rem)',
-                        marginBottom: '1rem',
+                        fontSize: 'clamp(1.75rem, 5vw, 2.5rem)',
+                        marginBottom: '0.75rem',
                         lineHeight: 1.2
                     }}>
                         Latest Articles
                     </h2>
                     <p style={{
                         color: '#666',
-                        fontSize: '1.15rem',
+                        fontSize: '1rem',
                         maxWidth: '600px',
-                        lineHeight: 1.8,
+                        lineHeight: 1.6,
                         marginBottom: 0,
                         marginLeft: 'auto',
                         marginRight: 'auto'

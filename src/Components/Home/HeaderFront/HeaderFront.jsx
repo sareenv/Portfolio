@@ -81,12 +81,7 @@ const HeaderFront = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                        <motion.span 
-                            className="hero__badge"
-                            variants={itemVariants}
-                        >
-                            Available for opportunities
-                        </motion.span>
+                     
                         
                         <motion.h1 
                             className="hero__title"
