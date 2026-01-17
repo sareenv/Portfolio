@@ -183,32 +183,46 @@ const ProjectDetails = (props) => {
         }}>
             {/* Hero Header Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #003049 0%, #001d2d 100%)',
+                background: 'linear-gradient(135deg, #003049 0%, #00415a 50%, #001d2d 100%)',
                 paddingTop: '7rem',
-                paddingBottom: '4rem',
+                paddingBottom: '5rem',
                 position: 'relative',
-                overflow: 'hidden'
+                overflow: 'hidden',
+                boxShadow: '0 15px 60px rgba(0,0,0,0.15)'
             }}>
                 {/* Background decorations */}
                 <div style={{
                     position: 'absolute',
                     top: '-30%',
                     right: '-5%',
-                    width: '500px',
-                    height: '500px',
+                    width: '600px',
+                    height: '600px',
                     borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0,180,216,0.1) 0%, transparent 70%)',
-                    pointerEvents: 'none'
+                    background: 'radial-gradient(circle, rgba(0,180,216,0.15) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                    animation: 'float 20s ease-in-out infinite'
                 }} />
                 <div style={{
                     position: 'absolute',
                     bottom: '-40%',
                     left: '-10%',
-                    width: '400px',
-                    height: '400px',
+                    width: '500px',
+                    height: '500px',
                     borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0,180,216,0.08) 0%, transparent 70%)',
-                    pointerEvents: 'none'
+                    background: 'radial-gradient(circle, rgba(0,180,216,0.12) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                    animation: 'float 25s ease-in-out infinite reverse'
+                }} />
+                <div style={{
+                    position: 'absolute',
+                    top: '20%',
+                    left: '30%',
+                    width: '300px',
+                    height: '300px',
+                    borderRadius: '50%',
+                    background: 'radial-gradient(circle, rgba(0,180,216,0.06) 0%, transparent 70%)',
+                    pointerEvents: 'none',
+                    animation: 'float 30s ease-in-out infinite'
                 }} />
 
                 <Container>
@@ -280,15 +294,51 @@ const ProjectDetails = (props) => {
                     {/* Tagline */}
                     {project.tagLine && (
                         <p style={{
-                            color: 'rgba(255,255,255,0.7)',
+                            color: 'rgba(255,255,255,0.85)',
                             fontSize: '1.25rem',
-                            lineHeight: 1.6,
-                            maxWidth: '600px',
-                            marginBottom: '2rem'
+                            lineHeight: 1.7,
+                            maxWidth: '700px',
+                            marginBottom: '1.5rem',
+                            fontWeight: 400
                         }}>
                             {project.tagLine}
                         </p>
                     )}
+
+                    {/* Project Meta Info */}
+                    <div style={{
+                        display: 'flex',
+                        gap: '2rem',
+                        flexWrap: 'wrap',
+                        marginBottom: '2rem',
+                        paddingTop: '1rem',
+                        borderTop: '1px solid rgba(255,255,255,0.1)'
+                    }}>
+                        {project.createdAt && (
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.6rem',
+                                color: 'rgba(255,255,255,0.8)',
+                                fontSize: '0.95rem'
+                            }}>
+                                <HiOutlineCalendar size={18} />
+                                <span>{new Date(project.createdAt).toLocaleDateString('en-US', { year: 'numeric', month: 'long' })}</span>
+                            </div>
+                        )}
+                        {project.category && (
+                            <div style={{
+                                display: 'flex',
+                                alignItems: 'center',
+                                gap: '0.6rem',
+                                color: 'rgba(255,255,255,0.8)',
+                                fontSize: '0.95rem'
+                            }}>
+                                <HiOutlineTag size={18} />
+                                <span>{project.category}</span>
+                            </div>
+                        )}
+                    </div>
 
                     {/* Action Buttons */}
                     <div style={{
@@ -403,20 +453,49 @@ const ProjectDetails = (props) => {
                 <Row>
                     {/* Image Gallery Section */}
                     <Col lg={7} style={{marginBottom: '2rem'}}>
-                        <div style={{
+                        <div className="project-detail-card" style={{
                             backgroundColor: 'white',
-                            borderRadius: '20px',
-                            padding: '1.5rem',
-                            boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
-                            marginBottom: '1.5rem'
+                            borderRadius: '24px',
+                            padding: '2rem',
+                            boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
+                            marginBottom: '1.5rem',
+                            transition: 'all 0.3s ease'
                         }}>
+                            {/* Image Counter */}
+                            {project.images && project.images.length > 0 && (
+                                <div style={{
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    justifyContent: 'space-between',
+                                    marginBottom: '1rem'
+                                }}>
+                                    <h4 style={{
+                                        fontSize: '1.1rem',
+                                        fontWeight: 700,
+                                        color: '#003049',
+                                        margin: 0
+                                    }}>Project Gallery</h4>
+                                    <span style={{
+                                        fontSize: '0.85rem',
+                                        color: '#6c757d',
+                                        backgroundColor: '#f8f9fa',
+                                        padding: '0.4rem 0.8rem',
+                                        borderRadius: '20px',
+                                        fontWeight: 500
+                                    }}>
+                                        {activeImageIndex + 1} / {project.images.length}
+                                    </span>
+                                </div>
+                            )}
+
                             {/* Main Image Display */}
                             <div style={{
                                 position: 'relative',
                                 backgroundColor: '#f8f9fa',
-                                borderRadius: '12px',
+                                borderRadius: '16px',
                                 overflow: 'hidden',
-                                marginBottom: '1rem'
+                                marginBottom: '1.5rem',
+                                boxShadow: 'inset 0 0 20px rgba(0,0,0,0.03)'
                             }}>
                                 {/* Video Modal Overlay */}
                                 {showVideo && project.video && (
@@ -515,7 +594,9 @@ const ProjectDetails = (props) => {
                                     display: 'flex',
                                     gap: '0.75rem',
                                     overflowX: 'auto',
-                                    paddingBottom: '0.5rem'
+                                    paddingBottom: '0.75rem',
+                                    scrollbarWidth: 'thin',
+                                    scrollbarColor: '#00b4d8 #f0f2f5'
                                 }}>
                                     {project.images.map((image, index) => (
                                         <div
@@ -527,27 +608,33 @@ const ProjectDetails = (props) => {
                                             }}
                                             style={{
                                                 flexShrink: 0,
-                                                width: '80px',
-                                                height: '60px',
-                                                borderRadius: '8px',
+                                                width: '90px',
+                                                height: '70px',
+                                                borderRadius: '12px',
                                                 overflow: 'hidden',
                                                 cursor: 'pointer',
                                                 border: displayImage === image 
                                                     ? '3px solid #00b4d8' 
-                                                    : '3px solid transparent',
-                                                transition: 'all 0.3s ease',
-                                                opacity: displayImage === image ? 1 : 0.6
+                                                    : '3px solid #e9ecef',
+                                                transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                                opacity: displayImage === image ? 1 : 0.7,
+                                                transform: displayImage === image ? 'scale(1.05)' : 'scale(1)',
+                                                boxShadow: displayImage === image 
+                                                    ? '0 4px 12px rgba(0,180,216,0.3)' 
+                                                    : '0 2px 6px rgba(0,0,0,0.05)'
                                             }}
                                             onMouseEnter={(e) => {
                                                 if (displayImage !== image) {
-                                                    e.currentTarget.style.opacity = '1';
-                                                    e.currentTarget.style.borderColor = 'rgba(0,180,216,0.5)';
+                                                    e.currentTarget.style.opacity = '0.9';
+                                                    e.currentTarget.style.borderColor = '#00b4d8';
+                                                    e.currentTarget.style.transform = 'scale(1.02)';
                                                 }
                                             }}
                                             onMouseLeave={(e) => {
                                                 if (displayImage !== image) {
-                                                    e.currentTarget.style.opacity = '0.6';
-                                                    e.currentTarget.style.borderColor = 'transparent';
+                                                    e.currentTarget.style.opacity = '0.7';
+                                                    e.currentTarget.style.borderColor = '#e9ecef';
+                                                    e.currentTarget.style.transform = 'scale(1)';
                                                 }
                                             }}
                                         >
@@ -570,12 +657,14 @@ const ProjectDetails = (props) => {
                     {/* Project Details Section */}
                     <Col lg={5}>
                         {/* About Section */}
-                        <div style={{
+                        <div className="project-detail-card" style={{
                             backgroundColor: 'white',
-                            borderRadius: '20px',
-                            padding: '2rem',
-                            boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
-                            marginBottom: '1.5rem'
+                            borderRadius: '24px',
+                            padding: '2.25rem',
+                            boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
+                            marginBottom: '1.5rem',
+                            border: '1px solid rgba(0,48,73,0.05)',
+                            transition: 'all 0.3s ease'
                         }}>
                             <div style={{
                                 display: 'flex',
@@ -614,18 +703,20 @@ const ProjectDetails = (props) => {
 
                         {/* Technologies Section */}
                         {project.conceptsUsed && project.conceptsUsed.length > 0 && (
-                            <div style={{
+                            <div className="project-detail-card" style={{
                                 backgroundColor: 'white',
-                                borderRadius: '20px',
-                                padding: '2rem',
-                                boxShadow: '0 10px 40px rgba(0,0,0,0.08)',
-                                marginBottom: '1.5rem'
+                                borderRadius: '24px',
+                                padding: '2.25rem',
+                                boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
+                                marginBottom: '1.5rem',
+                                border: '1px solid rgba(0,48,73,0.05)',
+                                transition: 'all 0.3s ease'
                             }}>
                                 <div style={{
                                     display: 'flex',
                                     alignItems: 'center',
                                     gap: '0.75rem',
-                                    marginBottom: '1.25rem'
+                                    marginBottom: '0.5rem'
                                 }}>
                                     <div style={{
                                         backgroundColor: 'rgba(0,48,73,0.1)',
@@ -643,50 +734,119 @@ const ProjectDetails = (props) => {
                                         color: '#003049',
                                         marginBottom: 0
                                     }}>
-                                        Technologies Used
+                                        Technologies & Tools
                                     </h3>
                                 </div>
-                                <div style={{
-                                    display: 'flex',
-                                    flexWrap: 'wrap',
-                                    gap: '0.6rem'
+                                <p style={{
+                                    color: '#6c757d',
+                                    fontSize: '0.9rem',
+                                    marginBottom: '1.5rem',
+                                    marginLeft: '3.5rem'
                                 }}>
-                                    {project.conceptsUsed.map((concept, index) => (
-                                        <span
-                                            key={index}
-                                            style={{
-                                                backgroundColor: '#f8f9fa',
-                                                color: '#003049',
-                                                padding: '0.5rem 1rem',
-                                                borderRadius: '8px',
-                                                fontSize: '0.9rem',
-                                                fontWeight: 500,
-                                                border: '1px solid #e9ecef',
-                                                transition: 'all 0.3s ease'
-                                            }}
-                                            onMouseEnter={(e) => {
-                                                e.currentTarget.style.backgroundColor = '#003049';
-                                                e.currentTarget.style.color = 'white';
-                                            }}
-                                            onMouseLeave={(e) => {
-                                                e.currentTarget.style.backgroundColor = '#f8f9fa';
-                                                e.currentTarget.style.color = '#003049';
-                                            }}
-                                        >
-                                            {concept}
-                                        </span>
-                                    ))}
+                                    {project.conceptsUsed.length} technologies used in this project
+                                </p>
+                                <div style={{
+                                    display: 'grid',
+                                    gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
+                                    gap: '0.75rem'
+                                }}>
+                                    {project.conceptsUsed.map((concept, index) => {
+                                        const colors = [
+                                            { bg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '#667eea' },
+                                            { bg: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', border: '#f093fb' },
+                                            { bg: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', border: '#4facfe' },
+                                            { bg: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', border: '#43e97b' },
+                                            { bg: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)', border: '#fa709a' },
+                                            { bg: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)', border: '#30cfd0' },
+                                            { bg: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', border: '#a8edea' },
+                                            { bg: 'linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)', border: '#ff9a56' },
+                                            { bg: 'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)', border: '#fbc2eb' },
+                                            { bg: 'linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)', border: '#fdcbf1' }
+                                        ];
+                                        const colorScheme = colors[index % colors.length];
+                                        
+                                        return (
+                                            <div
+                                                key={index}
+                                                style={{
+                                                    position: 'relative',
+                                                    background: 'white',
+                                                    padding: '1rem',
+                                                    borderRadius: '16px',
+                                                    border: '2px solid #f0f2f5',
+                                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
+                                                    cursor: 'pointer',
+                                                    overflow: 'hidden'
+                                                }}
+                                                onMouseEnter={(e) => {
+                                                    e.currentTarget.style.transform = 'translateY(-4px)';
+                                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
+                                                    e.currentTarget.style.borderColor = colorScheme.border;
+                                                    e.currentTarget.querySelector('.tech-gradient').style.opacity = '1';
+                                                }}
+                                                onMouseLeave={(e) => {
+                                                    e.currentTarget.style.transform = 'translateY(0)';
+                                                    e.currentTarget.style.boxShadow = 'none';
+                                                    e.currentTarget.style.borderColor = '#f0f2f5';
+                                                    e.currentTarget.querySelector('.tech-gradient').style.opacity = '0';
+                                                }}
+                                            >
+                                                {/* Gradient overlay */}
+                                                <div 
+                                                    className="tech-gradient"
+                                                    style={{
+                                                        position: 'absolute',
+                                                        top: 0,
+                                                        left: 0,
+                                                        right: 0,
+                                                        height: '4px',
+                                                        background: colorScheme.bg,
+                                                        opacity: 0,
+                                                        transition: 'opacity 0.3s ease'
+                                                    }}
+                                                />
+                                                
+                                                {/* Icon circle */}
+                                                <div style={{
+                                                    width: '40px',
+                                                    height: '40px',
+                                                    borderRadius: '10px',
+                                                    background: colorScheme.bg,
+                                                    display: 'flex',
+                                                    alignItems: 'center',
+                                                    justifyContent: 'center',
+                                                    marginBottom: '0.75rem',
+                                                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
+                                                }}>
+                                                    <FaCode size={18} color="white" />
+                                                </div>
+                                                
+                                                {/* Technology name */}
+                                                <div style={{
+                                                    fontSize: '0.85rem',
+                                                    fontWeight: 600,
+                                                    color: '#003049',
+                                                    lineHeight: 1.3,
+                                                    wordBreak: 'break-word'
+                                                }}>
+                                                    {concept}
+                                                </div>
+                                            </div>
+                                        );
+                                    })}
                                 </div>
                             </div>
                         )}
 
                         {/* Configuration Section */}
                         {project.configuration && project.configuration.length > 0 && (
-                            <div style={{
+                            <div className="project-detail-card" style={{
                                 backgroundColor: 'white',
-                                borderRadius: '20px',
-                                padding: '2rem',
-                                boxShadow: '0 10px 40px rgba(0,0,0,0.08)'
+                                borderRadius: '24px',
+                                padding: '2.25rem',
+                                boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
+                                border: '1px solid rgba(0,48,73,0.05)',
+                                transition: 'all 0.3s ease'
                             }}>
                                 <div style={{
                                     display: 'flex',
