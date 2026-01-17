@@ -9,11 +9,11 @@ $text-light: #f1faee;
 $accent: #00b4d8;
 
 .hero {
-  min-height: 100vh;
+  min-height: 70vh;
   display: flex;
   align-items: center;
   padding: 100px 0 60px;
-  background: linear-gradient(135deg, $hero-bg 0%, $hero-bg-light 100%);
+  background: linear-gradient(135deg, $hero-bg 0%, #003d52 50%, $hero-bg-light 100%);
   position: relative;
   overflow: hidden;
 
@@ -43,18 +43,23 @@ $accent: #00b4d8;
   }
 
   &__layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    flex-direction: column;
     align-items: center;
-    gap: 4rem;
+    text-align: center;
+    gap: 2rem;
     position: relative;
     z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
   }
 
   &__content {
     display: flex;
     flex-direction: column;
-    gap: 1.5rem;
+    align-items: center;
+    gap: 1.25rem;
+    order: 2;
   }
 
   &__badge {
@@ -87,7 +92,7 @@ $accent: #00b4d8;
   }
 
   &__title {
-    font-size: clamp(2.5rem, 5vw, 3.5rem);
+    font-size: clamp(2rem, 5vw, 2.75rem);
     font-weight: 700;
     line-height: 1.1;
     color: $text-light;
@@ -102,11 +107,12 @@ $accent: #00b4d8;
   }
 
   &__description {
-    font-size: 1.1rem;
-    line-height: 1.7;
+    font-size: 1rem;
+    line-height: 1.6;
     color: rgba($text-light, 0.75);
     margin: 0;
-    max-width: 480px;
+    max-width: 600px;
+    text-align: center;
 
     strong {
       color: $text-light;
@@ -118,7 +124,7 @@ $accent: #00b4d8;
     display: flex;
     align-items: center;
     gap: 1.5rem;
-    margin-top: 0.5rem;
+    margin-top: 0.25rem;
   }
 
   &__btn {
@@ -182,73 +188,41 @@ $accent: #00b4d8;
   &__visual {
     display: flex;
     justify-content: center;
+    order: 1;
   }
 
   &__image-container {
     position: relative;
-    width: 340px;
-    height: 400px;
+    width: 120px;
+    height: 120px;
   }
 
   &__image {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 20px;
-    position: relative;
-    z-index: 2;
-    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    border-radius: 50%;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
   }
 
   &__image-decoration {
-    position: absolute;
-    inset: -8px;
-    border-radius: 24px;
-    background: linear-gradient(135deg, $accent, color.adjust($accent, $lightness: 10%));
-    z-index: 1;
-    opacity: 0.6;
-
-    &::before {
-      content: '';
-      position: absolute;
-      inset: 2px;
-      border-radius: 22px;
-      background: $hero-bg;
-    }
+    display: none;
   }
 
   // Responsive Breakpoints
   // ----------------------
   
   @media (max-width: 991px) {
-    padding: 80px 0 40px;
+    padding: 80px 0 50px;
+    min-height: 65vh;
 
     &__layout {
-      grid-template-columns: 1fr;
-      gap: 3rem;
-      text-align: center;
-    }
-
-    &__content {
-      align-items: center;
-      order: 2;
-    }
-
-    &__description {
-      max-width: 520px;
-    }
-
-    &__actions {
-      justify-content: center;
-    }
-
-    &__visual {
-      order: 1;
+      gap: 1.75rem;
     }
 
     &__image-container {
-      width: 280px;
-      height: 340px;
+      width: 110px;
+      height: 110px;
     }
 
     &::after {
@@ -260,11 +234,11 @@ $accent: #00b4d8;
   }
 
   @media (max-width: 575px) {
-    padding: 70px 0 30px;
-    min-height: auto;
+    padding: 80px 0 40px;
+    min-height: 60vh;
 
     &__layout {
-      gap: 2rem;
+      gap: 1.5rem;
     }
 
     &__badge {
@@ -273,16 +247,17 @@ $accent: #00b4d8;
     }
 
     &__title {
-      font-size: 2rem;
+      font-size: 1.75rem;
     }
 
     &__description {
-      font-size: 1rem;
+      font-size: 0.95rem;
     }
 
     &__actions {
       flex-direction: column;
       gap: 1rem;
+      width: 100%;
     }
 
     &__btn {
@@ -291,8 +266,8 @@ $accent: #00b4d8;
     }
 
     &__image-container {
-      width: 220px;
-      height: 280px;
+      width: 100px;
+      height: 100px;
     }
   }
 }
