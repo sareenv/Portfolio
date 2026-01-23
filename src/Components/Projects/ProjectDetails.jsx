@@ -445,20 +445,22 @@ const ProjectDetails = (props) => {
 
             {/* Main Content */}
             <Container style={{ 
-                marginTop: '-2rem',
-                paddingBottom: '4rem',
+                marginTop: 'clamp(-3rem, -5vw, -2rem)',
+                paddingBottom: 'clamp(3rem, 8vw, 5rem)',
                 position: 'relative',
-                zIndex: 10
+                zIndex: 10,
+                maxWidth: '1400px'
             }}>
                 <Row>
                     {/* Image Gallery Section */}
-                    <Col lg={7} style={{marginBottom: '2rem'}}>
+                    <Col lg={8} style={{marginBottom: 'clamp(1.5rem, 4vw, 2rem)'}}>
                         <div className="project-detail-card" style={{
                             backgroundColor: 'white',
-                            borderRadius: '24px',
-                            padding: '2rem',
-                            boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
-                            marginBottom: '1.5rem',
+                            borderRadius: 'clamp(16px, 4vw, 20px)',
+                            padding: 'clamp(1.5rem, 4vw, 2.5rem)',
+                            boxShadow: '0 10px 40px rgba(0,48,73,0.08)',
+                            marginBottom: 'clamp(1.5rem, 4vw, 2rem)',
+                            border: '1px solid rgba(0,48,73,0.04)',
                             transition: 'all 0.3s ease'
                         }}>
                             {/* Image Counter */}
@@ -467,21 +469,25 @@ const ProjectDetails = (props) => {
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'space-between',
-                                    marginBottom: '1rem'
+                                    marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
+                                    paddingBottom: '1rem',
+                                    borderBottom: '1px solid rgba(0,48,73,0.06)'
                                 }}>
                                     <h4 style={{
-                                        fontSize: '1.1rem',
-                                        fontWeight: 700,
+                                        fontSize: 'clamp(0.95rem, 2.5vw, 1.05rem)',
+                                        fontWeight: 600,
                                         color: '#003049',
-                                        margin: 0
-                                    }}>Project Gallery</h4>
+                                        margin: 0,
+                                        letterSpacing: '-0.01em'
+                                    }}>Preview</h4>
                                     <span style={{
-                                        fontSize: '0.85rem',
+                                        fontSize: 'clamp(0.75rem, 2vw, 0.8rem)',
                                         color: '#6c757d',
-                                        backgroundColor: '#f8f9fa',
-                                        padding: '0.4rem 0.8rem',
-                                        borderRadius: '20px',
-                                        fontWeight: 500
+                                        backgroundColor: 'rgba(0,180,216,0.08)',
+                                        padding: '0.35rem 0.75rem',
+                                        borderRadius: '6px',
+                                        fontWeight: 600,
+                                        border: '1px solid rgba(0,180,216,0.12)'
                                     }}>
                                         {activeImageIndex + 1} / {project.images.length}
                                     </span>
@@ -492,10 +498,11 @@ const ProjectDetails = (props) => {
                             <div style={{
                                 position: 'relative',
                                 backgroundColor: '#f8f9fa',
-                                borderRadius: '16px',
+                                borderRadius: 'clamp(12px, 3vw, 14px)',
                                 overflow: 'hidden',
-                                marginBottom: '1.5rem',
-                                boxShadow: 'inset 0 0 20px rgba(0,0,0,0.03)'
+                                marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
+                                boxShadow: '0 4px 16px rgba(0,48,73,0.06)',
+                                border: '1px solid rgba(0,48,73,0.08)'
                             }}>
                                 {/* Video Modal Overlay */}
                                 {showVideo && project.video && (
@@ -652,227 +659,144 @@ const ProjectDetails = (props) => {
                                 </div>
                             )}
                         </div>
+
+                        {/* Technologies Section - Now under the gallery */}
+                        {project.conceptsUsed && project.conceptsUsed.length > 0 && (
+                            <div className="project-detail-card" style={{
+                                backgroundColor: 'white',
+                                borderRadius: 'clamp(16px, 4vw, 20px)',
+                                padding: 'clamp(1.5rem, 4vw, 2.5rem)',
+                                boxShadow: '0 10px 40px rgba(0,48,73,0.08)',
+                                marginBottom: 'clamp(1.5rem, 4vw, 2rem)',
+                                border: '1px solid rgba(0,48,73,0.04)',
+                                transition: 'all 0.3s ease'
+                            }}>
+                                <h3 style={{
+                                    fontSize: 'clamp(0.95rem, 2.5vw, 1.05rem)',
+                                    fontWeight: 600,
+                                    color: '#003049',
+                                    marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
+                                    display: 'flex',
+                                    alignItems: 'center',
+                                    gap: '0.5rem',
+                                    paddingBottom: '1rem',
+                                    borderBottom: '1px solid rgba(0,48,73,0.06)',
+                                    letterSpacing: '-0.01em'
+                                }}>
+                                    <FaCode size={16} color="#00b4d8" />
+                                    Technologies & Tools
+                                </h3>
+                                <div style={{
+                                    display: 'flex',
+                                    flexWrap: 'wrap',
+                                    gap: 'clamp(0.5rem, 1.5vw, 0.6rem)',
+                                    lineHeight: 1.6
+                                }}>
+                                    {project.conceptsUsed.map((concept, index) => (
+                                        <span
+                                            key={index}
+                                            style={{
+                                                display: 'inline-flex',
+                                                alignItems: 'center',
+                                                backgroundColor: 'rgba(0,48,73,0.04)',
+                                                color: '#003049',
+                                                padding: 'clamp(0.45rem, 1.5vw, 0.55rem) clamp(0.85rem, 2.5vw, 1rem)',
+                                                borderRadius: '7px',
+                                                fontSize: 'clamp(0.8rem, 2vw, 0.875rem)',
+                                                fontWeight: 500,
+                                                border: '1px solid rgba(0,48,73,0.08)',
+                                                transition: 'all 0.2s cubic-bezier(0.4, 0, 0.2, 1)',
+                                                letterSpacing: '0.01em'
+                                            }}
+                                            onMouseEnter={(e) => {
+                                                e.currentTarget.style.backgroundColor = '#003049';
+                                                e.currentTarget.style.color = 'white';
+                                                e.currentTarget.style.borderColor = '#003049';
+                                                e.currentTarget.style.transform = 'translateY(-1px)';
+                                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,48,73,0.15)';
+                                            }}
+                                            onMouseLeave={(e) => {
+                                                e.currentTarget.style.backgroundColor = 'rgba(0,48,73,0.04)';
+                                                e.currentTarget.style.color = '#003049';
+                                                e.currentTarget.style.borderColor = 'rgba(0,48,73,0.08)';
+                                                e.currentTarget.style.transform = 'translateY(0)';
+                                                e.currentTarget.style.boxShadow = 'none';
+                                            }}
+                                        >
+                                            {concept}
+                                        </span>
+                                    ))}
+                                </div>
+                            </div>
+                        )}
                     </Col>
 
                     {/* Project Details Section */}
-                    <Col lg={5}>
+                    <Col lg={4}>
                         {/* About Section */}
                         <div className="project-detail-card" style={{
                             backgroundColor: 'white',
-                            borderRadius: '24px',
-                            padding: '2.25rem',
-                            boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
-                            marginBottom: '1.5rem',
-                            border: '1px solid rgba(0,48,73,0.05)',
-                            transition: 'all 0.3s ease'
+                            borderRadius: 'clamp(16px, 4vw, 20px)',
+                            padding: 'clamp(1.5rem, 4vw, 2rem)',
+                            boxShadow: '0 10px 40px rgba(0,48,73,0.08)',
+                            marginBottom: 'clamp(1.5rem, 4vw, 2rem)',
+                            border: '1px solid rgba(0,48,73,0.04)',
+                            transition: 'all 0.3s ease',
+                            height: 'fit-content',
+                            position: 'sticky',
+                            top: '2rem'
                         }}>
-                            <div style={{
+                            <h3 style={{
+                                fontSize: 'clamp(0.95rem, 2.5vw, 1.05rem)',
+                                fontWeight: 600,
+                                color: '#003049',
+                                marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
                                 display: 'flex',
                                 alignItems: 'center',
-                                gap: '0.75rem',
-                                marginBottom: '1.25rem'
+                                gap: '0.5rem',
+                                paddingBottom: '1rem',
+                                borderBottom: '1px solid rgba(0,48,73,0.06)',
+                                letterSpacing: '-0.01em'
                             }}>
-                                <div style={{
-                                    backgroundColor: 'rgba(0,180,216,0.1)',
-                                    borderRadius: '12px',
-                                    padding: '0.75rem',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center'
-                                }}>
-                                    <FaLightbulb size={20} color="#00b4d8" />
-                                </div>
-                                <h3 style={{
-                                    fontSize: '1.25rem',
-                                    fontWeight: 700,
-                                    color: '#003049',
-                                    marginBottom: 0
-                                }}>
-                                    About this Project
-                                </h3>
-                            </div>
+                                <FaLightbulb size={16} color="#00b4d8" />
+                                About
+                            </h3>
                             <p style={{
-                                color: '#5a6c7d',
-                                lineHeight: 1.8,
-                                fontSize: '1rem',
-                                marginBottom: 0
+                                color: '#526170',
+                                lineHeight: 1.75,
+                                fontSize: 'clamp(0.875rem, 2.2vw, 0.95rem)',
+                                marginBottom: 0,
+                                letterSpacing: '0.01em'
                             }}>
                                 {project.description}
                             </p>
                         </div>
 
-                        {/* Technologies Section */}
-                        {project.conceptsUsed && project.conceptsUsed.length > 0 && (
-                            <div className="project-detail-card" style={{
-                                backgroundColor: 'white',
-                                borderRadius: '24px',
-                                padding: '2.25rem',
-                                boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
-                                marginBottom: '1.5rem',
-                                border: '1px solid rgba(0,48,73,0.05)',
-                                transition: 'all 0.3s ease'
-                            }}>
-                                <div style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.75rem',
-                                    marginBottom: '0.5rem'
-                                }}>
-                                    <div style={{
-                                        backgroundColor: 'rgba(0,48,73,0.1)',
-                                        borderRadius: '12px',
-                                        padding: '0.75rem',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                        <FaCode size={20} color="#003049" />
-                                    </div>
-                                    <h3 style={{
-                                        fontSize: '1.25rem',
-                                        fontWeight: 700,
-                                        color: '#003049',
-                                        marginBottom: 0
-                                    }}>
-                                        Technologies & Tools
-                                    </h3>
-                                </div>
-                                <p style={{
-                                    color: '#6c757d',
-                                    fontSize: '0.9rem',
-                                    marginBottom: '1.5rem',
-                                    marginLeft: '3.5rem'
-                                }}>
-                                    {project.conceptsUsed.length} technologies used in this project
-                                </p>
-                                <div style={{
-                                    display: 'grid',
-                                    gridTemplateColumns: 'repeat(auto-fill, minmax(140px, 1fr))',
-                                    gap: '0.75rem'
-                                }}>
-                                    {project.conceptsUsed.map((concept, index) => {
-                                        const colors = [
-                                            { bg: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)', border: '#667eea' },
-                                            { bg: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)', border: '#f093fb' },
-                                            { bg: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)', border: '#4facfe' },
-                                            { bg: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)', border: '#43e97b' },
-                                            { bg: 'linear-gradient(135deg, #fa709a 0%, #fee140 100%)', border: '#fa709a' },
-                                            { bg: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)', border: '#30cfd0' },
-                                            { bg: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)', border: '#a8edea' },
-                                            { bg: 'linear-gradient(135deg, #ff9a56 0%, #ff6a88 100%)', border: '#ff9a56' },
-                                            { bg: 'linear-gradient(135deg, #fbc2eb 0%, #a6c1ee 100%)', border: '#fbc2eb' },
-                                            { bg: 'linear-gradient(135deg, #fdcbf1 0%, #e6dee9 100%)', border: '#fdcbf1' }
-                                        ];
-                                        const colorScheme = colors[index % colors.length];
-                                        
-                                        return (
-                                            <div
-                                                key={index}
-                                                style={{
-                                                    position: 'relative',
-                                                    background: 'white',
-                                                    padding: '1rem',
-                                                    borderRadius: '16px',
-                                                    border: '2px solid #f0f2f5',
-                                                    transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                                    cursor: 'pointer',
-                                                    overflow: 'hidden'
-                                                }}
-                                                onMouseEnter={(e) => {
-                                                    e.currentTarget.style.transform = 'translateY(-4px)';
-                                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,0,0,0.12)';
-                                                    e.currentTarget.style.borderColor = colorScheme.border;
-                                                    e.currentTarget.querySelector('.tech-gradient').style.opacity = '1';
-                                                }}
-                                                onMouseLeave={(e) => {
-                                                    e.currentTarget.style.transform = 'translateY(0)';
-                                                    e.currentTarget.style.boxShadow = 'none';
-                                                    e.currentTarget.style.borderColor = '#f0f2f5';
-                                                    e.currentTarget.querySelector('.tech-gradient').style.opacity = '0';
-                                                }}
-                                            >
-                                                {/* Gradient overlay */}
-                                                <div 
-                                                    className="tech-gradient"
-                                                    style={{
-                                                        position: 'absolute',
-                                                        top: 0,
-                                                        left: 0,
-                                                        right: 0,
-                                                        height: '4px',
-                                                        background: colorScheme.bg,
-                                                        opacity: 0,
-                                                        transition: 'opacity 0.3s ease'
-                                                    }}
-                                                />
-                                                
-                                                {/* Icon circle */}
-                                                <div style={{
-                                                    width: '40px',
-                                                    height: '40px',
-                                                    borderRadius: '10px',
-                                                    background: colorScheme.bg,
-                                                    display: 'flex',
-                                                    alignItems: 'center',
-                                                    justifyContent: 'center',
-                                                    marginBottom: '0.75rem',
-                                                    boxShadow: '0 4px 12px rgba(0,0,0,0.1)'
-                                                }}>
-                                                    <FaCode size={18} color="white" />
-                                                </div>
-                                                
-                                                {/* Technology name */}
-                                                <div style={{
-                                                    fontSize: '0.85rem',
-                                                    fontWeight: 600,
-                                                    color: '#003049',
-                                                    lineHeight: 1.3,
-                                                    wordBreak: 'break-word'
-                                                }}>
-                                                    {concept}
-                                                </div>
-                                            </div>
-                                        );
-                                    })}
-                                </div>
-                            </div>
-                        )}
-
                         {/* Configuration Section */}
                         {project.configuration && project.configuration.length > 0 && (
                             <div className="project-detail-card" style={{
                                 backgroundColor: 'white',
-                                borderRadius: '24px',
-                                padding: '2.25rem',
-                                boxShadow: '0 20px 60px rgba(0,0,0,0.1)',
-                                border: '1px solid rgba(0,48,73,0.05)',
+                                borderRadius: 'clamp(16px, 4vw, 20px)',
+                                padding: 'clamp(1.5rem, 4vw, 2rem)',
+                                boxShadow: '0 10px 40px rgba(0,48,73,0.08)',
+                                border: '1px solid rgba(0,48,73,0.04)',
                                 transition: 'all 0.3s ease'
                             }}>
-                                <div style={{
+                                <h3 style={{
+                                    fontSize: 'clamp(0.95rem, 2.5vw, 1.05rem)',
+                                    fontWeight: 600,
+                                    color: '#003049',
+                                    marginBottom: 'clamp(1rem, 3vw, 1.5rem)',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    gap: '0.75rem',
-                                    marginBottom: '1.25rem'
+                                    gap: '0.5rem',
+                                    paddingBottom: '1rem',
+                                    borderBottom: '1px solid rgba(0,48,73,0.06)',
+                                    letterSpacing: '-0.01em'
                                 }}>
-                                    <div style={{
-                                        backgroundColor: 'rgba(214,40,40,0.1)',
-                                        borderRadius: '12px',
-                                        padding: '0.75rem',
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        justifyContent: 'center'
-                                    }}>
-                                        <FaCogs size={20} color="#d62828" />
-                                    </div>
-                                    <h3 style={{
-                                        fontSize: '1.25rem',
-                                        fontWeight: 700,
-                                        color: '#003049',
-                                        marginBottom: 0
-                                    }}>
-                                        Configuration
-                                    </h3>
-                                </div>
+                                    <FaCogs size={16} color="#00b4d8" />
+                                    Configuration
+                                </h3>
                                 <ul style={{
                                     listStyle: 'none',
                                     padding: 0,
@@ -885,22 +809,24 @@ const ProjectDetails = (props) => {
                                                 display: 'flex',
                                                 alignItems: 'flex-start',
                                                 gap: '0.75rem',
-                                                padding: '0.75rem 0',
+                                                padding: 'clamp(0.65rem, 2vw, 0.75rem) 0',
                                                 borderBottom: index < project.configuration.length - 1 
-                                                    ? '1px solid #f0f2f5' 
+                                                    ? '1px solid rgba(0,48,73,0.06)' 
                                                     : 'none'
                                             }}
                                         >
                                             <span style={{
                                                 color: '#00b4d8',
                                                 fontWeight: 'bold',
-                                                fontSize: '1.2rem',
-                                                lineHeight: 1.4
+                                                fontSize: 'clamp(1rem, 2.5vw, 1.1rem)',
+                                                lineHeight: 1.4,
+                                                flexShrink: 0
                                             }}>•</span>
                                             <span style={{
-                                                color: '#5a6c7d',
-                                                fontSize: '0.95rem',
-                                                lineHeight: 1.6
+                                                color: '#526170',
+                                                fontSize: 'clamp(0.85rem, 2.2vw, 0.9rem)',
+                                                lineHeight: 1.65,
+                                                letterSpacing: '0.01em'
                                             }}>
                                                 {config}
                                             </span>
