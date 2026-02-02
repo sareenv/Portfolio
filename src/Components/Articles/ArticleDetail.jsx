@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Container from 'react-bootstrap/Container';
@@ -41,10 +41,33 @@ const ArticleDetail = () => {
     const article = getArticleBySlug(slug);
     const topic = getTopicById(topicId);
     const concept = getConceptById(topicId, conceptId);
+    const [content, setContent] = useState('');
+    const [isLoading, setIsLoading] = useState(true);
 
     useEffect(() => {
         window.scrollTo(0, 0);
-    }, [slug]);
+        
+        // If article has contentPath, fetch from markdown file
+        if (article?.contentPath) {
+            setIsLoading(true);
+            fetch(article.contentPath)
+                .then(response => response.text())
+                .then(text => {
+                    setContent(text);
+                    setIsLoading(false);
+                })
+                .catch(err => {
+                    console.error('Failed to load article content:', err);
+                    setContent('# Error\n\nFailed to load article content.');
+                    setIsLoading(false);
+                });
+        } else if (article?.content) {
+            setContent(article.content);
+            setIsLoading(false);
+        } else {
+            setIsLoading(false);
+        }
+    }, [slug]); // Only depend on slug, not the article object
 
     if (!article || !topic || !concept) {
         return (
@@ -144,26 +167,30 @@ const ArticleDetail = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5, delay: 0.2 }}
                 >
-                    <Markdown
-                        options={{
-                            overrides: {
-                                code: {
-                                    component: CodeBlock
-                                },
-                                inlineCode: {
-                                    component: InlineCode
-                                },
-                                table: {
-                                    component: TableWrapper
-                                },
-                                pre: {
-                                    component: ({ children }) => <>{children}</>
+                    {isLoading ? (
+                        <div className="article-loading">Loading...</div>
+                    ) : (
+                        <Markdown
+                            options={{
+                                overrides: {
+                                    code: {
+                                        component: CodeBlock
+                                    },
+                                    inlineCode: {
+                                        component: InlineCode
+                                    },
+                                    table: {
+                                        component: TableWrapper
+                                    },
+                                    pre: {
+                                        component: ({ children }) => <>{children}</>
+                                    }
                                 }
-                            }
-                        }}
-                    >
-                        {article.content}
-                    </Markdown>
+                            }}
+                        >
+                            {content}
+                        </Markdown>
+                    )}
                 </motion.article>
 
                 {/* Navigation */}

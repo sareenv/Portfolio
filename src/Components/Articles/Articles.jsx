@@ -11,7 +11,15 @@ const Articles = () => {
     const [expandedTopics, setExpandedTopics] = useState(
         articlesData.reduce((acc, topic) => ({ ...acc, [topic.id]: true }), {})
     );
-    const [expandedConcepts, setExpandedConcepts] = useState({});
+    // Initialize all concepts as expanded
+    const [expandedConcepts, setExpandedConcepts] = useState(
+        articlesData.reduce((acc, topic) => {
+            topic.concepts.forEach(concept => {
+                acc[concept.id] = true;
+            });
+            return acc;
+        }, {})
+    );
 
     // Filter articles based on search
     const filteredData = useMemo(() => {

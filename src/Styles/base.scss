@@ -1,7 +1,7 @@
-$baseColor: #003049;
-$baseNavColor: #012335;
+$baseColor: #1a1a2e;
+$baseNavColor: #16213e;
 $secondaryColor: $baseNavColor;
-$redthemeColor: #d62828;
+$redthemeColor: #c9302c;
 
 html, body {
     max-width: 100%;
@@ -62,7 +62,7 @@ html {
     display: block;
     align-items: center;
     text-align: center;
-    background-color: #003049;
+    background-color: #1a1a2e;
     color: white;
     font-weight: 400;
     text-decoration: none;
@@ -73,13 +73,13 @@ html {
 
 .customLink:hover {
     border: none;
-    background-color:#003049;
+    background-color:#1a1a2e;
     color: white;
 }
 
 
 .link {
-    background-color: #003049;
+    background-color: #1a1a2e;
 }
 
 // Projects Grid - 3 columns layout
