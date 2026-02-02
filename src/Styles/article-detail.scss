@@ -13,6 +13,14 @@
     }
 }
 
+// Loading state
+.article-loading {
+    text-align: center;
+    padding: 4rem 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
 // Not Found
 .article-not-found {
     text-align: center;
@@ -24,7 +32,7 @@
     }
     
     h2 {
-        color: #003049;
+        color: #1a1a2e;
         margin-bottom: 0.5rem;
     }
     
@@ -37,7 +45,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.5rem;
-        color: #00b4d8;
+        color: #2d3748;
         text-decoration: none;
         font-weight: 600;
         
@@ -57,7 +65,7 @@
     flex-wrap: wrap;
     
     a {
-        color: #00b4d8;
+        color: #2d3748;
         text-decoration: none;
         
         &:hover {
@@ -90,7 +98,7 @@
     transition: color 0.2s ease;
     
     &:hover {
-        color: #003049;
+        color: #1a1a2e;
     }
 }
 
@@ -113,7 +121,7 @@
         gap: 0.35rem;
         font-size: 0.85rem;
         font-weight: 600;
-        color: #00b4d8;
+        color: #2d3748;
         background: rgba(0, 180, 216, 0.1);
         padding: 0.35rem 0.75rem;
         border-radius: 8px;
@@ -127,7 +135,7 @@
     &__title {
         font-size: clamp(1.75rem, 4vw, 2.5rem);
         font-weight: 700;
-        color: #003049;
+        color: #1a1a2e;
         line-height: 1.3;
         margin: 0 0 1rem;
     }
@@ -191,7 +199,7 @@
     h1 {
         font-size: 2rem;
         font-weight: 700;
-        color: #003049;
+        color: #1a1a2e;
         margin: 2.5rem 0 1rem;
         line-height: 1.3;
         
@@ -203,7 +211,7 @@
     h2 {
         font-size: 1.5rem;
         font-weight: 700;
-        color: #003049;
+        color: #1a1a2e;
         margin: 2.5rem 0 1rem;
         padding-bottom: 0.5rem;
         border-bottom: 2px solid #e8e8e8;
@@ -212,14 +220,14 @@
     h3 {
         font-size: 1.25rem;
         font-weight: 600;
-        color: #003049;
+        color: #1a1a2e;
         margin: 2rem 0 0.75rem;
     }
     
     h4 {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #003049;
+        color: #1a1a2e;
         margin: 1.5rem 0 0.5rem;
     }
     
@@ -238,11 +246,11 @@
     
     strong {
         font-weight: 600;
-        color: #003049;
+        color: #1a1a2e;
     }
     
     a {
-        color: #00b4d8;
+        color: #2d3748;
         text-decoration: none;
         
         &:hover {
@@ -253,7 +261,7 @@
     blockquote {
         margin: 1.5rem 0;
         padding: 1rem 1.5rem;
-        border-left: 4px solid #00b4d8;
+        border-left: 4px solid #2d3748;
         background: #f8f9fa;
         border-radius: 0 8px 8px 0;
         
@@ -301,28 +309,66 @@
     // Tables
     .table-wrapper {
         overflow-x: auto;
-        margin: 1.5rem 0;
+        margin: 2rem 0;
+        border-radius: 10px;
+        border: 1px solid #e2e8f0;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
     }
     
     table {
         width: 100%;
         border-collapse: collapse;
-        font-size: 0.95rem;
+        font-size: 0.9rem;
         
         th, td {
-            padding: 0.75rem 1rem;
+            padding: 0.85rem 1.25rem;
             text-align: left;
-            border: 1px solid #e8e8e8;
+            border-bottom: 1px solid #e2e8f0;
         }
         
         th {
-            background: #f8f9fa;
+            background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
             font-weight: 600;
-            color: #003049;
+            font-size: 0.8rem;
+            color: #1a1a2e;
+            text-transform: uppercase;
+            letter-spacing: 0.04em;
+            white-space: nowrap;
         }
         
-        tr:hover td {
-            background: #fafafa;
+        td {
+            color: #4a5568;
+            vertical-align: middle;
+        }
+        
+        tbody tr {
+            transition: background 0.15s ease;
+            
+            &:hover {
+                background: #f8fafc;
+            }
+            
+            &:last-child td {
+                border-bottom: none;
+            }
+        }
+        
+        // Zebra striping (optional, subtle)
+        tbody tr:nth-child(even) {
+            background: #fafbfc;
+            
+            &:hover {
+                background: #f1f5f9;
+            }
+        }
+        
+        // Code in tables
+        code {
+            font-size: 0.85rem;
+            padding: 0.2rem 0.5rem;
+            background: #edf2f7;
+            border-radius: 4px;
+            color: #1a1a2e;
         }
     }
     
@@ -370,7 +416,7 @@
             justify-content: flex-start;
             
             svg {
-                color: #00b4d8;
+                color: #2d3748;
                 font-size: 1.5rem;
             }
         }
@@ -380,7 +426,7 @@
             text-align: right;
             
             svg {
-                color: #00b4d8;
+                color: #2d3748;
                 font-size: 1.5rem;
             }
         }
@@ -399,7 +445,7 @@
         display: block;
         font-size: 1rem;
         font-weight: 600;
-        color: #003049;
+        color: #1a1a2e;
     }
 }
 
@@ -412,7 +458,7 @@
     &__title {
         font-size: 1.25rem;
         font-weight: 700;
-        color: #003049;
+        color: #1a1a2e;
         margin-bottom: 1.5rem;
     }
     
@@ -438,7 +484,7 @@
     h4 {
         font-size: 1rem;
         font-weight: 600;
-        color: #003049;
+        color: #1a1a2e;
         margin: 0 0 0.5rem;
     }
     

@@ -1,12 +1,12 @@
-// Navigation Styles - Inspired by Hero Section
+// Navigation Styles - Elegant Professional Theme
 // =============================================
 
-$nav-bg: #003049;
-$nav-bg-light: #004c59;
-$text-light: #f1faee;
+$nav-bg: #1a1a2e;
+$nav-bg-light: #16213e;
+$text-light: #f8f9fa;
 $text-dark: #1a1a2e;
-$accent: #00b4d8;
-$accent-red: #d62828;
+$accent: #4a6fa5;
+$accent-red: #c9302c;
 
 .nav {
   position: fixed;
@@ -91,7 +91,7 @@ $accent-red: #d62828;
     transform: translateX(-50%);
     width: 20px;
     height: 3px;
-    background: $accent;
+    background: $text-light;
     border-radius: 10px;
   }
 
@@ -112,14 +112,14 @@ $accent-red: #d62828;
     z-index: 10;
 
     &:hover {
-      background: rgba($accent, 0.15);
-      border-color: $accent;
-      color: $accent;
+      background: rgba($text-light, 0.1);
+      border-color: rgba($text-light, 0.3);
+      color: $text-light;
     }
 
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 2px rgba($accent, 0.3);
+      box-shadow: 0 0 0 2px rgba($text-light, 0.2);
     }
 
     @media (max-width: 768px) {
@@ -172,10 +172,10 @@ $accent-red: #d62828;
 
     &--active {
       color: $text-light;
-      background: rgba($accent, 0.1);
+      background: rgba($text-light, 0.08);
       
       &:hover {
-        background: rgba($accent, 0.15);
+        background: rgba($text-light, 0.1);
       }
     }
   }
@@ -183,7 +183,7 @@ $accent-red: #d62828;
   &__mobile-link-indicator {
     width: 6px;
     height: 6px;
-    background: $accent;
+    background: $text-light;
     border-radius: 50%;
   }
 }

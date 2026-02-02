@@ -2,29 +2,8 @@ import React, {useEffect} from 'react';
 import SkillsServices from './SkillsServices'
 import Footer from '../Footer'
 import {Row, Col, Container} from 'react-bootstrap'
-import { HiOutlineCode, HiOutlineDeviceMobile, HiOutlineCloud, HiArrowRight } from 'react-icons/hi'
+import { HiArrowRight, HiOutlineCalendar } from 'react-icons/hi'
 import ReactGA from 'react-ga'
-
-const services = [
-    {
-        icon: HiOutlineDeviceMobile,
-        title: 'Mobile Development',
-        description: 'Native iOS applications built with Swift and SwiftUI, delivering seamless user experiences with modern architecture patterns.',
-        features: ['iOS & iPadOS Apps', 'SwiftUI & UIKit', 'App Store Deployment']
-    },
-    {
-        icon: HiOutlineCode,
-        title: 'Full-Stack Development',
-        description: 'End-to-end web applications using React, Node.js, and modern frameworks with scalable backend architectures.',
-        features: ['React & Next.js', 'Node.js & Express', 'REST & GraphQL APIs']
-    },
-    {
-        icon: HiOutlineCloud,
-        title: 'Cloud Solutions',
-        description: 'Cloud infrastructure setup and management on AWS and GCP, with CI/CD pipelines and containerized deployments.',
-        features: ['AWS & GCP', 'Docker & Kubernetes', 'CI/CD Pipelines']
-    }
-];
 
 const Service = () => {
     
@@ -40,7 +19,7 @@ const Service = () => {
         <div style={{ backgroundColor: '#ffffff' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
+                background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
                 padding: '8rem 0 6rem',
                 position: 'relative',
                 overflow: 'hidden'
@@ -52,43 +31,52 @@ const Service = () => {
                     right: '10%',
                     width: '400px',
                     height: '400px',
-                    background: 'radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, transparent 70%)',
                     borderRadius: '50%',
-                    filter: 'blur(40px)',
+                    filter: 'blur(60px)',
                     pointerEvents: 'none'
                 }} />
                 
                 <Container>
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
-                            <p style={{
-                                color: '#00b4d8',
-                                fontSize: '0.9rem',
-                                fontWeight: 600,
-                                letterSpacing: '0.1em',
-                                textTransform: 'uppercase',
-                                marginBottom: '1rem'
+                            <div style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '0.5rem',
+                                backgroundColor: 'rgba(248, 249, 250, 0.1)',
+                                padding: '0.5rem 1rem',
+                                borderRadius: '100px',
+                                marginBottom: '1.5rem'
                             }}>
-                                Services
-                            </p>
+                                <HiOutlineCalendar size={18} color="#f8f9fa" />
+                                <span style={{
+                                    color: 'rgba(248, 249, 250, 0.8)',
+                                    fontSize: '0.85rem',
+                                    fontWeight: 500
+                                }}>
+                                    Let's Connect
+                                </span>
+                            </div>
                             <h1 style={{
-                                color: '#f1faee',
-                                fontSize: 'clamp(2rem, 5vw, 3rem)',
+                                color: '#f8f9fa',
+                                fontSize: 'clamp(1.75rem, 5vw, 2.5rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.5rem',
-                                lineHeight: 1.2
+                                lineHeight: 1.3
                             }}>
-                                Building Digital Solutions<br />That Drive Results
+                                Would like to connect with me?<br />
+                                Please book a slot from my calendar
                             </h1>
                             <p style={{
-                                color: 'rgba(241, 250, 238, 0.8)',
-                                fontSize: '1.15rem',
+                                color: 'rgba(248, 249, 250, 0.7)',
+                                fontSize: '1.1rem',
                                 lineHeight: 1.7,
-                                maxWidth: '600px',
+                                maxWidth: '550px',
                                 margin: '0 auto 2rem'
                             }}>
-                                From concept to deployment, I deliver tailored software solutions 
-                                that help businesses scale and succeed in the digital landscape.
+                                I'd love to hear about your project or just have a chat. 
+                                Schedule a convenient time and let's discuss how I can help.
                             </p>
                             <button
                                 onClick={handleBookConsultation}
@@ -97,26 +85,26 @@ const Service = () => {
                                     alignItems: 'center',
                                     gap: '0.5rem',
                                     padding: '1rem 2rem',
-                                    backgroundColor: '#00b4d8',
-                                    color: '#003049',
+                                    backgroundColor: '#f8f9fa',
+                                    color: '#1a1a2e',
                                     border: 'none',
                                     borderRadius: '8px',
                                     fontWeight: 600,
                                     fontSize: '1rem',
                                     cursor: 'pointer',
                                     transition: 'all 0.3s ease',
-                                    boxShadow: '0 4px 20px rgba(0, 180, 216, 0.3)'
+                                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'translateY(-2px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 180, 216, 0.4)';
+                                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.25)';
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 180, 216, 0.3)';
+                                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
                                 }}
                             >
-                                Book Free Consultation
+                                Book a Meeting
                                 <HiArrowRight size={18} />
                             </button>
                         </Col>
@@ -124,99 +112,10 @@ const Service = () => {
                 </Container>
             </div>
 
-            {/* Services Cards Section */}
-            <Container style={{ marginTop: '-3rem', position: 'relative', zIndex: 2 }}>
-                <Row>
-                    {services.map((service, index) => (
-                        <Col xs={12} md={4} key={index} style={{ marginBottom: '1.5rem' }}>
-                            <div style={{
-                                backgroundColor: '#ffffff',
-                                borderRadius: '16px',
-                                padding: '2rem',
-                                height: '100%',
-                                boxShadow: '0 4px 24px rgba(0,0,0,0.08)',
-                                transition: 'all 0.3s ease',
-                                border: '1px solid #f0f0f0'
-                            }}
-                            onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'translateY(-8px)';
-                                e.currentTarget.style.boxShadow = '0 12px 40px rgba(0,0,0,0.12)';
-                            }}
-                            onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 24px rgba(0,0,0,0.08)';
-                            }}
-                            >
-                                {/* Icon */}
-                                <div style={{
-                                    width: '56px',
-                                    height: '56px',
-                                    borderRadius: '14px',
-                                    background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    marginBottom: '1.5rem'
-                                }}>
-                                    <service.icon size={28} color="#00b4d8" />
-                                </div>
-                                
-                                {/* Title */}
-                                <h3 style={{
-                                    fontSize: '1.25rem',
-                                    fontWeight: 600,
-                                    color: '#003049',
-                                    marginBottom: '0.75rem'
-                                }}>
-                                    {service.title}
-                                </h3>
-                                
-                                {/* Description */}
-                                <p style={{
-                                    fontSize: '0.95rem',
-                                    color: '#666',
-                                    lineHeight: 1.7,
-                                    marginBottom: '1.5rem'
-                                }}>
-                                    {service.description}
-                                </p>
-                                
-                                {/* Features */}
-                                <ul style={{
-                                    listStyle: 'none',
-                                    padding: 0,
-                                    margin: 0
-                                }}>
-                                    {service.features.map((feature, i) => (
-                                        <li key={i} style={{
-                                            display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '0.5rem',
-                                            fontSize: '0.9rem',
-                                            color: '#555',
-                                            marginBottom: '0.5rem'
-                                        }}>
-                                            <span style={{
-                                                width: '6px',
-                                                height: '6px',
-                                                borderRadius: '50%',
-                                                backgroundColor: '#00b4d8'
-                                            }} />
-                                            {feature}
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                        </Col>
-                    ))}
-                </Row>
-            </Container>
-
             {/* Skills Section */}
             <div style={{
                 backgroundColor: '#f8f9fa',
-                padding: '5rem 0',
-                marginTop: '4rem'
+                padding: '5rem 0'
             }}>
                 <Container>
                     <SkillsServices />
@@ -234,7 +133,7 @@ const Service = () => {
                             <h2 style={{
                                 fontSize: 'clamp(1.5rem, 4vw, 2rem)',
                                 fontWeight: 700,
-                                color: '#003049',
+                                color: '#1a1a2e',
                                 marginBottom: '1rem'
                             }}>
                                 Ready to Start Your Project?
@@ -256,8 +155,8 @@ const Service = () => {
                                     alignItems: 'center',
                                     gap: '0.5rem',
                                     padding: '1rem 2rem',
-                                    backgroundColor: '#003049',
-                                    color: '#f1faee',
+                                    backgroundColor: '#1a1a2e',
+                                    color: '#f8f9fa',
                                     border: 'none',
                                     borderRadius: '8px',
                                     fontWeight: 600,
@@ -266,12 +165,12 @@ const Service = () => {
                                     transition: 'all 0.3s ease'
                                 }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#002035';
+                                    e.currentTarget.style.backgroundColor = '#16213e';
                                     e.currentTarget.style.transform = 'translateY(-2px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(0,48,73,0.3)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(26,26,46,0.3)';
                                 }}
                                 onMouseLeave={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#003049';
+                                    e.currentTarget.style.backgroundColor = '#1a1a2e';
                                     e.currentTarget.style.transform = 'translateY(0)';
                                     e.currentTarget.style.boxShadow = 'none';
                                 }}

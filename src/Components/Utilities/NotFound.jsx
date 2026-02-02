@@ -204,20 +204,20 @@ const NotFound = () => {
                             {[
                                 { path: '/projects', label: 'Projects' },
                                 { path: '/experience', label: 'Experience' },
-                                { path: '/services', label: 'Services' }
+                                { path: '/services', label: 'Connect' }
                             ].map((link) => (
                                 <Link
                                     key={link.path}
                                     to={link.path}
                                     style={{
-                                        color: '#00b4d8',
+                                        color: '#2d3748',
                                         textDecoration: 'none',
                                         fontSize: '0.95rem',
                                         fontWeight: 500,
                                         transition: 'color 0.3s ease'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.color = '#48cae4';
+                                        e.currentTarget.style.color = '#1a1a2e';
                                     }}
                                     onMouseLeave={(e) => {
                                         e.currentTarget.style.color = '#00b4d8';

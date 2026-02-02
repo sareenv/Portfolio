@@ -24,7 +24,7 @@ const navLinks = [
     { path: '/articles', label: 'Articles', matchPaths: ['/articles'] },
     { path: '/experience', label: 'Experience' },
     { path: '/education', label: 'Education' },
-    { path: '/services', label: 'Services' }
+    { path: '/services', label: 'Connect' }
 ]
 
 // Animation Variants

@@ -69,14 +69,14 @@ const JobPosition = (props) => {
                 {/* Company & Title */}
                 <div style={{textAlign: 'center', marginBottom: '1.5rem'}}>
                     <h3 style={{
-                        color: '#003049',
+                        color: '#1a1a2e',
                         fontWeight: 700,
                         fontSize: '1.35rem',
                         marginBottom: '0.5rem',
                         lineHeight: 1.3
                     }}>{props.company}</h3>
                     <p style={{
-                        color: '#00b4d8',
+                        color: '#2d3748',
                         fontSize: '1rem',
                         fontWeight: 600,
                         marginBottom: 0
@@ -97,8 +97,8 @@ const JobPosition = (props) => {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '0.4rem',
-                        backgroundColor: 'rgba(0,180,216,0.1)',
-                        color: '#00b4d8',
+                        backgroundColor: 'rgba(45, 55, 72, 0.08)',
+                        color: '#2d3748',
                         padding: '0.4rem 0.9rem',
                         borderRadius: '20px',
                         fontSize: '0.85rem',
@@ -126,7 +126,7 @@ const JobPosition = (props) => {
                 {/* Role description */}
                 <div>
                     <h4 style={{
-                        color: '#003049',
+                        color: '#1a1a2e',
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         textTransform: 'uppercase',
@@ -160,7 +160,7 @@ const ExperiencePage = () => {
         <div style={{ backgroundColor: '#f8f9fa' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
+                background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
                 padding: '8rem 0 4rem',
                 position: 'relative',
                 overflow: 'hidden'
@@ -172,9 +172,9 @@ const ExperiencePage = () => {
                     right: '10%',
                     width: '400px',
                     height: '400px',
-                    background: 'radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, transparent 70%)',
                     borderRadius: '50%',
-                    filter: 'blur(40px)',
+                    filter: 'blur(60px)',
                     pointerEvents: 'none'
                 }} />
                 
@@ -182,7 +182,7 @@ const ExperiencePage = () => {
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
                             <p style={{
-                                color: '#00b4d8',
+                                color: 'rgba(248, 249, 250, 0.7)',
                                 fontSize: '0.9rem',
                                 fontWeight: 600,
                                 letterSpacing: '0.1em',
@@ -192,7 +192,7 @@ const ExperiencePage = () => {
                                 Career Journey
                             </p>
                             <h1 style={{
-                                color: '#f1faee',
+                                color: '#f8f9fa',
                                 fontSize: 'clamp(2rem, 5vw, 3rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.5rem',

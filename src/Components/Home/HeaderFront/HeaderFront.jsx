@@ -81,8 +81,6 @@ const HeaderFront = () => {
                         initial="hidden"
                         animate="visible"
                     >
-                     
-                        
                         <motion.h1 
                             className="hero__title"
                             variants={itemVariants}

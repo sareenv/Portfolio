@@ -8,27 +8,28 @@
 // =============================================================================
 
 export const colors = {
-    // Primary palette
+    // Primary palette - Elegant dark slate tones
     primary: {
-        main: '#003049',
-        dark: '#002035',
-        light: '#004c59',
+        main: '#1a1a2e',
+        dark: '#0f0f1a',
+        light: '#16213e',
     },
     
-    // Accent colors
+    // Accent colors - Muted, professional
     accent: {
-        red: '#e63946',
-        redDark: '#d62828',
+        red: '#c9302c',
+        redDark: '#a82824',
+        blue: '#2d3748',
     },
     
     // Neutral colors
     neutral: {
         white: '#ffffff',
-        offWhite: '#f1faee',
-        lightGray: '#f8f9fa',
-        gray: '#666666',
-        darkGray: '#333333',
-        border: '#e8e8e8',
+        offWhite: '#f8f9fa',
+        lightGray: '#f5f5f7',
+        gray: '#6c757d',
+        darkGray: '#343a40',
+        border: '#e9ecef',
     },
     
     // Semantic colors

@@ -9,7 +9,7 @@ const Footer = () => {
     
     return (
         <footer style={{
-            background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
+            background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
             color: 'white',
             padding: '3rem 0 1.5rem',
             marginTop: 'auto'
@@ -166,7 +166,7 @@ const Footer = () => {
                                     onMouseEnter={(e) => e.target.style.color = 'white'}
                                     onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.8)'}
                                 >
-                                    Services
+                                    Connect
                                 </a>
                             </li>
                         </ul>

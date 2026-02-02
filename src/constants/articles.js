@@ -461,6 +461,58 @@ Application → Cache (miss) → Database
             }
         ]
     },
+    {
+        id: 'swift-ios',
+        topic: 'Swift & iOS',
+        icon: '🍎',
+        description: 'Swift programming language and iOS development concepts',
+        concepts: [
+            {
+                id: 'swift-fundamentals',
+                name: 'Swift Fundamentals',
+                description: 'Core Swift language concepts and best practices',
+                articles: [
+                    {
+                        id: 'memory-management',
+                        title: 'Memory Management in Swift',
+                        slug: 'memory-management-swift',
+                        summary: 'Understanding ARC, retain cycles, and memory management best practices in Swift.',
+                        readTime: '10 min read',
+                        date: '2024-01-15',
+                        tags: ['Swift', 'iOS', 'Memory Management', 'ARC'],
+                        contentPath: '/articles/swift/memory-management.md'
+                    },
+                    {
+                        id: 'swift-optionals',
+                        title: 'Understanding Optionals in Swift',
+                        slug: 'swift-optionals',
+                        summary: 'Master Swift optionals, unwrapping techniques, and nil-coalescing.',
+                        readTime: '7 min read',
+                        date: '2024-01-10',
+                        tags: ['Swift', 'iOS', 'Optionals'],
+                        contentPath: '/articles/swift/optionals.md'
+                    }
+                ]
+            },
+            {
+                id: 'swiftui',
+                name: 'SwiftUI',
+                description: 'Building modern iOS interfaces with SwiftUI',
+                articles: [
+                    {
+                        id: 'swiftui-state',
+                        title: 'State Management in SwiftUI',
+                        slug: 'swiftui-state-management',
+                        summary: 'Learn about @State, @Binding, @ObservedObject, and other property wrappers.',
+                        readTime: '8 min read',
+                        date: '2024-01-20',
+                        tags: ['SwiftUI', 'iOS', 'State Management'],
+                        contentPath: '/articles/swift/swiftui-state-management.md'
+                    }
+                ]
+            }
+        ]
+    },
     
 ];
 

@@ -61,7 +61,7 @@ const EducationCard = ({ image, qualification, institution, address, issued, cre
             <h3 style={{
                 fontSize: '1.2rem',
                 fontWeight: 700,
-                color: '#003049',
+                color: '#1a1a2e',
                 marginBottom: '0.5rem',
                 lineHeight: 1.3
             }}>
@@ -104,7 +104,7 @@ const EducationCard = ({ image, qualification, institution, address, issued, cre
                     <p style={{
                         fontSize: '0.8rem',
                         fontWeight: 600,
-                        color: '#003049',
+                        color: '#1a1a2e',
                         marginBottom: '0.75rem',
                         textTransform: 'uppercase',
                         letterSpacing: '0.05em'
@@ -131,7 +131,7 @@ const EducationCard = ({ image, qualification, institution, address, issued, cre
                             <span style={{
                                 fontSize: '0.8rem',
                                 padding: '0.35rem 0.75rem',
-                                backgroundColor: '#003049',
+                                backgroundColor: '#1a1a2e',
                                 borderRadius: '20px',
                                 color: '#fff'
                             }}>
@@ -154,7 +154,7 @@ const EducationCard = ({ image, qualification, institution, address, issued, cre
                         marginTop: '1.5rem',
                         fontSize: '0.9rem',
                         fontWeight: 500,
-                        color: '#00b4d8',
+                        color: '#2d3748',
                         textDecoration: 'none',
                         transition: 'color 0.2s ease'
                     }}
@@ -223,7 +223,7 @@ const CertificationCard = ({ image, qualification, institution, issued, credLink
                 <h4 style={{
                     fontSize: '1rem',
                     fontWeight: 600,
-                    color: '#003049',
+                    color: '#1a1a2e',
                     marginBottom: '0.25rem',
                     lineHeight: 1.3
                 }}>
@@ -311,7 +311,7 @@ const EducationPage = () => {
         <div style={{ backgroundColor: '#ffffff' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
+                background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
                 padding: '8rem 0 5rem',
                 position: 'relative',
                 overflow: 'hidden'
@@ -323,9 +323,9 @@ const EducationPage = () => {
                     right: '15%',
                     width: '350px',
                     height: '350px',
-                    background: 'radial-gradient(circle, rgba(0, 180, 216, 0.12) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, transparent 70%)',
                     borderRadius: '50%',
-                    filter: 'blur(40px)',
+                    filter: 'blur(60px)',
                     pointerEvents: 'none'
                 }} />
                 
@@ -333,7 +333,7 @@ const EducationPage = () => {
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
                             <p style={{
-                                color: '#00b4d8',
+                                color: 'rgba(248, 249, 250, 0.7)',
                                 fontSize: '0.9rem',
                                 fontWeight: 600,
                                 letterSpacing: '0.1em',
@@ -343,7 +343,7 @@ const EducationPage = () => {
                                 Education & Certifications
                             </p>
                             <h1 style={{
-                                color: '#f1faee',
+                                color: '#f8f9fa',
                                 fontSize: 'clamp(2rem, 5vw, 2.75rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.25rem',
@@ -384,7 +384,7 @@ const EducationPage = () => {
                                 <h2 style={{
                                     fontSize: 'clamp(1.5rem, 4vw, 1.75rem)',
                                     fontWeight: 700,
-                                    color: '#003049',
+                                    color: '#1a1a2e',
                                     margin: 0
                                 }}>
                                     Higher Education
@@ -440,11 +440,11 @@ const EducationPage = () => {
                                 gap: '0.75rem',
                                 marginBottom: '0.75rem'
                             }}>
-                                <HiBadgeCheck size={28} color="#00b4d8" />
+                                <HiBadgeCheck size={28} color="#2d3748" />
                                 <h2 style={{
                                     fontSize: 'clamp(1.5rem, 4vw, 1.75rem)',
                                     fontWeight: 700,
-                                    color: '#003049',
+                                    color: '#1a1a2e',
                                     margin: 0
                                 }}>
                                     Professional Certifications

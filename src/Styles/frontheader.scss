@@ -3,43 +3,43 @@
 
 @use "sass:color";
 
-$hero-bg: #003049;
-$hero-bg-light: #004c59;
-$text-light: #f1faee;
-$accent: #00b4d8;
+$hero-bg: #1a1a2e;
+$hero-bg-light: #16213e;
+$text-light: #f8f9fa;
+$accent: #4a6fa5;
 
 .hero {
   min-height: 70vh;
   display: flex;
   align-items: center;
   padding: 100px 0 60px;
-  background: linear-gradient(135deg, $hero-bg 0%, #003d52 50%, $hero-bg-light 100%);
+  background: linear-gradient(160deg, $hero-bg 0%, $hero-bg-light 100%);
   position: relative;
   overflow: hidden;
 
-  // Subtle background grid pattern
+  // Subtle background pattern - very minimal
   &::before {
     content: '';
     position: absolute;
     inset: 0;
     background-image: 
-      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.03) 1px, transparent 0);
-    background-size: 40px 40px;
+      radial-gradient(circle at 1px 1px, rgba(255,255,255,0.015) 1px, transparent 0);
+    background-size: 50px 50px;
     pointer-events: none;
   }
 
-  // Gradient orb decoration
+  // Subtle gradient glow - more understated
   &::after {
     content: '';
     position: absolute;
-    top: 20%;
-    right: 10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba($accent, 0.15) 0%, transparent 70%);
+    top: 30%;
+    right: 15%;
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba($accent, 0.08) 0%, transparent 70%);
     border-radius: 50%;
     pointer-events: none;
-    filter: blur(40px);
+    filter: blur(60px);
   }
 
   &__layout {
@@ -67,42 +67,43 @@ $accent: #00b4d8;
     align-items: center;
     gap: 0.5rem;
     padding: 0.5rem 1rem;
-    background: rgba($accent, 0.1);
-    border: 1px solid rgba($accent, 0.3);
+    background: rgba($text-light, 0.05);
+    border: 1px solid rgba($text-light, 0.1);
     border-radius: 100px;
     font-size: 0.8rem;
     font-weight: 500;
-    color: $accent;
+    color: rgba($text-light, 0.8);
     width: fit-content;
     letter-spacing: 0.02em;
 
     &::before {
       content: '';
-      width: 8px;
-      height: 8px;
+      width: 6px;
+      height: 6px;
       background: $accent;
       border-radius: 50%;
-      animation: pulse 2s ease-in-out infinite;
+      animation: pulse 3s ease-in-out infinite;
     }
   }
 
   @keyframes pulse {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0.5; }
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 0.4; }
   }
 
   &__title {
     font-size: clamp(2rem, 5vw, 2.75rem);
     font-weight: 700;
-    line-height: 1.1;
+    line-height: 1.15;
     color: $text-light;
     margin: 0;
     letter-spacing: -0.02em;
 
     &-accent {
       display: block;
-      color: $accent;
-      margin-top: 0.25rem;
+      color: rgba($text-light, 0.7);
+      font-weight: 500;
+      margin-top: 0.35rem;
     }
   }
 
@@ -139,13 +140,13 @@ $accent: #00b4d8;
     transition: all 0.2s ease;
 
     &--primary {
-      background: $accent;
+      background: $text-light;
       color: $hero-bg;
-      box-shadow: 0 4px 20px rgba($accent, 0.3);
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 30px rgba($accent, 0.4);
+        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
         color: $hero-bg;
         text-decoration: none;
       }
@@ -172,15 +173,15 @@ $accent: #00b4d8;
     width: 44px;
     height: 44px;
     background: rgba($text-light, 0.05);
-    border: 1px solid rgba($text-light, 0.15);
+    border: 1px solid rgba($text-light, 0.1);
     border-radius: 10px;
-    color: rgba($text-light, 0.7);
+    color: rgba($text-light, 0.6);
     transition: all 0.2s ease;
 
     &:hover {
-      background: rgba($accent, 0.15);
-      border-color: $accent;
-      color: $accent;
+      background: rgba($text-light, 0.1);
+      border-color: rgba($text-light, 0.2);
+      color: $text-light;
       transform: translateY(-2px);
     }
   }
