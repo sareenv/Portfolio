@@ -37,7 +37,7 @@ The Domain Name System (DNS) is often called the "phonebook of the internet." It
 
 ## Why Do We Need DNS?
 
-Imagine having to remember \`172.217.14.206\` every time you wanted to visit Google. DNS makes the internet user-friendly by allowing us to use memorable names instead of numerical addresses.
+Imagine having to remember 172.217.14.206 every time you wanted to visit Google. DNS makes the internet user-friendly by allowing us to use memorable names instead of numerical addresses.
 
 ## How DNS Resolution Works
 
@@ -537,7 +537,7 @@ Application → Cache (miss) → Database
 
 ## What is Memory?
 
-Memory is the ability of a system — whether human or artificial — to store, retain, and later retrieve information. In the context of AI agents, memory refers to the mechanism by which an agent stores prior interactions, facts, and context to inform future behaviour.
+Memory is the ability of a system (whether human or artificial) to store, retain, and later retrieve information. In the context of AI agents, memory refers to the mechanism by which an agent stores prior interactions, facts, and context to inform future behaviour.
 
 Unlike a stateless function that processes input and forgets everything, a memory-enabled agent can reference past experiences to make more intelligent, context-aware decisions.
 
@@ -553,13 +553,13 @@ When solving a problem, humans do not always start from scratch. Instead, they r
 
 Let's consider an example from an iOS codebase.
 
-As an iOS developer, you may be gradually adopting newer \`async/await\` concurrency patterns. Suppose an AI agent is reviewing your code and suggests replacing completion handlers with modern async patterns.
+As an iOS developer, you may be gradually adopting newer async/await concurrency patterns. Suppose an AI agent is reviewing your code and suggests replacing completion handlers with modern async patterns.
 
-However, there could be a valid reason for using completion or callback-based code — for instance, the need to support a legacy Objective-C class that does not support \`async/await\`.
+However, there could be a valid reason for using completion or callback-based code - for instance, the need to support a legacy Objective-C class that does not support async/await.
 
 **Without memory**, the agent evaluates the code in isolation and suggests changes based purely on best practices.
 
-**With memory**, the agent can recall prior context — such as constraints around legacy support — and adjust its recommendations accordingly.
+**With memory**, the agent can recall prior context (such as constraints around legacy support) and adjust its recommendations accordingly.
 
 This is where memory becomes powerful. It allows the code review agent to reference past decisions, understand underlying constraints, and explore similar patterns before making suggestions, leading to more accurate and context-aware feedback.
 
@@ -567,8 +567,8 @@ This is where memory becomes powerful. It allows the code review agent to refere
 
 AI agent memory can be broadly categorised into two types:
 
-- **Long-term Memory** — Persistent storage of information across sessions. This includes facts, user preferences, and learned patterns that remain available indefinitely.
-- **Short-term Memory** — Temporary storage used during active interactions. This is important for retaining ongoing information during interactions with the user and maintaining context between both parties.
+- **Long-term Memory**: Persistent storage of information across sessions. This includes facts, user preferences, and learned patterns that remain available indefinitely.
+- **Short-term Memory**: Temporary storage used during active interactions. This is important for retaining ongoing information during interactions with the user and maintaining context between both parties.
 
 ## Subtypes of Memories
 
@@ -590,10 +590,10 @@ This helps the agent track what context the user is referring to. For instance, 
 
 The system prompt is the foundational instruction set provided to an AI model before any user interaction begins. It defines the agent's:
 
-- **Role and persona** — What kind of assistant it is
-- **Behavioural guidelines** — How it should respond
-- **Domain knowledge** — What it knows about
-- **Constraints** — What it should or should not do
+- **Role and persona**: What kind of assistant it is
+- **Behavioural guidelines**: How it should respond
+- **Domain knowledge**: What it knows about
+- **Constraints**: What it should or should not do
 
 A typical system prompt is constructed as a structured text block, often combining static instructions with dynamically injected context:
 
@@ -614,9 +614,9 @@ Memory injection is the process of dynamically inserting relevant historical con
 
 ### How It Works
 
-1. **Memory Storage** — During interactions, important information is extracted and stored in a memory store (e.g., a vector database or key-value store).
-2. **Retrieval** — When a new session begins, relevant memories are fetched using semantic similarity search or keyword matching against the current context.
-3. **Injection** — The retrieved memories are formatted and inserted into the system prompt before the LLM processes the user's message.
+1. **Memory Storage**: During interactions, important information is extracted and stored in a memory store (e.g., a vector database or key-value store).
+2. **Retrieval**: When a new session begins, relevant memories are fetched using semantic similarity search or keyword matching against the current context.
+3. **Injection**: The retrieved memories are formatted and inserted into the system prompt before the LLM processes the user's message.
 
 \`\`\`
 [System Prompt]
