@@ -189,6 +189,106 @@
     }
 }
 
+// Article Reader
+.article-reader {
+    margin: 2rem 0;
+    padding: 1rem 1.5rem;
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #1a1a2e 100%);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+
+    &__controls {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+    }
+
+    &__btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(255, 255, 255, 0.95);
+        color: #1a1a2e;
+        border: 1px solid rgba(26, 26, 46, 0.1);
+        border-radius: 6px;
+        font-size: 0.9rem;
+        font-weight: 500;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        svg {
+            font-size: 1.1rem;
+        }
+
+        &:hover {
+            background: white;
+            border-color: rgba(26, 26, 46, 0.2);
+        }
+
+        &:active {
+            transform: scale(0.98);
+        }
+
+        &--play {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a2e;
+        }
+
+        &--pause {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a2e;
+        }
+
+        &--stop {
+            background: rgba(255, 255, 255, 0.9);
+            color: #1a1a2e;
+            padding: 0.5rem 0.75rem;
+
+            span {
+                display: none;
+            }
+        }
+    }
+
+    &__note {
+        margin-top: 0.75rem;
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.7);
+        font-style: italic;
+    }
+
+    &__status {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-top: 1rem;
+        color: white;
+        font-size: 0.9rem;
+        font-weight: 500;
+    }
+
+    &__indicator {
+        display: inline-block;
+        width: 8px;
+        height: 8px;
+        background: white;
+        border-radius: 50%;
+        animation: pulse 1.5s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.5;
+            transform: scale(1.2);
+        }
+    }
+}
+
 // Article Content
 .article-content {
     min-width: 0; // prevent grid blowout
@@ -597,6 +697,30 @@
 @media (max-width: 768px) {
     .article-detail {
         padding: 4.5rem 0 3rem;
+    }
+
+    .article-reader {
+        margin: 1.5rem 0;
+        padding: 0.875rem 1.25rem;
+
+        &__controls {
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        &__btn {
+            font-size: 0.85rem;
+            padding: 0.45rem 0.875rem;
+
+            &--stop {
+                padding: 0.45rem 0.65rem;
+            }
+        }
+
+        &__note {
+            font-size: 0.75rem;
+            margin-top: 0.5rem;
+        }
     }
     
     .article-header {

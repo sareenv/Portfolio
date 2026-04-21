@@ -7,26 +7,31 @@ import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { getArticleBySlug, getTopicById, getConceptById, getAllArticles } from '../../constants/articles';
 import { HiArrowLeft, HiClock, HiCalendar, HiChevronRight, HiBookOpen } from 'react-icons/hi';
+import ArticleReader from './ArticleReader';
 import '../../Styles/article-detail.scss';
 
-// Code block component for syntax highlighting
-const CodeBlock = ({ className, children }) => {
-    const language = className ? className.replace('lang-', '') : 'text';
-    return (
-        <SyntaxHighlighter
-            style={oneDark}
-            language={language}
-            className="code-block"
-        >
-            {children}
-        </SyntaxHighlighter>
-    );
+// Code component that handles both inline and block code
+const Code = ({ className, children, ...props }) => {
+    // If it has a className starting with 'lang-', it's a code block
+    if (className && className.startsWith('lang-')) {
+        const language = className.replace('lang-', '');
+        const codeString = String(children).replace(/\n$/, '');
+        
+        return (
+            <SyntaxHighlighter
+                style={oneDark}
+                language={language}
+                className="code-block"
+                showLineNumbers={false}
+            >
+                {codeString}
+            </SyntaxHighlighter>
+        );
+    }
+    
+    // Otherwise, it's inline code
+    return <code className="inline-code" {...props}>{children}</code>;
 };
-
-// Inline code component
-const InlineCode = ({ children }) => (
-    <code className="inline-code">{children}</code>
-);
 
 // Table component for responsive tables
 const TableWrapper = ({ children }) => (
@@ -204,7 +209,6 @@ const ArticleDetail = () => {
                         <span className="article-header__concept">{concept.name}</span>
                     </div>
                     <h1 className="article-header__title">{article.title}</h1>
-                    <p className="article-header__summary">{article.summary}</p>
                     <div className="article-header__info">
                         <span className="article-header__date">
                             <HiCalendar /> {new Date(article.date).toLocaleDateString('en-US', { 
@@ -224,6 +228,9 @@ const ArticleDetail = () => {
                     </div>
                 </motion.header>
 
+                {/* Article Reader */}
+                {!isLoading && content && <ArticleReader article={{ ...article, content }} />}
+
                 {/* Article body layout: content + TOC sidebar */}
                 <div className="article-layout">
                 {/* Article Content */}
@@ -240,16 +247,10 @@ const ArticleDetail = () => {
                             options={{
                                 overrides: {
                                     code: {
-                                        component: CodeBlock
-                                    },
-                                    inlineCode: {
-                                        component: InlineCode
+                                        component: Code
                                     },
                                     table: {
                                         component: TableWrapper
-                                    },
-                                    pre: {
-                                        component: ({ children }) => <>{children}</>
                                     },
                                     h2: { component: H2 },
                                     h3: { component: H3 },
