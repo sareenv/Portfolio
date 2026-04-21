@@ -101,7 +101,7 @@ const Articles = () => {
                                     onClick={() => toggleTopic(topic.id)}
                                 >
                                     <div className="topic-card__info">
-                                        <span className="topic-card__icon">{topic.icon}</span>
+                                        {topic.icon && <span className="topic-card__icon">{topic.icon}</span>}
                                         <div>
                                             <h2 className="topic-card__title">{topic.topic}</h2>
                                             <p className="topic-card__description">{topic.description}</p>

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Container from 'react-bootstrap/Container';
@@ -28,12 +28,47 @@ const InlineCode = ({ children }) => (
     <code className="inline-code">{children}</code>
 );
 
-// Table wrapper for responsive tables
+// Table component for responsive tables
 const TableWrapper = ({ children }) => (
     <div className="table-wrapper">
         <table>{children}</table>
     </div>
 );
+
+// Utility: slugify heading text to an id
+const slugify = (text) =>
+    text
+        .toLowerCase()
+        .replace(/[^\w\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .trim();
+
+// Recursively extract plain text from React children (handles bold, code, etc.)
+const extractText = (children) => {
+    if (typeof children === 'string') return children;
+    if (typeof children === 'number') return String(children);
+    if (Array.isArray(children)) return children.map(extractText).join('');
+    if (children?.props?.children) return extractText(children.props.children);
+    return '';
+};
+
+// Heading components that inject id attributes for anchor links
+const H2 = ({ children }) => <h2 id={slugify(extractText(children))}>{children}</h2>;
+const H3 = ({ children }) => <h3 id={slugify(extractText(children))}>{children}</h3>;
+const H4 = ({ children }) => <h4 id={slugify(extractText(children))}>{children}</h4>;
+
+// Extract heading entries from raw markdown for the TOC
+const extractTOC = (markdown) => {
+    const headingRegex = /^(#{2,4})\s+(.+)$/gm;
+    const items = [];
+    let match;
+    while ((match = headingRegex.exec(markdown)) !== null) {
+        const level = match[1].length;
+        const text = match[2].trim();
+        items.push({ level, text, id: slugify(text) });
+    }
+    return items;
+};
 
 const ArticleDetail = () => {
     const { topicId, conceptId, slug } = useParams();
@@ -43,6 +78,8 @@ const ArticleDetail = () => {
     const concept = getConceptById(topicId, conceptId);
     const [content, setContent] = useState('');
     const [isLoading, setIsLoading] = useState(true);
+    const [toc, setToc] = useState([]);
+    const [activeId, setActiveId] = useState('');
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -68,6 +105,33 @@ const ArticleDetail = () => {
             setIsLoading(false);
         }
     }, [slug]); // Only depend on slug, not the article object
+
+    // Build TOC whenever content changes
+    useEffect(() => {
+        if (content) {
+            setToc(extractTOC(content));
+        }
+    }, [content]);
+
+    // Track active heading with IntersectionObserver
+    useEffect(() => {
+        if (toc.length === 0) return;
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        setActiveId(entry.target.id);
+                    }
+                });
+            },
+            { rootMargin: '-80px 0px -70% 0px' }
+        );
+        toc.forEach(({ id }) => {
+            const el = document.getElementById(id);
+            if (el) observer.observe(el);
+        });
+        return () => observer.disconnect();
+    }, [toc]);
 
     if (!article || !topic || !concept) {
         return (
@@ -135,7 +199,7 @@ const ArticleDetail = () => {
                 >
                     <div className="article-header__meta">
                         <span className="article-header__topic">
-                            {topic.icon} {topic.topic}
+                            {topic.icon && `${topic.icon} `}{topic.topic}
                         </span>
                         <span className="article-header__concept">{concept.name}</span>
                     </div>
@@ -160,6 +224,8 @@ const ArticleDetail = () => {
                     </div>
                 </motion.header>
 
+                {/* Article body layout: content + TOC sidebar */}
+                <div className="article-layout">
                 {/* Article Content */}
                 <motion.article 
                     className="article-content"
@@ -184,7 +250,10 @@ const ArticleDetail = () => {
                                     },
                                     pre: {
                                         component: ({ children }) => <>{children}</>
-                                    }
+                                    },
+                                    h2: { component: H2 },
+                                    h3: { component: H3 },
+                                    h4: { component: H4 },
                                 }
                             }}
                         >
@@ -192,6 +261,37 @@ const ArticleDetail = () => {
                         </Markdown>
                     )}
                 </motion.article>
+
+                {/* Table of Contents */}
+                {toc.length > 0 && (
+                    <aside className="article-toc">
+                        <div className="article-toc__sticky">
+                            <p className="article-toc__label">On this page</p>
+                            <ul className="article-toc__list">
+                                {toc.map((item) => (
+                                    <li
+                                        key={item.id}
+                                        className={`article-toc__item article-toc__item--h${item.level}${activeId === item.id ? ' article-toc__item--active' : ''}`}
+                                    >
+                                        <a
+                                            href={`#${item.id}`}
+                                            onClick={(e) => {
+                                                e.preventDefault();
+                                                const el = document.getElementById(item.id);
+                                                if (el) {
+                                                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                                }
+                                            }}
+                                        >
+                                            {item.text}
+                                        </a>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </aside>
+                )}
+                </div>
 
                 {/* Navigation */}
                 <motion.div 
