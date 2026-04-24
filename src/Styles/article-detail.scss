@@ -189,6 +189,36 @@
     }
 }
 
+// Article Cover Image
+.article-cover {
+    margin: 0 0 3rem;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+    
+    img {
+        width: 100%;
+        height: auto;
+        max-height: 500px;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    &:hover img {
+        transform: scale(1.02);
+    }
+    
+    @media (max-width: 768px) {
+        margin: 0 0 2rem;
+        border-radius: 8px;
+        
+        img {
+            max-height: 300px;
+        }
+    }
+}
+
 // Article Reader
 .article-reader {
     margin: 2rem 0;
@@ -375,35 +405,146 @@
     // Inline code
     .inline-code {
         background: #f0f4f8;
-        color: #e63946;
+        color: #1f2937;
         padding: 0.2rem 0.5rem;
         border-radius: 4px;
         font-size: 0.9em;
         font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
+        font-weight: 500;
+        border: 1px solid #e2e8f0;
     }
     
-    // Code blocks
+    // Code blocks (from SyntaxHighlighter)
     .code-block {
         margin: 1.5rem 0 !important;
         border-radius: 12px !important;
         font-size: 0.9rem !important;
+        overflow-x: auto !important;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
         
         code {
             font-family: 'Fira Code', 'Monaco', 'Consolas', monospace !important;
+            line-height: 1.6 !important;
+            font-size: 0.9rem !important;
+        }
+        
+        // Ensure text/diagram blocks are always visible
+        .language-markdown,
+        .language-text,
+        .language-plaintext {
+            color: #abb2bf !important;
+        }
+        
+        // Special styling for text/diagram code blocks
+        &--text {
+            background: #282c34 !important;
+            padding: 1.25rem 1.5rem !important;
+            margin: 1.5rem 0 !important;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1) !important;
+            overflow-x: auto !important;
+            color: #abb2bf !important;
+            font-family: 'Fira Code', 'Monaco', 'Consolas', monospace !important;
+            font-size: 0.9rem !important;
+            line-height: 1.6 !important;
+            white-space: pre !important;
+            
+            code {
+                color: #abb2bf !important;
+                font-family: 'Fira Code', 'Monaco', 'Consolas', monospace !important;
+                font-size: 0.9rem !important;
+                line-height: 1.6 !important;
+                display: block !important;
+                white-space: pre !important;
+                background: none !important;
+                padding: 0 !important;
+                border: none !important;
+                font-weight: normal !important;
+            }
+            
+            // Force all descendants to be visible
+            *, & {
+                color: #abb2bf !important;
+            }
+        }
+        
+        // Ensure general visibility for all code blocks
+        code {
+            &:not(.inline-code) {
+                color: inherit;
+            }
+        }
+        
+        // Hide scrollbar but keep functionality
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+        
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.5);
+            }
         }
     }
     
-    pre {
+    // Plain pre/code blocks (without language specification)
+    pre:not(.code-block) {
         margin: 1.5rem 0;
         background: #282c34;
         border-radius: 12px;
         overflow-x: auto;
+        padding: 1.25rem 1.5rem;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         
         code {
             font-family: 'Fira Code', 'Monaco', 'Consolas', monospace;
             font-size: 0.9rem;
             line-height: 1.6;
+            color: #abb2bf !important;
+            display: block;
+            white-space: pre;
         }
+        
+        // Scrollbar styling
+        scrollbar-width: thin;
+        scrollbar-color: rgba(255, 255, 255, 0.3) transparent;
+        
+        &::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        &::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 4px;
+            
+            &:hover {
+                background: rgba(255, 255, 255, 0.5);
+            }
+        }
+    }
+    
+    // Ensure code inside any pre doesn't have inline-code styling
+    pre code {
+        background: none !important;
+        color: #abb2bf !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+        font-weight: normal !important;
+        border: none !important;
     }
     
     // Tables
@@ -485,6 +626,39 @@
         height: auto;
         border-radius: 8px;
         margin: 1.5rem 0;
+    }
+    
+    // Mobile responsive improvements
+    @media (max-width: 768px) {
+        font-size: 1rem;
+        
+        h2 {
+            font-size: 1.35rem;
+        }
+        
+        h3 {
+            font-size: 1.15rem;
+        }
+        
+        h4 {
+            font-size: 1.05rem;
+        }
+        
+        .code-block,
+        pre {
+            margin: 1.25rem -1rem !important;
+            border-radius: 8px !important;
+            font-size: 0.85rem !important;
+            
+            code {
+                font-size: 0.85rem !important;
+            }
+        }
+        
+        .table-wrapper {
+            margin: 1.5rem -1rem;
+            border-radius: 8px;
+        }
     }
 }
 
@@ -634,6 +808,90 @@
     }
 }
 
+// References Section
+.article-references {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e8e8e8;
+    
+    &__title {
+        font-size: 1rem;
+        font-weight: 600;
+        color: #1a1a2e;
+        margin-bottom: 1rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        font-size: 0.75rem;
+        color: #999;
+    }
+    
+    &__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+    
+    &__item {
+        margin: 0;
+    }
+    
+    &__link {
+        display: flex;
+        align-items: baseline;
+        gap: 0.625rem;
+        text-decoration: none;
+        padding: 0.35rem 0;
+        
+        &:hover {
+            .article-references__text {
+                color: #0066cc;
+            }
+            
+            .article-references__icon {
+                color: #0066cc;
+            }
+        }
+    }
+    
+    &__number {
+        flex-shrink: 0;
+        font-size: 0.75rem;
+        color: #aaa;
+        min-width: 1.25rem;
+    }
+    
+    &__content {
+        flex: 1;
+        display: flex;
+        align-items: baseline;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+    }
+    
+    &__text {
+        font-size: 0.9rem;
+        color: #444;
+        line-height: 1.4;
+        transition: color 0.15s ease;
+    }
+    
+    &__author {
+        font-size: 0.8rem;
+        color: #aaa;
+    }
+    
+    &__icon {
+        flex-shrink: 0;
+        font-size: 0.75rem;
+        color: #ccc;
+        transition: color 0.15s ease;
+        margin-left: auto;
+    }
+}
+
 // Related Articles
 .related-articles {
     margin-top: 4rem;
@@ -753,5 +1011,9 @@
             text-align: left;
             flex-direction: row-reverse;
         }
+    }
+    
+    .article-references {
+        margin-top: 2rem;
     }
 }

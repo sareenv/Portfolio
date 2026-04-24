@@ -6,13 +6,85 @@ import Markdown from 'markdown-to-jsx';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { getArticleBySlug, getTopicById, getConceptById, getAllArticles } from '../../constants/articles';
-import { HiArrowLeft, HiClock, HiCalendar, HiChevronRight, HiBookOpen } from 'react-icons/hi';
+import { HiArrowLeft, HiClock, HiCalendar, HiChevronRight, HiBookOpen, HiExternalLink } from 'react-icons/hi';
 import ArticleReader from './ArticleReader';
 import '../../Styles/article-detail.scss';
 
+// Auto-detect programming language from code content
+const detectLanguage = (code) => {
+    const codeStr = String(code).trim();
+    
+    // JavaScript/TypeScript patterns
+    if (/(const|let|var|function|=>|async|await|import|export|React|useState|useEffect)/.test(codeStr)) {
+        return 'javascript';
+    }
+    
+    // Python patterns
+    if (/(def |import |from |print\(|if __name__|self\.|class .*:)/.test(codeStr)) {
+        return 'python';
+    }
+    
+    // Java patterns
+    if (/(public class|private |protected |void |System\.out|import java\.)/.test(codeStr)) {
+        return 'java';
+    }
+    
+    // C/C++ patterns
+    if (/(#include|int main\(|printf\(|std::|cout|cin)/.test(codeStr)) {
+        return 'cpp';
+    }
+    
+    // Swift patterns
+    if (/(func |var |let |import Swift|@State|@Binding|class .*:|struct .*:)/.test(codeStr)) {
+        return 'swift';
+    }
+    
+    // SQL patterns
+    if (/(SELECT|INSERT|UPDATE|DELETE|FROM|WHERE|JOIN|CREATE TABLE)/i.test(codeStr)) {
+        return 'sql';
+    }
+    
+    // CSS/SCSS patterns
+    if (/(\{[\s\S]*?:[^:]+;[\s\S]*?\}|@media|@import|\.[\w-]+\s*\{)/.test(codeStr)) {
+        return 'css';
+    }
+    
+    // HTML/XML patterns
+    if (/^<[\w-]+[^>]*>[\s\S]*<\/[\w-]+>$/.test(codeStr) || /^<[\w-]+[^>]*\/>$/.test(codeStr)) {
+        return 'html';
+    }
+    
+    // JSON patterns
+    if (/^\s*[\{\[][\s\S]*[\}\]]\s*$/.test(codeStr) && codeStr.includes('"')) {
+        try {
+            JSON.parse(codeStr);
+            return 'json';
+        } catch (e) {
+            // Not valid JSON
+        }
+    }
+    
+    // Bash/Shell patterns
+    if (/(npm |yarn |cd |ls |mkdir |echo |export |source |chmod |grep |sudo )/.test(codeStr) || codeStr.startsWith('#!') || /\$\w+/.test(codeStr)) {
+        return 'bash';
+    }
+    
+    // Default to markup for arrows and simple text diagrams
+    if (/→|←|↔|⇒|⇐|⇔/.test(codeStr)) {
+        return 'markdown'; // Use markdown for better visibility of plain text
+    }
+    
+    // Default fallback - try to detect if it looks like code
+    if (/[{}\[\]();]/.test(codeStr) || /\w+\s*=\s*/.test(codeStr)) {
+        return 'javascript';
+    }
+    
+    return 'markdown'; // Default to markdown instead of text for better readability
+};
+
 // Code component that handles both inline and block code
 const Code = ({ className, children, ...props }) => {
-    // If it has a className starting with 'lang-', it's a code block
+    // If it has a className starting with 'lang-', it's a code block with language
     if (className && className.startsWith('lang-')) {
         const language = className.replace('lang-', '');
         const codeString = String(children).replace(/\n$/, '');
@@ -23,8 +95,48 @@ const Code = ({ className, children, ...props }) => {
                 language={language}
                 className="code-block"
                 showLineNumbers={false}
+                customStyle={{
+                    padding: '1.25rem 1.5rem',
+                    fontSize: '0.9rem',
+                    lineHeight: '1.6'
+                }}
             >
                 {codeString}
+            </SyntaxHighlighter>
+        );
+    }
+    
+    // Check if this is a block code (multi-line) without language specification
+    const codeString = String(children);
+    const isMultiLine = codeString.includes('\n');
+    
+    if (isMultiLine) {
+        // Auto-detect the language
+        const detectedLanguage = detectLanguage(codeString);
+        
+        // For text/diagram blocks, render as plain styled element for guaranteed visibility
+        if (detectedLanguage === 'markdown' || detectedLanguage === 'text') {
+            return (
+                <pre className="code-block code-block--text">
+                    <code style={{ color: '#abb2bf' }}>{codeString.trim()}</code>
+                </pre>
+            );
+        }
+        
+        // Render with detected language and syntax highlighting
+        return (
+            <SyntaxHighlighter
+                style={oneDark}
+                language={detectedLanguage}
+                className="code-block"
+                showLineNumbers={false}
+                customStyle={{
+                    padding: '1.25rem 1.5rem',
+                    fontSize: '0.9rem',
+                    lineHeight: '1.6'
+                }}
+            >
+                {codeString.replace(/\n$/, '')}
             </SyntaxHighlighter>
         );
     }
@@ -39,6 +151,27 @@ const TableWrapper = ({ children }) => (
         <table>{children}</table>
     </div>
 );
+
+// Pre component to handle code blocks with proper detection
+const Pre = ({ children, ...props }) => {
+    // If the pre contains a code element, extract it and render properly
+    if (children && typeof children === 'object' && children.type === 'code') {
+        const { className, children: codeChildren } = children.props || {};
+        return <Code className={className}>{codeChildren}</Code>;
+    }
+    
+    // If children is just text, render with text block styling
+    if (typeof children === 'string') {
+        return <Code>{children}</Code>;
+    }
+    
+    // Fallback: render as styled pre block
+    return (
+        <pre className="code-block code-block--text" {...props}>
+            {children}
+        </pre>
+    );
+};
 
 // Utility: slugify heading text to an id
 const slugify = (text) =>
@@ -228,6 +361,22 @@ const ArticleDetail = () => {
                     </div>
                 </motion.header>
 
+                {/* Cover Image */}
+                {article.coverImage && (
+                    <motion.div 
+                        className="article-cover"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.1 }}
+                    >
+                        <img 
+                            src={article.coverImage} 
+                            alt={article.title}
+                            loading="lazy"
+                        />
+                    </motion.div>
+                )}
+
                 {/* Article Reader */}
                 {!isLoading && content && <ArticleReader article={{ ...article, content }} />}
 
@@ -248,6 +397,9 @@ const ArticleDetail = () => {
                                 overrides: {
                                     code: {
                                         component: Code
+                                    },
+                                    pre: {
+                                        component: Pre
                                     },
                                     table: {
                                         component: TableWrapper
@@ -293,6 +445,39 @@ const ArticleDetail = () => {
                     </aside>
                 )}
                 </div>
+
+                {/* References Section */}
+                {article.references && article.references.length > 0 && (
+                    <motion.div
+                        className="article-references"
+                        initial={{ opacity: 0, y: 20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.5, delay: 0.3 }}
+                    >
+                        <h3 className="article-references__title">References & Further Reading</h3>
+                        <ul className="article-references__list">
+                            {article.references.map((ref, index) => (
+                                <li key={index} className="article-references__item">
+                                    <a 
+                                        href={ref.url} 
+                                        target="_blank" 
+                                        rel="noopener noreferrer"
+                                        className="article-references__link"
+                                    >
+                                        <span className="article-references__number">{index + 1}</span>
+                                        <div className="article-references__content">
+                                            <span className="article-references__text">{ref.title}</span>
+                                            {ref.author && (
+                                                <span className="article-references__author">by {ref.author}</span>
+                                            )}
+                                        </div>
+                                        <HiExternalLink className="article-references__icon" />
+                                    </a>
+                                </li>
+                            ))}
+                        </ul>
+                    </motion.div>
+                )}
 
                 {/* Navigation */}
                 <motion.div 
