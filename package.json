@@ -5,7 +5,7 @@
   "dependencies": {
     "@u-wave/react-vimeo": "^0.9.8",
     "antd": "^4.3.5",
-    "axios": "^1.13.2",
+    "axios": "^1.15.2",
     "bootstrap": "^4.6.2",
     "framer-motion": "^4.1.17",
     "markdown-to-jsx": "^9.5.0",
