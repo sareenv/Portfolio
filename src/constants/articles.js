@@ -67,36 +67,6 @@ export const articlesData = [
                         ]
                     }
                 ]
-            },
-            {
-                id: 'tcp-ip',
-                name: 'TCP/IP Protocol',
-                description: 'The foundational protocol suite of the internet',
-                articles: [
-                    {
-                        id: 'tcp-handshake',
-                        title: 'The TCP Three-Way Handshake',
-                        slug: 'tcp-handshake',
-                        summary: 'TCP establishes reliable connections using a three-way handshake before any data is transmitted. First, the client sends a SYN packet with an initial sequence number. Second, the server responds with SYN-ACK, acknowledging the client and providing its own sequence number. Third, the client sends an ACK to acknowledge the server, completing the handshake. This process ensures bidirectional communication, synchronizes sequence numbers to prevent data confusion, and verifies both parties can send and receive. Connection termination uses a four-way handshake because TCP connections are full-duplex, meaning data flows in both directions independently.',
-                        readTime: '7 min read',
-                        date: '2024-12-25',
-                        tags: ['TCP', 'Networking', 'Protocols'],
-                        coverImage: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&q=80',
-                        contentPath: '/articles/networking/tcp/tcp-handshake.md',
-                        references: [
-                            {
-                                title: 'RFC 793 - Transmission Control Protocol',
-                                url: 'https://www.rfc-editor.org/rfc/rfc793',
-                                author: 'IETF'
-                            },
-                            {
-                                title: 'TCP/IP Illustrated, Volume 1',
-                                url: 'https://en.wikipedia.org/wiki/TCP/IP_Illustrated',
-                                author: 'W. Richard Stevens'
-                            }
-                        ]
-                    }
-                ]
             }
         ]
     },
@@ -161,6 +131,58 @@ export const articlesData = [
                                 title: 'Redis Caching Patterns',
                                 url: 'https://redis.io/docs/manual/patterns/',
                                 author: 'Redis Labs'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'cap-theorem',
+                name: 'CAP Theorem',
+                description: 'Consistency, Availability, and Partition tolerance trade-offs in distributed systems',
+                articles: [
+                    {
+                        id: 'cap-theorem-intro',
+                        title: 'Introduction to the CAP Theorem',
+                        slug: 'cap-theorem-intro',
+                        summary: 'The CAP theorem addresses fundamental constraints of distributed systems during network partitions. When servers in different locations lose communication, systems must choose between consistency and availability. While banking systems require strong consistency and return error codes to prevent displaying incorrect balances, non-critical services like user profiles can safely prioritize availability over strict consistency.',
+                        readTime: '3 min read',
+                        date: '2026-09-07',
+                        tags: ['System Design', 'CAP Theorem', 'Distributed Systems'],
+                        coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80',
+                        contentPath: '/articles/system-design/cap-theorem/cap-theorem-intro.md',
+                        references: []
+                    }
+                ]
+            }
+        ]
+    },
+    {
+        id: 'clean-architecture',
+        topic: 'Clean Architecture',
+        icon: null,
+        description: 'Software architecture design principles and maintainable code patterns',
+        concepts: [
+            {
+                id: 'solid-principles',
+                name: 'SOLID Principles',
+                description: 'The five fundamental principles of object-oriented and clean software design',
+                articles: [
+                    {
+                        id: 'solid-principles',
+                        title: 'SOLID Principles in Clean Architecture',
+                        slug: 'solid-principles',
+                        summary: 'A deep dive into the SOLID design principles essential for clean architecture, exploring why they are needed, the consequences of ignoring them, and real-world Go examples for each principle.',
+                        readTime: '10 min read',
+                        date: '2026-09-07',
+                        tags: ['Clean Architecture', 'SOLID', 'Go', 'Design Patterns'],
+                        coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80',
+                        contentPath: '/articles/clean-architecture/solid-principles.md',
+                        references: [
+                            {
+                                title: "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
+                                url: 'https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/',
+                                author: 'Robert C. Martin'
                             }
                         ]
                     }
