@@ -35,7 +35,107 @@ Without these principles, codebases quickly deteriorate into technical debt:
 
 ## S - Single Responsibility Principle (SRP)
 
+SRP states that a class or component should focus on one reason or responsibility, and should only change because of this single responsibility.
+
 ### Swift Example
+
+Consider the following code block:
+
+```swift
+struct User {
+  let id: Int
+  let firstName: String
+  let lastName: String
+  let email: String
+}
+
+final class NotificationService {
+  
+  func findUser(_ id: Int) -> User {
+     return User(
+                 id: id, 
+                 firstName: "Edvin", 
+                 lastName: "Smith", 
+                 email: "smith_edvin@yahoo.com"
+                )   
+  }
+
+  func sendNotification(content: String, _ userID: Int) {
+    let email = findUser(userID).email
+    notification(content, email)
+  }
+}
+```
+
+This violates the SRP because if the logic for obtaining user details from an ID changes, `NotificationService` must also change. This introduces a risk of regression in the codebase and makes testing harder. 
+
+To adhere to SRP, we isolate the user fetching logic into a separate component and use aggregation—ideally behind an interface/protocol—making it easily swappable for testability:
+
+```swift
+protocol UserRepository {
+  func findUser(_ id: Int) -> User
+}
+
+final class DefaultUserRepository: UserRepository {
+  func findUser(_ id: Int) -> User {
+    return User(
+      id: id,
+      firstName: "Edvin",
+      lastName: "Smith",
+      email: "smith_edvin@yahoo.com"
+    )
+  }
+}
+
+final class NotificationService {
+  private let userRepository: UserRepository
+
+  init(userRepository: UserRepository) {
+    self.userRepository = userRepository
+  }
+
+  func sendNotification(content: String, _ userID: Int) {
+    let email = userRepository.findUser(userID).email
+    notification(content, email)
+  }
+}
+```
+
+Now `NotificationService` is only responsible for dispatching notifications. If the database schema or user lookup logic changes, only `DefaultUserRepository` changes, keeping both components decoupled and easily unit-testable with mock implementations.
+
+#### Unit Test Example
+
+Because `NotificationService` now depends on the `UserRepository` protocol rather than a concrete implementation, we can easily inject a mock repository in our unit tests:
+
+```swift
+import XCTest
+
+final class MockUserRepository: UserRepository {
+  var invokedFindUser = false
+  var stubbedUser: User?
+
+  func findUser(_ id: Int) -> User {
+    invokedFindUser = true
+    return stubbedUser ?? User(
+      id: id,
+      firstName: "Test",
+      lastName: "User",
+      email: "test@example.com"
+    )
+  }
+}
+
+final class NotificationServiceTests: XCTestCase {
+  func test_sendNotification_fetchesUserAndDispatchesNotification() {
+    let mockRepo = MockUserRepository()
+    let sut = NotificationService(userRepository: mockRepo)
+    
+    sut.sendNotification(content: "Welcome!", 42)
+    
+    XCTAssertTrue(mockRepo.invokedFindUser)
+  }
+}
+```
 
 ## O - Open/Closed Principle (OCP)
 
