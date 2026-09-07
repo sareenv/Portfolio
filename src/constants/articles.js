@@ -154,6 +154,97 @@ export const articlesData = [
                         references: []
                     }
                 ]
+            },
+            {
+                id: 'sso-oidc',
+                name: 'SSO and OIDC',
+                description: 'Single Sign-On and OpenID Connect identity protocols in distributed systems',
+                articles: [
+                    {
+                        id: 'what-is-sso-and-oidc',
+                        title: 'What is SSO and OIDC?',
+                        slug: 'what-is-sso-and-oidc',
+                        summary: 'An introduction to Single Sign-On (SSO) and OpenID Connect (OIDC), exploring the fundamentals of centralized authentication and identity federation in modern architectures.',
+                        readTime: '5 min read',
+                        date: '2026-09-07',
+                        tags: ['System Design', 'SSO', 'OIDC', 'Security', 'Authentication'],
+                        coverImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80',
+                        contentPath: '/articles/system-design/sso-oidc/what-is-sso-and-oidc.md',
+                        references: []
+                    },
+                    {
+                        id: 'parties-in-oidc-flow',
+                        title: 'Parties in the OIDC Flow',
+                        slug: 'parties-in-oidc-flow',
+                        summary: 'A breakdown of all the key participants in OpenID Connect: End-User, Relying Party (RP), OpenID Provider (OP/IdP), and Resource Server, along with their communication channels.',
+                        readTime: '5 min read',
+                        date: '2026-09-07',
+                        tags: ['System Design', 'OIDC', 'Authentication', 'Security'],
+                        coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80',
+                        contentPath: '/articles/system-design/sso-oidc/parties-in-oidc-flow.md',
+                        references: []
+                    },
+                    {
+                        id: 'kinds-of-tokens',
+                        title: 'Kinds of Tokens in OAuth 2.0 & OIDC',
+                        slug: 'kinds-of-tokens',
+                        summary: 'Understanding the distinct roles, scopes, lifecycles, and security implications of ID tokens, Access tokens, and Refresh tokens in modern authentication systems.',
+                        readTime: '6 min read',
+                        date: '2026-09-07',
+                        tags: ['System Design', 'OIDC', 'OAuth', 'Tokens', 'Security'],
+                        coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
+                        contentPath: '/articles/system-design/sso-oidc/kinds-of-tokens.md',
+                        references: []
+                    },
+                    {
+                        id: 'pkce',
+                        title: 'Proof Key for Code Exchange (PKCE)',
+                        slug: 'pkce',
+                        summary: 'Why PKCE is essential for securing authorization code flows on public clients like mobile and single-page apps against code interception attacks.',
+                        readTime: '5 min read',
+                        date: '2026-09-07',
+                        tags: ['System Design', 'OIDC', 'OAuth', 'PKCE', 'Security'],
+                        coverImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80',
+                        contentPath: '/articles/system-design/sso-oidc/pkce.md',
+                        references: []
+                    },
+                    {
+                        id: 'anatomy-of-tokens',
+                        title: 'Anatomy of Access and ID Tokens',
+                        slug: 'anatomy-of-tokens',
+                        summary: 'Dissecting JWT headers, payloads, signatures, standard claims, custom claims, and signature verification with JWKS.',
+                        readTime: '6 min read',
+                        date: '2026-09-07',
+                        tags: ['System Design', 'OIDC', 'JWT', 'Tokens', 'Security'],
+                        coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80',
+                        contentPath: '/articles/system-design/sso-oidc/anatomy-of-tokens.md',
+                        references: []
+                    },
+                    {
+                        id: 'go-server-implementation',
+                        title: 'Implementing an OIDC Server in Go',
+                        slug: 'go-server-implementation',
+                        summary: 'A step-by-step architecture and implementation guide for building an OpenID Connect server in Go, handling discovery, authorization, PKCE, token issuance, and JWKS.',
+                        readTime: '10 min read',
+                        date: '2026-09-07',
+                        tags: ['Go', 'System Design', 'OIDC', 'Backend', 'Security'],
+                        coverImage: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80',
+                        contentPath: '/articles/system-design/sso-oidc/go-server-implementation.md',
+                        references: []
+                    },
+                    {
+                        id: 'ios-appauth-implementation',
+                        title: 'iOS Implementation using AppAuth',
+                        slug: 'ios-appauth-implementation',
+                        summary: 'Integrating federated OIDC authentication in iOS applications using AppAuth-iOS, ASWebAuthenticationSession, PKCE, and secure keychain token persistence.',
+                        readTime: '8 min read',
+                        date: '2026-09-07',
+                        tags: ['iOS', 'Swift', 'AppAuth', 'OIDC', 'Mobile'],
+                        coverImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80',
+                        contentPath: '/articles/system-design/sso-oidc/ios-appauth-implementation.md',
+                        references: []
+                    }
+                ]
             }
         ]
     },
@@ -172,10 +263,10 @@ export const articlesData = [
                         id: 'solid-principles',
                         title: 'SOLID Principles in Clean Architecture',
                         slug: 'solid-principles',
-                        summary: 'A deep dive into the SOLID design principles essential for clean architecture, exploring why they are needed, the consequences of ignoring them, and real-world Go examples for each principle.',
+                        summary: 'A deep dive into the SOLID design principles essential for clean architecture, exploring why they are needed, the consequences of ignoring them, and real-world Swift examples for each principle.',
                         readTime: '10 min read',
                         date: '2026-09-07',
-                        tags: ['Clean Architecture', 'SOLID', 'Go', 'Design Patterns'],
+                        tags: ['Clean Architecture', 'SOLID', 'Swift', 'Design Patterns'],
                         coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80',
                         contentPath: '/articles/clean-architecture/solid-principles.md',
                         references: [
@@ -190,6 +281,169 @@ export const articlesData = [
             }
         ]
     },
+    /*
+    {
+        id: 'design-patterns',
+        topic: 'Design Patterns',
+        icon: null,
+        description: 'Reusable solutions to commonly occurring software design problems',
+        concepts: [
+            {
+                id: 'creational-patterns',
+                name: 'Creational Patterns',
+                description: 'Mechanisms for object creation that increase flexibility and code reuse',
+                articles: [
+                    {
+                        id: 'factory-pattern',
+                        title: 'Factory Pattern',
+                        slug: 'factory-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Creational', 'Swift', 'Factory Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/creational/factory-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'abstract-factory-pattern',
+                        title: 'Abstract Factory Pattern',
+                        slug: 'abstract-factory-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Creational', 'Swift', 'Abstract Factory'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/creational/abstract-factory-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'builder-pattern',
+                        title: 'Builder Pattern',
+                        slug: 'builder-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Creational', 'Swift', 'Builder Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/creational/builder-pattern.md',
+                        references: []
+                    }
+                ]
+            },
+            {
+                id: 'structural-patterns',
+                name: 'Structural Patterns',
+                description: 'Assembling objects and classes into larger, flexible structures',
+                articles: [
+                    {
+                        id: 'adapter-pattern',
+                        title: 'Adapter Pattern',
+                        slug: 'adapter-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Structural', 'Swift', 'Adapter Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/structural/adapter-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'facade-pattern',
+                        title: 'Facade Pattern',
+                        slug: 'facade-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Structural', 'Swift', 'Facade Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/structural/facade-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'bridge-pattern',
+                        title: 'Bridge Pattern',
+                        slug: 'bridge-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Structural', 'Swift', 'Bridge Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/structural/bridge-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'proxy-pattern',
+                        title: 'Proxy Pattern',
+                        slug: 'proxy-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Structural', 'Swift', 'Proxy Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/structural/proxy-pattern.md',
+                        references: []
+                    }
+                ]
+            },
+            {
+                id: 'behavioral-patterns',
+                name: 'Behavioral Patterns',
+                description: 'Effective communication and assignment of responsibilities between objects',
+                articles: [
+                    {
+                        id: 'chain-of-responsibility-pattern',
+                        title: 'Chain of Responsibility Pattern',
+                        slug: 'chain-of-responsibility-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Behavioral', 'Swift', 'Chain of Responsibility'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/behavioral/chain-of-responsibility-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'command-pattern',
+                        title: 'Command Pattern',
+                        slug: 'command-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Behavioral', 'Swift', 'Command Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/behavioral/command-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'observer-pattern',
+                        title: 'Observer Pattern',
+                        slug: 'observer-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Behavioral', 'Swift', 'Observer Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/behavioral/observer-pattern.md',
+                        references: []
+                    },
+                    {
+                        id: 'strategy-pattern',
+                        title: 'Strategy Pattern',
+                        slug: 'strategy-pattern',
+                        summary: '',
+                        readTime: '',
+                        date: '2026-09-07',
+                        tags: ['Design Patterns', 'Behavioral', 'Swift', 'Strategy Pattern'],
+                        coverImage: '',
+                        contentPath: '/articles/design-patterns/behavioral/strategy-pattern.md',
+                        references: []
+                    }
+                ]
+            }
+        ]
+    },
+    */
     {
         id: 'swift-ios',
         topic: 'Swift & iOS',

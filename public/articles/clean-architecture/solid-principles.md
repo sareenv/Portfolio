@@ -35,22 +35,22 @@ Without these principles, codebases quickly deteriorate into technical debt:
 
 ## S - Single Responsibility Principle (SRP)
 
-### Go Example
+### Swift Example
 
 ## O - Open/Closed Principle (OCP)
 
-### Go Example
+### Swift Example
 
 ## L - Liskov Substitution Principle (LSP)
 
-### Go Example
+### Swift Example
 
 ## I - Interface Segregation Principle (ISP)
 
-### Go Example
+### Swift Example
 
 ## D - Dependency Inversion Principle (DIP)
 
-### Go Example
+### Swift Example
 
 ## Conclusion
