@@ -274,6 +274,16 @@ export const articlesData = [
                                 title: "Clean Architecture: A Craftsman's Guide to Software Structure and Design",
                                 url: 'https://www.oreilly.com/library/view/clean-architecture-a/9780134494272/',
                                 author: 'Robert C. Martin'
+                            },
+                            {
+                                title: 'S.O.L.I.D: The First 5 Principles of Object Oriented Design',
+                                url: 'https://www.digitalocean.com/community/conceptual-articles/s-o-l-i-d-the-first-five-principles-of-object-oriented-design',
+                                author: 'DigitalOcean'
+                            },
+                            {
+                                title: 'ChatGPT (Content refinement & review)',
+                                url: 'https://chatgpt.com/',
+                                author: 'OpenAI'
                             }
                         ]
                     }
