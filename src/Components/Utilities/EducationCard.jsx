@@ -35,15 +35,15 @@ const EducationCard = ({
                     alignItems: 'flex-start',
                     gap: '1rem',
                     padding: '1rem',
-                    backgroundColor: '#f8f9fa',
+                    backgroundColor: '#F5F3EE',
                     borderRadius: '10px',
                     transition: 'all 0.2s ease'
                 }}
                 onMouseEnter={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f0f4f8';
+                    e.currentTarget.style.backgroundColor = '#EAE6DF';
                 }}
                 onMouseLeave={(e) => {
-                    e.currentTarget.style.backgroundColor = '#f8f9fa';
+                    e.currentTarget.style.backgroundColor = '#F5F3EE';
                 }}
             >
                 {/* Logo */}
@@ -75,7 +75,7 @@ const EducationCard = ({
                     <h4 style={{
                         fontSize: '0.95rem',
                         fontWeight: 600,
-                        color: '#003049',
+                        color: '#14213D',
                         marginBottom: '0.2rem',
                         lineHeight: 1.3
                     }}>
@@ -83,7 +83,7 @@ const EducationCard = ({
                     </h4>
                     <p style={{
                         fontSize: '0.85rem',
-                        color: '#666',
+                        color: '#334E68',
                         marginBottom: '0.25rem'
                     }}>
                         {institution}
@@ -252,20 +252,20 @@ const EducationCard = ({
                 display: 'flex',
                 flexDirection: 'column',
                 padding: '0',
-                backgroundColor: '#f8f9fa',
+                backgroundColor: '#ffffff',
                 borderRadius: '14px',
                 transition: 'all 0.2s ease',
-                border: '1px solid transparent',
+                border: '1px solid #E2DED6',
                 overflow: 'hidden'
             }}
             onMouseEnter={(e) => {
                 e.currentTarget.style.backgroundColor = '#fff';
-                e.currentTarget.style.borderColor = '#e8e8e8';
-                e.currentTarget.style.boxShadow = '0 4px 16px rgba(0,0,0,0.06)';
+                e.currentTarget.style.borderColor = '#D97706';
+                e.currentTarget.style.boxShadow = '0 4px 16px rgba(20, 33, 61, 0.08)';
             }}
             onMouseLeave={(e) => {
-                e.currentTarget.style.backgroundColor = '#f8f9fa';
-                e.currentTarget.style.borderColor = 'transparent';
+                e.currentTarget.style.backgroundColor = '#ffffff';
+                e.currentTarget.style.borderColor = '#E2DED6';
                 e.currentTarget.style.boxShadow = 'none';
             }}
         >
@@ -295,7 +295,7 @@ const EducationCard = ({
                 <h4 style={{
                     fontSize: '1rem',
                     fontWeight: 600,
-                    color: '#003049',
+                    color: '#14213D',
                     marginBottom: '0.35rem',
                     lineHeight: 1.35
                 }}>
@@ -303,7 +303,7 @@ const EducationCard = ({
                 </h4>
                 <p style={{
                     fontSize: '0.9rem',
-                    color: '#555',
+                    color: '#334E68',
                     marginBottom: '0.5rem'
                 }}>
                     {institution}

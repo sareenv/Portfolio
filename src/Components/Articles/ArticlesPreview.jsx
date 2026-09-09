@@ -11,7 +11,7 @@ const ArticlesPreview = ({ limit = 6 }) => {
 
     return (
         <div style={{
-            backgroundColor: '#ffffff',
+            backgroundColor: '#F5F3EE',
             padding: '4rem 0'
         }}>
             <Container>
@@ -20,23 +20,19 @@ const ArticlesPreview = ({ limit = 6 }) => {
                     marginBottom: '2.5rem',
                     textAlign: 'center'
                 }}>
-                    <span style={{
-                        color: '#00b4d8',
+                    <p style={{
+                        color: '#B45309',
                         fontSize: '0.85rem',
-                        fontWeight: 600,
-                        letterSpacing: '0.15em',
+                        fontWeight: 700,
+                        letterSpacing: '0.12em',
                         textTransform: 'uppercase',
-                        marginBottom: '0.75rem',
-                        display: 'inline-block',
-                        padding: '0.5rem 1rem',
-                        backgroundColor: 'rgba(0, 180, 216, 0.1)',
-                        borderRadius: '20px'
+                        marginBottom: '0.75rem'
                     }}>
-                        📚 Knowledge Base
-                    </span>
+                        Articles
+                    </p>
                     <h2 style={{
                         fontWeight: 700,
-                        color: '#003049',
+                        color: '#14213D',
                         fontSize: 'clamp(1.75rem, 5vw, 2.5rem)',
                         marginBottom: '0.75rem',
                         lineHeight: 1.2
@@ -44,7 +40,7 @@ const ArticlesPreview = ({ limit = 6 }) => {
                         Latest Articles
                     </h2>
                     <p style={{
-                        color: '#666',
+                        color: '#334E68',
                         fontSize: '1rem',
                         maxWidth: '600px',
                         lineHeight: 1.6,
@@ -78,7 +74,7 @@ const ArticlesPreview = ({ limit = 6 }) => {
                                     borderRadius: '20px',
                                     padding: '2rem',
                                     height: '100%',
-                                    border: '1px solid #e9ecef',
+                                    border: '1px solid #E2DED6',
                                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
                                     cursor: 'pointer',
                                     position: 'relative',
@@ -86,8 +82,8 @@ const ArticlesPreview = ({ limit = 6 }) => {
                                 }}
                                 onMouseEnter={(e) => {
                                     e.currentTarget.style.transform = 'translateY(-8px)';
-                                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(0,48,73,0.12)';
-                                    e.currentTarget.style.borderColor = '#00b4d8';
+                                    e.currentTarget.style.boxShadow = '0 20px 50px rgba(20, 33, 61, 0.12)';
+                                    e.currentTarget.style.borderColor = '#D97706';
                                     e.currentTarget.querySelector('.article-arrow').style.transform = 'translateX(4px)';
                                 }}
                                 onMouseLeave={(e) => {
@@ -185,7 +181,7 @@ const ArticlesPreview = ({ limit = 6 }) => {
                                     <HiArrowRight 
                                         className="article-arrow"
                                         size={20} 
-                                        color="#00b4d8"
+                                        color="#D97706"
                                         style={{
                                             transition: 'transform 0.3s ease'
                                         }}
@@ -206,8 +202,8 @@ const ArticlesPreview = ({ limit = 6 }) => {
                                                 style={{
                                                     fontSize: '0.75rem',
                                                     padding: '0.25rem 0.6rem',
-                                                    backgroundColor: 'rgba(0,180,216,0.08)',
-                                                    color: '#00b4d8',
+                                                    backgroundColor: 'rgba(217, 119, 6, 0.12)',
+                                                    color: '#D97706',
                                                     borderRadius: '4px',
                                                     fontWeight: 500
                                                 }}
@@ -230,7 +226,7 @@ const ArticlesPreview = ({ limit = 6 }) => {
                             display: 'inline-flex',
                             alignItems: 'center',
                             gap: '0.5rem',
-                            backgroundColor: '#003049',
+                            backgroundColor: '#14213D',
                             color: '#ffffff',
                             padding: '1rem 2rem',
                             borderRadius: '50px',
@@ -238,17 +234,17 @@ const ArticlesPreview = ({ limit = 6 }) => {
                             fontWeight: 600,
                             textDecoration: 'none',
                             transition: 'all 0.3s ease',
-                            boxShadow: '0 4px 15px rgba(0, 48, 73, 0.2)'
+                            boxShadow: '0 4px 15px rgba(20, 33, 61, 0.2)'
                         }}
                         onMouseEnter={(e) => {
-                            e.currentTarget.style.backgroundColor = '#004c6d';
+                            e.currentTarget.style.backgroundColor = '#334E68';
                             e.currentTarget.style.transform = 'translateY(-2px)';
-                            e.currentTarget.style.boxShadow = '0 8px 25px rgba(0, 48, 73, 0.3)';
+                            e.currentTarget.style.boxShadow = '0 8px 25px rgba(20, 33, 61, 0.3)';
                         }}
                         onMouseLeave={(e) => {
-                            e.currentTarget.style.backgroundColor = '#003049';
+                            e.currentTarget.style.backgroundColor = '#14213D';
                             e.currentTarget.style.transform = 'translateY(0)';
-                            e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 48, 73, 0.2)';
+                            e.currentTarget.style.boxShadow = '0 4px 15px rgba(20, 33, 61, 0.2)';
                         }}
                     >
                         View All Articles

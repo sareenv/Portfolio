@@ -9,7 +9,7 @@ import '../../Styles/contact.scss'
 const Contact = () => {
     return (
         <div style={{
-            backgroundColor: '#f8f9fa',
+            backgroundColor: '#F5F3EE',
             minHeight: '100vh',
             padding: '6rem 0',
             transition: 'all 0.3s ease'
@@ -20,7 +20,7 @@ const Contact = () => {
                     <Col>
                         <h2 style={{
                             fontWeight: 600,
-                            color: '#003049',
+                            color: '#14213D',
                             fontSize: '2rem',
                             marginBottom: '0.5rem',
                             textAlign: 'center'
@@ -28,7 +28,7 @@ const Contact = () => {
                             Get in Touch
                         </h2>
                         <p style={{
-                            color: '#666',
+                            color: '#334E68',
                             fontSize: '1.1rem',
                             marginBottom: 0,
                             textAlign: 'center',
@@ -47,13 +47,14 @@ const Contact = () => {
                             backgroundColor: 'white',
                             borderRadius: '12px',
                             padding: '2.5rem',
-                            boxShadow: '0 2px 12px rgba(0,0,0,0.08)',
+                            boxShadow: '0 2px 12px rgba(20,33,61,0.06)',
+                            border: '1px solid #E2DED6',
                             height: '100%'
                         }}>
                             <h3 style={{
                                 fontSize: '1.5rem',
                                 fontWeight: 600,
-                                color: '#003049',
+                                color: '#14213D',
                                 marginBottom: '1.5rem'
                             }}>
                                 Contact Information
@@ -63,11 +64,11 @@ const Contact = () => {
                                 <div style={{
                                     marginBottom: '1.5rem',
                                     paddingBottom: '1.5rem',
-                                    borderBottom: '1px solid #e8e8e8'
+                                    borderBottom: '1px solid #E2DED6'
                                 }}>
                                     <div style={{
                                         fontSize: '0.85rem',
-                                        color: '#666',
+                                        color: '#334E68',
                                         marginBottom: '0.25rem',
                                         textTransform: 'uppercase',
                                         letterSpacing: '0.5px',
@@ -75,7 +76,7 @@ const Contact = () => {
                                     }}>Email</div>
                                     <div style={{
                                         fontSize: '1rem',
-                                        color: '#003049',
+                                        color: '#14213D',
                                         fontWeight: '500'
                                     }}>contact@sareenv.com</div>
                                 </div>
@@ -83,11 +84,11 @@ const Contact = () => {
                                 <div style={{
                                     marginBottom: '1.5rem',
                                     paddingBottom: '1.5rem',
-                                    borderBottom: '1px solid #e8e8e8'
+                                    borderBottom: '1px solid #E2DED6'
                                 }}>
                                     <div style={{
                                         fontSize: '0.85rem',
-                                        color: '#666',
+                                        color: '#334E68',
                                         marginBottom: '0.25rem',
                                         textTransform: 'uppercase',
                                         letterSpacing: '0.5px',
@@ -95,7 +96,7 @@ const Contact = () => {
                                     }}>Location</div>
                                     <div style={{
                                         fontSize: '1rem',
-                                        color: '#003049',
+                                        color: '#14213D',
                                         fontWeight: '500'
                                     }}>Barrie, Canada</div>
                                 </div>
@@ -105,7 +106,7 @@ const Contact = () => {
                                 }}>
                                     <div style={{
                                         fontSize: '0.85rem',
-                                        color: '#666',
+                                        color: '#334E68',
                                         marginBottom: '0.25rem',
                                         textTransform: 'uppercase',
                                         letterSpacing: '0.5px',
@@ -113,7 +114,7 @@ const Contact = () => {
                                     }}>Phone</div>
                                     <div style={{
                                         fontSize: '1rem',
-                                        color: '#003049',
+                                        color: '#14213D',
                                         fontWeight: '500'
                                     }}>+1 (437) 365-3351</div>
                                 </div>
@@ -281,7 +282,7 @@ const Contact = () => {
                                         placeholder='Tell me about your project or inquiry...'
                                         style={{
                                             borderRadius: '8px',
-                                            border: '1px solid #e8e8e8',
+                                            border: '1px solid #E2DED6',
                                             padding: '0.75rem',
                                             fontSize: '1rem',
                                             resize: 'vertical'
@@ -292,7 +293,7 @@ const Contact = () => {
                                 <Button 
                                     type="submit"
                                     style={{
-                                        backgroundColor: '#003049',
+                                        backgroundColor: '#14213D',
                                         border: 'none',
                                         padding: '0.75rem 2rem',
                                         borderRadius: '8px',
@@ -306,11 +307,11 @@ const Contact = () => {
                                         justifyContent: 'center'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.target.style.backgroundColor = '#002037';
+                                        e.target.style.backgroundColor = '#334E68';
                                         e.target.style.transform = 'translateY(-2px)';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.target.style.backgroundColor = '#003049';
+                                        e.target.style.backgroundColor = '#14213D';
                                         e.target.style.transform = 'translateY(0)';
                                     }}
                                 >

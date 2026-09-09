@@ -33,7 +33,7 @@ const EducationCard = ({ image, qualification, institution, address, issued, cre
     >
         {/* Logo Section */}
         <div style={{
-            backgroundColor: '#f8f9fa',
+            backgroundColor: '#F5F3EE',
             padding: '2.5rem',
             display: 'flex',
             alignItems: 'center',
@@ -61,7 +61,7 @@ const EducationCard = ({ image, qualification, institution, address, issued, cre
             <h3 style={{
                 fontSize: '1.2rem',
                 fontWeight: 700,
-                color: '#1a1a2e',
+                color: '#14213D',
                 marginBottom: '0.5rem',
                 lineHeight: 1.3
             }}>
@@ -70,7 +70,7 @@ const EducationCard = ({ image, qualification, institution, address, issued, cre
             
             <p style={{
                 fontSize: '1rem',
-                color: '#555',
+                color: '#334E68',
                 marginBottom: '1rem'
             }}>
                 {institution}
@@ -308,10 +308,10 @@ const EducationPage = () => {
     }, [])
 
     return (
-        <div style={{ backgroundColor: '#ffffff' }}>
+        <div style={{ backgroundColor: '#F5F3EE' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
+                background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
                 padding: '8rem 0 5rem',
                 position: 'relative',
                 overflow: 'hidden'
@@ -323,7 +323,7 @@ const EducationPage = () => {
                     right: '15%',
                     width: '350px',
                     height: '350px',
-                    background: 'radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
                     borderRadius: '50%',
                     filter: 'blur(60px)',
                     pointerEvents: 'none'
@@ -333,17 +333,17 @@ const EducationPage = () => {
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
                             <p style={{
-                                color: 'rgba(248, 249, 250, 0.7)',
-                                fontSize: '0.9rem',
-                                fontWeight: 600,
-                                letterSpacing: '0.1em',
+                                color: '#F59E0B',
+                                fontSize: '0.85rem',
+                                fontWeight: 700,
+                                letterSpacing: '0.12em',
                                 textTransform: 'uppercase',
                                 marginBottom: '1rem'
                             }}>
                                 Education & Certifications
                             </p>
                             <h1 style={{
-                                color: '#f8f9fa',
+                                color: '#F5F3EE',
                                 fontSize: 'clamp(2rem, 5vw, 2.75rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.25rem',
@@ -352,7 +352,7 @@ const EducationPage = () => {
                                 Academic Background &<br />Professional Development
                             </h1>
                             <p style={{
-                                color: 'rgba(241, 250, 238, 0.8)',
+                                color: 'rgba(245, 243, 238, 0.85)',
                                 fontSize: '1.1rem',
                                 lineHeight: 1.7,
                                 maxWidth: '550px',

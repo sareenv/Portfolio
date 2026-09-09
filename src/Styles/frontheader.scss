@@ -3,10 +3,10 @@
 
 @use "sass:color";
 
-$hero-bg: #1a1a2e;
-$hero-bg-light: #16213e;
-$text-light: #f8f9fa;
-$accent: #4a6fa5;
+$hero-bg: #14213D;
+$hero-bg-light: #334E68;
+$text-light: #F5F3EE;
+$accent: #D97706;
 
 .hero {
   min-height: 70vh;
@@ -140,14 +140,15 @@ $accent: #4a6fa5;
     transition: all 0.2s ease;
 
     &--primary {
-      background: $text-light;
-      color: $hero-bg;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      background: $accent;
+      color: #ffffff;
+      box-shadow: 0 4px 15px rgba(217, 119, 6, 0.35);
 
       &:hover {
         transform: translateY(-2px);
-        box-shadow: 0 6px 25px rgba(0, 0, 0, 0.25);
-        color: $hero-bg;
+        box-shadow: 0 6px 25px rgba(217, 119, 6, 0.45);
+        background: #B45309;
+        color: #ffffff;
         text-decoration: none;
       }
 

@@ -64,7 +64,7 @@ const ProjectsPage = () => {
     }
 
     return (
-        <div style={{ backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
+        <div style={{ backgroundColor: '#F5F3EE', minHeight: '100vh' }}>
             {/* Loading Shimmer */}
             {visibility === false && (
                 <Container style={{marginTop: '6rem', paddingBottom: '2rem'}}>
@@ -100,7 +100,7 @@ const ProjectsPage = () => {
             {/* Featured Project Hero Section */}
             {visibility === true && featuredProject && (
                 <div style={{
-                    background: 'linear-gradient(135deg, #003049 0%, #001d2d 100%)',
+                    background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
                     paddingTop: '7rem',
                     paddingBottom: '5rem',
                     position: 'relative',
@@ -114,7 +114,7 @@ const ProjectsPage = () => {
                         width: '600px',
                         height: '600px',
                         borderRadius: '50%',
-                        background: 'radial-gradient(circle, rgba(0,180,216,0.1) 0%, transparent 70%)',
+                        background: 'radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, transparent 70%)',
                         pointerEvents: 'none'
                     }} />
                     <div style={{
@@ -124,24 +124,24 @@ const ProjectsPage = () => {
                         width: '400px',
                         height: '400px',
                         borderRadius: '50%',
-                        background: 'radial-gradient(circle, rgba(0,180,216,0.08) 0%, transparent 70%)',
+                        background: 'radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
                         pointerEvents: 'none'
                     }} />
 
                     <Container>
-                        {/* Featured Badge */}
+                        {/* Featured Label */}
                         <div style={{
                             display: 'flex',
                             alignItems: 'center',
                             gap: '0.5rem',
-                            marginBottom: '2rem'
+                            marginBottom: '1.5rem'
                         }}>
-                            <HiOutlineStar size={18} color="#00b4d8" />
+                            <HiOutlineStar size={16} color="#F59E0B" />
                             <span style={{
-                                color: '#00b4d8',
+                                color: '#F59E0B',
                                 fontSize: '0.85rem',
-                                fontWeight: 600,
-                                letterSpacing: '0.15em',
+                                fontWeight: 700,
+                                letterSpacing: '0.12em',
                                 textTransform: 'uppercase'
                             }}>
                                 Featured Project
@@ -180,8 +180,8 @@ const ProjectsPage = () => {
                                     }}>
                                         {featuredProject.tags.slice(0, 4).map((tag, idx) => (
                                             <span key={idx} style={{
-                                                backgroundColor: 'rgba(0,180,216,0.15)',
-                                                color: '#00b4d8',
+                                                backgroundColor: 'rgba(217, 119, 6, 0.2)',
+                                                color: '#F59E0B',
                                                 padding: '0.5rem 1rem',
                                                 borderRadius: '25px',
                                                 fontSize: '0.85rem',
@@ -200,7 +200,7 @@ const ProjectsPage = () => {
                                         display: 'inline-flex',
                                         alignItems: 'center',
                                         gap: '0.75rem',
-                                        backgroundColor: '#00b4d8',
+                                        backgroundColor: '#D97706',
                                         color: 'white',
                                         padding: '1rem 2rem',
                                         borderRadius: '50px',
@@ -208,17 +208,17 @@ const ProjectsPage = () => {
                                         fontWeight: 600,
                                         fontSize: '1rem',
                                         transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                        boxShadow: '0 4px 20px rgba(0,180,216,0.3)'
+                                        boxShadow: '0 4px 20px rgba(217, 119, 6, 0.35)'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.target.style.backgroundColor = "#0096c7";
+                                        e.target.style.backgroundColor = "#B45309";
                                         e.target.style.transform = "translateY(-3px)";
-                                        e.target.style.boxShadow = "0 8px 30px rgba(0,180,216,0.4)";
+                                        e.target.style.boxShadow = "0 8px 30px rgba(217, 119, 6, 0.45)";
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.target.style.backgroundColor = "#00b4d8";
+                                        e.target.style.backgroundColor = "#D97706";
                                         e.target.style.transform = "translateY(0)";
-                                        e.target.style.boxShadow = "0 4px 20px rgba(0,180,216,0.3)";
+                                        e.target.style.boxShadow = "0 4px 20px rgba(217, 119, 6, 0.35)";
                                     }}
                                 >
                                     View Project Details

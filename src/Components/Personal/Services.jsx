@@ -16,10 +16,10 @@ const Service = () => {
     }
 
     return (
-        <div style={{ backgroundColor: '#ffffff' }}>
+        <div style={{ backgroundColor: '#F5F3EE' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
+                background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
                 padding: '8rem 0 6rem',
                 position: 'relative',
                 overflow: 'hidden'
@@ -31,7 +31,7 @@ const Service = () => {
                     right: '10%',
                     width: '400px',
                     height: '400px',
-                    background: 'radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
                     borderRadius: '50%',
                     filter: 'blur(60px)',
                     pointerEvents: 'none'
@@ -40,26 +40,22 @@ const Service = () => {
                 <Container>
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
-                            <div style={{
+                            <p style={{
+                                color: '#F59E0B',
+                                fontSize: '0.85rem',
+                                fontWeight: 700,
+                                letterSpacing: '0.12em',
+                                textTransform: 'uppercase',
+                                marginBottom: '1rem',
                                 display: 'inline-flex',
                                 alignItems: 'center',
-                                gap: '0.5rem',
-                                backgroundColor: 'rgba(248, 249, 250, 0.1)',
-                                padding: '0.5rem 1rem',
-                                borderRadius: '100px',
-                                marginBottom: '1.5rem'
+                                gap: '0.5rem'
                             }}>
-                                <HiOutlineCalendar size={18} color="#f8f9fa" />
-                                <span style={{
-                                    color: 'rgba(248, 249, 250, 0.8)',
-                                    fontSize: '0.85rem',
-                                    fontWeight: 500
-                                }}>
-                                    Let's Connect
-                                </span>
-                            </div>
+                                <HiOutlineCalendar size={16} />
+                                Let's Connect
+                            </p>
                             <h1 style={{
-                                color: '#f8f9fa',
+                                color: '#F5F3EE',
                                 fontSize: 'clamp(1.75rem, 5vw, 2.5rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.5rem',
@@ -69,7 +65,7 @@ const Service = () => {
                                 Please book a slot from my calendar
                             </h1>
                             <p style={{
-                                color: 'rgba(248, 249, 250, 0.7)',
+                                color: 'rgba(245, 243, 238, 0.85)',
                                 fontSize: '1.1rem',
                                 lineHeight: 1.7,
                                 maxWidth: '550px',
@@ -114,7 +110,7 @@ const Service = () => {
 
             {/* Skills Section */}
             <div style={{
-                backgroundColor: '#f8f9fa',
+                backgroundColor: '#F5F3EE',
                 padding: '5rem 0'
             }}>
                 <Container>
@@ -125,7 +121,8 @@ const Service = () => {
             {/* CTA Section */}
             <div style={{
                 padding: '5rem 0',
-                backgroundColor: '#ffffff'
+                backgroundColor: '#ffffff',
+                borderTop: '1px solid #E2DED6'
             }}>
                 <Container>
                     <Row className="justify-content-center">
@@ -133,13 +130,13 @@ const Service = () => {
                             <h2 style={{
                                 fontSize: 'clamp(1.5rem, 4vw, 2rem)',
                                 fontWeight: 700,
-                                color: '#1a1a2e',
+                                color: '#14213D',
                                 marginBottom: '1rem'
                             }}>
                                 Ready to Start Your Project?
                             </h2>
                             <p style={{
-                                color: '#666',
+                                color: '#334E68',
                                 fontSize: '1.1rem',
                                 marginBottom: '2rem',
                                 maxWidth: '500px',
@@ -155,8 +152,8 @@ const Service = () => {
                                     alignItems: 'center',
                                     gap: '0.5rem',
                                     padding: '1rem 2rem',
-                                    backgroundColor: '#1a1a2e',
-                                    color: '#f8f9fa',
+                                    backgroundColor: '#14213D',
+                                    color: '#F5F3EE',
                                     border: 'none',
                                     borderRadius: '8px',
                                     fontWeight: 600,
@@ -165,12 +162,12 @@ const Service = () => {
                                     transition: 'all 0.3s ease'
                                 }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#16213e';
+                                    e.currentTarget.style.backgroundColor = '#334E68';
                                     e.currentTarget.style.transform = 'translateY(-2px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(26,26,46,0.3)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(20,33,61,0.25)';
                                 }}
                                 onMouseLeave={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#1a1a2e';
+                                    e.currentTarget.style.backgroundColor = '#14213D';
                                     e.currentTarget.style.transform = 'translateY(0)';
                                     e.currentTarget.style.boxShadow = 'none';
                                 }}

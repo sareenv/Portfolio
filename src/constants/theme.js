@@ -8,45 +8,68 @@
 // =============================================================================
 
 export const colors = {
-    // Primary palette - Elegant dark slate tones
+    // Primary palette - Deep Oxford Navy
     primary: {
-        main: '#1a1a2e',
-        dark: '#0f0f1a',
-        light: '#16213e',
+        main: '#14213D',
+        dark: '#0B132B',
+        light: '#1F3158',
+    },
+
+    // Secondary palette - Slate / Steel Blue
+    secondary: {
+        main: '#334E68',
+        light: '#486581',
+        dark: '#243B53',
     },
     
-    // Accent colors - Muted, professional
+    // Accent colors - Warm Amber
     accent: {
-        red: '#c9302c',
-        redDark: '#a82824',
-        blue: '#2d3748',
+        main: '#D97706',
+        light: '#F59E0B',
+        dark: '#B45309',
+        soft: 'rgba(217, 119, 6, 0.12)',
+        // Backward-compatibility aliases
+        red: '#D97706',
+        redDark: '#B45309',
+        blue: '#334E68',
     },
     
     // Neutral colors
     neutral: {
         white: '#ffffff',
-        offWhite: '#f8f9fa',
-        lightGray: '#f5f5f7',
-        gray: '#6c757d',
-        darkGray: '#343a40',
-        border: '#e9ecef',
+        offWhite: '#F5F3EE',
+        lightGray: '#EAE6DF',
+        gray: '#627D98',
+        darkGray: '#334E68',
+        border: '#E2DED6',
     },
     
     // Semantic colors
     semantic: {
         error: '#dc3545',
         success: '#28a745',
-        warning: '#ffc107',
-        info: '#6c757d',
+        warning: '#D97706',
+        info: '#334E68',
     },
     
     // Background colors
     background: {
-        page: '#f8f9fa',
+        page: '#F5F3EE',
         card: '#ffffff',
-        overlay: 'rgba(255, 255, 255, 0.1)',
-        overlayHover: 'rgba(255, 255, 255, 0.2)',
+        overlay: 'rgba(20, 33, 61, 0.08)',
+        overlayHover: 'rgba(20, 33, 61, 0.15)',
     },
+};
+
+// Global shorthand tokens
+export const THEME_COLORS = {
+    background: '#F5F3EE',
+    primary: '#14213D',
+    secondary: '#334E68',
+    accent: '#D97706',
+    card: '#ffffff',
+    textMuted: '#627D98',
+    border: '#E2DED6',
 };
 
 // =============================================================================

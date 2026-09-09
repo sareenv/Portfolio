@@ -8,7 +8,7 @@ const NotFound = () => {
     return (
         <div style={{
             minHeight: '100vh',
-            background: 'linear-gradient(135deg, #003049 0%, #004c59 100%)',
+            background: 'linear-gradient(135deg, #14213D 0%, #334E68 100%)',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
@@ -23,7 +23,7 @@ const NotFound = () => {
                 right: '10%',
                 width: '400px',
                 height: '400px',
-                background: 'radial-gradient(circle, rgba(0, 180, 216, 0.15) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%)',
                 borderRadius: '50%',
                 filter: 'blur(40px)',
                 pointerEvents: 'none'
@@ -35,7 +35,7 @@ const NotFound = () => {
                 left: '5%',
                 width: '300px',
                 height: '300px',
-                background: 'radial-gradient(circle, rgba(0, 180, 216, 0.1) 0%, transparent 70%)',
+                background: 'radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%)',
                 borderRadius: '50%',
                 filter: 'blur(40px)',
                 pointerEvents: 'none'
@@ -64,12 +64,12 @@ const NotFound = () => {
                             fontSize: 'clamp(8rem, 20vw, 12rem)',
                             fontWeight: 800,
                             color: 'transparent',
-                            background: 'linear-gradient(135deg, #00b4d8 0%, #48cae4 100%)',
+                            background: 'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
                             WebkitBackgroundClip: 'text',
                             backgroundClip: 'text',
                             lineHeight: 1,
                             marginBottom: '0.5rem',
-                            textShadow: '0 0 80px rgba(0, 180, 216, 0.3)'
+                            textShadow: '0 0 80px rgba(217, 119, 6, 0.3)'
                         }}>
                             404
                         </h1>
@@ -80,7 +80,7 @@ const NotFound = () => {
                         style={{
                             fontSize: 'clamp(1.5rem, 4vw, 2rem)',
                             fontWeight: 600,
-                            color: '#f1faee',
+                            color: '#F5F3EE',
                             marginBottom: '1rem'
                         }}
                         initial={{ opacity: 0, y: 20 }}
@@ -94,7 +94,7 @@ const NotFound = () => {
                     <motion.p
                         style={{
                             fontSize: '1.1rem',
-                            color: 'rgba(241, 250, 238, 0.7)',
+                            color: 'rgba(245, 243, 238, 0.75)',
                             lineHeight: 1.7,
                             marginBottom: '2.5rem'
                         }}
@@ -125,22 +125,24 @@ const NotFound = () => {
                                 alignItems: 'center',
                                 gap: '0.5rem',
                                 padding: '0.875rem 1.75rem',
-                                backgroundColor: '#00b4d8',
-                                color: '#003049',
+                                backgroundColor: '#D97706',
+                                color: '#ffffff',
                                 borderRadius: '8px',
                                 fontWeight: 600,
                                 fontSize: '0.95rem',
                                 textDecoration: 'none',
                                 transition: 'all 0.3s ease',
-                                boxShadow: '0 4px 20px rgba(0, 180, 216, 0.3)'
+                                boxShadow: '0 4px 20px rgba(217, 119, 6, 0.3)'
                             }}
                             onMouseEnter={(e) => {
                                 e.currentTarget.style.transform = 'translateY(-2px)';
-                                e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 180, 216, 0.4)';
+                                e.currentTarget.style.backgroundColor = '#B45309';
+                                e.currentTarget.style.boxShadow = '0 8px 30px rgba(217, 119, 6, 0.4)';
                             }}
                             onMouseLeave={(e) => {
                                 e.currentTarget.style.transform = 'translateY(0)';
-                                e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 180, 216, 0.3)';
+                                e.currentTarget.style.backgroundColor = '#D97706';
+                                e.currentTarget.style.boxShadow = '0 4px 20px rgba(217, 119, 6, 0.3)';
                             }}
                         >
                             <HiHome size={18} />
@@ -155,8 +157,8 @@ const NotFound = () => {
                                 gap: '0.5rem',
                                 padding: '0.875rem 1.75rem',
                                 backgroundColor: 'transparent',
-                                color: '#f1faee',
-                                border: '1px solid rgba(241, 250, 238, 0.3)',
+                                color: '#F5F3EE',
+                                border: '1px solid rgba(245, 243, 238, 0.3)',
                                 borderRadius: '8px',
                                 fontWeight: 600,
                                 fontSize: '0.95rem',
@@ -190,7 +192,7 @@ const NotFound = () => {
                     >
                         <p style={{
                             fontSize: '0.9rem',
-                            color: 'rgba(241, 250, 238, 0.5)',
+                            color: 'rgba(245, 243, 238, 0.6)',
                             marginBottom: '1rem'
                         }}>
                             Or check out these pages:
@@ -210,17 +212,17 @@ const NotFound = () => {
                                     key={link.path}
                                     to={link.path}
                                     style={{
-                                        color: '#2d3748',
+                                        color: '#E2DED6',
                                         textDecoration: 'none',
                                         fontSize: '0.95rem',
                                         fontWeight: 500,
                                         transition: 'color 0.3s ease'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.color = '#1a1a2e';
+                                        e.currentTarget.style.color = '#D97706';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.currentTarget.style.color = '#00b4d8';
+                                        e.currentTarget.style.color = '#E2DED6';
                                     }}
                                 >
                                     {link.label}

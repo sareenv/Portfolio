@@ -111,17 +111,17 @@ const SkillsServices = () => {
             <Row style={{marginBottom: '2rem'}}>
                 <Col>
                     <p style={{
-                        color: '#00b4d8',
-                        fontSize: '0.9rem',
-                        fontWeight: 600,
-                        letterSpacing: '0.1em',
+                        color: '#B45309',
+                        fontSize: '0.85rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.12em',
                         textTransform: 'uppercase',
                         marginBottom: '0.75rem'
                     }}>
                         Skills
                     </p>
                     <h2 style={{
-                        color: '#003049',
+                        color: '#14213D',
                         fontSize: 'clamp(1.5rem, 4vw, 2rem)',
                         fontWeight: 700,
                         marginBottom: '0.5rem'
@@ -129,7 +129,7 @@ const SkillsServices = () => {
                         Technical Expertise
                     </h2>
                     <p style={{
-                        color: '#666',
+                        color: '#334E68',
                         fontSize: '1.05rem',
                         maxWidth: '500px'
                     }}>
@@ -183,7 +183,7 @@ const SkillsServices = () => {
                                 {/* Card Content */}
                                 <div style={{padding: '1.5rem', flex: 1}}>
                                     <h5 style={{
-                                        color: '#003049',
+                                        color: '#14213D',
                                         fontWeight: 700,
                                         fontSize: '1.2rem',
                                         marginBottom: '0.5rem'
@@ -191,7 +191,7 @@ const SkillsServices = () => {
                                         {skill.category}
                                     </h5>
                                     <p style={{
-                                        color: '#666',
+                                        color: '#334E68',
                                         fontSize: '0.95rem',
                                         marginBottom: '1rem'
                                     }}>
@@ -203,11 +203,11 @@ const SkillsServices = () => {
                                         <div style={{
                                             marginTop: '1rem',
                                             paddingTop: '1rem',
-                                            borderTop: '1px solid #e8e8e8',
+                                            borderTop: '1px solid #E2DED6',
                                             animation: 'fadeIn 0.3s ease-in'
                                         }}>
                                             <strong style={{
-                                                color: '#003049',
+                                                color: '#14213D',
                                                 fontSize: '0.95rem',
                                                 display: 'block',
                                                 marginBottom: '0.75rem'
@@ -217,7 +217,7 @@ const SkillsServices = () => {
                                             <ul style={{
                                                 paddingLeft: '1.25rem',
                                                 margin: 0,
-                                                color: '#666',
+                                                color: '#334E68',
                                                 fontSize: '0.9rem',
                                                 lineHeight: '1.7'
                                             }}>
@@ -236,21 +236,21 @@ const SkillsServices = () => {
                                     onClick={() => toggleCard(index)}
                                     style={{
                                         padding: '1rem',
-                                        backgroundColor: '#f8f9fa',
+                                        backgroundColor: '#F5F3EE',
                                         display: 'flex',
                                         alignItems: 'center',
                                         justifyContent: 'center',
-                                        color: '#003049',
+                                        color: '#14213D',
                                         fontWeight: 600,
                                         fontSize: '0.9rem',
                                         transition: 'all 0.3s ease',
-                                        borderTop: '1px solid #e8e8e8'
+                                        borderTop: '1px solid #E2DED6'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.backgroundColor = '#e8e8e8';
+                                        e.currentTarget.style.backgroundColor = '#EAE6DF';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.currentTarget.style.backgroundColor = '#f8f9fa';
+                                        e.currentTarget.style.backgroundColor = '#F5F3EE';
                                     }}
                                 >
                                     {isExpanded ? (

@@ -4,8 +4,8 @@ const Badge = (props) => {
     return (
         <span style={{
             display: 'inline-block',
-            backgroundColor: 'rgba(0, 180, 216, 0.1)',
-            color: '#00b4d8',
+            backgroundColor: 'rgba(217, 119, 6, 0.12)',
+            color: '#D97706',
             padding: '0.35rem 0.85rem',
             borderRadius: '20px',
             fontSize: '0.8rem',

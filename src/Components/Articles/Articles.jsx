@@ -59,7 +59,7 @@ const Articles = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
-                    <span className="articles-header__label">Knowledge Base</span>
+                    <span className="articles-header__label">Articles</span>
                     <h1 className="articles-header__title">Technical Articles</h1>
                     <p className="articles-header__description">
                         Deep dives into technical concepts, best practices, and learnings.

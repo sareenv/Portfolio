@@ -57,18 +57,18 @@ const PublishedWork = () => {
                 }}>
                     <div>
                         <p style={{
-                            color: '#00b4d8',
-                            fontSize: '0.9rem',
-                            fontWeight: 600,
-                            letterSpacing: '0.1em',
+                            color: '#B45309',
+                            fontSize: '0.85rem',
+                            fontWeight: 700,
+                            letterSpacing: '0.12em',
                             textTransform: 'uppercase',
-                            marginBottom: '1rem'
+                            marginBottom: '0.75rem'
                         }}>
                             Published Work
                         </p>
                         <h2 style={{
                             fontWeight: 700,
-                            color: '#003049',
+                            color: '#14213D',
                             fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
                             marginBottom: '0.5rem',
                             lineHeight: 1.3
@@ -76,7 +76,7 @@ const PublishedWork = () => {
                             Available on the App Store
                         </h2>
                         <p style={{
-                            color: '#666',
+                            color: '#334E68',
                             fontSize: '1.1rem',
                             maxWidth: '500px',
                             lineHeight: 1.7,
@@ -98,24 +98,24 @@ const PublishedWork = () => {
                                     width: '44px',
                                     height: '44px',
                                     borderRadius: '50%',
-                                    border: '1px solid #e0e0e0',
+                                    border: '1px solid #E2DED6',
                                     backgroundColor: '#fff',
                                     cursor: 'pointer',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
-                                    color: '#003049',
+                                    color: '#14213D',
                                     transition: 'all 0.2s ease'
                                 }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#003049';
+                                    e.currentTarget.style.backgroundColor = '#14213D';
                                     e.currentTarget.style.color = '#fff';
-                                    e.currentTarget.style.borderColor = '#003049';
+                                    e.currentTarget.style.borderColor = '#14213D';
                                 }}
                                 onMouseLeave={(e) => {
                                     e.currentTarget.style.backgroundColor = '#fff';
-                                    e.currentTarget.style.color = '#003049';
-                                    e.currentTarget.style.borderColor = '#e0e0e0';
+                                    e.currentTarget.style.color = '#14213D';
+                                    e.currentTarget.style.borderColor = '#E2DED6';
                                 }}
                                 aria-label="Previous app"
                             >

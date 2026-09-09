@@ -11,7 +11,7 @@ import '../../Styles/base.scss';
 // Styles for the Projects component
 const styles = {
     container: {
-        backgroundColor: '#f8f9fa',
+        backgroundColor: '#F5F3EE',
         padding: '6rem 0'
     },
     sectionHeader: {
@@ -19,26 +19,23 @@ const styles = {
         textAlign: 'center'
     },
     sectionLabel: {
-        color: '#00b4d8',
+        color: '#B45309',
         fontSize: '0.85rem',
-        fontWeight: 600,
-        letterSpacing: '0.15em',
+        fontWeight: 700,
+        letterSpacing: '0.12em',
         textTransform: 'uppercase',
         marginBottom: '0.75rem',
-        display: 'inline-block',
-        padding: '0.5rem 1rem',
-        backgroundColor: 'rgba(0, 180, 216, 0.1)',
-        borderRadius: '20px'
+        display: 'block'
     },
     sectionTitle: {
         fontWeight: 700,
-        color: '#003049',
+        color: '#14213D',
         fontSize: 'clamp(2rem, 5vw, 3rem)',
         marginBottom: '1rem',
         lineHeight: 1.2
     },
     sectionDescription: {
-        color: '#666',
+        color: '#334E68',
         fontSize: '1.15rem',
         maxWidth: '600px',
         lineHeight: 1.8,
@@ -60,18 +57,18 @@ const styles = {
         cursor: 'pointer',
         display: 'flex',
         flexDirection: 'column',
-        border: '1px solid rgba(0,0,0,0.06)',
+        border: '1px solid #E2DED6',
         position: 'relative'
     },
     projectCardHover: {
         transform: 'translateY(-8px)',
-        boxShadow: '0 25px 50px rgba(0,48,73,0.12)'
+        boxShadow: '0 25px 50px rgba(20, 33, 61, 0.12)'
     },
     imageContainer: {
         width: '100%',
         height: '220px',
         overflow: 'hidden',
-        backgroundColor: '#f0f2f5',
+        backgroundColor: '#EAE6DF',
         position: 'relative'
     },
     imageOverlay: {
@@ -180,11 +177,11 @@ const ProjectCard = ({ project, index }) => {
                     <div style={{
                         ...styles.imageOverlay,
                         opacity: isHovered ? 1 : 0,
-                        background: 'linear-gradient(180deg, rgba(0,48,73,0.1) 0%, rgba(0,48,73,0.4) 100%)'
+                        background: 'linear-gradient(180deg, rgba(20,33,61,0.1) 0%, rgba(20,33,61,0.5) 100%)'
                     }}>
                         <span style={{
                             backgroundColor: 'white',
-                            color: '#003049',
+                            color: '#14213D',
                             padding: '0.6rem 1.2rem',
                             borderRadius: '25px',
                             fontSize: '0.85rem',
@@ -211,7 +208,7 @@ const ProjectCard = ({ project, index }) => {
                     {/* Title */}
                     <h3 style={{
                         ...styles.projectTitle,
-                        color: isHovered ? '#00b4d8' : '#003049'
+                        color: isHovered ? '#D97706' : '#14213D'
                     }}>
                         {project.projectName}
                     </h3>
@@ -225,7 +222,7 @@ const ProjectCard = ({ project, index }) => {
                     <div style={styles.cardFooter}>
                         <div style={{
                             ...styles.viewLink,
-                            color: isHovered ? '#0096c7' : '#00b4d8'
+                            color: isHovered ? '#B45309' : '#D97706'
                         }}>
                             Explore project
                             <HiArrowRight
@@ -370,7 +367,7 @@ const Project = (props) => {
                                         display: 'inline-flex',
                                         alignItems: 'center',
                                         gap: '0.5rem',
-                                        backgroundColor: '#003049',
+                                        backgroundColor: '#14213D',
                                         color: '#ffffff',
                                         padding: '1rem 2rem',
                                         borderRadius: '50px',

@@ -178,17 +178,17 @@ const ProjectDetails = (props) => {
 
     return (
         <div style={{
-            backgroundColor: '#f8f9fa',
+            backgroundColor: '#F5F3EE',
             minHeight: '100vh'
         }}>
             {/* Hero Header Section */}
             <div style={{
-                background: 'linear-gradient(135deg, #003049 0%, #00415a 50%, #001d2d 100%)',
+                background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
                 paddingTop: '7rem',
                 paddingBottom: '5rem',
                 position: 'relative',
                 overflow: 'hidden',
-                boxShadow: '0 15px 60px rgba(0,0,0,0.15)'
+                boxShadow: '0 15px 60px rgba(20,33,61,0.15)'
             }}>
                 {/* Background decorations */}
                 <div style={{
@@ -198,7 +198,7 @@ const ProjectDetails = (props) => {
                     width: '600px',
                     height: '600px',
                     borderRadius: '50%',
-                    background: 'radial-gradient(circle, rgba(0,180,216,0.15) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%)',
                     pointerEvents: 'none',
                     animation: 'float 20s ease-in-out infinite'
                 }} />
@@ -266,8 +266,8 @@ const ProjectDetails = (props) => {
                         }}>
                             {project.tags.map((tag, idx) => (
                                 <span key={idx} style={{
-                                    backgroundColor: 'rgba(0,180,216,0.15)',
-                                    color: '#00b4d8',
+                                    backgroundColor: 'rgba(217, 119, 6, 0.2)',
+                                    color: '#F59E0B',
                                     padding: '0.4rem 1rem',
                                     borderRadius: '20px',
                                     fontSize: '0.85rem',
@@ -356,7 +356,7 @@ const ProjectDetails = (props) => {
                                     alignItems: 'center',
                                     gap: '0.6rem',
                                     backgroundColor: 'white',
-                                    color: '#003049',
+                                    color: '#14213D',
                                     padding: '0.9rem 1.8rem',
                                     borderRadius: '50px',
                                     textDecoration: 'none',
@@ -384,7 +384,7 @@ const ProjectDetails = (props) => {
                                     display: 'inline-flex',
                                     alignItems: 'center',
                                     gap: '0.6rem',
-                                    backgroundColor: '#00b4d8',
+                                    backgroundColor: '#D97706',
                                     color: 'white',
                                     padding: '0.9rem 1.8rem',
                                     borderRadius: '50px',
@@ -392,17 +392,17 @@ const ProjectDetails = (props) => {
                                     fontWeight: 600,
                                     fontSize: '0.95rem',
                                     transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                    boxShadow: '0 4px 20px rgba(0,180,216,0.3)'
+                                    boxShadow: '0 4px 20px rgba(217, 119, 6, 0.35)'
                                 }}
                                 onMouseEnter={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#0096c7';
+                                    e.currentTarget.style.backgroundColor = '#B45309';
                                     e.currentTarget.style.transform = 'translateY(-3px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(0,180,216,0.4)';
+                                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(217, 119, 6, 0.45)';
                                 }}
                                 onMouseLeave={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#00b4d8';
+                                    e.currentTarget.style.backgroundColor = '#D97706';
                                     e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0,180,216,0.3)';
+                                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(217, 119, 6, 0.35)';
                                 }}
                             >
                                 <FaPlay size={14} /> Watch Demo

@@ -69,14 +69,14 @@ const JobPosition = (props) => {
                 {/* Company & Title */}
                 <div style={{textAlign: 'center', marginBottom: '1.5rem'}}>
                     <h3 style={{
-                        color: '#1a1a2e',
+                        color: '#14213D',
                         fontWeight: 700,
                         fontSize: '1.35rem',
                         marginBottom: '0.5rem',
                         lineHeight: 1.3
                     }}>{props.company}</h3>
                     <p style={{
-                        color: '#2d3748',
+                        color: '#334E68',
                         fontSize: '1rem',
                         fontWeight: 600,
                         marginBottom: 0
@@ -91,14 +91,14 @@ const JobPosition = (props) => {
                     justifyContent: 'center',
                     marginBottom: '1.5rem',
                     paddingBottom: '1.5rem',
-                    borderBottom: '1px solid #f0f2f5'
+                    borderBottom: '1px solid #E2DED6'
                 }}>
                     <span style={{
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '0.4rem',
-                        backgroundColor: 'rgba(45, 55, 72, 0.08)',
-                        color: '#2d3748',
+                        backgroundColor: 'rgba(217, 119, 6, 0.12)',
+                        color: '#D97706',
                         padding: '0.4rem 0.9rem',
                         borderRadius: '20px',
                         fontSize: '0.85rem',
@@ -111,8 +111,8 @@ const JobPosition = (props) => {
                         display: 'inline-flex',
                         alignItems: 'center',
                         gap: '0.4rem',
-                        backgroundColor: '#f8f9fa',
-                        color: '#5a6c7d',
+                        backgroundColor: '#F5F3EE',
+                        color: '#334E68',
                         padding: '0.4rem 0.9rem',
                         borderRadius: '20px',
                         fontSize: '0.85rem',
@@ -126,7 +126,7 @@ const JobPosition = (props) => {
                 {/* Role description */}
                 <div>
                     <h4 style={{
-                        color: '#1a1a2e',
+                        color: '#14213D',
                         fontSize: '0.9rem',
                         fontWeight: 600,
                         textTransform: 'uppercase',
@@ -138,7 +138,7 @@ const JobPosition = (props) => {
                     <ul style={{
                         paddingLeft: '1.25rem',
                         margin: 0,
-                        color: '#5a6c7d',
+                        color: '#334E68',
                         lineHeight: '1.7',
                         fontSize: '0.95rem'
                     }}>
@@ -157,10 +157,10 @@ const ExperiencePage = () => {
         ReactGA.pageview(window.location.pathname + window.location.search);
     }, [])
     return(
-        <div style={{ backgroundColor: '#f8f9fa' }}>
+        <div style={{ backgroundColor: '#F5F3EE' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(160deg, #1a1a2e 0%, #16213e 100%)',
+                background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
                 padding: '8rem 0 4rem',
                 position: 'relative',
                 overflow: 'hidden'
@@ -172,7 +172,7 @@ const ExperiencePage = () => {
                     right: '10%',
                     width: '400px',
                     height: '400px',
-                    background: 'radial-gradient(circle, rgba(74, 111, 165, 0.08) 0%, transparent 70%)',
+                    background: 'radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
                     borderRadius: '50%',
                     filter: 'blur(60px)',
                     pointerEvents: 'none'
@@ -182,17 +182,17 @@ const ExperiencePage = () => {
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
                             <p style={{
-                                color: 'rgba(248, 249, 250, 0.7)',
-                                fontSize: '0.9rem',
-                                fontWeight: 600,
-                                letterSpacing: '0.1em',
+                                color: '#F59E0B',
+                                fontSize: '0.85rem',
+                                fontWeight: 700,
+                                letterSpacing: '0.12em',
                                 textTransform: 'uppercase',
                                 marginBottom: '1rem'
                             }}>
                                 Career Journey
                             </p>
                             <h1 style={{
-                                color: '#f8f9fa',
+                                color: '#F5F3EE',
                                 fontSize: 'clamp(2rem, 5vw, 3rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.5rem',
@@ -201,7 +201,7 @@ const ExperiencePage = () => {
                                 Professional Experience
                             </h1>
                             <p style={{
-                                color: 'rgba(241, 250, 238, 0.8)',
+                                color: 'rgba(245, 243, 238, 0.85)',
                                 fontSize: '1.15rem',
                                 lineHeight: 1.7,
                                 maxWidth: '600px',
@@ -466,7 +466,7 @@ const ExperiencePage = () => {
                                 <div style={{
                                     height: '100%',
                                     minHeight: '300px',
-                                    backgroundColor: '#f8f9fa',
+                                    backgroundColor: '#F5F3EE',
                                     display: 'flex',
                                     alignItems: 'center',
                                     justifyContent: 'center',
@@ -487,14 +487,14 @@ const ExperiencePage = () => {
                             
                             <Col sm={12} md={8} lg={8} style={{padding: '2rem'}}>
                                 <h3 style={{
-                                    color: '#003049',
+                                    color: '#14213D',
                                     fontWeight: 700,
                                     fontSize: '1.4rem',
                                     marginBottom: '1.5rem'
                                 }}>Swift India Developer Conference</h3>
                                 <ul style={{
                                     paddingLeft: '1.25rem',
-                                    color: '#666',
+                                    color: '#334E68',
                                     lineHeight: '1.7',
                                     fontSize: '1.05rem'
                                 }}>
@@ -552,14 +552,14 @@ const ExperiencePage = () => {
                             
                             <Col sm={12} md={8} lg={8} style={{padding: '2rem'}}>
                                 <h3 style={{
-                                    color: '#003049',
+                                    color: '#14213D',
                                     fontWeight: 700,
                                     fontSize: '1.4rem',
                                     marginBottom: '1.5rem'
                                 }}>CovHack 2020</h3>
                                 <ul style={{
                                     paddingLeft: '1.25rem',
-                                    color: '#666',
+                                    color: '#334E68',
                                     lineHeight: '1.7',
                                     fontSize: '1.05rem'
                                 }}>

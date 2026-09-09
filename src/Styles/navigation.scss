@@ -1,12 +1,12 @@
 // Navigation Styles - Elegant Professional Theme
 // =============================================
 
-$nav-bg: #1a1a2e;
-$nav-bg-light: #16213e;
-$text-light: #f8f9fa;
-$text-dark: #1a1a2e;
-$accent: #4a6fa5;
-$accent-red: #c9302c;
+$nav-bg: #14213D;
+$nav-bg-light: #334E68;
+$text-light: #F5F3EE;
+$text-dark: #14213D;
+$accent: #D97706;
+$accent-red: #D97706;
 
 .nav {
   position: fixed;
@@ -91,7 +91,7 @@ $accent-red: #c9302c;
     transform: translateX(-50%);
     width: 20px;
     height: 3px;
-    background: $text-light;
+    background: $accent;
     border-radius: 10px;
   }
 

@@ -9,7 +9,7 @@ const About = () => {
     return (
         <div style={{
             padding: '4rem 0',
-            backgroundColor: '#ffffff'
+            backgroundColor: '#F5F3EE'
         }}>
             <Container>
                 <Row className="justify-content-center">
@@ -17,12 +17,12 @@ const About = () => {
                         <div style={{ maxWidth: '800px', margin: '0 auto' }}>
                             {/* Section Label */}
                             <p style={{
-                                color: '#00b4d8',
-                                fontSize: '0.9rem',
-                                fontWeight: 600,
-                                letterSpacing: '0.1em',
+                                color: '#B45309',
+                                fontSize: '0.85rem',
+                                fontWeight: 700,
+                                letterSpacing: '0.12em',
                                 textTransform: 'uppercase',
-                                marginBottom: '1rem'
+                                marginBottom: '0.75rem'
                             }}>
                                 About Me
                             </p>
@@ -30,7 +30,7 @@ const About = () => {
                             {/* Main Heading */}
                             <h2 style={{
                                 fontWeight: 700,
-                                color: '#003049',
+                                color: '#14213D',
                                 fontSize: 'clamp(1.75rem, 4vw, 2.5rem)',
                                 marginBottom: '1.5rem',
                                 lineHeight: 1.3
@@ -40,12 +40,12 @@ const About = () => {
                             
                             {/* Description */}
                             <div style={{
-                                color: '#555',
+                                color: '#334E68',
                                 fontSize: '1.05rem',
                                 lineHeight: 1.75
                             }}>
                                 <p style={{ marginBottom: '1.25rem' }}>
-                                    I'm a Software Development Engineer at <strong style={{ color: '#003049' }}>Dayforce</strong>, 
+                                    I'm a Software Development Engineer at <strong style={{ color: '#14213D' }}>Dayforce</strong>, 
                                     currently specializing in iOS development with Swift and SwiftUI. Based in Toronto, Canada, 
                                     I hold a Master's degree in Software Engineering from Concordia University.
                                 </p>
@@ -72,7 +72,7 @@ const About = () => {
                                         display: 'inline-flex',
                                         alignItems: 'center',
                                         gap: '0.5rem',
-                                        backgroundColor: '#003049',
+                                        backgroundColor: '#14213D',
                                         color: '#ffffff',
                                         padding: '0.875rem 1.75rem',
                                         borderRadius: '10px',
@@ -80,17 +80,17 @@ const About = () => {
                                         fontWeight: 600,
                                         textDecoration: 'none',
                                         transition: 'all 0.3s ease',
-                                        boxShadow: '0 4px 15px rgba(0, 48, 73, 0.2)'
+                                        boxShadow: '0 4px 15px rgba(20, 33, 61, 0.2)'
                                     }}
                                     onMouseEnter={(e) => {
-                                        e.currentTarget.style.backgroundColor = '#004c6d';
+                                        e.currentTarget.style.backgroundColor = '#334E68';
                                         e.currentTarget.style.transform = 'translateY(-2px)';
-                                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(0, 48, 73, 0.3)';
+                                        e.currentTarget.style.boxShadow = '0 6px 20px rgba(20, 33, 61, 0.3)';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.currentTarget.style.backgroundColor = '#003049';
+                                        e.currentTarget.style.backgroundColor = '#14213D';
                                         e.currentTarget.style.transform = 'translateY(0)';
-                                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(0, 48, 73, 0.2)';
+                                        e.currentTarget.style.boxShadow = '0 4px 15px rgba(20, 33, 61, 0.2)';
                                     }}
                                 >
                                     View Full Experience

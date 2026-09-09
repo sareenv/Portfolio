@@ -4,7 +4,7 @@
 .articles-section {
     padding: 7rem 0 4rem;
     min-height: 100vh;
-    background: #f8f9fa;
+    background: #F5F3EE;
 }
 
 // Header
@@ -14,27 +14,24 @@
     
     &__label {
         display: inline-block;
-        color: #2d3748;
-        font-size: 0.8rem;
-        font-weight: 600;
+        color: #B45309;
+        font-size: 0.85rem;
+        font-weight: 700;
         letter-spacing: 0.12em;
         text-transform: uppercase;
-        margin-bottom: 1rem;
-        padding: 0.5rem 1.25rem;
-        background-color: rgba(26, 26, 46, 0.06);
-        border-radius: 100px;
+        margin-bottom: 0.75rem;
     }
     
     &__title {
         font-weight: 700;
-        color: #1a1a2e;
+        color: #14213D;
         font-size: clamp(2rem, 5vw, 2.75rem);
         margin-bottom: 1rem;
         line-height: 1.15;
     }
     
     &__description {
-        color: #666;
+        color: #334E68;
         font-size: 1.05rem;
         max-width: 550px;
         line-height: 1.7;
@@ -53,28 +50,28 @@
         left: 1.25rem;
         top: 50%;
         transform: translateY(-50%);
-        color: #999;
+        color: #627D98;
         font-size: 1.2rem;
     }
     
     &__input {
         width: 100%;
         padding: 0.95rem 1rem 0.95rem 3.25rem;
-        border: 1px solid #e2e8f0;
+        border: 1px solid #E2DED6;
         border-radius: 10px;
         font-size: 0.95rem;
         background: #fff;
         transition: all 0.25s ease;
-        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+        box-shadow: 0 1px 3px rgba(20, 33, 61, 0.04);
         
         &:focus {
             outline: none;
-            border-color: #1a1a2e;
-            box-shadow: 0 0 0 3px rgba(26, 26, 46, 0.08);
+            border-color: #D97706;
+            box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.15);
         }
         
         &::placeholder {
-            color: #a0aec0;
+            color: #627D98;
         }
     }
 }
@@ -135,19 +132,19 @@
     &__title {
         font-size: 1.1rem;
         font-weight: 600;
-        color: #1a1a2e;
+        color: #14213D;
         margin: 0 0 0.2rem;
     }
     
     &__description {
         font-size: 0.85rem;
-        color: #718096;
+        color: #627D98;
         margin: 0;
     }
     
     &__toggle {
         font-size: 1.25rem;
-        color: #a0aec0;
+        color: #627D98;
         transition: color 0.2s;
     }
 }
@@ -181,7 +178,7 @@
     
     &__chevron {
         font-size: 1.1rem;
-        color: #1a1a2e;
+        color: #14213D;
         margin-right: 0.6rem;
         flex-shrink: 0;
     }
@@ -196,7 +193,7 @@
     &__name {
         font-size: 0.95rem;
         font-weight: 600;
-        color: #1a1a2e;
+        color: #14213D;
         margin: 0;
     }
     
@@ -231,15 +228,15 @@
     }
     
     &:hover {
-        background: #f8fafc;
+        background: #F5F3EE;
         
         .article-card__arrow {
             transform: translateX(4px);
-            color: #1a1a2e;
+            color: #D97706;
         }
         
         .article-card__title {
-            color: #1a1a2e;
+            color: #D97706;
         }
     }
     
