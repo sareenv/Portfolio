@@ -510,6 +510,34 @@ export const articlesData = [
                                 author: 'Swift by Sundell'
                             }
                         ]
+                    },
+                    {
+                        id: 'equatable-hashable-identifiable',
+                        title: 'Core Swift Protocols: Equatable, Hashable, and Identifiable',
+                        slug: 'equatable-hashable-identifiable',
+                        summary: 'Master the three cornerstone protocols of Swift data modeling. Learn how Equatable establishes logical value equivalence and automatic compiler synthesis, how Hashable satisfies the hashing invariant for O(1) Set and Dictionary lookups, and how Identifiable provides persistent entity identity for SwiftUI\'s view diffing engine.',
+                        readTime: '9 min read',
+                        date: '2024-02-05',
+                        tags: ['Swift', 'iOS', 'Protocols', 'SwiftUI', 'Foundation'],
+                        coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80',
+                        contentPath: '/articles/swift/equatable-hashable-identifiable.md',
+                        references: [
+                            {
+                                title: 'Equatable Protocol',
+                                url: 'https://developer.apple.com/documentation/swift/equatable',
+                                author: 'Apple Developer'
+                            },
+                            {
+                                title: 'Hashable Protocol',
+                                url: 'https://developer.apple.com/documentation/swift/hashable',
+                                author: 'Apple Developer'
+                            },
+                            {
+                                title: 'Identifiable Protocol',
+                                url: 'https://developer.apple.com/documentation/swift/identifiable',
+                                author: 'Apple Developer'
+                            }
+                        ]
                     }
                 ]
             },
