@@ -205,6 +205,7 @@ const NotFound = () => {
                         }}>
                             {[
                                 { path: '/projects', label: 'Projects' },
+                                { path: '/apps', label: 'Published Apps' },
                                 { path: '/experience', label: 'Experience' },
                                 { path: '/services', label: 'Connect' }
                             ].map((link) => (

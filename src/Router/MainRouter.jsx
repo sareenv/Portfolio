@@ -10,6 +10,7 @@ import ProjectDetails from '../Components/Projects/ProjectDetails'
 import EducationPage from '../Components/Personal/Education/EducationPage'
 import ArticlesPage from '../Components/Articles/ArticlesPage'
 import ArticleDetailPage from '../Components/Articles/ArticleDetailPage'
+import PublishedAppsPage from '../Components/WorkProjects/PublishedAppsPage'
 import NotFound from '../Components/Utilities/NotFound'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
@@ -233,6 +234,8 @@ const MainRouter = () => {
                 <Route path="/contact" exact component={ContactPage} />
                 <Route path="/services" exact component={Service} />
                 <Route path="/education" exact component={EducationPage} />
+                <Route path="/apps" exact component={PublishedAppsPage} />
+                <Route path="/published-apps" exact component={PublishedAppsPage} />
                 <Route path="/project_details/:id" exact component={ProjectDetails} />
                 <Route component={NotFound} />
             </Switch>

@@ -3,7 +3,6 @@ import HeaderFront from './HeaderFront/HeaderFront'
 import Project from '../Projects/Projects'
 import About from '../Personal/About'
 import Contact from '../Contact/Contact'
-import PublishedWork from '../WorkProjects/CarryBags'
 import ArticlesPreview from '../Articles/ArticlesPreview'
 import ReactGA from 'react-ga'
 import '../../Styles/home.scss'
@@ -32,12 +31,6 @@ const Home = () => {
             <section id="projects">
                 <Project length={9} showTitle={true}/>
             </section>
-
-            {/* Published Work Section */}
-            <section id="published-work">
-                <PublishedWork />
-            </section>
-            
             
             {/* Contact Section */}
             <section id="contact">
