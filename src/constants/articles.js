@@ -538,6 +538,29 @@ export const articlesData = [
                                 author: 'Apple Developer'
                             }
                         ]
+                    },
+                    {
+                        id: 'associated-types',
+                        title: 'Associated Types in Swift Protocols',
+                        slug: 'associated-types',
+                        summary: 'Discover why method-level generics fail for homogeneous storage protocols and how Swift\'s associated types provide compile-time type safety without resorting to Any or unsafe downcasting. Includes practical code examples, compiler type inference, and modern Swift 5.7+ primary associated types.',
+                        readTime: '9 min read',
+                        date: '2024-02-15',
+                        tags: ['Swift', 'iOS', 'Generics', 'Protocols', 'Architecture'],
+                        coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80',
+                        contentPath: '/articles/swift/associated-types.md',
+                        references: [
+                            {
+                                title: 'Generics and Associated Types',
+                                url: 'https://docs.swift.org/swift-book/documentation/the-swift-programming-language/generics/#Associated-Types',
+                                author: 'Swift.org'
+                            },
+                            {
+                                title: 'SE-0346: Lightweight satisfaction of requirements with associated types',
+                                url: 'https://github.com/swiftlang/swift-evolution/blob/main/proposals/0346-light-weight-same-type-syntax.md',
+                                author: 'Swift Evolution'
+                            }
+                        ]
                     }
                 ]
             },
