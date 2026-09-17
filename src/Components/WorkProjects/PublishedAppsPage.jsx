@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import ReactGA from 'react-ga';
-import { FaApple, FaStar, FaCheckCircle } from 'react-icons/fa';
 import { HiArrowLeft, HiExternalLink } from 'react-icons/hi';
 import CB04 from '../../Assets/carrybags/cb04.png';
 import CB02 from '../../Assets/carrybags/cb02.png';
@@ -19,7 +18,6 @@ export const publishedAppsList = [
         category: 'Shopping & Logistics',
         platform: 'iOS 15.0+ • iPhone & iPad',
         appStoreUrl: 'https://apps.apple.com/ca/app/wecarrybags/id6475269259',
-        icon: CB04,
         screenshots: [CB04, CB02],
         description: 'A shopping delivery service application designed to transform the retail experience. Customers can have their in-store purchases and bags delivered directly to any home or hotel address, eliminating the hassle of carrying heavy bags while exploring malls and city centers.',
         highlights: [
@@ -95,7 +93,6 @@ const PublishedAppsPage = () => {
                                 alignItems: 'center',
                                 gap: '0.5rem'
                             }}>
-                                <FaApple size={16} />
                                 App Store Releases
                             </p>
 
@@ -106,7 +103,7 @@ const PublishedAppsPage = () => {
                                 marginBottom: '1.25rem',
                                 lineHeight: 1.2
                             }}>
-                                Published Applications
+                                iOS Apps Shipped to the App Store
                             </h1>
 
                             <p style={{
@@ -148,25 +145,12 @@ const PublishedAppsPage = () => {
                                 <Row style={{ alignItems: 'center' }}>
                                     {/* App Info Column */}
                                     <Col xs={12} lg={7} style={{ marginBottom: '2.5rem' }}>
-                                        {/* App Header Badge */}
+                                        {/* App Header */}
                                         <div style={{
                                             display: 'flex',
-                                            alignItems: 'center',
-                                            gap: '1rem',
+                                            alignItems: 'flex-start',
                                             marginBottom: '1.5rem'
                                         }}>
-                                            <img 
-                                                src={app.icon} 
-                                                alt={`${app.name} icon`}
-                                                style={{
-                                                    width: '64px',
-                                                    height: '64px',
-                                                    borderRadius: '14px',
-                                                    boxShadow: '0 4px 12px rgba(20, 33, 61, 0.12)',
-                                                    border: '1px solid #E2DED6',
-                                                    objectFit: 'cover'
-                                                }}
-                                            />
                                             <div>
                                                 <h2 style={{
                                                     fontSize: 'clamp(1.5rem, 3.5vw, 2rem)',
@@ -191,7 +175,7 @@ const PublishedAppsPage = () => {
                                                         alignItems: 'center',
                                                         gap: '0.25rem'
                                                     }}>
-                                                        <FaStar size={13} /> {app.rating} Rating
+                                                        {app.rating} Rating
                                                     </span>
                                                     <span style={{ color: '#E2DED6' }}>•</span>
                                                     <span style={{ color: '#334E68', fontWeight: 500 }}>
@@ -247,7 +231,14 @@ const PublishedAppsPage = () => {
                                                             lineHeight: 1.5
                                                         }}
                                                     >
-                                                        <FaCheckCircle size={15} style={{ color: '#D97706', marginTop: '0.2rem', flexShrink: 0 }} />
+                                                        <span style={{
+                                                            width: '0.45rem',
+                                                            height: '0.45rem',
+                                                            borderRadius: '50%',
+                                                            backgroundColor: '#D97706',
+                                                            marginTop: '0.45rem',
+                                                            flexShrink: 0
+                                                        }} />
                                                         <span>{item}</span>
                                                     </li>
                                                 ))}

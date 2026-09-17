@@ -1,6 +1,6 @@
 import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
-import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaApple } from 'react-icons/fa'
+import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import { HiArrowRight } from 'react-icons/hi'
 import { PROJECTS_ENABLED } from '../constants'
 
@@ -154,15 +154,12 @@ const Footer = () => {
                                         fontWeight: 600,
                                         textDecoration: 'none',
                                         fontSize: '0.95rem',
-                                        transition: 'color 0.3s ease',
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        gap: '0.35rem'
+                                        transition: 'color 0.3s ease'
                                     }}
                                     onMouseEnter={(e) => e.target.style.color = '#FBBF24'}
                                     onMouseLeave={(e) => e.target.style.color = '#F59E0B'}
                                 >
-                                    <FaApple size={14} /> Published Apps
+                                    Published Apps
                                 </a>
                             </li>
                             <li style={{ marginBottom: '0.5rem' }}>
@@ -263,29 +260,36 @@ const Footer = () => {
 
                         {/* Published Apps Callout */}
                         <div style={{
-                            backgroundColor: 'rgba(255, 255, 255, 0.05)',
-                            border: '1px solid rgba(255, 255, 255, 0.12)',
-                            borderRadius: '10px',
-                            padding: '0.85rem 1rem'
+                            backgroundColor: '#F5F3EE',
+                            border: '1px solid #E2DED6',
+                            borderRadius: '18px',
+                            padding: '1.15rem 1.2rem',
+                            boxShadow: '0 14px 34px rgba(0, 0, 0, 0.12)'
                         }}>
                             <div style={{
-                                fontSize: '0.8rem',
+                                fontSize: '0.78rem',
                                 textTransform: 'uppercase',
-                                letterSpacing: '0.08em',
-                                color: '#F59E0B',
+                                letterSpacing: '0.12em',
+                                color: '#B45309',
                                 fontWeight: 700,
-                                marginBottom: '0.35rem',
-                                display: 'flex',
-                                alignItems: 'center',
-                                gap: '0.35rem'
+                                marginBottom: '0.55rem'
                             }}>
-                                <FaApple size={13} /> App Store Releases
+                                App Store Releases
                             </div>
+                            <h5 style={{
+                                color: '#14213D',
+                                fontSize: '1.05rem',
+                                fontWeight: 700,
+                                lineHeight: 1.25,
+                                margin: '0 0 0.5rem'
+                            }}>
+                                Published Applications
+                            </h5>
                             <p style={{
-                                fontSize: '0.85rem',
-                                color: 'rgba(245, 243, 238, 0.75)',
-                                margin: '0 0 0.5rem',
-                                lineHeight: 1.4
+                                fontSize: '0.9rem',
+                                color: '#334E68',
+                                margin: '0 0 0.9rem',
+                                lineHeight: 1.55
                             }}>
                                 Explore my published iOS apps and services.
                             </p>
@@ -294,17 +298,30 @@ const Footer = () => {
                                 style={{
                                     display: 'inline-flex',
                                     alignItems: 'center',
-                                    gap: '0.35rem',
-                                    color: '#F59E0B',
-                                    fontSize: '0.825rem',
+                                    justifyContent: 'center',
+                                    gap: '0.45rem',
+                                    color: '#ffffff',
+                                    backgroundColor: '#14213D',
+                                    border: '1px solid #14213D',
+                                    borderRadius: '999px',
+                                    padding: '0.65rem 0.95rem',
+                                    fontSize: '0.85rem',
                                     fontWeight: 600,
                                     textDecoration: 'none',
-                                    transition: 'color 0.2s ease'
+                                    transition: 'background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease'
                                 }}
-                                onMouseEnter={(e) => e.currentTarget.style.color = '#FBBF24'}
-                                onMouseLeave={(e) => e.currentTarget.style.color = '#F59E0B'}
+                                onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#D97706';
+                                    e.currentTarget.style.borderColor = '#D97706';
+                                    e.currentTarget.style.transform = 'translateY(-1px)';
+                                }}
+                                onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#14213D';
+                                    e.currentTarget.style.borderColor = '#14213D';
+                                    e.currentTarget.style.transform = 'translateY(0)';
+                                }}
                             >
-                                View published apps <HiArrowRight size={13} />
+                                View published apps <HiArrowRight size={14} />
                             </a>
                         </div>
                     </Col>
