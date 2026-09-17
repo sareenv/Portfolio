@@ -14,6 +14,7 @@ import PublishedAppsPage from '../Components/WorkProjects/PublishedAppsPage'
 import NotFound from '../Components/Utilities/NotFound'
 import { motion, AnimatePresence } from 'framer-motion'
 import { HiMenuAlt3, HiX } from 'react-icons/hi'
+import { PROJECTS_ENABLED } from '../constants'
 
 // CSS Imports
 import '../Styles/base.scss'
@@ -227,7 +228,7 @@ const MainRouter = () => {
             <Navigation />
             <Switch>
                 <Route path="/" exact component={Home} />
-                <Route path="/projects" exact component={ProjectsPage} />
+                {PROJECTS_ENABLED && <Route path="/projects" exact component={ProjectsPage} />}
                 <Route path="/articles" exact component={ArticlesPage} />
                 <Route path="/articles/:topicId/:conceptId/:slug" exact component={ArticleDetailPage} />
                 <Route path="/experience" exact component={ExperiencePage} />
@@ -236,7 +237,7 @@ const MainRouter = () => {
                 <Route path="/education" exact component={EducationPage} />
                 <Route path="/apps" exact component={PublishedAppsPage} />
                 <Route path="/published-apps" exact component={PublishedAppsPage} />
-                <Route path="/project_details/:id" exact component={ProjectDetails} />
+                {PROJECTS_ENABLED && <Route path="/project_details/:id" exact component={ProjectDetails} />}
                 <Route component={NotFound} />
             </Switch>
         </HashRouter>

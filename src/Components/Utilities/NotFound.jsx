@@ -3,110 +3,94 @@ import { Container } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import { HiHome, HiArrowLeft } from 'react-icons/hi';
 import { motion } from 'framer-motion';
+import { PROJECTS_ENABLED } from '../../constants';
+
+const dicebearImageUrl = 'https://api.dicebear.com/9.x/adventurer-neutral/svg?seed=page-rebuild&backgroundColor=f5f3ee&radius=18';
 
 const NotFound = () => {
+    const helpfulLinks = [
+        PROJECTS_ENABLED && { path: '/projects', label: 'Projects' },
+        { path: '/apps', label: 'Published Apps' },
+        { path: '/experience', label: 'Experience' },
+        { path: '/services', label: 'Connect' }
+    ].filter(Boolean);
+
     return (
         <div style={{
             minHeight: '100vh',
-            background: 'linear-gradient(135deg, #14213D 0%, #334E68 100%)',
+            background: '#F5F3EE',
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',
             padding: '2rem',
-            position: 'relative',
-            overflow: 'hidden'
+            color: '#14213D'
         }}>
-            {/* Background decoration */}
-            <div style={{
-                position: 'absolute',
-                top: '20%',
-                right: '10%',
-                width: '400px',
-                height: '400px',
-                background: 'radial-gradient(circle, rgba(217, 119, 6, 0.15) 0%, transparent 70%)',
-                borderRadius: '50%',
-                filter: 'blur(40px)',
-                pointerEvents: 'none'
-            }} />
-            
-            <div style={{
-                position: 'absolute',
-                bottom: '10%',
-                left: '5%',
-                width: '300px',
-                height: '300px',
-                background: 'radial-gradient(circle, rgba(217, 119, 6, 0.1) 0%, transparent 70%)',
-                borderRadius: '50%',
-                filter: 'blur(40px)',
-                pointerEvents: 'none'
-            }} />
-
             <Container>
                 <motion.div 
                     style={{
                         textAlign: 'center',
                         maxWidth: '600px',
-                        margin: '0 auto',
-                        position: 'relative',
-                        zIndex: 1
+                        margin: '0 auto'
                     }}
                     initial={{ opacity: 0, y: 30 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.6, ease: 'easeOut' }}
                 >
-                    {/* 404 Number */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.5, delay: 0.2 }}
                     >
+                        <img
+                            src={dicebearImageUrl}
+                            alt="Friendly work in progress illustration"
+                            width="180"
+                            height="180"
+                            style={{
+                                width: 'min(180px, 48vw)',
+                                height: 'auto',
+                                marginBottom: '1.25rem'
+                            }}
+                        />
                         <h1 style={{
-                            fontSize: 'clamp(8rem, 20vw, 12rem)',
-                            fontWeight: 800,
-                            color: 'transparent',
-                            background: 'linear-gradient(135deg, #D97706 0%, #F59E0B 100%)',
-                            WebkitBackgroundClip: 'text',
-                            backgroundClip: 'text',
-                            lineHeight: 1,
-                            marginBottom: '0.5rem',
-                            textShadow: '0 0 80px rgba(217, 119, 6, 0.3)'
+                            fontSize: 'clamp(2.5rem, 8vw, 4.5rem)',
+                            fontWeight: 700,
+                            color: '#14213D',
+                            lineHeight: 1.08,
+                            marginBottom: '1rem'
                         }}>
-                            404
+                            We're working on this page
                         </h1>
                     </motion.div>
 
-                    {/* Title */}
                     <motion.h2
                         style={{
-                            fontSize: 'clamp(1.5rem, 4vw, 2rem)',
+                            fontSize: 'clamp(1.25rem, 3vw, 1.75rem)',
                             fontWeight: 600,
-                            color: '#F5F3EE',
+                            color: '#14213D',
                             marginBottom: '1rem'
                         }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.3 }}
                     >
-                        Page Not Found
+                        Bringing it back soon
                     </motion.h2>
 
-                    {/* Description */}
                     <motion.p
                         style={{
                             fontSize: '1.1rem',
-                            color: 'rgba(245, 243, 238, 0.75)',
-                            lineHeight: 1.7,
+                            color: '#627D98',
+                            lineHeight: 1.65,
                             marginBottom: '2.5rem'
                         }}
                         initial={{ opacity: 0, y: 20 }}
                         animate={{ opacity: 1, y: 0 }}
                         transition={{ duration: 0.5, delay: 0.4 }}
                     >
-                        Oops! The page you're looking for seems to have wandered off. 
-                        Let's get you back on track.
+                        This part of the website is being refreshed. I'm keeping it tucked away for now and will bring it back when the update is ready.
                     </motion.p>
 
-                    {/* Action Buttons */}
                     <motion.div
                         style={{
                             display: 'flex',
@@ -131,18 +115,15 @@ const NotFound = () => {
                                 fontWeight: 600,
                                 fontSize: '0.95rem',
                                 textDecoration: 'none',
-                                transition: 'all 0.3s ease',
-                                boxShadow: '0 4px 20px rgba(217, 119, 6, 0.3)'
+                                transition: 'background-color 0.2s ease, transform 0.2s ease'
                             }}
                             onMouseEnter={(e) => {
                                 e.currentTarget.style.transform = 'translateY(-2px)';
                                 e.currentTarget.style.backgroundColor = '#B45309';
-                                e.currentTarget.style.boxShadow = '0 8px 30px rgba(217, 119, 6, 0.4)';
                             }}
                             onMouseLeave={(e) => {
                                 e.currentTarget.style.transform = 'translateY(0)';
                                 e.currentTarget.style.backgroundColor = '#D97706';
-                                e.currentTarget.style.boxShadow = '0 4px 20px rgba(217, 119, 6, 0.3)';
                             }}
                         >
                             <HiHome size={18} />
@@ -157,21 +138,21 @@ const NotFound = () => {
                                 gap: '0.5rem',
                                 padding: '0.875rem 1.75rem',
                                 backgroundColor: 'transparent',
-                                color: '#F5F3EE',
-                                border: '1px solid rgba(245, 243, 238, 0.3)',
+                                color: '#14213D',
+                                border: '1px solid #E2DED6',
                                 borderRadius: '8px',
                                 fontWeight: 600,
                                 fontSize: '0.95rem',
                                 cursor: 'pointer',
-                                transition: 'all 0.3s ease'
+                                transition: 'background-color 0.2s ease, border-color 0.2s ease'
                             }}
                             onMouseEnter={(e) => {
-                                e.currentTarget.style.backgroundColor = 'rgba(241, 250, 238, 0.1)';
-                                e.currentTarget.style.borderColor = 'rgba(241, 250, 238, 0.5)';
+                                e.currentTarget.style.backgroundColor = '#ffffff';
+                                e.currentTarget.style.borderColor = '#D97706';
                             }}
                             onMouseLeave={(e) => {
                                 e.currentTarget.style.backgroundColor = 'transparent';
-                                e.currentTarget.style.borderColor = 'rgba(241, 250, 238, 0.3)';
+                                e.currentTarget.style.borderColor = '#E2DED6';
                             }}
                         >
                             <HiArrowLeft size={18} />
@@ -184,7 +165,7 @@ const NotFound = () => {
                         style={{
                             marginTop: '3rem',
                             paddingTop: '2rem',
-                            borderTop: '1px solid rgba(241, 250, 238, 0.1)'
+                            borderTop: '1px solid #E2DED6'
                         }}
                         initial={{ opacity: 0 }}
                         animate={{ opacity: 1 }}
@@ -192,7 +173,7 @@ const NotFound = () => {
                     >
                         <p style={{
                             fontSize: '0.9rem',
-                            color: 'rgba(245, 243, 238, 0.6)',
+                            color: '#627D98',
                             marginBottom: '1rem'
                         }}>
                             Or check out these pages:
@@ -203,27 +184,22 @@ const NotFound = () => {
                             justifyContent: 'center',
                             flexWrap: 'wrap'
                         }}>
-                            {[
-                                { path: '/projects', label: 'Projects' },
-                                { path: '/apps', label: 'Published Apps' },
-                                { path: '/experience', label: 'Experience' },
-                                { path: '/services', label: 'Connect' }
-                            ].map((link) => (
+                            {helpfulLinks.map((link) => (
                                 <Link
                                     key={link.path}
                                     to={link.path}
                                     style={{
-                                        color: '#E2DED6',
+                                        color: '#14213D',
                                         textDecoration: 'none',
                                         fontSize: '0.95rem',
                                         fontWeight: 500,
-                                        transition: 'color 0.3s ease'
+                                        transition: 'color 0.2s ease'
                                     }}
                                     onMouseEnter={(e) => {
                                         e.currentTarget.style.color = '#D97706';
                                     }}
                                     onMouseLeave={(e) => {
-                                        e.currentTarget.style.color = '#E2DED6';
+                                        e.currentTarget.style.color = '#14213D';
                                     }}
                                 >
                                     {link.label}

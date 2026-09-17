@@ -6,6 +6,7 @@ import Contact from '../Contact/Contact'
 import ArticlesPreview from '../Articles/ArticlesPreview'
 import ReactGA from 'react-ga'
 import '../../Styles/home.scss'
+import { PROJECTS_ENABLED } from '../../constants'
 
 const Home = () => {
     useEffect(() => {
@@ -27,10 +28,11 @@ const Home = () => {
                 <ArticlesPreview limit={6} />
             </section>
             
-            {/* Projects Section */}
-            <section id="projects">
-                <Project length={9} showTitle={true}/>
-            </section>
+            {PROJECTS_ENABLED && (
+                <section id="projects">
+                    <Project length={9} showTitle={true}/>
+                </section>
+            )}
             
             {/* Contact Section */}
             <section id="contact">

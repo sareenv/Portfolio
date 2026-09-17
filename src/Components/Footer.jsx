@@ -2,6 +2,7 @@ import React from 'react'
 import { Container, Row, Col } from 'react-bootstrap'
 import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt, FaApple } from 'react-icons/fa'
 import { HiArrowRight } from 'react-icons/hi'
+import { PROJECTS_ENABLED } from '../constants'
 
 import '../Styles/footer.scss'
 
@@ -128,21 +129,23 @@ const Footer = () => {
                                     Articles
                                 </a>
                             </li>
-                            <li style={{ marginBottom: '0.5rem' }}>
-                                <a 
-                                    href="#/projects"
-                                    style={{
-                                        color: 'rgba(255,255,255,0.8)',
-                                        textDecoration: 'none',
-                                        fontSize: '0.95rem',
-                                        transition: 'color 0.3s ease'
-                                    }}
-                                    onMouseEnter={(e) => e.target.style.color = 'white'}
-                                    onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.8)'}
-                                >
-                                    Projects
-                                </a>
-                            </li>
+                            {PROJECTS_ENABLED && (
+                                <li style={{ marginBottom: '0.5rem' }}>
+                                    <a 
+                                        href="#/projects"
+                                        style={{
+                                            color: 'rgba(255,255,255,0.8)',
+                                            textDecoration: 'none',
+                                            fontSize: '0.95rem',
+                                            transition: 'color 0.3s ease'
+                                        }}
+                                        onMouseEnter={(e) => e.target.style.color = 'white'}
+                                        onMouseLeave={(e) => e.target.style.color = 'rgba(255,255,255,0.8)'}
+                                    >
+                                        Projects
+                                    </a>
+                                </li>
+                            )}
                             <li style={{ marginBottom: '0.5rem' }}>
                                 <a 
                                     href="#/apps"
