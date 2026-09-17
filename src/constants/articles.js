@@ -169,6 +169,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['System Design', 'SSO', 'OIDC', 'Security', 'Authentication'],
                         coverImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80',
+                        wip: true,
                         contentPath: '/articles/system-design/sso-oidc/what-is-sso-and-oidc.md',
                         references: []
                     },
@@ -181,6 +182,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'Authentication', 'Security'],
                         coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80',
+                        wip: true,
                         contentPath: '/articles/system-design/sso-oidc/parties-in-oidc-flow.md',
                         references: []
                     },
@@ -193,6 +195,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'OAuth', 'Tokens', 'Security'],
                         coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
+                        wip: true,
                         contentPath: '/articles/system-design/sso-oidc/kinds-of-tokens.md',
                         references: []
                     },
@@ -205,6 +208,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'OAuth', 'PKCE', 'Security'],
                         coverImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80',
+                        wip: true,
                         contentPath: '/articles/system-design/sso-oidc/pkce.md',
                         references: []
                     },
@@ -217,6 +221,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'JWT', 'Tokens', 'Security'],
                         coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80',
+                        wip: true,
                         contentPath: '/articles/system-design/sso-oidc/anatomy-of-tokens.md',
                         references: []
                     },
@@ -229,6 +234,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Go', 'System Design', 'OIDC', 'Backend', 'Security'],
                         coverImage: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80',
+                        wip: true,
                         contentPath: '/articles/system-design/sso-oidc/go-server-implementation.md',
                         references: []
                     },
@@ -241,6 +247,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['iOS', 'Swift', 'AppAuth', 'OIDC', 'Mobile'],
                         coverImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80',
+                        wip: true,
                         contentPath: '/articles/system-design/sso-oidc/ios-appauth-implementation.md',
                         references: []
                     }
@@ -312,6 +319,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Creational', 'Swift', 'Factory Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/creational/factory-pattern.md',
                         references: []
                     },
@@ -324,6 +332,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Creational', 'Swift', 'Abstract Factory'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/creational/abstract-factory-pattern.md',
                         references: []
                     },
@@ -336,6 +345,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Creational', 'Swift', 'Builder Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/creational/builder-pattern.md',
                         references: []
                     }
@@ -355,6 +365,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Structural', 'Swift', 'Adapter Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/structural/adapter-pattern.md',
                         references: []
                     },
@@ -367,6 +378,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Structural', 'Swift', 'Facade Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/structural/facade-pattern.md',
                         references: []
                     },
@@ -379,6 +391,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Structural', 'Swift', 'Bridge Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/structural/bridge-pattern.md',
                         references: []
                     },
@@ -391,6 +404,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Structural', 'Swift', 'Proxy Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/structural/proxy-pattern.md',
                         references: []
                     }
@@ -410,6 +424,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Behavioral', 'Swift', 'Chain of Responsibility'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/behavioral/chain-of-responsibility-pattern.md',
                         references: []
                     },
@@ -422,6 +437,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Behavioral', 'Swift', 'Command Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/behavioral/command-pattern.md',
                         references: []
                     },
@@ -434,6 +450,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Behavioral', 'Swift', 'Observer Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/behavioral/observer-pattern.md',
                         references: []
                     },
@@ -446,6 +463,7 @@ export const articlesData = [
                         date: '2026-09-07',
                         tags: ['Design Patterns', 'Behavioral', 'Swift', 'Strategy Pattern'],
                         coverImage: '',
+                        wip: true,
                         contentPath: '/articles/design-patterns/behavioral/strategy-pattern.md',
                         references: []
                     }
@@ -558,6 +576,55 @@ export const articlesData = [
                             {
                                 title: 'SE-0346: Lightweight satisfaction of requirements with associated types',
                                 url: 'https://github.com/swiftlang/swift-evolution/blob/main/proposals/0346-light-weight-same-type-syntax.md',
+                                author: 'Swift Evolution'
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                id: 'swift-concurrency',
+                name: 'Swift Concurrency',
+                description: 'Modern asynchronous programming, tasks, actors, and thread safety in Swift',
+                articles: [
+                    {
+                        id: 'modern-concurrency-basics',
+                        title: 'Demystifying the Basics of Modern Concurrency in Swift',
+                        slug: 'modern-concurrency-basics',
+                        summary: 'Understand the bedrock of modern Swift concurrency: the cooperative thread pool, executors, how await suspends execution, task hierarchies, lifecycle, cancellations, and wrapping legacy completion handlers with continuations.',
+                        readTime: '10 min read',
+                        date: '2024-03-05',
+                        tags: ['Swift', 'iOS', 'Concurrency', 'Async/Await', 'Tasks', 'Executors'],
+                        coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80',
+                        wip: true,
+                        contentPath: '/articles/swift/modern-concurrency-basics.md',
+                        references: [
+                            {
+                                title: 'Swift Concurrency',
+                                url: 'https://docs.swift.org/swift-book/documentation/the-swift-programming-language/concurrency/',
+                                author: 'Swift.org'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'swift-actors',
+                        title: 'Understanding Actors in Swift',
+                        slug: 'swift-actors',
+                        summary: 'Explore how actors in Swift ensure safe, serial access to mutable state across concurrent tasks. Understand actor isolation boundaries, why external calls require await, how serial executors prevent overlapping execution, and a preview of actor reentrancy.',
+                        readTime: '6 min read',
+                        date: '2024-03-10',
+                        tags: ['Swift', 'iOS', 'Concurrency', 'Actors', 'Multithreading'],
+                        coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80',
+                        contentPath: '/articles/swift/actors.md',
+                        references: [
+                            {
+                                title: 'Actors in Swift',
+                                url: 'https://developer.apple.com/documentation/swift/actor',
+                                author: 'Apple Developer'
+                            },
+                            {
+                                title: 'SE-0306: Actors',
+                                url: 'https://github.com/swiftlang/swift-evolution/blob/main/proposals/0306-actors.md',
                                 author: 'Swift Evolution'
                             }
                         ]

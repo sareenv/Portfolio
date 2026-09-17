@@ -264,6 +264,24 @@
         color: #2d3748;
         margin: 0 0 0.35rem;
         transition: color 0.2s ease;
+        display: flex;
+        align-items: center;
+        gap: 0.55rem;
+        flex-wrap: wrap;
+    }
+
+    &__wip-badge {
+        display: inline-flex;
+        align-items: center;
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        color: #92400E;
+        background: #FEF3C7;
+        border: 1px solid #FCD34D;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
     }
     
     &__summary {

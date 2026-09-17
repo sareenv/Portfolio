@@ -21,6 +21,195 @@
     font-size: 1.1rem;
 }
 
+// Work In Progress View
+.article-wip {
+    background: #ffffff;
+    border-radius: 16px;
+    border: 1px solid #f1e6cf;
+    box-shadow: 0 12px 30px rgba(180, 83, 9, 0.06);
+    padding: 2.5rem;
+    margin: 1rem 0 2rem;
+
+    &__hero {
+        display: flex;
+        gap: 1.75rem;
+        align-items: center;
+        margin-bottom: 2rem;
+        flex-wrap: wrap;
+    }
+
+    &__avatar {
+        flex-shrink: 0;
+        width: 128px;
+        height: 128px;
+        border-radius: 24px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #FEF3C7 0%, #FDE68A 100%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 8px 20px rgba(217, 119, 6, 0.15);
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 8px;
+        }
+    }
+
+    &__intro {
+        flex: 1;
+        min-width: 260px;
+    }
+
+    &__badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        background: #FEF3C7;
+        color: #92400E;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        padding: 0.35rem 0.75rem;
+        border-radius: 999px;
+        margin-bottom: 0.85rem;
+
+        svg {
+            font-size: 0.9rem;
+        }
+    }
+
+    &__title {
+        font-size: 1.65rem;
+        font-weight: 700;
+        color: #14213D;
+        margin: 0 0 0.6rem;
+        line-height: 1.25;
+    }
+
+    &__message {
+        color: #4a5568;
+        font-size: 1rem;
+        line-height: 1.65;
+        margin: 0;
+    }
+
+    &__outline {
+        border-top: 1px dashed #f1e6cf;
+        padding-top: 1.75rem;
+    }
+
+    &__outline-title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #B45309;
+        margin: 0 0 1.25rem;
+
+        svg {
+            font-size: 1rem;
+        }
+    }
+
+    &__outline-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    &__outline-item {
+        position: relative;
+        display: flex;
+        align-items: flex-start;
+        gap: 0.75rem;
+        padding: 0.4rem 0;
+        color: #2d3748;
+        line-height: 1.5;
+
+        &--h2 {
+            font-size: 1rem;
+            font-weight: 600;
+            padding-left: 0;
+            margin-top: 0.6rem;
+        }
+
+        &--h3 {
+            font-size: 0.9rem;
+            font-weight: 500;
+            padding-left: 1.5rem;
+            color: #4a5568;
+        }
+
+        &--h4 {
+            font-size: 0.85rem;
+            font-weight: 400;
+            padding-left: 3rem;
+            color: #718096;
+        }
+    }
+
+    &__outline-marker {
+        display: inline-block;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: #D97706;
+        margin-top: 0.5rem;
+        flex-shrink: 0;
+        opacity: 0.6;
+    }
+
+    &__outline-text {
+        flex: 1;
+    }
+
+    &__actions {
+        margin-top: 2rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    &__cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: #14213D;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.95rem;
+        padding: 0.65rem 1.25rem;
+        border-radius: 999px;
+        background: #F5F3EE;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background: #FEF3C7;
+            color: #92400E;
+            transform: translateX(-2px);
+        }
+    }
+
+    @media (max-width: 640px) {
+        padding: 1.75rem 1.25rem;
+
+        &__avatar {
+            width: 96px;
+            height: 96px;
+        }
+
+        &__title {
+            font-size: 1.35rem;
+        }
+    }
+}
+
 // Not Found
 .article-not-found {
     text-align: center;
