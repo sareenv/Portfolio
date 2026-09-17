@@ -4,7 +4,57 @@ import { motion, AnimatePresence } from 'framer-motion';
 import Container from 'react-bootstrap/Container';
 import { articlesData, getAllArticles } from '../../constants/articles';
 import { HiArrowRight, HiSearch, HiBookOpen, HiClock, HiChevronDown, HiChevronRight } from 'react-icons/hi';
+import technicalArticlesDicebear from '../../Assets/technical-articles-dicebear.svg';
+import articlesWritingTableDicebear from '../../Assets/articles-writing-table-dicebear.svg';
 import '../../Styles/articles.scss';
+
+const WritingTable = ({ topics }) => {
+    const upcomingArticles = topics.flatMap(topic =>
+        topic.concepts.flatMap(concept =>
+            concept.articles
+                .filter(article => article.wip)
+                .map(article => ({ ...article, topic: topic.topic }))
+        )
+    );
+
+    const topicNames = [...new Set(upcomingArticles.map(article => article.topic))];
+
+    if (upcomingArticles.length === 0) {
+        return null;
+    }
+
+    return (
+        <motion.div
+            className="articles-writing-table"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.08 }}
+        >
+            <div className="articles-writing-table__visual">
+                <img
+                    src={articlesWritingTableDicebear}
+                    alt=""
+                    aria-hidden="true"
+                    loading="lazy"
+                    width="88"
+                    height="88"
+                />
+            </div>
+            <div className="articles-writing-table__content">
+                <span className="articles-writing-table__label">On My Writing Table</span>
+                <h2 className="articles-writing-table__title">More technical articles are in progress</h2>
+                <p className="articles-writing-table__description">
+                    I'm working on writing these articles. They are on my table, and this is the list of topics they will cover soon.
+                </p>
+                <div className="articles-writing-table__topics" aria-label="Upcoming article topics">
+                    {topicNames.map(topic => (
+                        <span key={topic} className="articles-writing-table__topic">{topic}</span>
+                    ))}
+                </div>
+            </div>
+        </motion.div>
+    );
+};
 
 const Articles = () => {
     const [searchTerm, setSearchTerm] = useState('');
@@ -59,6 +109,15 @@ const Articles = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.5 }}
                 >
+                    <img
+                        src={technicalArticlesDicebear}
+                        alt=""
+                        aria-hidden="true"
+                        className="articles-header__asset"
+                        loading="lazy"
+                        width="72"
+                        height="72"
+                    />
                     <span className="articles-header__label">Articles</span>
                     <h1 className="articles-header__title">Technical Articles</h1>
                     <p className="articles-header__description">
@@ -66,6 +125,8 @@ const Articles = () => {
                         Currently {totalArticles} articles across {articlesData.length} topics.
                     </p>
                 </motion.div>
+
+                <WritingTable topics={articlesData} />
 
                 {/* Search */}
                 <motion.div 
@@ -164,7 +225,12 @@ const Articles = () => {
                                                                         <div className="article-card__content">
                                                                             <HiBookOpen className="article-card__icon" />
                                                                             <div className="article-card__info">
-                                                                                <h4 className="article-card__title">{article.title}</h4>
+                                                                                <h4 className="article-card__title">
+                                                                                    <span>{article.title}</span>
+                                                                                    {article.wip && (
+                                                                                        <span className="article-card__wip-badge">Coming Soon</span>
+                                                                                    )}
+                                                                                </h4>
                                                                                 <p className="article-card__summary">{article.summary}</p>
                                                                                 <div className="article-card__meta">
                                                                                     <span className="article-card__time">

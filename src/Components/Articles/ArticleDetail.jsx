@@ -4,11 +4,51 @@ import { motion } from 'framer-motion';
 import Container from 'react-bootstrap/Container';
 import Markdown from 'markdown-to-jsx';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
-import { oneDark } from 'react-syntax-highlighter/dist/esm/styles/prism';
+import { oneLight, vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { getArticleBySlug, getTopicById, getConceptById, getAllArticles } from '../../constants/articles';
 import { HiArrowLeft, HiClock, HiCalendar, HiChevronRight, HiBookOpen, HiExternalLink } from 'react-icons/hi';
-import ArticleReader from './ArticleReader';
+import { FaLinkedinIn } from 'react-icons/fa';
+import WorkInProgressView from './WorkInProgressView';
+import { isMarkdownWIP } from './wipDetection';
 import '../../Styles/article-detail.scss';
+
+const CODE_THEME_STORAGE_KEY = 'articleCodeTheme';
+const DEFAULT_CODE_THEME = 'light';
+const PUBLIC_SITE_ORIGIN = 'https://www.sareenv.com';
+const ARTICLE_SHARE_PARAM = 'article';
+
+const CODE_THEMES = {
+    light: {
+        label: 'Light',
+        syntax: oneLight
+    },
+    dark: {
+        label: 'Dark',
+        syntax: vscDarkPlus
+    }
+};
+
+const getCodeTheme = (theme) => CODE_THEMES[theme] ? theme : DEFAULT_CODE_THEME;
+
+const getPublicArticleUrl = () => {
+    const { hostname, origin, pathname, hash } = window.location;
+    const siteOrigin = hostname === 'localhost' || hostname === '127.0.0.1' ? PUBLIC_SITE_ORIGIN : origin;
+    const hashRoute = hash.startsWith('#/') ? hash.slice(1) : hash;
+    const params = new URLSearchParams({ [ARTICLE_SHARE_PARAM]: hashRoute });
+    return `${siteOrigin}${pathname}?${params.toString()}`;
+};
+
+const getLinkedInShareUrl = (article) => {
+    const params = new URLSearchParams({
+        mini: 'true',
+        url: getPublicArticleUrl(),
+        title: article.title,
+        summary: article.summary || '',
+        source: 'sareenv'
+    });
+
+    return `https://www.linkedin.com/shareArticle?${params.toString()}`;
+};
 
 // Auto-detect programming language from code content
 const detectLanguage = (code) => {
@@ -35,7 +75,7 @@ const detectLanguage = (code) => {
     }
     
     // Swift patterns
-    if (/(func |var |let |import Swift|@State|@Binding|class .*:|struct .*:)/.test(codeStr)) {
+    if (/(func |var |let |import Swift|@State|@Binding|class .*:|struct .*:|protocol |associatedtype|extension |where )/.test(codeStr)) {
         return 'swift';
     }
     
@@ -82,28 +122,153 @@ const detectLanguage = (code) => {
     return 'markdown'; // Default to markdown instead of text for better readability
 };
 
+const getLanguageFromClassName = (className = '') => {
+    const token = className
+        .split(/\s+/)
+        .find(item => item.startsWith('language-') || item.startsWith('lang-'));
+
+    return token ? token.replace(/^language-|^lang-/, '') : '';
+};
+
+const normalizeCodeIndent = (code) => {
+    const lines = String(code).replace(/\t/g, '    ').replace(/^\n+|\n+$/g, '').split('\n');
+    const nonEmptyLines = lines.filter(line => line.trim().length > 0);
+
+    if (nonEmptyLines.length === 0) return '';
+
+    const smallestIndent = Math.min(...nonEmptyLines.map(line => line.match(/^\s*/)[0].length));
+    return lines.map(line => line.slice(smallestIndent)).join('\n');
+};
+
+const CodeThemeSelector = ({ value, onChange }) => (
+    <div className="article-code-theme" aria-label="Code theme selector">
+        {Object.entries(CODE_THEMES).map(([theme, config]) => (
+            <button
+                key={theme}
+                type="button"
+                className={`article-code-theme__option${value === theme ? ' article-code-theme__option--active' : ''}`}
+                onClick={() => onChange(theme)}
+                aria-pressed={value === theme}
+            >
+                {config.label}
+            </button>
+        ))}
+    </div>
+);
+
+const CopyCodeButton = ({ code }) => {
+    const [hasCopied, setHasCopied] = useState(false);
+
+    const copyWithFallback = useCallback(() => {
+        const textarea = document.createElement('textarea');
+        textarea.value = code;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.top = '-9999px';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        document.body.removeChild(textarea);
+    }, [code]);
+
+    const handleCopy = useCallback(async () => {
+        try {
+            if (navigator.clipboard && document.hasFocus()) {
+                await navigator.clipboard.writeText(code);
+            } else {
+                copyWithFallback();
+            }
+            setHasCopied(true);
+            window.setTimeout(() => setHasCopied(false), 1600);
+        } catch (error) {
+            copyWithFallback();
+            setHasCopied(true);
+            window.setTimeout(() => setHasCopied(false), 1600);
+        }
+    }, [code, copyWithFallback]);
+
+    return (
+        <button
+            type="button"
+            className={`article-code__copy${hasCopied ? ' article-code__copy--copied' : ''}`}
+            onClick={handleCopy}
+            aria-label={hasCopied ? 'Code copied' : 'Copy code'}
+        >
+            {hasCopied ? 'Copied' : 'Copy'}
+        </button>
+    );
+};
+
+const LineNumberedTextBlock = ({ children }) => {
+    const lines = String(children).split('\n');
+
+    return (
+        <pre className="code-block code-block--text">
+            {lines.map((line, index) => (
+                <span className="code-block__line" key={`${index}-${line}`}>
+                    <span className="code-block__line-number">{index + 1}</span>
+                    <code>{line || ' '}</code>
+                </span>
+            ))}
+        </pre>
+    );
+};
+
+const CodeBlock = ({ language, children, isText = false, theme = DEFAULT_CODE_THEME, onThemeChange }) => {
+    const currentTheme = getCodeTheme(theme);
+    const code = normalizeCodeIndent(children);
+
+    return (
+        <figure className={`article-code article-code--${currentTheme}`}>
+            <figcaption className="article-code__toolbar">
+                <CopyCodeButton code={code} />
+                <CodeThemeSelector value={currentTheme} onChange={onThemeChange} />
+            </figcaption>
+            {isText ? (
+                <LineNumberedTextBlock>{code}</LineNumberedTextBlock>
+            ) : (
+                <SyntaxHighlighter
+                    style={CODE_THEMES[currentTheme].syntax}
+                    language={language}
+                    className="code-block"
+                    showLineNumbers
+                    lineNumberStyle={{
+                        minWidth: '2.25rem',
+                        paddingRight: '1rem',
+                        color: currentTheme === 'dark' ? '#6B7280' : '#94A3B8',
+                        textAlign: 'right',
+                        userSelect: 'none'
+                    }}
+                    customStyle={{
+                        background: 'transparent',
+                        margin: 0,
+                        padding: '1.2rem 1.4rem',
+                        fontSize: '0.9rem',
+                        lineHeight: '1.65'
+                    }}
+                    codeTagProps={{
+                        style: {
+                            fontFamily: "'Fira Code', 'Monaco', 'Consolas', monospace"
+                        }
+                    }}
+                >
+                    {code}
+                </SyntaxHighlighter>
+            )}
+        </figure>
+    );
+};
+
 // Code component that handles both inline and block code
-const Code = ({ className, children, ...props }) => {
-    // If it has a className starting with 'lang-', it's a code block with language
-    if (className && className.startsWith('lang-')) {
-        const language = className.replace('lang-', '');
+const Code = ({ className, children, theme = DEFAULT_CODE_THEME, onThemeChange, ...props }) => {
+    const languageFromClass = getLanguageFromClassName(className);
+
+    // If it has a className with 'lang-' or 'language-', it's a code block with language
+    if (languageFromClass) {
+        const language = languageFromClass;
         const codeString = String(children).replace(/\n$/, '');
         
-        return (
-            <SyntaxHighlighter
-                style={oneDark}
-                language={language}
-                className="code-block"
-                showLineNumbers={false}
-                customStyle={{
-                    padding: '1.25rem 1.5rem',
-                    fontSize: '0.9rem',
-                    lineHeight: '1.6'
-                }}
-            >
-                {codeString}
-            </SyntaxHighlighter>
-        );
+        return <CodeBlock language={language} theme={theme} onThemeChange={onThemeChange}>{codeString}</CodeBlock>;
     }
     
     // Check if this is a block code (multi-line) without language specification
@@ -116,29 +281,11 @@ const Code = ({ className, children, ...props }) => {
         
         // For text/diagram blocks, render as plain styled element for guaranteed visibility
         if (detectedLanguage === 'markdown' || detectedLanguage === 'text') {
-            return (
-                <pre className="code-block code-block--text">
-                    <code style={{ color: '#abb2bf' }}>{codeString.trim()}</code>
-                </pre>
-            );
+            return <CodeBlock language={detectedLanguage} theme={theme} onThemeChange={onThemeChange} isText>{codeString.trim()}</CodeBlock>;
         }
         
         // Render with detected language and syntax highlighting
-        return (
-            <SyntaxHighlighter
-                style={oneDark}
-                language={detectedLanguage}
-                className="code-block"
-                showLineNumbers={false}
-                customStyle={{
-                    padding: '1.25rem 1.5rem',
-                    fontSize: '0.9rem',
-                    lineHeight: '1.6'
-                }}
-            >
-                {codeString.replace(/\n$/, '')}
-            </SyntaxHighlighter>
-        );
+        return <CodeBlock language={detectedLanguage} theme={theme} onThemeChange={onThemeChange}>{codeString.replace(/\n$/, '')}</CodeBlock>;
     }
     
     // Otherwise, it's inline code
@@ -153,21 +300,21 @@ const TableWrapper = ({ children }) => (
 );
 
 // Pre component to handle code blocks with proper detection
-const Pre = ({ children, ...props }) => {
+const Pre = ({ children, theme = DEFAULT_CODE_THEME, onThemeChange, ...props }) => {
     // If the pre contains a code element, extract it and render properly
     if (children && typeof children === 'object' && children.type === 'code') {
         const { className, children: codeChildren } = children.props || {};
-        return <Code className={className}>{codeChildren}</Code>;
+        return <Code className={className} theme={theme} onThemeChange={onThemeChange}>{codeChildren}</Code>;
     }
     
     // If children is just text, render with text block styling
     if (typeof children === 'string') {
-        return <Code>{children}</Code>;
+        return <Code theme={theme} onThemeChange={onThemeChange}>{children}</Code>;
     }
     
     // Fallback: render as styled pre block
     return (
-        <pre className="code-block code-block--text" {...props}>
+        <pre className={`code-block code-block--text code-block--${getCodeTheme(theme)}`} {...props}>
             {children}
         </pre>
     );
@@ -218,6 +365,7 @@ const ArticleDetail = () => {
     const [isLoading, setIsLoading] = useState(true);
     const [toc, setToc] = useState([]);
     const [activeId, setActiveId] = useState('');
+    const [codeTheme, setCodeTheme] = useState(() => getCodeTheme(window.localStorage.getItem(CODE_THEME_STORAGE_KEY)));
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -250,6 +398,12 @@ const ArticleDetail = () => {
             setToc(extractTOC(content));
         }
     }, [content]);
+
+    const handleCodeThemeChange = useCallback((theme) => {
+        const nextTheme = getCodeTheme(theme);
+        setCodeTheme(nextTheme);
+        window.localStorage.setItem(CODE_THEME_STORAGE_KEY, nextTheme);
+    }, []);
 
     // Track active heading with IntersectionObserver
     useEffect(() => {
@@ -298,6 +452,8 @@ const ArticleDetail = () => {
     const currentIndex = allArticles.findIndex(a => a.slug === slug);
     const prevArticle = currentIndex > 0 ? allArticles[currentIndex - 1] : null;
     const nextArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
+    const isWorkInProgress = article.wip || (!isLoading && isMarkdownWIP(content));
+    const linkedInShareUrl = getLinkedInShareUrl(article);
 
     return (
         <section className="article-detail">
@@ -353,6 +509,15 @@ const ArticleDetail = () => {
                         <span className="article-header__time">
                             <HiClock /> {article.readTime}
                         </span>
+                        <a
+                            className="article-header__share"
+                            href={linkedInShareUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label={`Share ${article.title} on LinkedIn`}
+                        >
+                            <FaLinkedinIn /> Share on LinkedIn
+                        </a>
                     </div>
                     <div className="article-header__tags">
                         {article.tags.map(tag => (
@@ -362,7 +527,7 @@ const ArticleDetail = () => {
                 </motion.header>
 
                 {/* Cover Image */}
-                {article.coverImage && (
+                {!isWorkInProgress && article.coverImage && (
                     <motion.div 
                         className="article-cover"
                         initial={{ opacity: 0, y: 20 }}
@@ -377,106 +542,109 @@ const ArticleDetail = () => {
                     </motion.div>
                 )}
 
-                {/* Article Reader */}
-                {!isLoading && content && <ArticleReader article={{ ...article, content }} />}
-
-                {/* Article body layout: content + TOC sidebar */}
-                <div className="article-layout">
-                {/* Article Content */}
-                <motion.article 
-                    className="article-content"
-                    initial={{ opacity: 0, y: 30 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                >
-                    {isLoading ? (
-                        <div className="article-loading">Loading...</div>
-                    ) : (
-                        <Markdown
-                            options={{
-                                overrides: {
-                                    code: {
-                                        component: Code
-                                    },
-                                    pre: {
-                                        component: Pre
-                                    },
-                                    table: {
-                                        component: TableWrapper
-                                    },
-                                    h2: { component: H2 },
-                                    h3: { component: H3 },
-                                    h4: { component: H4 },
-                                }
-                            }}
+                {isWorkInProgress ? (
+                    <WorkInProgressView article={article} markdown={content} />
+                ) : (
+                    <>
+                        {/* Article body layout: content + TOC sidebar */}
+                        <div className="article-layout">
+                        {/* Article Content */}
+                        <motion.article 
+                            className="article-content"
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.5, delay: 0.2 }}
                         >
-                            {content}
-                        </Markdown>
-                    )}
-                </motion.article>
+                            {isLoading ? (
+                                <div className="article-loading">Loading...</div>
+                            ) : (
+                                <Markdown
+                                    options={{
+                                        overrides: {
+                                            code: {
+                                                component: (props) => <Code {...props} theme={codeTheme} onThemeChange={handleCodeThemeChange} />
+                                            },
+                                            pre: {
+                                                component: (props) => <Pre {...props} theme={codeTheme} onThemeChange={handleCodeThemeChange} />
+                                            },
+                                            table: {
+                                                component: TableWrapper
+                                            },
+                                            h2: { component: H2 },
+                                            h3: { component: H3 },
+                                            h4: { component: H4 },
+                                        }
+                                    }}
+                                >
+                                    {content}
+                                </Markdown>
+                            )}
+                        </motion.article>
 
-                {/* Table of Contents */}
-                {toc.length > 0 && (
-                    <aside className="article-toc">
-                        <div className="article-toc__sticky">
-                            <p className="article-toc__label">On this page</p>
-                            <ul className="article-toc__list">
-                                {toc.map((item) => (
-                                    <li
-                                        key={item.id}
-                                        className={`article-toc__item article-toc__item--h${item.level}${activeId === item.id ? ' article-toc__item--active' : ''}`}
-                                    >
-                                        <a
-                                            href={`#${item.id}`}
-                                            onClick={(e) => {
-                                                e.preventDefault();
-                                                const el = document.getElementById(item.id);
-                                                if (el) {
-                                                    el.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                                                }
-                                            }}
-                                        >
-                                            {item.text}
-                                        </a>
-                                    </li>
-                                ))}
-                            </ul>
+                        {/* Table of Contents */}
+                        {toc.length > 0 && (
+                            <aside className="article-toc">
+                                <div className="article-toc__sticky">
+                                    <p className="article-toc__label">On this page</p>
+                                    <ul className="article-toc__list">
+                                        {toc.map((item) => (
+                                            <li
+                                                key={item.id}
+                                                className={`article-toc__item article-toc__item--h${item.level}${activeId === item.id ? ' article-toc__item--active' : ''}`}
+                                            >
+                                                <a
+                                                    href={`#${item.id}`}
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        const el = document.getElementById(item.id);
+                                                        if (el) {
+                                                            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                                                        }
+                                                    }}
+                                                >
+                                                    {item.text}
+                                                </a>
+                                            </li>
+                                        ))}
+                                    </ul>
+                                </div>
+                            </aside>
+                        )}
                         </div>
-                    </aside>
-                )}
-                </div>
 
-                {/* References Section */}
-                {article.references && article.references.length > 0 && (
-                    <motion.div
-                        className="article-references"
-                        initial={{ opacity: 0, y: 20 }}
-                        animate={{ opacity: 1, y: 0 }}
-                        transition={{ duration: 0.5, delay: 0.3 }}
-                    >
-                        <h3 className="article-references__title">References & Further Reading</h3>
-                        <ul className="article-references__list">
-                            {article.references.map((ref, index) => (
-                                <li key={index} className="article-references__item">
-                                    <a 
-                                        href={ref.url} 
-                                        target="_blank" 
-                                        rel="noopener noreferrer"
-                                        className="article-references__link"
-                                    >
-                                        <span className="article-references__number">{index + 1}</span>
-                                        <div className="article-references__content">
-                                            <span className="article-references__text">{ref.title}</span>
-                                            {ref.author && (
-                                                <span className="article-references__author">by {ref.author}</span>
-                                            )}
-                                        </div>
-                                        <HiExternalLink className="article-references__icon" />
-                                    </a>
-                                </li>
-                            ))}
-                        </ul>
-                    </motion.div>
+                        {/* References Section */}
+                        {article.references && article.references.length > 0 && (
+                            <motion.div
+                                className="article-references"
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ duration: 0.5, delay: 0.3 }}
+                            >
+                                <h3 className="article-references__title">References & Further Reading</h3>
+                                <ul className="article-references__list">
+                                    {article.references.map((ref, index) => (
+                                        <li key={index} className="article-references__item">
+                                            <a 
+                                                href={ref.url} 
+                                                target="_blank" 
+                                                rel="noopener noreferrer"
+                                                className="article-references__link"
+                                            >
+                                                <span className="article-references__number">{index + 1}</span>
+                                                <div className="article-references__content">
+                                                    <span className="article-references__text">{ref.title}</span>
+                                                    {ref.author && (
+                                                        <span className="article-references__author">by {ref.author}</span>
+                                                    )}
+                                                </div>
+                                                <HiExternalLink className="article-references__icon" />
+                                            </a>
+                                        </li>
+                                    ))}
+                                </ul>
+                            </motion.div>
+                        )}
+                    </>
                 )}
 
                 {/* Navigation */}

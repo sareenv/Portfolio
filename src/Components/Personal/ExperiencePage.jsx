@@ -3,7 +3,8 @@ import {Container, Row, Col, Image} from 'react-bootstrap'
 import ProgressJobPosition from '../Utilities/JobPositionProgress'
 import Contact from '../Contact/Contact'
 import ReactGA from 'react-ga'
-import { HiOutlineBriefcase, HiOutlineLocationMarker, HiOutlineCalendar } from 'react-icons/hi'
+import { HiOutlineBriefcase, HiOutlineLocationMarker } from 'react-icons/hi'
+import professionalExperienceDicebear from '../../Assets/professional-experience-dicebear.svg'
 import '../../Styles/experience.scss'
 
 const JobPosition = (props) => {
@@ -160,29 +161,23 @@ const ExperiencePage = () => {
         <div style={{ backgroundColor: '#F5F3EE' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
-                padding: '8rem 0 4rem',
-                position: 'relative',
-                overflow: 'hidden'
+                background: '#F5F3EE',
+                padding: '7rem 0 4rem'
             }}>
-                {/* Background decoration */}
-                <div style={{
-                    position: 'absolute',
-                    top: '20%',
-                    right: '10%',
-                    width: '400px',
-                    height: '400px',
-                    background: 'radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
-                    borderRadius: '50%',
-                    filter: 'blur(60px)',
-                    pointerEvents: 'none'
-                }} />
-                
                 <Container>
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
+                            <img
+                                src={professionalExperienceDicebear}
+                                alt=""
+                                aria-hidden="true"
+                                className="page-header-dicebear"
+                                loading="lazy"
+                                width="72"
+                                height="72"
+                            />
                             <p style={{
-                                color: '#F59E0B',
+                                color: '#B45309',
                                 fontSize: '0.85rem',
                                 fontWeight: 700,
                                 letterSpacing: '0.12em',
@@ -192,7 +187,7 @@ const ExperiencePage = () => {
                                 Career Journey
                             </p>
                             <h1 style={{
-                                color: '#F5F3EE',
+                                color: '#14213D',
                                 fontSize: 'clamp(2rem, 5vw, 3rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.5rem',
@@ -201,7 +196,7 @@ const ExperiencePage = () => {
                                 Professional Experience
                             </h1>
                             <p style={{
-                                color: 'rgba(245, 243, 238, 0.85)',
+                                color: '#334E68',
                                 fontSize: '1.15rem',
                                 lineHeight: 1.7,
                                 maxWidth: '600px',
@@ -413,6 +408,8 @@ const ExperiencePage = () => {
                 </Col>
             </Row>
 
+            {false && (
+            <>
             {/* Learning Events Section */}
             <Row style={{marginBottom: '2rem', marginTop: '4rem'}}>
                 <Col>
@@ -574,6 +571,8 @@ const ExperiencePage = () => {
                     </div>
                 </Col>
             </Row>
+            </>
+            )}
 
             <Row style={{
                 marginTop: '2rem', 

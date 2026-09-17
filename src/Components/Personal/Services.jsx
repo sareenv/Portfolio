@@ -2,8 +2,9 @@ import React, {useEffect} from 'react';
 import SkillsServices from './SkillsServices'
 import Footer from '../Footer'
 import {Row, Col, Container} from 'react-bootstrap'
-import { HiArrowRight, HiOutlineCalendar } from 'react-icons/hi'
+import { HiArrowRight } from 'react-icons/hi'
 import ReactGA from 'react-ga'
+import connectServicesDicebear from '../../Assets/connect-services-dicebear.svg'
 
 const Service = () => {
     
@@ -19,43 +20,33 @@ const Service = () => {
         <div style={{ backgroundColor: '#F5F3EE' }}>
             {/* Hero Section */}
             <div style={{
-                background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
-                padding: '8rem 0 6rem',
-                position: 'relative',
-                overflow: 'hidden'
+                background: '#F5F3EE',
+                padding: '7rem 0 4rem'
             }}>
-                {/* Background decoration */}
-                <div style={{
-                    position: 'absolute',
-                    top: '20%',
-                    right: '10%',
-                    width: '400px',
-                    height: '400px',
-                    background: 'radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
-                    borderRadius: '50%',
-                    filter: 'blur(60px)',
-                    pointerEvents: 'none'
-                }} />
-                
                 <Container>
                     <Row className="justify-content-center">
                         <Col xs={12} lg={8} style={{ textAlign: 'center' }}>
+                            <img
+                                src={connectServicesDicebear}
+                                alt=""
+                                aria-hidden="true"
+                                className="page-header-dicebear"
+                                loading="lazy"
+                                width="72"
+                                height="72"
+                            />
                             <p style={{
-                                color: '#F59E0B',
+                                color: '#B45309',
                                 fontSize: '0.85rem',
                                 fontWeight: 700,
                                 letterSpacing: '0.12em',
                                 textTransform: 'uppercase',
-                                marginBottom: '1rem',
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '0.5rem'
+                                marginBottom: '0.75rem'
                             }}>
-                                <HiOutlineCalendar size={16} />
                                 Let's Connect
                             </p>
                             <h1 style={{
-                                color: '#F5F3EE',
+                                color: '#14213D',
                                 fontSize: 'clamp(1.75rem, 5vw, 2.5rem)',
                                 fontWeight: 700,
                                 marginBottom: '1.5rem',
@@ -65,7 +56,7 @@ const Service = () => {
                                 Please book a slot from my calendar
                             </h1>
                             <p style={{
-                                color: 'rgba(245, 243, 238, 0.85)',
+                                color: '#334E68',
                                 fontSize: '1.1rem',
                                 lineHeight: 1.7,
                                 maxWidth: '550px',
@@ -81,23 +72,24 @@ const Service = () => {
                                     alignItems: 'center',
                                     gap: '0.5rem',
                                     padding: '1rem 2rem',
-                                    backgroundColor: '#f8f9fa',
-                                    color: '#1a1a2e',
+                                    backgroundColor: '#14213D',
+                                    color: '#F5F3EE',
                                     border: 'none',
                                     borderRadius: '8px',
                                     fontWeight: 600,
                                     fontSize: '1rem',
                                     cursor: 'pointer',
-                                    transition: 'all 0.3s ease',
-                                    boxShadow: '0 4px 20px rgba(0, 0, 0, 0.2)'
+                                    transition: 'all 0.3s ease'
                                 }}
                                 onMouseEnter={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#334E68';
                                     e.currentTarget.style.transform = 'translateY(-2px)';
-                                    e.currentTarget.style.boxShadow = '0 8px 30px rgba(0, 0, 0, 0.25)';
+                                    e.currentTarget.style.boxShadow = '0 8px 24px rgba(20,33,61,0.2)';
                                 }}
                                 onMouseLeave={(e) => {
+                                    e.currentTarget.style.backgroundColor = '#14213D';
                                     e.currentTarget.style.transform = 'translateY(0)';
-                                    e.currentTarget.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+                                    e.currentTarget.style.boxShadow = 'none';
                                 }}
                             >
                                 Book a Meeting

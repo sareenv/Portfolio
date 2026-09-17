@@ -3,6 +3,7 @@ import { Container, Row, Col } from 'react-bootstrap'
 import { FaLinkedin, FaGithub, FaEnvelope, FaMapMarkerAlt } from 'react-icons/fa'
 import { HiArrowRight } from 'react-icons/hi'
 import { PROJECTS_ENABLED } from '../constants'
+import appStoreDicebear from '../Assets/app-store-releases-dicebear.svg'
 
 import '../Styles/footer.scss'
 
@@ -259,70 +260,90 @@ const Footer = () => {
                         </div>
 
                         {/* Published Apps Callout */}
-                        <div style={{
+                        <div className="footer-app-card" style={{
                             backgroundColor: '#F5F3EE',
                             border: '1px solid #E2DED6',
                             borderRadius: '18px',
                             padding: '1.15rem 1.2rem',
                             boxShadow: '0 14px 34px rgba(0, 0, 0, 0.12)'
                         }}>
-                            <div style={{
-                                fontSize: '0.78rem',
-                                textTransform: 'uppercase',
-                                letterSpacing: '0.12em',
-                                color: '#B45309',
-                                fontWeight: 700,
-                                marginBottom: '0.55rem'
-                            }}>
-                                App Store Releases
+                            <div className="footer-app-card__content">
+                                <div style={{
+                                    fontSize: '0.78rem',
+                                    textTransform: 'uppercase',
+                                    letterSpacing: '0.12em',
+                                    color: '#B45309',
+                                    fontWeight: 700,
+                                    marginBottom: '0.55rem'
+                                }}>
+                                    App Store Releases
+                                </div>
+                                <h5 style={{
+                                    color: '#14213D',
+                                    fontSize: '1.05rem',
+                                    fontWeight: 700,
+                                    lineHeight: 1.25,
+                                    margin: '0 0 0.5rem'
+                                }}>
+                                    Published Applications
+                                </h5>
+                                <p style={{
+                                    fontSize: '0.9rem',
+                                    color: '#334E68',
+                                    margin: '0 0 0.9rem',
+                                    lineHeight: 1.55
+                                }}>
+                                    Explore my published iOS apps and services.
+                                </p>
+                                <a
+                                    href="#/apps"
+                                    className="footer-app-card__link"
+                                    style={{
+                                        display: 'inline-flex',
+                                        alignItems: 'center',
+                                        justifyContent: 'center',
+                                        gap: '0.45rem',
+                                        color: '#ffffff',
+                                        backgroundColor: '#14213D',
+                                        border: '1px solid #14213D',
+                                        borderRadius: '999px',
+                                        padding: '0.65rem 0.95rem',
+                                        fontSize: '0.85rem',
+                                        fontWeight: 600,
+                                        textDecoration: 'none',
+                                        transition: 'background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease'
+                                    }}
+                                    onMouseEnter={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#D97706';
+                                        e.currentTarget.style.borderColor = '#D97706';
+                                        e.currentTarget.style.transform = 'translateY(-1px)';
+                                    }}
+                                    onMouseLeave={(e) => {
+                                        e.currentTarget.style.backgroundColor = '#14213D';
+                                        e.currentTarget.style.borderColor = '#14213D';
+                                        e.currentTarget.style.transform = 'translateY(0)';
+                                    }}
+                                >
+                                    View published apps <HiArrowRight size={14} />
+                                </a>
                             </div>
-                            <h5 style={{
-                                color: '#14213D',
-                                fontSize: '1.05rem',
-                                fontWeight: 700,
-                                lineHeight: 1.25,
-                                margin: '0 0 0.5rem'
-                            }}>
-                                Published Applications
-                            </h5>
-                            <p style={{
-                                fontSize: '0.9rem',
-                                color: '#334E68',
-                                margin: '0 0 0.9rem',
-                                lineHeight: 1.55
-                            }}>
-                                Explore my published iOS apps and services.
-                            </p>
-                            <a
-                                href="#/apps"
+                            <img
+                                src={appStoreDicebear}
+                                alt=""
+                                aria-hidden="true"
+                                className="footer-app-card__asset"
+                                loading="lazy"
+                                width="54"
+                                height="54"
                                 style={{
-                                    display: 'inline-flex',
-                                    alignItems: 'center',
-                                    justifyContent: 'center',
-                                    gap: '0.45rem',
-                                    color: '#ffffff',
-                                    backgroundColor: '#14213D',
-                                    border: '1px solid #14213D',
-                                    borderRadius: '999px',
-                                    padding: '0.65rem 0.95rem',
-                                    fontSize: '0.85rem',
-                                    fontWeight: 600,
-                                    textDecoration: 'none',
-                                    transition: 'background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease'
+                                    width: '54px',
+                                    height: '54px',
+                                    borderRadius: '16px',
+                                    border: '1px solid #E2DED6',
+                                    backgroundColor: '#ffffff',
+                                    marginTop: '0.1rem'
                                 }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#D97706';
-                                    e.currentTarget.style.borderColor = '#D97706';
-                                    e.currentTarget.style.transform = 'translateY(-1px)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.backgroundColor = '#14213D';
-                                    e.currentTarget.style.borderColor = '#14213D';
-                                    e.currentTarget.style.transform = 'translateY(0)';
-                                }}
-                            >
-                                View published apps <HiArrowRight size={14} />
-                            </a>
+                            />
                         </div>
                     </Col>
                 </Row>

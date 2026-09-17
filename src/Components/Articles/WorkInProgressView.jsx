@@ -3,10 +3,10 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { HiArrowLeft, HiPencilAlt, HiSparkles } from 'react-icons/hi';
 import { extractOutline } from './wipDetection';
+import articleWritingRobotDicebear from '../../Assets/article-writing-robot-dicebear.svg';
 
 const WorkInProgressView = ({ article, markdown }) => {
     const outline = extractOutline(markdown).filter((item) => item.level > 1);
-    const avatarUrl = `https://api.dicebear.com/10.x/bottts/svg?seed=${encodeURIComponent(article.slug)}&backgroundColor=fef3c7,fde68a,fed7aa`;
 
     return (
         <motion.section
@@ -17,19 +17,20 @@ const WorkInProgressView = ({ article, markdown }) => {
         >
             <div className="article-wip__hero">
                 <div className="article-wip__avatar">
-                    <img src={avatarUrl} alt="Work in progress mascot" loading="lazy" />
+                    <img src={articleWritingRobotDicebear} alt="Work in progress robot" loading="lazy" />
                 </div>
                 <div className="article-wip__intro">
                     <span className="article-wip__badge">
-                        <HiPencilAlt /> Still writing this one
+                        <HiPencilAlt /> On my writing table
                     </span>
                     <h2 className="article-wip__title">
-                        This article is on my desk.
+                        This article is on my table to write.
                     </h2>
                     <p className="article-wip__message">
-                        I'm still drafting the full explanation, code samples, and diagrams for
-                        this piece. Here's the outline of what I'm planning to cover so you know
-                        what's coming.
+                        I'm actively working on this topic and shaping the explanation,
+                        examples, and diagrams. It is not available yet, but I will make
+                        it available soon. For now, here is the outline of what this article
+                        is going to cover.
                     </p>
                 </div>
             </div>

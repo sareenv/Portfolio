@@ -56,8 +56,6 @@ const ArticleReader = ({ article }) => {
                 .replace(/\s{2,}/g, ' ')
                 .trim();
             
-            // Add closing statement for summary
-            textToSpeak += ' Read the complete article to learn more details.';
         } else if (article.content) {
             // Fall back to processing full content if no summary
             console.log('No summary found, processing full content for TTS');
@@ -263,10 +261,10 @@ const ArticleReader = ({ article }) => {
                     <button
                         className="article-reader__btn article-reader__btn--play"
                         onClick={speak}
-                        title="Quick Summary"
+                        title="Listen"
                     >
                         <HiPlay />
-                        <span>Quick Summary</span>
+                        <span>Listen</span>
                     </button>
                 )}
 
@@ -302,10 +300,6 @@ const ArticleReader = ({ article }) => {
                         <span>Stop</span>
                     </button>
                 )}
-            </div>
-
-            <div className="article-reader__note">
-                Brief summary of the complete article. Read the complete article for full information.
             </div>
 
             {isPlaying && (

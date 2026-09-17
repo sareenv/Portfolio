@@ -601,9 +601,7 @@ const ProjectDetails = (props) => {
                                     display: 'flex',
                                     gap: '0.75rem',
                                     overflowX: 'auto',
-                                    paddingBottom: '0.75rem',
-                                    scrollbarWidth: 'thin',
-                                    scrollbarColor: '#00b4d8 #f0f2f5'
+                                    paddingBottom: '0.75rem'
                                 }}>
                                     {project.images.map((image, index) => (
                                         <div

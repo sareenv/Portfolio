@@ -15,25 +15,6 @@
     }
 }
 
-// Scrollbar styling for thumbnail gallery
-::-webkit-scrollbar {
-    height: 6px;
-}
-
-::-webkit-scrollbar-track {
-    background: #EAE6DF;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb {
-    background: #334E68;
-    border-radius: 10px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-    background: #D97706;
-}
-
 // Enhanced card hover effects
 .project-detail-card {
     transition: all 0.3s ease;

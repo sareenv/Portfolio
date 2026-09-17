@@ -1,4 +1,9 @@
 
+import awsCertificationLogo from '../../Assets/logos/aws-certified-cloud-practitioner.png';
+import dockerLogo from '../../Assets/logos/docker-logo.png';
+import graphqlLogo from '../../Assets/logos/graphql-logo.svg';
+import jiraLogo from '../../Assets/logos/jira-logo.svg';
+
 const ConcordiaDetails = {
     instition: 'Concordia University',
     qualification: 'MSc Software Engineering',
@@ -42,7 +47,7 @@ const AWSCertification = {
     instition: 'AWS Web Services',
     qualification: 'AWS Certified Cloud Practitioner',
     id: '3',
-    image: 'https://images.credly.com/size/220x220/images/00634f82-b07f-4bbd-a6bb-53de397fc3a6/image.png',
+    image: awsCertificationLogo,
     issued: "Aug 2022",
     credLink: 'https://www.credly.com/badges/a1241d89-d1e6-4f30-80da-e3f0bdc51e3f/public_url'
 }
@@ -52,7 +57,7 @@ const DockerCertification = {
     instition: 'Udemy e-Learning',
     qualification: 'Docker',
     id: '4',
-    image: 'https://1000logos.net/wp-content/uploads/2021/11/Docker-Logo-2013.png',
+    image: dockerLogo,
     credLink: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a.pdf', 
     issued: "Sep 2022",
     certificateID: "UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a"
@@ -62,7 +67,7 @@ const JiraCertification = {
     instition: 'Ceridian Dayforce Learning',
     qualification: 'Jira at Ceridian',
     id: '5',
-    image: 'https://cdn.icon-icons.com/icons2/3053/PNG/512/jira_cloud_macos_bigsur_icon_190051.png',
+    image: jiraLogo,
     credLink: "",
     issued: "Sept 2023",
     certificateID: ""
@@ -72,7 +77,7 @@ const GraphQLCertification = {
     instition: 'Udemy e-Learning',
     qualification: 'GraphQL',
     id: '6',
-    image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/1/17/GraphQL_Logo.svg/2048px-GraphQL_Logo.svg.png',
+    image: graphqlLogo,
     credLink: "",
     issued: "In Progress",
     certificateID: "UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a"
