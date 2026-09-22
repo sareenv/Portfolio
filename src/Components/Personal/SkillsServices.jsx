@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'react-bootstrap';
-import { FaMobileAlt, FaServer, FaDesktop, FaFlask, FaCloud, FaDatabase, FaRegQuestionCircle, FaChevronDown, FaChevronUp } from 'react-icons/fa';
+import { FaChevronDown, FaChevronUp } from 'react-icons/fa';
+
+const getDiceBearSectionAsset = (seed) => (
+    `https://api.dicebear.com/9.x/shapes/svg?seed=${encodeURIComponent(seed)}&backgroundColor=f5f3ee,e2ded6,fef3c7,dbeafe&radius=12`
+);
 
 const SkillsServices = () => {
     // Initialize all cards as expanded (0 through 6)
@@ -19,8 +23,7 @@ const SkillsServices = () => {
                 'CoreData - Persistent data storage solutions',
                 'Combine - Handling asynchronous programming'
             ],
-            icon: <FaMobileAlt />,
-            color: '#3498db'
+            asset: getDiceBearSectionAsset('connect-mobile-development')
         },
         {
             category: 'Backend Development',
@@ -32,8 +35,7 @@ const SkillsServices = () => {
                 'OAuth - Implementing OAuth authentication',
                 'GraphQL - Developing APIs with GraphQL'
             ],
-            icon: <FaServer />,
-            color: '#2ecc71'
+            asset: getDiceBearSectionAsset('connect-backend-development')
         },
         {
             category: 'Frontend Development',
@@ -43,8 +45,7 @@ const SkillsServices = () => {
                 'Context - React context for state management',
                 'Hooks - Using React hooks for local state and effects'
             ],
-            icon: <FaDesktop />,
-            color: '#61dafb'
+            asset: getDiceBearSectionAsset('connect-frontend-development')
         },
         {
             category: 'Automated Testing',
@@ -54,8 +55,7 @@ const SkillsServices = () => {
                 'Jest - JavaScript testing framework',
                 'XCTest - Testing framework for Swift and Objective-C'
             ],
-            icon: <FaFlask />,
-            color: '#e74c3c'
+            asset: getDiceBearSectionAsset('connect-automated-testing')
         },
         {
             category: 'DevOps',
@@ -66,8 +66,7 @@ const SkillsServices = () => {
                 'Kubernetes - Container orchestration and management',
                 'GitHub Actions - CI/CD automation with GitHub'
             ],
-            icon: <FaCloud />,
-            color: '#ff9800'
+            asset: getDiceBearSectionAsset('connect-devops')
         },
         {
             category: 'Datastores Management',
@@ -78,8 +77,7 @@ const SkillsServices = () => {
                 'MongoDB - NoSQL database for modern applications',
                 'DynamoDB - AWS NoSQL database service'
             ],
-            icon: <FaDatabase />,
-            color: '#9b59b6'
+            asset: getDiceBearSectionAsset('connect-datastores-management')
         },
         {
             category: 'Miscellaneous Skills',
@@ -90,8 +88,7 @@ const SkillsServices = () => {
                 'Zoho - Online office suite and SaaS applications',
                 'Git - Version control system'
             ],
-            icon: <FaRegQuestionCircle />,
-            color: '#34495e'
+            asset: getDiceBearSectionAsset('connect-miscellaneous-skills')
         }
     ];
     
@@ -166,18 +163,29 @@ const SkillsServices = () => {
                             >
                                 {/* Icon Header */}
                                 <div style={{
-                                    backgroundColor: skill.color,
-                                    padding: '2rem',
+                                    backgroundColor: '#F5F3EE',
+                                    padding: '1.25rem',
                                     display: 'flex',
                                     alignItems: 'center',
-                                    justifyContent: 'center'
+                                    justifyContent: 'center',
+                                    borderBottom: '1px solid #E2DED6'
                                 }}>
-                                    <div style={{
-                                        fontSize: '3rem',
-                                        color: 'white'
-                                    }}>
-                                        {skill.icon}
-                                    </div>
+                                    <img
+                                        src={skill.asset}
+                                        alt=""
+                                        aria-hidden="true"
+                                        loading="lazy"
+                                        width="96"
+                                        height="96"
+                                        style={{
+                                            width: '96px',
+                                            height: '96px',
+                                            borderRadius: '14px',
+                                            objectFit: 'cover',
+                                            border: '1px solid #E2DED6',
+                                            backgroundColor: '#ffffff'
+                                        }}
+                                    />
                                 </div>
 
                                 {/* Card Content */}
