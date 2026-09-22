@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory, useLocation } from 'react-router-dom';
 import { motion, AnimatePresence } from 'framer-motion';
 import Container from 'react-bootstrap/Container';
 import { articlesData, getAllArticles } from '../../constants/articles';
@@ -7,6 +7,14 @@ import { HiArrowRight, HiSearch, HiBookOpen, HiClock, HiChevronDown, HiChevronRi
 import technicalArticlesDicebear from '../../Assets/technical-articles-dicebear.svg';
 import articlesWritingTableDicebear from '../../Assets/articles-writing-table-dicebear.svg';
 import '../../Styles/articles.scss';
+
+const ARTICLE_TOPIC_PARAM = 'topic';
+
+const getValidTopicFilter = (search) => {
+    const topicId = new URLSearchParams(search).get(ARTICLE_TOPIC_PARAM);
+
+    return articlesData.some(topic => topic.id === topicId) ? topicId : 'all';
+};
 
 const WritingTable = ({ topics }) => {
     const upcomingArticles = topics.flatMap(topic =>
@@ -57,7 +65,10 @@ const WritingTable = ({ topics }) => {
 };
 
 const Articles = () => {
+    const history = useHistory();
+    const location = useLocation();
     const [searchTerm, setSearchTerm] = useState('');
+    const selectedTopic = useMemo(() => getValidTopicFilter(location.search), [location.search]);
     const [expandedTopics, setExpandedTopics] = useState(
         articlesData.reduce((acc, topic) => ({ ...acc, [topic.id]: true }), {})
     );
@@ -71,25 +82,35 @@ const Articles = () => {
         }, {})
     );
 
-    // Filter articles based on search
     const filteredData = useMemo(() => {
-        if (!searchTerm.trim()) return articlesData;
-
         const term = searchTerm.toLowerCase();
-        return articlesData.map(topic => ({
+        return articlesData.filter(topic => selectedTopic === 'all' || topic.id === selectedTopic).map(topic => ({
             ...topic,
             concepts: topic.concepts.map(concept => ({
                 ...concept,
-                articles: concept.articles.filter(article =>
-                    article.title.toLowerCase().includes(term) ||
-                    article.summary.toLowerCase().includes(term) ||
-                    article.tags.some(tag => tag.toLowerCase().includes(term))
-                )
+                articles: concept.articles.filter(article => {
+                    const matchesSearch = !term.trim() ||
+                        article.title.toLowerCase().includes(term) ||
+                        article.summary.toLowerCase().includes(term) ||
+                        article.tags.some(tag => tag.toLowerCase().includes(term));
+
+                    return matchesSearch;
+                })
             })).filter(concept => concept.articles.length > 0)
         })).filter(topic => topic.concepts.length > 0);
-    }, [searchTerm]);
+    }, [searchTerm, selectedTopic]);
 
-    const totalArticles = getAllArticles().length;
+    const allArticles = useMemo(() => getAllArticles(), []);
+    const totalArticles = allArticles.length;
+    const topicFilters = useMemo(() => [
+        { id: 'all', label: 'All', count: allArticles.length },
+        ...articlesData.map(topic => ({
+            id: topic.id,
+            label: topic.topic,
+            count: topic.concepts.reduce((total, concept) => total + concept.articles.length, 0)
+        }))
+    ], [allArticles]);
+    const hasActiveFilters = selectedTopic !== 'all';
 
     const toggleTopic = (topicId) => {
         setExpandedTopics(prev => ({ ...prev, [topicId]: !prev[topicId] }));
@@ -97,6 +118,26 @@ const Articles = () => {
 
     const toggleConcept = (conceptId) => {
         setExpandedConcepts(prev => ({ ...prev, [conceptId]: !prev[conceptId] }));
+    };
+
+    const updateTopicFilter = (topicId) => {
+        const params = new URLSearchParams(location.search);
+
+        if (topicId === 'all') {
+            params.delete(ARTICLE_TOPIC_PARAM);
+        } else {
+            params.set(ARTICLE_TOPIC_PARAM, topicId);
+        }
+
+        const search = params.toString();
+        history.push({
+            pathname: location.pathname,
+            search: search ? `?${search}` : ''
+        });
+    };
+
+    const clearFilters = () => {
+        updateTopicFilter('all');
     };
 
     return (
@@ -143,6 +184,36 @@ const Articles = () => {
                         onChange={(e) => setSearchTerm(e.target.value)}
                         className="articles-search__input"
                     />
+                </motion.div>
+
+                <motion.div
+                    className="articles-filter-bar"
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.5, delay: 0.15 }}
+                >
+                    <div className="articles-filter-bar__section">
+                        <span className="articles-filter-bar__label">Browse by topic</span>
+                        <div className="articles-filter-bar__chips" aria-label="Filter articles by topic">
+                            {topicFilters.map(topic => (
+                                <button
+                                    key={topic.id}
+                                    type="button"
+                                    className={`articles-filter-chip${selectedTopic === topic.id ? ' articles-filter-chip--active' : ''}`}
+                                    onClick={() => updateTopicFilter(topic.id)}
+                                    aria-pressed={selectedTopic === topic.id}
+                                >
+                                    <span>{topic.label}</span>
+                                    <span className="articles-filter-chip__count">{topic.count}</span>
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+                    {hasActiveFilters && (
+                        <button type="button" className="articles-filter-bar__clear" onClick={clearFilters}>
+                            Clear filters
+                        </button>
+                    )}
                 </motion.div>
 
                 {/* Topics Tree */}
@@ -268,7 +339,7 @@ const Articles = () => {
                         >
                             <HiSearch size={48} />
                             <h3>No articles found</h3>
-                            <p>Try adjusting your search terms</p>
+                            <p>Try adjusting your search terms or clearing filters</p>
                         </motion.div>
                     )}
                 </div>

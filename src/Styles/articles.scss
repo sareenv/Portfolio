@@ -54,7 +54,7 @@
 .articles-search {
     position: relative;
     max-width: 480px;
-    margin: 0 auto 3rem;
+    margin: 0 auto 1rem;
     
     &__icon {
         position: absolute;
@@ -84,6 +84,85 @@
         &::placeholder {
             color: #627D98;
         }
+    }
+}
+
+.articles-filter-bar {
+    max-width: 900px;
+    margin: 0 auto 2.5rem;
+    padding: 0;
+
+    &__label {
+        display: block;
+        color: #627D98;
+        font-size: 0.68rem;
+        font-weight: 800;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.45rem;
+    }
+
+    &__chips {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+    }
+
+    &__clear {
+        display: inline-flex;
+        margin-top: 0.65rem;
+        border: 0;
+        background: transparent;
+        color: #B45309;
+        font-size: 0.78rem;
+        font-weight: 800;
+        padding: 0.15rem 0;
+        cursor: pointer;
+
+        &:hover,
+        &:focus-visible {
+            color: #92400E;
+            text-decoration: underline;
+            outline: none;
+        }
+    }
+}
+
+.articles-filter-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    min-height: 30px;
+    padding: 0.34rem 0.65rem;
+    border: 1px solid #E2DED6;
+    border-radius: 999px;
+    background: transparent;
+    color: #334E68;
+    font-size: 0.76rem;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background 0.18s ease, border-color 0.18s ease, color 0.18s ease;
+
+    &:hover {
+        color: #14213D;
+        border-color: #FCD34D;
+    }
+
+    &:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(217, 119, 6, 0.18);
+    }
+
+    &--active {
+        color: #14213D;
+        background: #FEF3C7;
+        border-color: #FCD34D;
+    }
+
+    &__count {
+        color: #7A8696;
+        font-size: 0.68rem;
+        font-weight: 700;
     }
 }
 
@@ -472,7 +551,22 @@
     }
     
     .articles-search {
+        margin-bottom: 1rem;
+    }
+
+    .articles-filter-bar {
         margin-bottom: 2rem;
+        padding: 0;
+
+        &__chips {
+            gap: 0.45rem;
+        }
+    }
+
+    .articles-filter-chip {
+        min-height: 32px;
+        padding: 0.34rem 0.58rem;
+        font-size: 0.74rem;
     }
 
     .articles-writing-table {
