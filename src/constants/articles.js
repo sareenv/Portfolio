@@ -8,6 +8,10 @@
  * - articles: Individual articles within a concept
  */
 
+const getDiceBearCoverImage = (seed) => (
+    `https://api.dicebear.com/9.x/shapes/svg?seed=${encodeURIComponent(seed)}&backgroundColor=f5f3ee,e2ded6,fef3c7,dbeafe&radius=12`
+);
+
 export const articlesData = [
     {
         id: 'networking',
@@ -27,8 +31,8 @@ export const articlesData = [
                         summary: 'DNS is the phonebook of the internet, translating domain names like google.com into IP addresses that computers understand. When you type a URL, your request travels through six layers: browser cache, operating system cache, recursive resolver, root name servers, TLD servers, and finally the authoritative server that returns the IP address. The most important DNS record types are A records for IPv4 addresses, AAAA for IPv6, CNAME for domain aliases, MX for mail servers, and TXT for verification. Understanding DNS is essential for debugging network issues and optimizing website performance.',
                         readTime: '8 min read',
                         date: '2024-12-15',
-                        tags: ['DNS', 'Networking', 'Fundamentals'],
-                        coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80',
+                        tags: ['Recommended Read', 'DNS', 'Networking', 'Fundamentals'],
+                        coverImage: getDiceBearCoverImage('dns-basics'),
                         contentPath: '/articles/networking/dns/dns-basics.md',
                         references: [
                             {
@@ -51,7 +55,7 @@ export const articlesData = [
                         readTime: '6 min read',
                         date: '2024-12-20',
                         tags: ['DNS', 'Caching', 'Performance'],
-                        coverImage: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('dns-caching'),
                         contentPath: '/articles/networking/dns/dns-caching.md',
                         references: [
                             {
@@ -88,8 +92,8 @@ export const articlesData = [
                         summary: 'Load balancing distributes network traffic across multiple servers to improve availability, performance, and scalability. Common algorithms include round robin for simple sequential distribution, weighted round robin for servers with different capacities, least connections for routing to the least busy server, and IP hash for session persistence. Layer 4 load balancers work at the TCP level and are fast but limited, while Layer 7 load balancers operate at the HTTP level and can route based on URLs, headers, and cookies. Always implement health checks so the load balancer can detect and bypass failed servers automatically.',
                         readTime: '10 min read',
                         date: '2024-12-28',
-                        tags: ['System Design', 'Load Balancing', 'Scalability'],
-                        coverImage: 'https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200&q=80',
+                        tags: ['Recommended Read', 'System Design', 'Load Balancing', 'Scalability'],
+                        coverImage: getDiceBearCoverImage('load-balancing-intro'),
                         contentPath: '/articles/system-design/load-balancing/load-balancing-intro.md',
                         references: [
                             {
@@ -118,8 +122,8 @@ export const articlesData = [
                         summary: 'Caching stores frequently accessed data closer to where it is needed, significantly reducing database load and improving response times from seconds to milliseconds. The four main patterns are: cache-aside where the application manages the cache directly, write-through where data is written to both cache and database simultaneously, write-behind where cache is updated immediately but database writes happen asynchronously, and read-through where the cache automatically fetches from the database on a miss. For cache eviction, use LRU for general purpose, LFU for popular content, or TTL for time-sensitive data. Always monitor your cache hit rate and plan for cache failures with fallback strategies.',
                         readTime: '9 min read',
                         date: '2024-12-30',
-                        tags: ['Caching', 'Performance', 'System Design'],
-                        coverImage: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=1200&q=80',
+                        tags: ['Recommended Read', 'Caching', 'Performance', 'System Design'],
+                        coverImage: getDiceBearCoverImage('caching-patterns'),
                         contentPath: '/articles/system-design/caching/caching-patterns.md',
                         references: [
                             {
@@ -148,8 +152,8 @@ export const articlesData = [
                         summary: 'The CAP theorem addresses fundamental constraints of distributed systems during network partitions. When servers in different locations lose communication, systems must choose between consistency and availability. While banking systems require strong consistency and return error codes to prevent displaying incorrect balances, non-critical services like user profiles can safely prioritize availability over strict consistency.',
                         readTime: '3 min read',
                         date: '2026-09-07',
-                        tags: ['System Design', 'CAP Theorem', 'Distributed Systems'],
-                        coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80',
+                        tags: ['Recommended Read', 'System Design', 'CAP Theorem', 'Distributed Systems'],
+                        coverImage: getDiceBearCoverImage('cap-theorem-intro'),
                         contentPath: '/articles/system-design/cap-theorem/cap-theorem-intro.md',
                         references: []
                     }
@@ -168,7 +172,7 @@ export const articlesData = [
                         readTime: '5 min read',
                         date: '2026-09-07',
                         tags: ['System Design', 'SSO', 'OIDC', 'Security', 'Authentication'],
-                        coverImage: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('what-is-sso-and-oidc'),
                         wip: true,
                         contentPath: '/articles/system-design/sso-oidc/what-is-sso-and-oidc.md',
                         references: []
@@ -181,7 +185,7 @@ export const articlesData = [
                         readTime: '5 min read',
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'Authentication', 'Security'],
-                        coverImage: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('parties-in-oidc-flow'),
                         wip: true,
                         contentPath: '/articles/system-design/sso-oidc/parties-in-oidc-flow.md',
                         references: []
@@ -194,7 +198,7 @@ export const articlesData = [
                         readTime: '6 min read',
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'OAuth', 'Tokens', 'Security'],
-                        coverImage: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('kinds-of-tokens'),
                         wip: true,
                         contentPath: '/articles/system-design/sso-oidc/kinds-of-tokens.md',
                         references: []
@@ -207,7 +211,7 @@ export const articlesData = [
                         readTime: '5 min read',
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'OAuth', 'PKCE', 'Security'],
-                        coverImage: 'https://images.unsplash.com/photo-1510511459019-5dda7724fd87?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('pkce'),
                         wip: true,
                         contentPath: '/articles/system-design/sso-oidc/pkce.md',
                         references: []
@@ -220,7 +224,7 @@ export const articlesData = [
                         readTime: '6 min read',
                         date: '2026-09-07',
                         tags: ['System Design', 'OIDC', 'JWT', 'Tokens', 'Security'],
-                        coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('anatomy-of-tokens'),
                         wip: true,
                         contentPath: '/articles/system-design/sso-oidc/anatomy-of-tokens.md',
                         references: []
@@ -233,7 +237,7 @@ export const articlesData = [
                         readTime: '10 min read',
                         date: '2026-09-07',
                         tags: ['Go', 'System Design', 'OIDC', 'Backend', 'Security'],
-                        coverImage: 'https://images.unsplash.com/photo-1515879218367-8466d910aaa4?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('go-server-implementation'),
                         wip: true,
                         contentPath: '/articles/system-design/sso-oidc/go-server-implementation.md',
                         references: []
@@ -246,7 +250,7 @@ export const articlesData = [
                         readTime: '8 min read',
                         date: '2026-09-07',
                         tags: ['iOS', 'Swift', 'AppAuth', 'OIDC', 'Mobile'],
-                        coverImage: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('ios-appauth-implementation'),
                         wip: true,
                         contentPath: '/articles/system-design/sso-oidc/ios-appauth-implementation.md',
                         references: []
@@ -273,8 +277,8 @@ export const articlesData = [
                         summary: 'A deep dive into the SOLID design principles essential for clean architecture, exploring why they are needed, the consequences of ignoring them, and real-world Swift examples for each principle.',
                         readTime: '10 min read',
                         date: '2026-09-07',
-                        tags: ['Clean Architecture', 'SOLID', 'Swift', 'Design Patterns'],
-                        coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80',
+                        tags: ['Recommended Read', 'Clean Architecture', 'SOLID', 'Swift', 'Design Patterns'],
+                        coverImage: getDiceBearCoverImage('solid-principles'),
                         contentPath: '/articles/clean-architecture/solid-principles.md',
                         references: [
                             {
@@ -490,8 +494,8 @@ export const articlesData = [
                         summary: 'Swift uses Automatic Reference Counting or ARC to manage memory by tracking how many references point to each object. When the reference count drops to zero, the object is deallocated automatically. The main challenge is retain cycles, where two objects hold strong references to each other, preventing deallocation and causing memory leaks. Break retain cycles using weak references for optional relationships or unowned references when you know the reference will never be nil. For closures that capture self, use capture lists with weak or unowned to avoid creating retain cycles. Always use instruments and memory debugger tools to detect and fix leaks in your iOS applications.',
                         readTime: '10 min read',
                         date: '2024-01-15',
-                        tags: ['Swift', 'iOS', 'Memory Management', 'ARC'],
-                        coverImage: 'https://images.unsplash.com/photo-1621839673705-6617adf9e890?w=1200&q=80',
+                        tags: ['Recommended Read', 'Swift', 'iOS', 'Memory Management', 'ARC'],
+                        coverImage: getDiceBearCoverImage('memory-management-swift'),
                         contentPath: '/articles/swift/memory-management.md',
                         references: [
                             {
@@ -514,7 +518,7 @@ export const articlesData = [
                         readTime: '7 min read',
                         date: '2024-01-10',
                         tags: ['Swift', 'iOS', 'Optionals'],
-                        coverImage: 'https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('swift-optionals'),
                         contentPath: '/articles/swift/optionals.md',
                         references: [
                             {
@@ -536,8 +540,8 @@ export const articlesData = [
                         summary: 'Master the three cornerstone protocols of Swift data modeling. Learn how Equatable establishes logical value equivalence and automatic compiler synthesis, how Hashable satisfies the hashing invariant for O(1) Set and Dictionary lookups, and how Identifiable provides persistent entity identity for SwiftUI\'s view diffing engine.',
                         readTime: '9 min read',
                         date: '2024-02-05',
-                        tags: ['Swift', 'iOS', 'Protocols', 'SwiftUI', 'Foundation'],
-                        coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80',
+                        tags: ['Recommended Read', 'Swift', 'iOS', 'Protocols', 'SwiftUI', 'Foundation'],
+                        coverImage: getDiceBearCoverImage('equatable-hashable-identifiable'),
                         contentPath: '/articles/swift/equatable-hashable-identifiable.md',
                         references: [
                             {
@@ -565,7 +569,7 @@ export const articlesData = [
                         readTime: '9 min read',
                         date: '2024-02-15',
                         tags: ['Swift', 'iOS', 'Generics', 'Protocols', 'Architecture'],
-                        coverImage: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('associated-types'),
                         contentPath: '/articles/swift/associated-types.md',
                         references: [
                             {
@@ -595,7 +599,7 @@ export const articlesData = [
                         readTime: '10 min read',
                         date: '2024-03-05',
                         tags: ['Swift', 'iOS', 'Concurrency', 'Async/Await', 'Tasks', 'Executors'],
-                        coverImage: 'https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('modern-concurrency-basics'),
                         wip: true,
                         contentPath: '/articles/swift/modern-concurrency-basics.md',
                         references: [
@@ -614,7 +618,7 @@ export const articlesData = [
                         readTime: '6 min read',
                         date: '2024-03-10',
                         tags: ['Swift', 'iOS', 'Concurrency', 'Actors', 'Multithreading'],
-                        coverImage: 'https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('swift-actors'),
                         contentPath: '/articles/swift/actors.md',
                         references: [
                             {
@@ -644,7 +648,7 @@ export const articlesData = [
                         readTime: '8 min read',
                         date: '2024-01-20',
                         tags: ['SwiftUI', 'iOS', 'State Management'],
-                        coverImage: 'https://images.unsplash.com/photo-1587620962725-abab7fe55159?w=1200&q=80',
+                        coverImage: getDiceBearCoverImage('swiftui-state-management'),
                         contentPath: '/articles/swift/swiftui-state-management.md',
                         references: [
                             {
@@ -681,8 +685,8 @@ export const articlesData = [
                         summary: 'AI agents need memory to retain context across conversations and make more intelligent decisions based on past interactions. Unlike stateless functions that forget everything after each request, memory-enabled agents can recall previous conversations, learn user preferences, and reference solutions to similar problems. Memory is typically structured in tiers: user memory for persistent facts across all sessions, session memory for temporary context within a conversation, and repository memory for project-specific knowledge. This memory is injected into the system prompt at runtime, allowing the agent to behave as if it remembers you. Just like humans don\'t start from scratch when solving problems, AI agents with memory can leverage prior experience to provide better, more personalized assistance.',
                         readTime: '12 min read',
                         date: '2026-04-21',
-                        tags: ['AI', 'Agents', 'Memory', 'LLM', 'System Prompt'],
-                        coverImage: 'https://images.unsplash.com/photo-1677442136019-21780ecad995?w=1200&q=80',
+                        tags: ['Recommended Read', 'AI', 'Agents', 'Memory', 'LLM', 'System Prompt'],
+                        coverImage: getDiceBearCoverImage('agentic-memory-need'),
                         contentPath: '/articles/ai-ml/agentic-memory/agentic-memory-need.md',
                         references: [
                             {
