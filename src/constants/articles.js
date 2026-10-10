@@ -692,6 +692,7 @@ export const articlesData = [
                 description: 'A series about push notifications and the Apple Push Notification Service',
                 series: {
                     title: 'Push Notifications & APNS Series',
+                    coverImage: getDiceBearCoverImage('push-notifications-series'),
                     summary: 'A series about push notifications and the Apple Push Notification Service (APNS): the registration flow, the identity of your server, and how your server connects to APNS.'
                 },
                 articles: [

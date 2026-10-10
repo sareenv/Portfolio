@@ -1,0 +1,140 @@
+// Article Series Page Styles
+
+.article-series {
+    padding: 7rem 0 4rem;
+    min-height: 100vh;
+    background: #F5F3EE;
+
+    &--not-found {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    &__empty {
+        text-align: center;
+        color: #334E68;
+    }
+
+    &__back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: #B45309;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+    &__breadcrumb {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 0.4rem;
+        margin-bottom: 2rem;
+        font-size: 0.9rem;
+        color: #627D98;
+
+        a {
+            color: #334E68;
+            text-decoration: none;
+
+            &:hover {
+                color: #B45309;
+            }
+        }
+    }
+
+    &__header {
+        margin-bottom: 2rem;
+        max-width: 800px;
+    }
+
+    &__label {
+        display: inline-block;
+        color: #B45309;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        color: #14213D;
+        line-height: 1.3;
+        margin: 0 0 1rem;
+    }
+
+    &__summary {
+        font-size: 1.1rem;
+        color: #334E68;
+        line-height: 1.7;
+        margin: 0;
+    }
+
+    &__table-wrapper {
+        overflow-x: auto;
+        background: #FFFFFF;
+        border: 1px solid #E2DED6;
+        border-radius: 12px;
+    }
+
+    &__table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 0.95rem;
+
+        th,
+        td {
+            padding: 0.9rem 1.1rem;
+            text-align: left;
+            border-bottom: 1px solid #E2DED6;
+            color: #334E68;
+        }
+
+        th {
+            background: #FAF8F4;
+            color: #14213D;
+            font-weight: 700;
+            white-space: nowrap;
+        }
+
+        tbody tr:last-child td {
+            border-bottom: none;
+        }
+
+        td:first-child {
+            width: 4rem;
+            font-weight: 600;
+        }
+
+        td:nth-child(3),
+        td:nth-child(4) {
+            white-space: nowrap;
+        }
+
+        a {
+            color: #14213D;
+            font-weight: 600;
+            text-decoration: none;
+
+            &:hover {
+                color: #B45309;
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__badge {
+        display: inline-block;
+        margin-left: 0.6rem;
+        padding: 0.15rem 0.5rem;
+        border-radius: 999px;
+        background: #FEF3C7;
+        color: #B45309;
+        font-size: 0.72rem;
+        font-weight: 700;
+    }
+}

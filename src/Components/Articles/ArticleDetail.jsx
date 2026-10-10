@@ -51,11 +51,11 @@ const getLinkedInShareUrl = (article) => {
     return `https://www.linkedin.com/shareArticle?${params.toString()}`;
 };
 
-// Series share links to the first article of the series.
-const getLinkedInSeriesShareUrl = (series, firstArticleRoute) => {
+// Series share links to the series page, which lists every article in the series.
+const getLinkedInSeriesShareUrl = (series, seriesRoute) => {
     const params = new URLSearchParams({
         mini: 'true',
-        url: getPublicArticleUrl(firstArticleRoute),
+        url: getPublicArticleUrl(seriesRoute),
         title: series.title,
         summary: series.summary || '',
         source: 'sareenv'
@@ -592,8 +592,8 @@ const ArticleDetail = () => {
     const nextArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
     const isWorkInProgress = article.wip || (!isLoading && isMarkdownWIP(content));
     const linkedInShareUrl = getLinkedInShareUrl(article);
-    const linkedInSeriesShareUrl = concept.series && concept.articles.length > 0
-        ? getLinkedInSeriesShareUrl(concept.series, `/articles/${topicId}/${conceptId}/${concept.articles[0].slug}`)
+    const linkedInSeriesShareUrl = concept.series
+        ? getLinkedInSeriesShareUrl(concept.series, `/articles/${topicId}/${conceptId}`)
         : null;
 
     return (

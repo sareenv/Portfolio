@@ -10,6 +10,7 @@ import ProjectDetails from '../Components/Projects/ProjectDetails'
 import EducationPage from '../Components/Personal/Education/EducationPage'
 import ArticlesPage from '../Components/Articles/ArticlesPage'
 import ArticleDetailPage from '../Components/Articles/ArticleDetailPage'
+import ArticleSeriesPage from '../Components/Articles/ArticleSeriesPage'
 import PublishedAppsPage from '../Components/WorkProjects/PublishedAppsPage'
 import NotFound from '../Components/Utilities/NotFound'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -230,6 +231,7 @@ const MainRouter = () => {
                 <Route path="/" exact component={Home} />
                 {PROJECTS_ENABLED && <Route path="/projects" exact component={ProjectsPage} />}
                 <Route path="/articles" exact component={ArticlesPage} />
+                <Route path="/articles/:topicId/:conceptId" exact component={ArticleSeriesPage} />
                 <Route path="/articles/:topicId/:conceptId/:slug" exact component={ArticleDetailPage} />
                 <Route path="/experience" exact component={ExperiencePage} />
                 <Route path="/contact" exact component={ContactPage} />
