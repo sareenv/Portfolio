@@ -47,6 +47,7 @@ export const articlesData = [
                             }
                         ]
                     },
+                    /*
                     {
                         id: 'dns-caching',
                         title: 'DNS Caching and TTL',
@@ -70,6 +71,7 @@ export const articlesData = [
                             }
                         ]
                     }
+                    */
                 ]
             }
         ]
@@ -662,6 +664,60 @@ export const articlesData = [
                                 author: 'Hacking with Swift'
                             }
                         ]
+                    }
+                ]
+            },
+            {
+                id: 'swift-networking',
+                name: 'Networking in Swift',
+                description: 'Streaming and real-time communication between Swift apps and servers',
+                articles: [
+                    {
+                        id: 'server-sent-events',
+                        title: 'Server-Sent Events in SwiftUI with async/await',
+                        slug: 'server-sent-events',
+                        summary: 'Learn how to receive a continuous stream of events from a server in SwiftUI. This article explains the SSE format, how to build an SSEClient with URLSession, how to use a cancellable Task in an @Observable view model, and how to write a small Go server with Gin that sends the events.',
+                        readTime: '8 min read',
+                        date: '2026-10-10',
+                        tags: ['Swift', 'iOS', 'SwiftUI', 'Networking', 'SSE', 'Async/Await', 'Go'],
+                        coverImage: getDiceBearCoverImage('server-sent-events'),
+                        contentPath: '/articles/swift/server-sent-events.md',
+                        references: []
+                    }
+                ]
+            },
+            {
+                id: 'push-notifications',
+                name: 'Push Notifications & APNS',
+                description: 'A series about push notifications and the Apple Push Notification Service',
+                series: {
+                    title: 'Push Notifications & APNS Series',
+                    summary: 'A series about push notifications and the Apple Push Notification Service (APNS): the registration flow, the identity of your server, and how your server connects to APNS.'
+                },
+                articles: [
+                    {
+                        id: 'apns-registration-flow',
+                        title: 'Push Notifications Series, Part 1: APNS and the Registration Flow',
+                        slug: 'apns-registration-flow',
+                        summary: 'The first article in the push notifications series. It explains the high-level registration flow of APNS: the iPhone asks Apple for a device token, Apple assigns it, the iPhone sends it to your server, and the server saves it in the database. It also shows how the iPhone finds out if getting the token passed or failed.',
+                        readTime: '4 min read',
+                        date: '2026-10-10',
+                        tags: ['Swift', 'iOS', 'Push Notifications', 'APNS', 'Series'],
+                        coverImage: getDiceBearCoverImage('apns-registration-flow'),
+                        contentPath: '/articles/swift/push-notifications/apns-registration-flow.md',
+                        references: []
+                    },
+                    {
+                        id: 'apns-identity-and-server-connection',
+                        title: 'Push Notifications Series, Part 2: Identity and How Your Server Connects to APNS',
+                        slug: 'apns-identity-and-server-connection',
+                        summary: 'The second article in the push notifications series. It explains why APNS needs to know the identity of your server, why you should use a .p8 key and not a .p12 certificate, and how your server proves that it owns the key by signing a JWT with a header, claims, and a signature.',
+                        readTime: '5 min read',
+                        date: '2026-10-10',
+                        tags: ['Swift', 'iOS', 'Push Notifications', 'APNS', 'Security', 'JWT', 'Series'],
+                        coverImage: getDiceBearCoverImage('apns-identity-and-server-connection'),
+                        contentPath: '/articles/swift/push-notifications/apns-identity-and-server-connection.md',
+                        references: []
                     }
                 ]
             }

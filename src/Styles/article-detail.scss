@@ -826,6 +826,10 @@
         border-radius: 8px;
         margin: 1.5rem 0;
     }
+
+    img.article-image-zoomable {
+        cursor: zoom-in;
+    }
     
     // Mobile responsive improvements
     @media (max-width: 768px) {
@@ -1193,5 +1197,104 @@
     
     .article-references {
         margin-top: 2rem;
+    }
+}
+
+// Image lightbox (rendered in a portal on document.body)
+.image-lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    &__backdrop {
+        position: absolute;
+        inset: 0;
+        background: rgba(20, 33, 61, 0.88);
+    }
+
+    &__toolbar {
+        position: absolute;
+        top: 1rem;
+        right: 1rem;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.4rem 0.6rem;
+        background: #ffffff;
+        border-radius: 10px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+
+        button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 2.25rem;
+            height: 2.25rem;
+            padding: 0 0.6rem;
+            border: 1px solid #E2DED6;
+            border-radius: 8px;
+            background: #F5F3EE;
+            color: #14213D;
+            font-size: 0.9rem;
+            font-weight: 600;
+            cursor: pointer;
+
+            &:hover {
+                background: #FEF3C7;
+            }
+        }
+    }
+
+    &__level {
+        min-width: 3.25rem;
+        text-align: center;
+        color: #334E68;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+
+    &__stage {
+        position: relative;
+        z-index: 1;
+        width: 100%;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        cursor: grab;
+        touch-action: none;
+        user-select: none;
+
+        &--dragging {
+            cursor: grabbing;
+        }
+
+        img {
+            max-width: 92vw;
+            max-height: 86vh;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 16px 48px rgba(0, 0, 0, 0.35);
+            transform-origin: center center;
+            pointer-events: none;
+        }
+    }
+
+    &__hint {
+        position: absolute;
+        bottom: 0.75rem;
+        z-index: 2;
+        margin: 0;
+        padding: 0 1rem;
+        color: #E2DED6;
+        font-size: 0.8rem;
+        text-align: center;
+        pointer-events: none;
     }
 }

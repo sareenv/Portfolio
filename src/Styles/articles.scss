@@ -48,6 +48,15 @@
         line-height: 1.7;
         margin: 0 auto;
     }
+
+    &__note {
+        color: #627D98;
+        font-size: 0.9rem;
+        font-style: italic;
+        max-width: 550px;
+        line-height: 1.6;
+        margin: 0.75rem auto 0;
+    }
 }
 
 // Search

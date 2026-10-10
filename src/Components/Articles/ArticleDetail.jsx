@@ -1,4 +1,5 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState, useCallback, useRef } from 'react';
+import { createPortal } from 'react-dom';
 import { useParams, Link, useHistory } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import Container from 'react-bootstrap/Container';
@@ -6,7 +7,7 @@ import Markdown from 'markdown-to-jsx';
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter';
 import { oneLight, vscDarkPlus } from 'react-syntax-highlighter/dist/esm/styles/prism';
 import { getArticleBySlug, getTopicById, getConceptById, getAllArticles } from '../../constants/articles';
-import { HiArrowLeft, HiClock, HiCalendar, HiChevronRight, HiBookOpen, HiExternalLink } from 'react-icons/hi';
+import { HiArrowLeft, HiClock, HiCalendar, HiChevronRight, HiBookOpen, HiExternalLink, HiPlus, HiMinus, HiX } from 'react-icons/hi';
 import { FaLinkedinIn } from 'react-icons/fa';
 import WorkInProgressView from './WorkInProgressView';
 import { isMarkdownWIP } from './wipDetection';
@@ -30,10 +31,10 @@ const CODE_THEMES = {
 
 const getCodeTheme = (theme) => CODE_THEMES[theme] ? theme : DEFAULT_CODE_THEME;
 
-const getPublicArticleUrl = () => {
+const getPublicArticleUrl = (route) => {
     const { hostname, origin, pathname, hash } = window.location;
     const siteOrigin = hostname === 'localhost' || hostname === '127.0.0.1' ? PUBLIC_SITE_ORIGIN : origin;
-    const hashRoute = hash.startsWith('#/') ? hash.slice(1) : hash;
+    const hashRoute = route || (hash.startsWith('#/') ? hash.slice(1) : hash);
     const params = new URLSearchParams({ [ARTICLE_SHARE_PARAM]: hashRoute });
     return `${siteOrigin}${pathname}?${params.toString()}`;
 };
@@ -44,6 +45,19 @@ const getLinkedInShareUrl = (article) => {
         url: getPublicArticleUrl(),
         title: article.title,
         summary: article.summary || '',
+        source: 'sareenv'
+    });
+
+    return `https://www.linkedin.com/shareArticle?${params.toString()}`;
+};
+
+// Series share links to the first article of the series.
+const getLinkedInSeriesShareUrl = (series, firstArticleRoute) => {
+    const params = new URLSearchParams({
+        mini: 'true',
+        url: getPublicArticleUrl(firstArticleRoute),
+        title: series.title,
+        summary: series.summary || '',
         source: 'sareenv'
     });
 
@@ -320,6 +334,130 @@ const Pre = ({ children, theme = DEFAULT_CODE_THEME, onThemeChange, ...props }) 
     );
 };
 
+const MIN_ZOOM = 0.5;
+const MAX_ZOOM = 6;
+const ZOOM_STEP = 0.5;
+
+const clampZoom = (value) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, value));
+
+const ImageLightbox = ({ src, alt, onClose }) => {
+    const [scale, setScale] = useState(1);
+    const [offset, setOffset] = useState({ x: 0, y: 0 });
+    const [isDragging, setIsDragging] = useState(false);
+    const dragStart = useRef(null);
+
+    const resetView = useCallback(() => {
+        setScale(1);
+        setOffset({ x: 0, y: 0 });
+    }, []);
+
+    const zoomBy = useCallback((delta) => {
+        setScale(prev => clampZoom(prev + delta));
+    }, []);
+
+    useEffect(() => {
+        const handleKeyDown = (event) => {
+            if (event.key === 'Escape') onClose();
+            if (event.key === '+' || event.key === '=') zoomBy(ZOOM_STEP);
+            if (event.key === '-') zoomBy(-ZOOM_STEP);
+            if (event.key === '0') resetView();
+        };
+        const previousOverflow = document.body.style.overflow;
+        document.body.style.overflow = 'hidden';
+        window.addEventListener('keydown', handleKeyDown);
+        return () => {
+            document.body.style.overflow = previousOverflow;
+            window.removeEventListener('keydown', handleKeyDown);
+        };
+    }, [onClose, zoomBy, resetView]);
+
+    const handlePointerDown = (event) => {
+        event.currentTarget.setPointerCapture(event.pointerId);
+        dragStart.current = { x: event.clientX - offset.x, y: event.clientY - offset.y };
+        setIsDragging(true);
+    };
+
+    const handlePointerMove = (event) => {
+        if (!dragStart.current) return;
+        setOffset({ x: event.clientX - dragStart.current.x, y: event.clientY - dragStart.current.y });
+    };
+
+    const handlePointerUp = () => {
+        dragStart.current = null;
+        setIsDragging(false);
+    };
+
+    const handleWheel = (event) => {
+        zoomBy(event.deltaY < 0 ? ZOOM_STEP / 2 : -ZOOM_STEP / 2);
+    };
+
+    const handleDoubleClick = () => {
+        if (scale === 1) {
+            setScale(2.5);
+        } else {
+            resetView();
+        }
+    };
+
+    return createPortal(
+        <div className="image-lightbox" role="dialog" aria-modal="true" aria-label={alt || 'Image preview'}>
+            <div className="image-lightbox__backdrop" onClick={onClose} />
+            <div className="image-lightbox__toolbar">
+                <button type="button" onClick={() => zoomBy(-ZOOM_STEP)} aria-label="Zoom out"><HiMinus /></button>
+                <span className="image-lightbox__level">{Math.round(scale * 100)}%</span>
+                <button type="button" onClick={() => zoomBy(ZOOM_STEP)} aria-label="Zoom in"><HiPlus /></button>
+                <button type="button" onClick={resetView}>Reset</button>
+                <button type="button" onClick={onClose} aria-label="Close image"><HiX /></button>
+            </div>
+            <div
+                className={`image-lightbox__stage${isDragging ? ' image-lightbox__stage--dragging' : ''}`}
+                onPointerDown={handlePointerDown}
+                onPointerMove={handlePointerMove}
+                onPointerUp={handlePointerUp}
+                onPointerCancel={handlePointerUp}
+                onWheel={handleWheel}
+                onDoubleClick={handleDoubleClick}
+            >
+                <img
+                    src={src}
+                    alt={alt}
+                    draggable={false}
+                    style={{ transform: `translate(${offset.x}px, ${offset.y}px) scale(${scale})` }}
+                />
+            </div>
+            <p className="image-lightbox__hint">Scroll or use +/- to zoom, drag to move, double-click to toggle zoom, Esc to close</p>
+        </div>,
+        document.body
+    );
+};
+
+const ZoomableImage = ({ src, alt }) => {
+    const [isOpen, setIsOpen] = useState(false);
+    const close = useCallback(() => setIsOpen(false), []);
+
+    return (
+        <>
+            <img
+                src={src}
+                alt={alt}
+                loading="lazy"
+                className="article-image-zoomable"
+                role="button"
+                tabIndex={0}
+                title="Click to zoom"
+                onClick={() => setIsOpen(true)}
+                onKeyDown={(event) => {
+                    if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault();
+                        setIsOpen(true);
+                    }
+                }}
+            />
+            {isOpen && <ImageLightbox src={src} alt={alt} onClose={close} />}
+        </>
+    );
+};
+
 // Utility: slugify heading text to an id
 const slugify = (text) =>
     text
@@ -454,6 +592,9 @@ const ArticleDetail = () => {
     const nextArticle = currentIndex < allArticles.length - 1 ? allArticles[currentIndex + 1] : null;
     const isWorkInProgress = article.wip || (!isLoading && isMarkdownWIP(content));
     const linkedInShareUrl = getLinkedInShareUrl(article);
+    const linkedInSeriesShareUrl = concept.series && concept.articles.length > 0
+        ? getLinkedInSeriesShareUrl(concept.series, `/articles/${topicId}/${conceptId}/${concept.articles[0].slug}`)
+        : null;
 
     return (
         <section className="article-detail">
@@ -518,6 +659,17 @@ const ArticleDetail = () => {
                         >
                             <FaLinkedinIn /> Share on LinkedIn
                         </a>
+                        {linkedInSeriesShareUrl && (
+                            <a
+                                className="article-header__share"
+                                href={linkedInSeriesShareUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                aria-label={`Share the ${concept.series.title} on LinkedIn`}
+                            >
+                                <FaLinkedinIn /> Share the series on LinkedIn
+                            </a>
+                        )}
                     </div>
                     <div className="article-header__tags">
                         {article.tags.map(tag => (
@@ -570,6 +722,7 @@ const ArticleDetail = () => {
                                             table: {
                                                 component: TableWrapper
                                             },
+                                            img: { component: ZoomableImage },
                                             h2: { component: H2 },
                                             h3: { component: H3 },
                                             h4: { component: H4 },

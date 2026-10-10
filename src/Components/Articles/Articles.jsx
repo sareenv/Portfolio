@@ -165,6 +165,9 @@ const Articles = () => {
                         Deep dives into technical concepts, best practices, and learnings.
                         Currently {totalArticles} articles across {articlesData.length} topics.
                     </p>
+                    <p className="articles-header__note">
+                        All content is written by me. I only use tools to check and refine the writing.
+                    </p>
                 </motion.div>
 
                 <WritingTable topics={articlesData} />
