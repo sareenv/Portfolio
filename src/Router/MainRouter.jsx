@@ -14,7 +14,7 @@ import ArticleSeriesPage from '../Components/Articles/ArticleSeriesPage'
 import PublishedAppsPage from '../Components/WorkProjects/PublishedAppsPage'
 import NotFound from '../Components/Utilities/NotFound'
 import { motion, AnimatePresence } from 'framer-motion'
-import { HiMenuAlt3, HiX } from 'react-icons/hi'
+import { HiMenu, HiX } from 'react-icons/hi'
 import { PROJECTS_ENABLED } from '../constants'
 
 // CSS Imports
@@ -151,6 +151,7 @@ const Navigation = () => {
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
                     aria-label="Toggle navigation menu"
+                    aria-expanded={isMobileMenuOpen}
                 >
                     <AnimatePresence mode="wait">
                         {isMobileMenuOpen ? (
@@ -171,7 +172,7 @@ const Navigation = () => {
                                 exit={{ rotate: -90, opacity: 0 }}
                                 transition={{ duration: 0.2 }}
                             >
-                                <HiMenuAlt3 size={24} />
+                                <HiMenu size={24} />
                             </motion.div>
                         )}
                     </AnimatePresence>

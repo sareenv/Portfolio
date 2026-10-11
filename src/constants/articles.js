@@ -114,7 +114,7 @@ export const articlesData = [
             },
             {
                 id: 'caching',
-                name: 'Caching Strategies',
+                name: 'Caching',
                 description: 'Improving performance through intelligent caching',
                 articles: [
                     {
