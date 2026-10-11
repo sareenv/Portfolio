@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { HiArrowLeft, HiPencilAlt, HiSparkles } from 'react-icons/hi';
 import { extractOutline } from './wipDetection';
-import articleWritingRobotDicebear from '../../Assets/article-writing-robot-dicebear.svg';
 
 const WorkInProgressView = ({ article, markdown }) => {
     const outline = extractOutline(markdown).filter((item) => item.level > 1);
@@ -15,10 +14,16 @@ const WorkInProgressView = ({ article, markdown }) => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
         >
+            <div className="article-wip__illustration">
+                <img
+                    src="/Assets/articles/WIP.png"
+                    alt="Writer preparing an article with notes and a laptop"
+                    width={2802}
+                    height={2068}
+                    loading="lazy"
+                />
+            </div>
             <div className="article-wip__hero">
-                <div className="article-wip__avatar">
-                    <img src={articleWritingRobotDicebear} alt="Work in progress robot" loading="lazy" />
-                </div>
                 <div className="article-wip__intro">
                     <span className="article-wip__badge">
                         <HiPencilAlt /> On my writing table
