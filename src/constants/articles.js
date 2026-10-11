@@ -118,6 +118,29 @@ export const articlesData = [
                 description: 'Improving performance through intelligent caching',
                 articles: [
                     {
+                        id: 'redis-introduction-and-commands',
+                        title: 'Redis Introduction and Essential Commands',
+                        slug: 'redis-introduction-and-commands',
+                        summary: 'Redis is an in-memory key-value data store commonly used for caching, sessions, rate limiting, queues, and real-time data. This article introduces Redis data structures, installation, redis-cli, server info commands, key commands like SET, GET, DEL, UNLINK, EXISTS, and TYPE, expiration commands like SETEX, TTL, EXPIRE, PSETEX, PTTL, and PERSIST, plus key naming, pattern lookup, SCAN, and shutdown behavior.',
+                        readTime: '6 min read',
+                        date: '2026-10-11',
+                        tags: ['Recommended Read', 'Redis', 'Caching', 'Commands'],
+                        coverImage: getDiceBearCoverImage('redis-introduction-and-commands'),
+                        contentPath: '/articles/system-design/caching/redis-introduction-and-commands.md',
+                        references: [
+                            {
+                                title: 'Redis commands',
+                                url: 'https://redis.io/docs/latest/commands/',
+                                author: 'Redis'
+                            },
+                            {
+                                title: 'Redis data types',
+                                url: 'https://redis.io/docs/latest/develop/data-types/',
+                                author: 'Redis'
+                            }
+                        ]
+                    },
+                    {
                         id: 'caching-patterns',
                         title: 'Common Caching Patterns',
                         slug: 'caching-patterns',
