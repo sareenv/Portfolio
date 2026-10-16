@@ -612,6 +612,43 @@ export const articlesData = [
                 ]
             },
             {
+                id: 'closures',
+                name: 'Closures',
+                description: 'Learning Swift closures, from the basics to practical patterns',
+                articles: [
+                    {
+                        id: 'closures-basics',
+                        title: 'Swift Closures: The Basics',
+                        slug: 'closures-in-swift',
+                        summary: 'Learn how closures work in Swift and how to pass them to functions, use them with arrays, and write shorter code with trailing closures. This guide uses clear examples and also explains when to keep logic in a named function.',
+                        readTime: '8 min read',
+                        date: '2026-10-13',
+                        tags: ['Swift', 'iOS', 'Closures', 'Functions'],
+                        coverImage: getDiceBearCoverImage('closures-in-swift'),
+                        contentPath: '/articles/swift/closures.md',
+                        references: [
+                            {
+                                title: 'Closures',
+                                url: 'https://docs.swift.org/swift-book/documentation/the-swift-programming-language/closures/',
+                                author: 'The Swift Programming Language'
+                            }
+                        ]
+                    },
+                    {
+                        id: 'closure-capture-values',
+                        title: 'Understanding How Closures Capture Values in Swift',
+                        slug: 'closure-capture-values',
+                        summary: 'See how a closure keeps access to a captured variable after a function returns, and how two closures can share the same variable.',
+                        readTime: '4 min read',
+                        date: '2026-10-16',
+                        tags: ['Swift', 'iOS', 'Closures', 'Captured Variables'],
+                        coverImage: getDiceBearCoverImage('closure-capture-values'),
+                        contentPath: '/articles/swift/closures/closure-capture-values.md',
+                        references: []
+                    }
+                ]
+            },
+            {
                 id: 'swift-concurrency',
                 name: 'Swift Concurrency',
                 description: 'Modern asynchronous programming, tasks, actors, and thread safety in Swift',
