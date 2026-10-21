@@ -6,10 +6,11 @@ import Footer from '../Footer';
 import {downloadProject, clearCache} from '../../Services/Projects'
 import {Link} from 'react-router-dom'
 import '../../Styles/base.scss'
+import '../../Styles/projects-page.scss'
 import Project from "./Projects"
 import ErrorState from '../Utilities/ErrorState'
 import ReactGA from 'react-ga'
-import { HiArrowRight, HiOutlineStar } from 'react-icons/hi'
+import { HiArrowRight } from 'react-icons/hi'
 
 const ProjectsPage = () => {
     const [featuredProject, setfeaturedProject] = useState(null)
@@ -97,177 +98,47 @@ const ProjectsPage = () => {
                 </Container>
             )}
 
-            {/* Featured Project Hero Section */}
+            {/* Featured Project */}
             {visibility === true && featuredProject && (
-                <div style={{
-                    background: 'linear-gradient(160deg, #14213D 0%, #334E68 100%)',
-                    paddingTop: '7rem',
-                    paddingBottom: '5rem',
-                    position: 'relative',
-                    overflow: 'hidden'
-                }}>
-                    {/* Background decoration */}
-                    <div style={{
-                        position: 'absolute',
-                        top: '-50%',
-                        right: '-10%',
-                        width: '600px',
-                        height: '600px',
-                        borderRadius: '50%',
-                        background: 'radial-gradient(circle, rgba(217, 119, 6, 0.12) 0%, transparent 70%)',
-                        pointerEvents: 'none'
-                    }} />
-                    <div style={{
-                        position: 'absolute',
-                        bottom: '-30%',
-                        left: '-5%',
-                        width: '400px',
-                        height: '400px',
-                        borderRadius: '50%',
-                        background: 'radial-gradient(circle, rgba(217, 119, 6, 0.08) 0%, transparent 70%)',
-                        pointerEvents: 'none'
-                    }} />
-
+                <section className="featured-project">
                     <Container>
-                        {/* Featured Label */}
-                        <div style={{
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem',
-                            marginBottom: '1.5rem'
-                        }}>
-                            <HiOutlineStar size={16} color="#F59E0B" />
-                            <span style={{
-                                color: '#F59E0B',
-                                fontSize: '0.85rem',
-                                fontWeight: 700,
-                                letterSpacing: '0.12em',
-                                textTransform: 'uppercase'
-                            }}>
-                                Featured Project
-                            </span>
-                        </div>
+                        <div className="featured-project__inner">
+                            <Row className="featured-project__row">
+                                <Col lg={6} md={12} className="featured-project__text">
+                                    <span className="featured-project__label">Featured Project</span>
+                                    <h1 className="featured-project__title">
+                                        {featuredProject.projectName}
+                                    </h1>
+                                    <p className="featured-project__description">
+                                        {featuredProject.description}
+                                    </p>
+                                    {featuredProject.tags && featuredProject.tags.length > 0 && (
+                                        <p className="featured-project__meta">
+                                            {featuredProject.tags.slice(0, 4).join(' · ')}
+                                        </p>
+                                    )}
+                                    <Link
+                                        to={"project_details/" + featuredProject.id}
+                                        className="featured-project__link"
+                                    >
+                                        View Project Details <HiArrowRight size={16} />
+                                    </Link>
+                                </Col>
 
-                        <Row style={{ alignItems: 'center' }}>
-                            <Col lg={6} md={12} style={{ marginBottom: '2rem' }}>
-                                {/* Project Info */}
-                                <h1 style={{
-                                    color: 'white',
-                                    fontWeight: 800,
-                                    fontSize: 'clamp(2rem, 5vw, 3.5rem)',
-                                    marginBottom: '1.5rem',
-                                    lineHeight: 1.2
-                                }}>
-                                    {featuredProject.projectName}
-                                </h1>
-                                <p style={{
-                                    color: 'rgba(255,255,255,0.75)',
-                                    fontSize: '1.15rem',
-                                    lineHeight: 1.8,
-                                    marginBottom: '2rem',
-                                    maxWidth: '500px'
-                                }}>
-                                    {featuredProject.description}
-                                </p>
-
-                                {/* Tags */}
-                                {featuredProject.tags && (
-                                    <div style={{
-                                        display: 'flex',
-                                        flexWrap: 'wrap',
-                                        gap: '0.75rem',
-                                        marginBottom: '2.5rem'
-                                    }}>
-                                        {featuredProject.tags.slice(0, 4).map((tag, idx) => (
-                                            <span key={idx} style={{
-                                                backgroundColor: 'rgba(217, 119, 6, 0.2)',
-                                                color: '#F59E0B',
-                                                padding: '0.5rem 1rem',
-                                                borderRadius: '25px',
-                                                fontSize: '0.85rem',
-                                                fontWeight: 500
-                                            }}>
-                                                {tag}
-                                            </span>
-                                        ))}
+                                <Col lg={6} md={12}>
+                                    <div className="featured-project__media">
+                                        <Image
+                                            fluid
+                                            src={featuredProject.thumbnail}
+                                            alt={featuredProject.projectName}
+                                            className="featured-project__image"
+                                        />
                                     </div>
-                                )}
-
-                                {/* CTA Button */}
-                                <Link 
-                                    to={"project_details/" + featuredProject.id}
-                                    style={{
-                                        display: 'inline-flex',
-                                        alignItems: 'center',
-                                        gap: '0.75rem',
-                                        backgroundColor: '#D97706',
-                                        color: 'white',
-                                        padding: '1rem 2rem',
-                                        borderRadius: '50px',
-                                        textDecoration: 'none',
-                                        fontWeight: 600,
-                                        fontSize: '1rem',
-                                        transition: 'all 0.3s cubic-bezier(0.4, 0, 0.2, 1)',
-                                        boxShadow: '0 4px 20px rgba(217, 119, 6, 0.35)'
-                                    }}
-                                    onMouseEnter={(e) => {
-                                        e.target.style.backgroundColor = "#B45309";
-                                        e.target.style.transform = "translateY(-3px)";
-                                        e.target.style.boxShadow = "0 8px 30px rgba(217, 119, 6, 0.45)";
-                                    }}
-                                    onMouseLeave={(e) => {
-                                        e.target.style.backgroundColor = "#D97706";
-                                        e.target.style.transform = "translateY(0)";
-                                        e.target.style.boxShadow = "0 4px 20px rgba(217, 119, 6, 0.35)";
-                                    }}
-                                >
-                                    View Project Details
-                                    <HiArrowRight size={18} />
-                                </Link>
-                            </Col>
-
-                            <Col lg={6} md={12}>
-                                {/* Project Image */}
-                                <div style={{
-                                    position: 'relative',
-                                    borderRadius: '16px',
-                                    overflow: 'hidden',
-                                    boxShadow: '0 30px 60px rgba(0,0,0,0.3)',
-                                    transform: 'perspective(1000px) rotateY(-5deg)',
-                                    transition: 'transform 0.5s ease'
-                                }}
-                                onMouseEnter={(e) => {
-                                    e.currentTarget.style.transform = 'perspective(1000px) rotateY(0deg) scale(1.02)';
-                                }}
-                                onMouseLeave={(e) => {
-                                    e.currentTarget.style.transform = 'perspective(1000px) rotateY(-5deg)';
-                                }}
-                                >
-                                    <Image
-                                        fluid
-                                        src={featuredProject.thumbnail}
-                                        alt={featuredProject.projectName}
-                                        style={{
-                                            width: '100%',
-                                            height: 'auto',
-                                            display: 'block'
-                                        }}
-                                    />
-                                    {/* Gradient overlay */}
-                                    <div style={{
-                                        position: 'absolute',
-                                        bottom: 0,
-                                        left: 0,
-                                        right: 0,
-                                        height: '30%',
-                                        background: 'linear-gradient(transparent, rgba(0,48,73,0.3))',
-                                        pointerEvents: 'none'
-                                    }} />
-                                </div>
-                            </Col>
-                        </Row>
+                                </Col>
+                            </Row>
+                        </div>
                     </Container>
-                </div>
+                </section>
             )}
 
             {/* All Projects Section */}

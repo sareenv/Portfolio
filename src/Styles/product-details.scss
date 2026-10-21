@@ -1,26 +1,304 @@
-.description {
-    margin-top: 2rem;
+// Project Details — minimal, matches the Articles pages
+
+.project-detail {
+    padding: 7rem 0 4rem;
+    min-height: 100vh;
+    background: #F5F3EE;
+
+    &__container {
+        max-width: 820px;
+    }
+
+    &__back {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        margin-bottom: 2rem;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #627D98;
+        font-size: 0.85rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: color 0.18s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: #B45309;
+            outline: none;
+        }
+    }
+
+    // Header
+    &__header {
+        text-align: center;
+        margin-bottom: 2.5rem;
+    }
+
+    &__label {
+        display: block;
+        color: #B45309;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title {
+        font-weight: 700;
+        color: #14213D;
+        font-size: clamp(2rem, 5vw, 2.75rem);
+        line-height: 1.15;
+        margin-bottom: 1rem;
+    }
+
+    &__tagline {
+        color: #334E68;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    &__meta {
+        margin: 0.9rem auto 0;
+        color: #627D98;
+        font-size: 0.875rem;
+        line-height: 1.6;
+    }
+
+    &__actions {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: 1.5rem;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: #14213D;
+        font-size: 0.9rem;
+        font-weight: 600;
+        text-decoration: none;
+        cursor: pointer;
+        transition: color 0.18s ease;
+
+        &:hover,
+        &:focus-visible {
+            color: #B45309;
+            text-decoration: none;
+            outline: none;
+        }
+    }
+
+    // Media
+    &__media {
+        position: relative;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid #E2DED6;
+        border-radius: 8px;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    &__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 56px;
+        height: 56px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 0;
+        border-radius: 50%;
+        background: rgba(20, 33, 61, 0.8);
+        color: #ffffff;
+        cursor: pointer;
+        transition: background 0.18s ease;
+
+        svg {
+            margin-left: 3px;
+        }
+
+        &:hover,
+        &:focus-visible {
+            background: #B45309;
+            outline: none;
+        }
+    }
+
+    &__video {
+        position: absolute;
+        inset: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: #14213D;
+    }
+
+    &__video-inner {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    &__video-close {
+        position: absolute;
+        top: 0.5rem;
+        right: 0.75rem;
+        z-index: 3;
+        padding: 0;
+        border: 0;
+        background: transparent;
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 1.5rem;
+        line-height: 1;
+        cursor: pointer;
+
+        &:hover {
+            color: #ffffff;
+        }
+    }
+
+    &__gallery-bar {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-top: 0.75rem;
+    }
+
+    &__thumbs {
+        display: flex;
+        gap: 0.5rem;
+        flex: 1;
+        min-width: 0;
+        overflow-x: auto;
+    }
+
+    &__thumb {
+        flex-shrink: 0;
+        width: 72px;
+        height: 52px;
+        padding: 0;
+        overflow: hidden;
+        border: 1px solid #E2DED6;
+        border-radius: 6px;
+        background: #ffffff;
+        opacity: 0.55;
+        cursor: pointer;
+        transition: opacity 0.18s ease, border-color 0.18s ease;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        &:hover,
+        &:focus-visible {
+            opacity: 0.85;
+            outline: none;
+        }
+
+        &--active,
+        &--active:hover {
+            opacity: 1;
+            border-color: #B45309;
+        }
+    }
+
+    &__counter {
+        flex-shrink: 0;
+        color: #627D98;
+        font-size: 0.8rem;
+    }
+
+    // Sections
+    &__section {
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid #E2DED6;
+    }
+
+    &__section-title {
+        color: #627D98;
+        font-size: 0.75rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin: 0 0 0.75rem;
+    }
+
+    &__text {
+        color: #334E68;
+        font-size: 1rem;
+        line-height: 1.75;
+        margin: 0;
+    }
+
+    &__list {
+        margin: 0;
+        padding-left: 1.1rem;
+        color: #334E68;
+        font-size: 1rem;
+        line-height: 1.75;
+
+        li::marker {
+            color: #B45309;
+        }
+    }
+
+    // Loading skeleton
+    &__skeleton {
+        background: #EEE7DC;
+        border-radius: 6px;
+        animation: project-detail-pulse 1.6s ease-in-out infinite;
+
+        &--center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+    }
 }
 
-// Floating animation for background elements
-@keyframes float {
-    0%, 100% {
-        transform: translate(0, 0) scale(1);
-    }
-    33% {
-        transform: translate(30px, -30px) scale(1.1);
-    }
-    66% {
-        transform: translate(-20px, 20px) scale(0.9);
-    }
+@keyframes project-detail-pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.55; }
 }
 
-// Enhanced card hover effects
-.project-detail-card {
-    transition: all 0.3s ease;
-    
-    &:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 25px 70px rgba(0,0,0,0.15) !important;
+@media (max-width: 768px) {
+    .project-detail {
+        padding: 6rem 0 3rem;
+
+        &__header {
+            margin-bottom: 2rem;
+        }
+
+        &__tagline {
+            font-size: 0.95rem;
+        }
+
+        &__actions {
+            gap: 1.25rem;
+        }
+
+        &__section {
+            margin-top: 2rem;
+        }
     }
 }

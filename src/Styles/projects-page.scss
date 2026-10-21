@@ -1,0 +1,223 @@
+// Projects page — featured project, minimal to match the Articles pages
+
+.featured-project {
+    padding: 7rem 0 0;
+    background: #F5F3EE;
+
+    &__inner {
+        padding-bottom: 3.5rem;
+        border-bottom: 1px solid #E2DED6;
+    }
+
+    &__row {
+        align-items: center;
+    }
+
+    &__label {
+        display: inline-block;
+        color: #B45309;
+        font-size: 0.85rem;
+        font-weight: 700;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+    }
+
+    &__title {
+        color: #14213D;
+        font-weight: 700;
+        font-size: clamp(1.9rem, 4vw, 2.5rem);
+        line-height: 1.15;
+        margin-bottom: 1rem;
+    }
+
+    &__description {
+        color: #334E68;
+        font-size: 1.05rem;
+        line-height: 1.7;
+        max-width: 500px;
+        margin-bottom: 0.9rem;
+    }
+
+    &__meta {
+        color: #627D98;
+        font-size: 0.875rem;
+        margin-bottom: 1.5rem;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+        color: #14213D;
+        font-size: 0.95rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: color 0.18s ease;
+
+        svg {
+            transition: transform 0.18s ease;
+        }
+
+        &:hover,
+        &:focus-visible {
+            color: #B45309;
+            text-decoration: none;
+            outline: none;
+
+            svg {
+                transform: translateX(3px);
+            }
+        }
+    }
+
+    &__media {
+        display: block;
+        overflow: hidden;
+        background: #ffffff;
+        border: 1px solid #E2DED6;
+        border-radius: 8px;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media (max-width: 991px) {
+    .featured-project {
+        &__text {
+            margin-bottom: 2rem;
+        }
+    }
+}
+
+@media (max-width: 768px) {
+    .featured-project {
+        padding: 6rem 0 0;
+
+        &__inner {
+            padding-bottom: 2.5rem;
+        }
+
+        &__description {
+            font-size: 0.95rem;
+        }
+    }
+}
+
+// Project card — minimal, no chips or overlays
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+    background: #ffffff;
+    border: 1px solid #E2DED6;
+    border-radius: 12px;
+    color: inherit;
+    text-decoration: none;
+    box-shadow: 0 1px 3px rgba(20, 33, 61, 0.04);
+    transition: box-shadow 0.25s ease, border-color 0.25s ease;
+
+    &:hover,
+    &:focus-visible {
+        color: inherit;
+        text-decoration: none;
+        border-color: #D6D0C4;
+        box-shadow: 0 6px 18px rgba(20, 33, 61, 0.08);
+        outline: none;
+
+        .project-card__title,
+        .project-card__link {
+            color: #B45309;
+        }
+
+        .project-card__link svg {
+            transform: translateX(3px);
+        }
+    }
+
+    &__media {
+        height: 200px;
+        overflow: hidden;
+        background: #EEE7DC;
+        border-bottom: 1px solid #EEE7DC;
+    }
+
+    &__image {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    &__body {
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+        padding: 1.25rem 1.4rem 1.1rem;
+    }
+
+    &__tags {
+        color: #627D98;
+        font-size: 0.75rem;
+        font-weight: 600;
+        letter-spacing: 0.04em;
+        margin: 0 0 0.5rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    &__title {
+        color: #14213D;
+        font-size: 1.1rem;
+        font-weight: 700;
+        line-height: 1.35;
+        margin: 0 0 0.5rem;
+        transition: color 0.18s ease;
+    }
+
+    &__description {
+        flex: 1;
+        color: #334E68;
+        font-size: 0.9rem;
+        line-height: 1.65;
+        margin: 0 0 1.1rem;
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+    }
+
+    &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 0.85rem;
+        border-top: 1px solid #EEE7DC;
+    }
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.35rem;
+        color: #14213D;
+        font-size: 0.85rem;
+        font-weight: 600;
+        transition: color 0.18s ease;
+
+        svg {
+            transition: transform 0.18s ease;
+        }
+    }
+
+    &__number {
+        color: #A0AEC0;
+        font-size: 0.75rem;
+        font-weight: 600;
+    }
+}

@@ -1,12 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import Container from 'react-bootstrap/Container';
-import Badge from '../Utilities/Badge';
 import ErrorState from '../Utilities/ErrorState';
 import { downloadProject, clearCache } from '../../Services/Projects';
-import { HiArrowRight, HiExternalLink } from 'react-icons/hi';
-import { FaGithub } from 'react-icons/fa';
+import { HiArrowRight } from 'react-icons/hi';
 import '../../Styles/base.scss';
+import '../../Styles/projects-page.scss';
 
 // Styles for the Projects component
 const styles = {
@@ -47,201 +46,40 @@ const styles = {
         display: 'grid',
         gridTemplateColumns: 'repeat(3, 1fr)',
         gap: '2rem'
-    },
-    projectCard: {
-        backgroundColor: '#ffffff',
-        borderRadius: '16px',
-        overflow: 'hidden',
-        transition: 'all 0.35s cubic-bezier(0.4, 0, 0.2, 1)',
-        height: '100%',
-        cursor: 'pointer',
-        display: 'flex',
-        flexDirection: 'column',
-        border: '1px solid #E2DED6',
-        position: 'relative'
-    },
-    projectCardHover: {
-        transform: 'translateY(-8px)',
-        boxShadow: '0 25px 50px rgba(20, 33, 61, 0.12)'
-    },
-    imageContainer: {
-        width: '100%',
-        height: '220px',
-        overflow: 'hidden',
-        backgroundColor: '#EAE6DF',
-        position: 'relative'
-    },
-    imageOverlay: {
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: 'linear-gradient(180deg, transparent 0%, rgba(0,48,73,0.03) 100%)',
-        opacity: 0,
-        transition: 'opacity 0.3s ease',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        gap: '1rem'
-    },
-    projectImage: {
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover',
-        transition: 'transform 0.5s cubic-bezier(0.4, 0, 0.2, 1)'
-    },
-    cardContent: {
-        padding: '1.75rem',
-        display: 'flex',
-        flexDirection: 'column',
-        flex: 1
-    },
-    tagsContainer: {
-        display: 'flex',
-        flexWrap: 'wrap',
-        gap: '0.5rem',
-        marginBottom: '1rem'
-    },
-    projectTitle: {
-        fontWeight: 700,
-        fontSize: '1.25rem',
-        color: '#003049',
-        marginBottom: '0.85rem',
-        lineHeight: 1.4,
-        transition: 'color 0.3s ease'
-    },
-    projectDescription: {
-        color: '#5a6c7d',
-        fontSize: '0.95rem',
-        lineHeight: 1.75,
-        marginBottom: '1.5rem',
-        flex: 1,
-        display: '-webkit-box',
-        WebkitLineClamp: '3',
-        WebkitBoxOrient: 'vertical',
-        overflow: 'hidden'
-    },
-    cardFooter: {
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between',
-        paddingTop: '1rem',
-        borderTop: '1px solid rgba(0,0,0,0.06)'
-    },
-    viewLink: {
-        color: '#00b4d8',
-        fontSize: '0.9rem',
-        fontWeight: 600,
-        display: 'flex',
-        alignItems: 'center',
-        gap: '0.5rem',
-        transition: 'all 0.3s ease'
-    },
-    viewLinkArrow: {
-        transition: 'transform 0.3s ease'
-    },
-    cardNumber: {
-        fontSize: '0.8rem',
-        color: '#adb5bd',
-        fontWeight: 500
     }
 };
 
-const ProjectCard = ({ project, index }) => {
-    const [isHovered, setIsHovered] = useState(false);
+const ProjectCard = ({ project, index }) => (
+    <Link to={{ pathname: '/project_details/' + project.id }} className="project-card">
+        <div className="project-card__media">
+            <img
+                src={project.thumbnail}
+                alt={project.projectName}
+                className="project-card__image"
+                loading="lazy"
+            />
+        </div>
 
-    return (
-        <Link
-            to={{ pathname: '/project_details/' + project.id }}
-            style={{ textDecoration: 'none', color: 'inherit' }}
-        >
-            <article
-                style={{
-                    ...styles.projectCard,
-                    ...(isHovered ? styles.projectCardHover : {})
-                }}
-                onMouseEnter={() => setIsHovered(true)}
-                onMouseLeave={() => setIsHovered(false)}
-            >
-                {/* Image */}
-                <div style={styles.imageContainer}>
-                    <img
-                        src={project.thumbnail}
-                        alt={project.projectName}
-                        style={{
-                            ...styles.projectImage,
-                            transform: isHovered ? 'scale(1.08)' : 'scale(1)'
-                        }}
-                    />
-                    <div style={{
-                        ...styles.imageOverlay,
-                        opacity: isHovered ? 1 : 0,
-                        background: 'linear-gradient(180deg, rgba(20,33,61,0.1) 0%, rgba(20,33,61,0.5) 100%)'
-                    }}>
-                        <span style={{
-                            backgroundColor: 'white',
-                            color: '#14213D',
-                            padding: '0.6rem 1.2rem',
-                            borderRadius: '25px',
-                            fontSize: '0.85rem',
-                            fontWeight: 600,
-                            display: 'flex',
-                            alignItems: 'center',
-                            gap: '0.5rem',
-                            boxShadow: '0 4px 15px rgba(0,0,0,0.1)'
-                        }}>
-                            View Details <HiExternalLink size={14} />
-                        </span>
-                    </div>
-                </div>
+        <div className="project-card__body">
+            {project.tags && project.tags.length > 0 && (
+                <p className="project-card__tags">{project.tags.slice(0, 3).join(' · ')}</p>
+            )}
 
-                {/* Content */}
-                <div style={styles.cardContent}>
-                    {/* Tags */}
-                    <div style={styles.tagsContainer}>
-                        {project.tags && project.tags.slice(0, 3).map((tag, idx) => (
-                            <Badge key={idx} tag={tag} />
-                        ))}
-                    </div>
+            <h3 className="project-card__title">{project.projectName}</h3>
 
-                    {/* Title */}
-                    <h3 style={{
-                        ...styles.projectTitle,
-                        color: isHovered ? '#D97706' : '#14213D'
-                    }}>
-                        {project.projectName}
-                    </h3>
+            <p className="project-card__description">{project.description}</p>
 
-                    {/* Description */}
-                    <p style={styles.projectDescription}>
-                        {project.description}
-                    </p>
-
-                    {/* Footer */}
-                    <div style={styles.cardFooter}>
-                        <div style={{
-                            ...styles.viewLink,
-                            color: isHovered ? '#B45309' : '#D97706'
-                        }}>
-                            Explore project
-                            <HiArrowRight
-                                size={16}
-                                style={{
-                                    ...styles.viewLinkArrow,
-                                    transform: isHovered ? 'translateX(4px)' : 'translateX(0)'
-                                }}
-                            />
-                        </div>
-                        <span style={styles.cardNumber}>
-                            {String(index + 1).padStart(2, '0')}
-                        </span>
-                    </div>
-                </div>
-            </article>
-        </Link>
-    );
-};
+            <div className="project-card__footer">
+                <span className="project-card__link">
+                    Explore project <HiArrowRight size={14} />
+                </span>
+                <span className="project-card__number">
+                    {String(index + 1).padStart(2, '0')}
+                </span>
+            </div>
+        </div>
+    </Link>
+);
 
 const Project = (props) => {
     const [projects, setProjects] = useState([])
