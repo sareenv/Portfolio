@@ -8,7 +8,7 @@ This is the first article in a series about push notifications and APNS. Here we
 
 ## The Big Picture
 
-![APNS registration flow diagram](/Assets/articles/apns-registration-flow.png)
+![APNS registration flow diagram](/assets/articles/apns-registration-flow.png)
 
 The diagram shows **Phase 1: Registration**. It happens once, when the app starts.
 

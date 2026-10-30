@@ -13,7 +13,7 @@ There are two reasons why APNS needs to know who your server is:
 
 As a result, **the developer identity is required**. Just the device is not enough.
 
-![APNS diagram](/Assets/articles/apns-final.png)
+![APNS diagram](/assets/articles/apns-final.png)
 
 ## Two Ways to Prove Your Identity: `.p8` and `.p12`
 

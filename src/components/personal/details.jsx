@@ -1,0 +1,88 @@
+
+import awsCertificationLogo from '../../assets/logos/aws-certified-cloud-practitioner.png';
+import dockerLogo from '../../assets/logos/docker-logo.png';
+import graphqlLogo from '../../assets/logos/graphql-logo.svg';
+import jiraLogo from '../../assets/logos/jira-logo.svg';
+
+const ConcordiaDetails = {
+    instition: 'Concordia University',
+    qualification: 'MSc Software Engineering',
+    address: `1455 Boul. de Maisonneuve Ouest, Montréal, Canada, QC H3G 1M8`,
+    id: '1',
+    course: [
+            "Distributed System Design", 
+            "Advanced Software Architecture", 
+            "Applied Artificial Intelligence", 
+            "Program and Problem Solving", 
+            "Software Requirement Specification", 
+            "Comp Studies of Programming Languages", 
+            "Graduate Seminar Report", 
+            "Advanced Programming Practices",
+            "Software Comprehension & Maintenance", 
+            "Software Development Methodologies"
+    ],
+    image: 'https://campus1mtl.ca/montreal-student-housing/assets/images/interface/concorida-logo-sm.png', 
+}
+
+const CoventryDetails = {
+    instition: 'Coventry University',
+    qualification: 'BSc Hons Computer Science',
+    address: 'Priory St, Coventry CV1 5FB, United Kingdom',
+    id: '2',
+    image: 'https://conflictresearchsociety.org/wp-content/uploads/2020/01/coventry-university-logo.png',
+    course: [
+        "Discrete Mathematics",
+        "iOS Application Development with Swift", 
+        "Web Application & Backend Development", 
+        "Advanced Datastructures and Algorithms", 
+        "Data and Information Retrival",
+        "Operating Systems & Computer Networks", 
+        "Theory of Compution & Automata", 
+        "Software Engineering", 
+        "Final Dissertation",
+    ]
+}
+
+const AWSCertification = {
+    instition: 'AWS Web Services',
+    qualification: 'AWS Certified Cloud Practitioner',
+    id: '3',
+    image: awsCertificationLogo,
+    issued: "Aug 2022",
+    credLink: 'https://www.credly.com/badges/a1241d89-d1e6-4f30-80da-e3f0bdc51e3f/public_url'
+}
+
+
+const DockerCertification = {
+    instition: 'Udemy e-Learning',
+    qualification: 'Docker',
+    id: '4',
+    image: dockerLogo,
+    credLink: 'https://udemy-certificate.s3.amazonaws.com/pdf/UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a.pdf', 
+    issued: "Sep 2022",
+    certificateID: "UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a"
+}
+
+const JiraCertification = {
+    instition: 'Ceridian Dayforce Learning',
+    qualification: 'Jira at Ceridian',
+    id: '5',
+    image: jiraLogo,
+    credLink: "",
+    issued: "Sept 2023",
+    certificateID: ""
+}
+
+const GraphQLCertification = {
+    instition: 'Udemy e-Learning',
+    qualification: 'GraphQL',
+    id: '6',
+    image: graphqlLogo,
+    credLink: "",
+    issued: "In Progress",
+    certificateID: "UC-4069f5bf-57db-400e-b3fc-15a69bfcb79a"
+}
+
+
+export {ConcordiaDetails, CoventryDetails, AWSCertification, 
+    DockerCertification, JiraCertification, GraphQLCertification};

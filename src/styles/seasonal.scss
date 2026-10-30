@@ -1,0 +1,126 @@
+// Seasonal decorations. Decor hangs from behind the fixed nav bar (z-index 1000)
+// so it never covers the header; the greeting sits at the bottom of the viewport.
+
+.decor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 999;
+    pointer-events: none;
+
+    &__item {
+        position: absolute;
+        top: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        transform-origin: top center;
+        animation: decor-dangle 3.2s ease-in-out infinite;
+
+        &-thread {
+            width: 2px;
+            height: var(--thread);
+            background: linear-gradient(#999, #555);
+        }
+
+        &-body {
+            display: block;
+            margin-top: -2px;
+            transform: scale(var(--scale, 1));
+            transform-origin: top center;
+        }
+    }
+
+    @media (max-width: 576px) {
+        &__item--extra { display: none; }
+    }
+}
+
+@keyframes decor-dangle {
+    0%, 100% { transform: rotate(-4deg); }
+    50% { transform: rotate(4deg) translateY(10px); }
+}
+
+.seasonal-greeting {
+    position: fixed;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1050;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    white-space: nowrap;
+
+    &__close {
+        border: 0;
+        background: transparent;
+        color: inherit;
+        font-size: 1.4rem;
+        line-height: 1;
+        cursor: pointer;
+        padding: 0 2px;
+    }
+
+    &--halloween {
+        background: #1b1b1b;
+        color: #ff6a00;
+        border: 2px solid #ff6a00;
+        animation: glow-orange 2.4s ease-in-out infinite;
+    }
+
+    &--christmas {
+        background: #8b1e1e;
+        color: #fff;
+        border: 2px solid #2a9d8f;
+        animation: glow-green 2.4s ease-in-out infinite;
+    }
+
+    @media (max-width: 576px) {
+        font-size: 0.95rem;
+        padding: 6px 14px;
+    }
+}
+
+@keyframes glow-orange {
+    0%, 100% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 8px rgba(255, 106, 0, 0.3); }
+    50% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 20px rgba(255, 106, 0, 0.7); }
+}
+
+@keyframes glow-green {
+    0%, 100% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 8px rgba(42, 157, 143, 0.4); }
+    50% { box-shadow: 0 4px 16px rgba(0, 0, 0, 0.35), 0 0 20px rgba(42, 157, 143, 0.9); }
+}
+
+.snow {
+    position: fixed;
+    inset: 0;
+    z-index: 1040;
+    pointer-events: none;
+    overflow: hidden;
+
+    &__flake {
+        position: absolute;
+        top: -20px;
+        border-radius: 50%;
+        background: #fff;
+        opacity: 0.85;
+        box-shadow: 0 0 4px rgba(0, 0, 0, 0.25);
+        animation: snow-fall linear infinite;
+    }
+}
+
+@keyframes snow-fall {
+    to { transform: translate(var(--drift), 105vh); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .decor__item, .seasonal-greeting, .snow__flake { animation: none; }
+    .snow { display: none; }
+}

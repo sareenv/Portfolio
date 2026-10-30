@@ -14,7 +14,7 @@ To build on this idea, consider the example of two bank servers, **S1** and **S2
 - **S1** is hosted in Canada.
 - **S2** is hosted in the USA.
 
-![CAP Theorem Diagram](/Assets/articles/CAP.png)
+![CAP Theorem Diagram](/assets/articles/CAP.png)
 
 During a network partition, the system is forced to make a choice between **consistency** and **availability**.
 
